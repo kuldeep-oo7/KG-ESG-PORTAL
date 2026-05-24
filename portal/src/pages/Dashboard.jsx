@@ -3,7 +3,7 @@ import {
   BarChart, Bar, AreaChart, Area, XAxis, YAxis, CartesianGrid,
   Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell
 } from 'recharts'
-import { ChevronDown, TrendingDown, Zap, Globe2, Wind } from 'lucide-react'
+import { ChevronDown, TrendingDown, Zap, Globe2 } from 'lucide-react'
 import {
   DASHBOARD_TOTALS, MONTHLY_SCOPE1, MONTHLY_SCOPE2, SCOPE3_BREAKDOWN, SCOPE3_TOTAL
 } from '../data/ghgData'

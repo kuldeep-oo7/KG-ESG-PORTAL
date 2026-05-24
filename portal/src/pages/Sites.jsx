@@ -15,7 +15,7 @@ function loadSites() {
   try {
     const raw = localStorage.getItem(LS_KEY)
     if (raw) return JSON.parse(raw)
-  } catch (_) {}
+  } catch { /* ignore */ }
   return SITES
 }
 
@@ -52,7 +52,7 @@ export default function Sites() {
 
   function saveSites(updated) {
     setSites(updated)
-    try { localStorage.setItem(LS_KEY, JSON.stringify(updated)) } catch (_) {}
+    try { localStorage.setItem(LS_KEY, JSON.stringify(updated)) } catch { /* ignore */ }
   }
 
   function openCreate() {

@@ -79,7 +79,7 @@ function buildInitialState() {
     try {
       const parsed = JSON.parse(stored)
       if (Object.keys(parsed).length > 0) return { entries: parsed }
-    } catch {}
+    } catch { /* ignore parse error */ }
   }
   // Seed with demo data on first launch
   localStorage.setItem(STORAGE_KEY, JSON.stringify(SEED))
