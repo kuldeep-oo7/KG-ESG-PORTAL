@@ -3,7 +3,7 @@ import {
   BarChart, Bar, AreaChart, Area, XAxis, YAxis, CartesianGrid,
   Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell, Label
 } from 'recharts'
-import { ChevronDown, TrendingDown, Zap, Globe2 } from 'lucide-react'
+import { TrendingDown, Zap, Globe2, Calendar } from 'lucide-react'
 import {
   DASHBOARD_TOTALS, MONTHLY_SCOPE1, MONTHLY_SCOPE2, SCOPE3_BREAKDOWN, SCOPE3_TOTAL
 } from '../data/ghgData'
@@ -74,10 +74,10 @@ export default function Dashboard() {
   const liveS3pct = liveTotal > 0 ? +((liveS3 / liveTotal) * 100).toFixed(2) : DASHBOARD_TOTALS.scope3_pct
 
   const kpi = {
-    total:     liveTotal > 0 ? liveTotal : DASHBOARD_TOTALS.total,
-    scope1:    liveTotal > 0 ? liveS1    : DASHBOARD_TOTALS.scope1,
-    scope2:    liveTotal > 0 ? liveS2    : DASHBOARD_TOTALS.scope2,
-    scope3:    liveTotal > 0 ? liveS3    : DASHBOARD_TOTALS.scope3,
+    total:      liveTotal > 0 ? liveTotal : DASHBOARD_TOTALS.total,
+    scope1:     liveTotal > 0 ? liveS1    : DASHBOARD_TOTALS.scope1,
+    scope2:     liveTotal > 0 ? liveS2    : DASHBOARD_TOTALS.scope2,
+    scope3:     liveTotal > 0 ? liveS3    : DASHBOARD_TOTALS.scope3,
     scope1_pct: liveS1pct,
     scope2_pct: liveS2pct,
     scope3_pct: liveS3pct,
@@ -87,7 +87,6 @@ export default function Dashboard() {
   const [s2View, setS2View] = useState('Detailed')
   const [activePeriod, setActivePeriod] = useState('CY')
 
-  // Scope 1 chart data
   const s1Data = MONTHLY_SCOPE1.map(d => ({
     month: d.month,
     'Stationary Combustion': d.stationary,
@@ -95,7 +94,6 @@ export default function Dashboard() {
     'Fugitive Emissions': d.fugitive,
   }))
 
-  // Scope 2 chart data
   const s2Data = MONTHLY_SCOPE2.map(d => ({
     month: d.month,
     'Renewable Electricity Generation': +(d.renewable / 1000).toFixed(2),
@@ -107,90 +105,108 @@ export default function Dashboard() {
   const SCOPE2_COLORS = ['#10B981', '#064E3B', '#3B82F6']
 
   return (
-    <div className="min-h-screen bg-[#0B0F18]">
+    <div className="min-h-screen bg-[#F8FAFC]">
       <div className="max-w-[1320px] mx-auto px-6 pt-6 pb-14">
 
         {/* ── Top bar ──────────────────────────────────────────────────────── */}
         <div className="flex items-center justify-between mb-7">
-          <h1 className="font-heading text-2xl font-bold text-[#10B981]">
-            GHG Dashboard
-          </h1>
-          <div className="flex items-center gap-2">
-            <button
-              onClick={() => setActivePeriod('CY')}
-              className={`px-4 py-1.5 rounded-lg text-sm text-white bg-[#1A2035] border transition-all ${
-                activePeriod === 'CY' ? 'border-[#10B981]' : 'border-transparent'
-              }`}
+          <div>
+            <p className="text-xs text-gray-400 mb-1">
+              K. Girdharlal International Pvt. Ltd. &gt; Dashboard
+            </p>
+            <h1
+              className="text-3xl font-bold text-[#111827]"
+              style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}
             >
-              CY 2026
-            </button>
-            <button
-              onClick={() => setActivePeriod('FY')}
-              className={`px-4 py-1.5 rounded-lg text-sm text-white bg-[#1A2035] border transition-all ${
-                activePeriod === 'FY' ? 'border-[#10B981]' : 'border-transparent'
-              }`}
-            >
-              FY 2026 (Default)
-            </button>
+              GHG Dashboard
+            </h1>
+          </div>
+          <div className="flex items-center gap-3">
+            <div className="bg-white border border-slate-200 rounded-lg px-4 py-2 text-sm text-slate-600 flex items-center gap-1.5 shadow-sm">
+              <Calendar className="w-4 h-4 text-slate-400" />
+              May 2026
+            </div>
+            <div className="flex bg-white border border-slate-200 rounded-lg overflow-hidden shadow-sm text-sm">
+              {['CY 2026', 'FY 2026'].map(label => (
+                <button
+                  key={label}
+                  onClick={() => setActivePeriod(label.split(' ')[0])}
+                  className={`px-4 py-2 font-medium transition-all ${
+                    activePeriod === label.split(' ')[0]
+                      ? 'bg-[#064E3B] text-white'
+                      : 'text-slate-500 hover:bg-slate-50'
+                  }`}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* ── KPI Cards row ─────────────────────────────────────────────────── */}
-        <div className="grid grid-cols-4 gap-4 mb-5">
+        {/* ── KPI Cards ────────────────────────────────────────────────────── */}
+        <div className="grid grid-cols-4 gap-4 mb-6">
 
-          {/* Total GHG — wide green card */}
-          <div className="col-span-2 rounded-2xl bg-[#064E3B] p-6 relative overflow-hidden">
+          {/* Total GHG — accent green card */}
+          <div className="col-span-2 rounded-2xl bg-[#064E3B] p-6 relative overflow-hidden shadow-sm">
             <div className="absolute top-0 right-0 w-40 h-40 bg-white/5 rounded-full -translate-y-12 translate-x-12 pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-28 h-28 bg-white/5 rounded-full translate-y-8 -translate-x-8 pointer-events-none" />
-            <p className="text-xs uppercase tracking-wider text-[#6EE7B7] mb-2 relative">
+            <p className="text-xs uppercase tracking-wider text-[#A7F3D0] mb-2 relative">
               TOTAL GHG EMISSIONS
             </p>
             <div className="flex items-end gap-2 relative">
-              <span className="font-heading text-5xl font-bold text-white tabular-nums leading-none">
+              <span
+                className="text-5xl font-bold text-white tabular-nums leading-none"
+                style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}
+              >
                 {kpi.total.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
               </span>
               <span className="text-sm text-[#A7F3D0] mb-1">TCO2eq</span>
             </div>
-            <p className="text-xs text-[#6EE7B7] mt-3 relative">
-              Combined Scope 1 + 2 + 3
-            </p>
+            <p className="text-xs text-[#6EE7B7] mt-3 relative">Combined Scope 1 + 2 + 3</p>
           </div>
 
           {/* Scope 1 */}
-          <div className="rounded-2xl bg-[#131B2E] p-5 flex flex-col justify-between">
+          <div className="rounded-2xl bg-white border border-slate-200 p-5 flex flex-col justify-between shadow-sm">
             <div>
-              <p className="text-xs uppercase tracking-wide text-[#6EE7B7] mb-2">SCOPE 1</p>
+              <p className="text-xs uppercase tracking-wide text-slate-400 mb-2">SCOPE 1</p>
               <div className="flex items-end gap-1.5">
-                <span className="font-heading text-3xl font-bold text-white tabular-nums leading-none">
+                <span
+                  className="text-3xl font-bold text-slate-900 tabular-nums leading-none"
+                  style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}
+                >
                   {kpi.scope1.toLocaleString()}
                 </span>
-                <span className="text-sm text-gray-400 mb-0.5">TCO2eq</span>
+                <span className="text-sm text-slate-400 mb-0.5">TCO2eq</span>
               </div>
             </div>
             <div className="flex items-center gap-2 mt-3">
               <TrendingDown className="w-3.5 h-3.5 text-[#10B981]" />
-              <span className="text-xs text-gray-400">Direct emissions</span>
-              <span className="ml-auto text-[#10B981] bg-[#064E3B]/50 text-xs px-2 py-0.5 rounded-full font-semibold">
+              <span className="text-xs text-slate-400">Direct emissions</span>
+              <span className="ml-auto text-[#064E3B] bg-[#E6F4F1] text-xs px-2 py-0.5 rounded-full font-semibold">
                 {kpi.scope1_pct}%
               </span>
             </div>
           </div>
 
           {/* Scope 2 */}
-          <div className="rounded-2xl bg-[#131B2E] p-5 flex flex-col justify-between">
+          <div className="rounded-2xl bg-white border border-slate-200 p-5 flex flex-col justify-between shadow-sm">
             <div>
-              <p className="text-xs uppercase tracking-wide text-[#6EE7B7] mb-2">SCOPE 2</p>
+              <p className="text-xs uppercase tracking-wide text-slate-400 mb-2">SCOPE 2</p>
               <div className="flex items-end gap-1.5">
-                <span className="font-heading text-3xl font-bold text-white tabular-nums leading-none">
+                <span
+                  className="text-3xl font-bold text-slate-900 tabular-nums leading-none"
+                  style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}
+                >
                   {kpi.scope2.toLocaleString()}
                 </span>
-                <span className="text-sm text-gray-400 mb-0.5">TCO2eq</span>
+                <span className="text-sm text-slate-400 mb-0.5">TCO2eq</span>
               </div>
             </div>
             <div className="flex items-center gap-2 mt-3">
               <Zap className="w-3.5 h-3.5 text-[#10B981]" />
-              <span className="text-xs text-gray-400">Purchased energy</span>
-              <span className="ml-auto text-[#10B981] bg-[#064E3B]/50 text-xs px-2 py-0.5 rounded-full font-semibold">
+              <span className="text-xs text-slate-400">Purchased energy</span>
+              <span className="ml-auto text-[#064E3B] bg-[#E6F4F1] text-xs px-2 py-0.5 rounded-full font-semibold">
                 {kpi.scope2_pct}%
               </span>
             </div>
@@ -198,42 +214,50 @@ export default function Dashboard() {
 
         </div>
 
-        {/* Scope 3 KPI — separate row so it sits naturally after the 4-col grid */}
+        {/* Scope 3 KPI */}
         <div className="grid grid-cols-4 gap-4 mb-6">
-          <div className="col-start-3 col-span-2 rounded-2xl bg-[#131B2E] p-5 flex flex-col justify-between">
+          <div className="col-start-3 col-span-2 rounded-2xl bg-white border border-slate-200 p-5 flex flex-col justify-between shadow-sm">
             <div>
-              <p className="text-xs uppercase tracking-wide text-[#6EE7B7] mb-2">SCOPE 3</p>
+              <p className="text-xs uppercase tracking-wide text-slate-400 mb-2">SCOPE 3</p>
               <div className="flex items-end gap-1.5">
-                <span className="font-heading text-3xl font-bold text-white tabular-nums leading-none">
+                <span
+                  className="text-3xl font-bold text-slate-900 tabular-nums leading-none"
+                  style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}
+                >
                   {kpi.scope3.toLocaleString()}
                 </span>
-                <span className="text-sm text-gray-400 mb-0.5">TCO2eq</span>
+                <span className="text-sm text-slate-400 mb-0.5">TCO2eq</span>
               </div>
             </div>
             <div className="flex items-center gap-2 mt-3">
               <Globe2 className="w-3.5 h-3.5 text-[#10B981]" />
-              <span className="text-xs text-gray-400">Value chain</span>
-              <span className="ml-auto text-[#10B981] bg-[#064E3B]/50 text-xs px-2 py-0.5 rounded-full font-semibold">
+              <span className="text-xs text-slate-400">Value chain</span>
+              <span className="ml-auto text-[#064E3B] bg-[#E6F4F1] text-xs px-2 py-0.5 rounded-full font-semibold">
                 {kpi.scope3_pct}%
               </span>
             </div>
           </div>
         </div>
 
-        {/* ── Two-column chart row: Scope 1 bar + Scope 3 donut ─────────────── */}
+        {/* ── Charts: Scope 1 bar + Scope 3 donut ──────────────────────────── */}
         <div className="grid grid-cols-5 gap-5 mb-5">
 
-          {/* Scope 1 Bar Chart — 3/5 width */}
-          <div className="col-span-3 bg-white rounded-2xl p-6 shadow">
+          {/* Scope 1 Bar Chart */}
+          <div className="col-span-3 bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
             <div className="flex items-center justify-between mb-4">
-              <h2 className="font-heading font-semibold text-slate-800 text-[15px]">Scope 1</h2>
+              <h2
+                className="font-semibold text-slate-800 text-[15px]"
+                style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}
+              >
+                Scope 1
+              </h2>
               <div className="flex rounded-lg border border-slate-200 overflow-hidden text-xs">
                 {['Detailed', 'Overall'].map(v => (
                   <button
                     key={v}
                     onClick={() => setS1View(v)}
                     className={`px-3.5 py-1.5 font-medium transition-all ${
-                      s1View === v ? 'bg-[#10B981] text-white' : 'text-slate-500 hover:bg-slate-50'
+                      s1View === v ? 'bg-[#064E3B] text-white' : 'text-slate-500 hover:bg-slate-50'
                     }`}
                   >
                     {v}
@@ -270,9 +294,14 @@ export default function Dashboard() {
             </ResponsiveContainer>
           </div>
 
-          {/* Scope 3 Donut Chart — 2/5 width */}
-          <div className="col-span-2 bg-white rounded-2xl p-6 shadow flex flex-col">
-            <h2 className="font-heading font-semibold text-slate-800 text-[15px] mb-4">Scope 3</h2>
+          {/* Scope 3 Donut Chart */}
+          <div className="col-span-2 bg-white rounded-2xl border border-slate-200 p-6 shadow-sm flex flex-col">
+            <h2
+              className="font-semibold text-slate-800 text-[15px] mb-4"
+              style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}
+            >
+              Scope 3
+            </h2>
             <div className="flex-1 flex flex-col items-center justify-center">
               <ResponsiveContainer width="100%" height={200}>
                 <PieChart>
@@ -307,7 +336,6 @@ export default function Dashboard() {
                 </PieChart>
               </ResponsiveContainer>
             </div>
-            {/* Legend list */}
             <div className="mt-2 space-y-1.5">
               {SCOPE3_BREAKDOWN.map(item => (
                 <div key={item.name} className="flex items-center gap-2">
@@ -322,16 +350,21 @@ export default function Dashboard() {
         </div>
 
         {/* ── Scope 2 full-width Area Chart ─────────────────────────────────── */}
-        <div className="bg-white rounded-2xl p-6 shadow">
+        <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="font-heading font-semibold text-slate-800 text-[15px]">Scope 2</h2>
+            <h2
+              className="font-semibold text-slate-800 text-[15px]"
+              style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}
+            >
+              Scope 2
+            </h2>
             <div className="flex rounded-lg border border-slate-200 overflow-hidden text-xs">
               {['Detailed', 'Overall'].map(v => (
                 <button
                   key={v}
                   onClick={() => setS2View(v)}
                   className={`px-3.5 py-1.5 font-medium transition-all ${
-                    s2View === v ? 'bg-[#10B981] text-white' : 'text-slate-500 hover:bg-slate-50'
+                    s2View === v ? 'bg-[#064E3B] text-white' : 'text-slate-500 hover:bg-slate-50'
                   }`}
                 >
                   {v}
