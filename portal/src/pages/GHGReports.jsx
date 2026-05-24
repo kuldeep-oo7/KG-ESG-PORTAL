@@ -247,6 +247,30 @@ export default function GHGReports() {
 
   const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
 
+  function handleExport() {
+    const allRows = [
+      ['Scope', 'Module', 'Date', 'Site', 'Type', 'Unit', 'Consumption', 'GHG (tCO2Eq)'],
+      ...scope1Stationary.map(e => ['Scope 1', 'Stationary Combustion', e.date || '', e.siteCode || '', e.Type || '', e.Unit || '', e.Consumption || '', e.tco2e?.toFixed(6) || '']),
+      ...scope1Mobile.map(e => ['Scope 1', 'Mobile Combustion', e.date || '', e.siteCode || '', e.Type || '', e.Unit || '', e.Consumption || '', e.tco2e?.toFixed(6) || '']),
+      ...scope1Fugitive.map(e => ['Scope 1', 'Fugitive Emissions', e.date || '', e.siteCode || '', e.Type || '', e.Unit || '', e.Consumption || '', e.tco2e?.toFixed(6) || '']),
+      ...scope2Electricity.map(e => ['Scope 2', 'Imported Electricity', e.date || '', e.siteCode || '', '', e.Unit || '', e.Consumption || '', e.tco2e?.toFixed(6) || '']),
+      ...scope2Renewable.map(e => ['Scope 2', 'Renewable Electricity', e.date || '', e.siteCode || '', '', e.Unit || '', e.Consumption || '', e.tco2e?.toFixed(6) || '']),
+      ...scope2HeatSteam.map(e => ['Scope 2', 'Heat / Steam', e.date || '', e.siteCode || '', '', e.Unit || '', e.Consumption || '', e.tco2e?.toFixed(6) || '']),
+      ...[...scope3EmployeeCommute, ...scope3BusinessAir, ...scope3BusinessLand, ...scope3BusinessSea,
+          ...scope3WasteDisposal, ...scope3WaterSupply, ...scope3PurchasedGoods, ...scope3HotelStay,
+          ...scope3Food, ...scope3Upstream, ...scope3Downstream, ...scope3TdLoss].map(e => ['Scope 3', e.category || e.module || '', e.date || '', e.siteCode || '', '', '', '', e.tco2e?.toFixed(6) || '']),
+      ['', '', '', '', '', 'TOTAL', '', liveTotal > 0 ? liveTotal.toFixed(6) : displayTotal],
+    ]
+    const csv = allRows.map(r => r.join(',')).join('\n')
+    const blob = new Blob([csv], { type: 'text/csv' })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `KG_GHG_Report_${fromMonth}${fromYear}-${toMonth}${toYear}.csv`
+    a.click()
+    URL.revokeObjectURL(url)
+  }
+
   return (
     <div className="min-h-screen bg-[#F8FAFC]">
       {/* Title section */}
@@ -366,7 +390,10 @@ export default function GHGReports() {
           </select>
 
           {/* Export button */}
-          <button className="ml-auto flex items-center gap-2 bg-[#10B981] hover:bg-[#059669] text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors">
+          <button
+            onClick={handleExport}
+            className="ml-auto flex items-center gap-2 bg-[#10B981] hover:bg-[#059669] text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors"
+          >
             <Download className="w-4 h-4" /> Export
           </button>
         </div>
