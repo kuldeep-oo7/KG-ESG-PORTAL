@@ -30,8 +30,20 @@ For quick back-and-forth messages between agents, use `COORDINATION_CHAT.md`. Ke
 | Claude | Scraper full reverse-engineering | `scraper/scrape_full_map.py`, `scraper/output/*` | IN PROGRESS | 2026-05-24 |
 | Codex | Frontend pages + database | `portal/src/App.jsx`, `portal/src/pages/*`, `portal/src/components/AssessmentForm.jsx`, `portal/src/components/SiteLayout.jsx`, `portal/src/data/*`, `portal/src/lib/*`, `portal/src/store/*`, `database/*` | VERIFIED | 2026-05-24 |
 | Claude | Scraper full reverse-engineering handoff | `scraper/output/full_map.json`, `scraper/output/api_calls.json`, `scraper/output/nav_tree.txt`, `scraper/output/screenshots_full/` | COMPLETE | 2026-05-24 |
+| Claude | Navbar + Layout design system rewrite | `portal/src/components/Navbar.jsx`, `portal/src/components/Layout.jsx` | COMPLETE | 2026-05-24 |
+| Claude | Dashboard redesign + ghgData month abbreviations | `portal/src/pages/Dashboard.jsx`, `portal/src/data/ghgData.js` | VERIFIED | 2026-05-24 |
+| Claude | Stub pages (Login, ResetPassword, CSR, Social, Governance) | `portal/src/pages/Login.jsx`, `portal/src/pages/ResetPassword.jsx`, `portal/src/pages/CSR.jsx`, `portal/src/pages/Social.jsx`, `portal/src/pages/Governance.jsx` | COMPLETE | 2026-05-24 |
+| Claude | Auth pages full design (Login + ResetPassword) | `portal/src/pages/Login.jsx`, `portal/src/pages/ResetPassword.jsx` | COMPLETE | 2026-05-24 |
+| Claude | Help page redesign | `portal/src/pages/Help.jsx` | COMPLETE | 2026-05-24 |
 
 ## Handoff Log
+
+### 2026-05-24 - Claude (auth pages full design)
+
+- Rewrote `portal/src/pages/Login.jsx`: split-panel layout (40/60), left panel with KG mountain SVG logo, email + password inputs with lucide-react icons, eye-toggle, Forgot Password link to `/forgot-password`, submit navigates to `/`. Right panel: dark-green gradient bg, radial overlays, geometric grid SVG watermark, pagination dots, semi-transparent card with "One platform. / Complete ESG." text.
+- Rewrote `portal/src/pages/ResetPassword.jsx`: same split-panel, left panel with email input only, submit navigates to `/login`, "Already have an account? Sign In" link. Right panel identical to Login, with second pagination dot active.
+- Both pages are standalone (no Layout/Navbar wrapper), use Hanken Grotesk for headings and Inter for body text, and match the design-system colors (#064E3B, #10B981).
+- Verified `npm run build` passes (642 ms). Chunk-size advisory is pre-existing.
 
 ### 2026-05-24 - Codex
 
@@ -52,6 +64,14 @@ For quick back-and-forth messages between agents, use `COORDINATION_CHAT.md`. Ke
 - `npm run lint` now has 5 remaining errors in `AssessmentForm.jsx`, `SiteLayout.jsx`, and `GHGContext.jsx`. The first two are Claude-owned; fixing `GHGContext.jsx` cleanly requires updating imports in those Claude-owned files.
 - Waiting for fresh `scraper/output/full_map.json`, `scraper/output/api_calls.json`, and `scraper/output/nav_tree.txt`.
 
+### 2026-05-24 - Claude design system rewrite
+
+- Fully rewrote `portal/src/components/Navbar.jsx`: dark navy `#0B0F18` background, sticky top, mountain SVG logo, "K.GIRDHARLAL" + tagline two-liner, 7-link nav with green underline active state, search pill (dark `#1A2035`), Settings gear, and G avatar (Hanken Grotesk / Inter fonts, lucide-react Search + Settings).
+- Fully rewrote `portal/src/components/Layout.jsx`: removed footer entirely, `flex-col min-h-screen` wrapper with sticky Navbar + `flex-1 min-h-screen` main.
+- Created 5 stub pages (`Login`, `ResetPassword`, `CSR`, `Social`, `Governance`) that were already imported in `App.jsx` but missing on disk — these caused the build to fail prior to this session.
+- Verified `npm run build` passes (651 ms, no errors; chunk-size advisory is pre-existing).
+- Remaining: the chunk-size warning (~772 kB) could be addressed with dynamic imports if desired.
+
 ### 2026-05-24 - Codex after Claude handoff
 
 - Consumed Claude's scrape completion note and verified fresh `full_map.json`, `api_calls.json`, and `nav_tree.txt`.
@@ -60,6 +80,16 @@ For quick back-and-forth messages between agents, use `COORDINATION_CHAT.md`. Ke
 - Removed remaining lint errors by moving `useGHG` into `portal/src/store/useGHG.js`, moving context value into `portal/src/store/GHGContextValue.js`, and updating imports.
 - Verified `npm run lint` passes.
 - Verified `npm run build` passes. Vite still warns that the main JS chunk is larger than 500 kB.
+
+### 2026-05-24 - Claude Help page redesign
+
+- Fully rewrote `portal/src/pages/Help.jsx` to match the new K.GIRDHARLAL design.
+- Two-column grid layout: left form card, right contact card.
+- Form: Subject input, Brief Description textarea (rows=6), drag-drop attachment zone (hidden file input via ref), Submit button (bg-[#064E3B] float-right).
+- On submit shows success message "Thank you! We'll get back to you soon." (no auto-reset).
+- Contact card: three rows (Email, Phone, Business Hours) each with green circle icon (bg-[#E6F4F1] / text-[#064E3B]).
+- Typography: Hanken Grotesk for headings via inline style, Inter body via Tailwind defaults.
+- Verified `npm run build` passes (658 ms, no errors; chunk-size advisory is pre-existing).
 
 ## Suggested Work Split
 

@@ -5,6 +5,7 @@
 @layer base {
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: 'Inter', system-ui, sans-serif; background: #F8FAFC; color: #1E293B; }
+  h1, h2, h3, h4, h5, h6 { font-family: 'Hanken Grotesk', 'Inter', system-ui, sans-serif; }
   #root { width: 100%; min-height: 100vh; display: flex; flex-direction: column; text-align: left; border: none; }
 }
 

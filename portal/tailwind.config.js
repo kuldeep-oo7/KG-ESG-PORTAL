@@ -9,7 +9,8 @@ export default {
         sage:      { DEFAULT: '#2D6A4F', light: '#D8F3DC' },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans:    ['Inter', 'system-ui', 'sans-serif'],
+        heading: ['"Hanken Grotesk"', 'Inter', 'system-ui', 'sans-serif'],
       },
     },
   },

@@ -113,34 +113,34 @@ export const DASHBOARD_TOTALS = {
 
 // ── Monthly Scope 1 data (tCO2e) ─────────────────────────────────────────────
 export const MONTHLY_SCOPE1 = [
-  { month: 'January',   stationary: 0.8,  mobile: 0.3,  fugitive: 0 },
-  { month: 'February',  stationary: 0.9,  mobile: 0.4,  fugitive: 0 },
-  { month: 'March',     stationary: 1.1,  mobile: 0.5,  fugitive: 0 },
-  { month: 'April',     stationary: 1.2,  mobile: 0.6,  fugitive: 0.1 },
-  { month: 'May',       stationary: 3.20, mobile: 0.67, fugitive: 0 },
-  { month: 'June',      stationary: 0,    mobile: 0,    fugitive: 0 },
-  { month: 'July',      stationary: 0,    mobile: 0,    fugitive: 0 },
-  { month: 'August',    stationary: 0,    mobile: 0,    fugitive: 0 },
-  { month: 'September', stationary: 0,    mobile: 0,    fugitive: 0 },
-  { month: 'October',   stationary: 0,    mobile: 0,    fugitive: 0 },
-  { month: 'November',  stationary: 0,    mobile: 0,    fugitive: 0 },
-  { month: 'December',  stationary: 0,    mobile: 0,    fugitive: 0 },
+  { month: 'Jan', stationary: 0.8,  mobile: 0.3,  fugitive: 0 },
+  { month: 'Feb', stationary: 0.9,  mobile: 0.4,  fugitive: 0 },
+  { month: 'Mar', stationary: 1.1,  mobile: 0.5,  fugitive: 0 },
+  { month: 'Apr', stationary: 1.2,  mobile: 0.6,  fugitive: 0.1 },
+  { month: 'May', stationary: 3.20, mobile: 0.67, fugitive: 0 },
+  { month: 'Jun', stationary: 0,    mobile: 0,    fugitive: 0 },
+  { month: 'Jul', stationary: 0,    mobile: 0,    fugitive: 0 },
+  { month: 'Aug', stationary: 0,    mobile: 0,    fugitive: 0 },
+  { month: 'Sep', stationary: 0,    mobile: 0,    fugitive: 0 },
+  { month: 'Oct', stationary: 0,    mobile: 0,    fugitive: 0 },
+  { month: 'Nov', stationary: 0,    mobile: 0,    fugitive: 0 },
+  { month: 'Dec', stationary: 0,    mobile: 0,    fugitive: 0 },
 ]
 
 // ── Monthly Scope 2 data (kWh) ────────────────────────────────────────────────
 export const MONTHLY_SCOPE2 = [
-  { month: 'January',   renewable: 149640, imported: 329480, total: 236.028 },
-  { month: 'February',  renewable: 126120, imported: 278400, total: 199.334 },
-  { month: 'March',     renewable: 220649, imported: 184800, total: 132.317 },
-  { month: 'April',     renewable: 168000, imported: 184800, total: 132.317 },
-  { month: 'May',       renewable: 154592, imported: 184800, total: 132.317 },
-  { month: 'June',      renewable: 0,      imported: 0,      total: 0 },
-  { month: 'July',      renewable: 0,      imported: 0,      total: 0 },
-  { month: 'August',    renewable: 0,      imported: 0,      total: 0 },
-  { month: 'September', renewable: 0,      imported: 0,      total: 0 },
-  { month: 'October',   renewable: 0,      imported: 0,      total: 0 },
-  { month: 'November',  renewable: 0,      imported: 0,      total: 0 },
-  { month: 'December',  renewable: 0,      imported: 0,      total: 0 },
+  { month: 'Jan', renewable: 149640, imported: 329480, total: 236.028 },
+  { month: 'Feb', renewable: 126120, imported: 278400, total: 199.334 },
+  { month: 'Mar', renewable: 220649, imported: 184800, total: 132.317 },
+  { month: 'Apr', renewable: 168000, imported: 184800, total: 132.317 },
+  { month: 'May', renewable: 154592, imported: 184800, total: 132.317 },
+  { month: 'Jun', renewable: 0,      imported: 0,      total: 0 },
+  { month: 'Jul', renewable: 0,      imported: 0,      total: 0 },
+  { month: 'Aug', renewable: 0,      imported: 0,      total: 0 },
+  { month: 'Sep', renewable: 0,      imported: 0,      total: 0 },
+  { month: 'Oct', renewable: 0,      imported: 0,      total: 0 },
+  { month: 'Nov', renewable: 0,      imported: 0,      total: 0 },
+  { month: 'Dec', renewable: 0,      imported: 0,      total: 0 },
 ]
 
 // ── Scope 3 breakdown (%) ──────────────────────────────────────────────────

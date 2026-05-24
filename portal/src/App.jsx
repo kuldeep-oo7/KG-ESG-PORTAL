@@ -5,7 +5,11 @@ import Dashboard from './pages/Dashboard'
 import Sites from './pages/Sites'
 import GHGReports from './pages/GHGReports'
 import Help from './pages/Help'
-import Placeholder from './pages/Placeholder'
+import Login from './pages/Login'
+import ResetPassword from './pages/ResetPassword'
+import CSR from './pages/CSR'
+import Social from './pages/Social'
+import Governance from './pages/Governance'
 
 // Scope 1
 import Scope1Stationary from './pages/site/Scope1Stationary'
@@ -78,13 +82,18 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout><Dashboard /></Layout>} />
-        <Route path="/sites" element={<Layout><Sites /></Layout>} />
-        <Route path="/reports" element={<Layout><GHGReports /></Layout>} />
-        <Route path="/csr" element={<Layout><Placeholder title="CSR" /></Layout>} />
-        <Route path="/social" element={<Layout><Placeholder title="Social" /></Layout>} />
-        <Route path="/governance" element={<Layout><Placeholder title="Governance" /></Layout>} />
-        <Route path="/help" element={<Layout><Help /></Layout>} />
+        {/* Auth pages — no Layout wrapper */}
+        <Route path="/login"           element={<Login />} />
+        <Route path="/forgot-password" element={<ResetPassword />} />
+
+        {/* Main app */}
+        <Route path="/"          element={<Layout><Dashboard /></Layout>} />
+        <Route path="/sites"     element={<Layout><Sites /></Layout>} />
+        <Route path="/reports"   element={<Layout><GHGReports /></Layout>} />
+        <Route path="/csr"       element={<Layout><CSR /></Layout>} />
+        <Route path="/social"    element={<Layout><Social /></Layout>} />
+        <Route path="/governance" element={<Layout><Governance /></Layout>} />
+        <Route path="/help"      element={<Layout><Help /></Layout>} />
         <Route path="/sites/:siteId/*" element={<Layout><SiteRoutes /></Layout>} />
       </Routes>
     </BrowserRouter>
