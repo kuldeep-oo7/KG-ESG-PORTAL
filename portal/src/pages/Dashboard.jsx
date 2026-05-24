@@ -266,15 +266,22 @@ export default function Dashboard() {
               </div>
             </div>
             <ResponsiveContainer width="100%" height={240}>
-              <BarChart data={s1Data} barSize={14} margin={{ left: 20, right: 8, bottom: 20, top: 4 }}>
+              <BarChart data={s1Data} barSize={14} margin={{ left: 0, right: 10, bottom: 30, top: 4 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#F1F5F9" vertical={false} />
                 <XAxis
                   dataKey="month"
                   tick={{ fontSize: 10, fill: '#94A3B8', fontWeight: 500 }}
                   axisLine={false}
                   tickLine={false}
+                  label={{
+                    value: 'Month',
+                    position: 'insideBottom',
+                    offset: -12,
+                    style: { fontSize: 11, fill: '#94A3B8', textAnchor: 'middle' },
+                  }}
                 />
                 <YAxis
+                  width={72}
                   tick={{ fontSize: 10, fill: '#94A3B8' }}
                   axisLine={false}
                   tickLine={false}
@@ -282,7 +289,8 @@ export default function Dashboard() {
                     value: 'GHG Emission (TCO2e)',
                     angle: -90,
                     position: 'insideLeft',
-                    style: { fontSize: 11, fill: '#94A3B8' },
+                    dx: -8,
+                    style: { fontSize: 11, fill: '#94A3B8', textAnchor: 'middle' },
                   }}
                 />
                 <Tooltip content={<ChartTooltip />} cursor={{ fill: '#F8FAFC' }} />
@@ -373,7 +381,7 @@ export default function Dashboard() {
             </div>
           </div>
           <ResponsiveContainer width="100%" height={240}>
-            <AreaChart data={s2Data} margin={{ left: 20, right: 8, bottom: 20, top: 4 }}>
+            <AreaChart data={s2Data} margin={{ left: 0, right: 10, bottom: 30, top: 4 }}>
               <defs>
                 <linearGradient id="gRenew" x1="0" y1="0" x2="0" y2="1">
                   <stop offset="0%" stopColor="#10B981" stopOpacity={0.3} />
@@ -394,8 +402,15 @@ export default function Dashboard() {
                 tick={{ fontSize: 10, fill: '#94A3B8', fontWeight: 500 }}
                 axisLine={false}
                 tickLine={false}
+                label={{
+                  value: 'Month',
+                  position: 'insideBottom',
+                  offset: -12,
+                  style: { fontSize: 11, fill: '#94A3B8', textAnchor: 'middle' },
+                }}
               />
               <YAxis
+                width={80}
                 tick={{ fontSize: 10, fill: '#94A3B8' }}
                 axisLine={false}
                 tickLine={false}
@@ -403,7 +418,8 @@ export default function Dashboard() {
                   value: 'GHG Emission (TCO2e)',
                   angle: -90,
                   position: 'insideLeft',
-                  style: { fontSize: 11, fill: '#94A3B8' },
+                  dx: -8,
+                  style: { fontSize: 11, fill: '#94A3B8', textAnchor: 'middle' },
                 }}
               />
               <Tooltip content={<ChartTooltip />} />
