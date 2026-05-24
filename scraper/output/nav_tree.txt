@@ -1,0 +1,328 @@
+ESGTech Portal — Navigation Flowchart & Field Map
+======================================================================
+
+=== TOP PAGES ===
+
+
+## PAGE: Dashboard  (https://app.esgtech.ai/dashboard)
+  headings:   ['GHG Dashboard', 'Total GHG Emissions', 'Scope 1', 'Scope 2', 'Scope 3']
+  table_cols: []
+  buttons:    ['G\n\nGirish', 'CY 2026', 'Detailed', 'Overall']
+  tabs:       []
+  BTN[CY 2026] → NAV: https://app.esgtech.ai/user/setting
+
+## PAGE: GHG Reports  (https://app.esgtech.ai/report)
+  headings:   ['Report for All Sites- Calendar Year 2026', 'Scope Emission', 'Total GHG Emissions', 'Avoided Emissions', 'Scope 1', 'Scope 2', 'Scope 3', 'Report', 'Stationary Combustion', 'Mobile Combustion', 'Purchased Electricity', 'Renewable Electricity Generation – Avoided Emission', 'Employee Commute', 'Food Consumption', 'Purchased Goods', 'Transmission & Distribution Loss', 'Upstream Activities', 'Downstream Activities', 'Waste Disposal', 'Water Supply', 'Business Travel (Air)', 'Business Travel (Land)']
+  table_cols: ['Date', 'Entry Period', 'Site Name', 'Type', 'Unit of Measurement', 'Consumption', 'Source', 'Emission Factor', 'GHG Emissions (TCO2Eq)', 'Remarks', 'Name of Country', 'Supporting Document', 'Generation', 'Avoided Emissions (TCO2Eq)', 'Commute Type', 'Fuel Type', 'Vehicle Type', 'Number of Passengers', 'Kilo meters Travelled', 'Food Type', 'Type of Goods', 'Loop', 'Type of Vehicle', 'Type of Fuel', 'Class', 'Tonnes', 'Distance Travelled', 'Select Type', 'Mode of Travel', 'Number of Passenger', 'Kilometers Travelled']
+  buttons:    ['G\n\nGirish', 'CY', 'FY', 'All Site', 'Select Export Type', 'Stationary Combustion\nTotal GHG Emissions: 10.875814 TCO2Eq', 'Mobile Combustion\nTotal GHG Emissions: 3.565434 TCO2Eq', 'Purchased Electricity\nTotal GHG Emissions: 798.315022 TCO2Eq', 'Employee Commute\nTotal GHG Emissions: 209.978931 TCO2Eq', 'Food Consumption\nTotal GHG Emissions: 10.96395 TCO2Eq', 'Purchased Goods\nTotal GHG Emissions: 7.348368 TCO2Eq', 'Transmission & Distribution Loss\nTotal GHG Emissions: 12.033759 TCO2Eq', 'Upstream Activities\nTotal GHG Emissions: 0.000004 TCO2Eq', 'Downstream Activities\nTotal GHG Emissions: 0.00544 TCO2Eq', 'Waste Disposal\nTotal GHG Emissions: 2.310809 TCO2Eq', 'Water Supply\nTotal GHG Emissions: 2.109519 TCO2Eq', 'Business Travel (Air)\nTotal GHG Emissions: 2.266179 TCO2Eq', 'Business Travel (Land)\nTotal GHG Emissions: 0.211377 TCO2Eq']
+  tabs:       []
+  BTN[Manage Profile] → NAV: https://app.esgtech.ai/user/setting
+  BTN[All Site] → NAV: https://app.esgtech.ai/report?myear=fy
+
+## PAGE: Organization  (https://app.esgtech.ai/organization)
+  headings:   ['Update Organization', 'Organization Details', 'Measurement Details']
+  table_cols: []
+  buttons:    ['G\n\nGirish', 'India', 'Gujarat', 'Manufacturing', '500+ Employee', 'Save']
+  tabs:       []
+  BTN[Manage Profile] → NAV: https://app.esgtech.ai/user/setting
+
+## PAGE: Help  (https://app.esgtech.ai/help)
+  headings:   ['How can we help?', 'Contact Us']
+  table_cols: []
+  buttons:    ['G\n\nGirish', 'Submit']
+  tabs:       []
+  BTN[Manage Profile] → NAV: https://app.esgtech.ai/user/setting
+
+## PAGE: Settings  (https://app.esgtech.ai/settings)
+  headings:   []
+  table_cols: []
+  buttons:    []
+  tabs:       []
+
+
+=== ASSESSMENT FORMS ===
+
+### Surat | Stationary Combustion (Q1)  →  https://app.esgtech.ai/sites/193/assessment/Q1/2026/5
+  landing cols: []
+  landing btns: ['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+  sub-nav: ['1', '2', '3', 'Mobile Combustion', 'Fugitive Emissions', 'Summary']
+
+### Surat | Mobile Combustion (Q2)  →  https://app.esgtech.ai/sites/193/assessment/Q2/2026/5
+  landing cols: []
+  landing btns: ['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+  sub-nav: ['1', '2', '3', 'Mobile Combustion', 'Fugitive Emissions', 'Summary']
+
+### Surat | Fugitive Emissions (Q3)  →  https://app.esgtech.ai/sites/193/assessment/Q3/2026/5
+  landing cols: []
+  landing btns: ['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Type of Refrigerant', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+  sub-nav: ['1', '2', '3', 'Mobile Combustion', 'Fugitive Emissions', 'Summary']
+
+### Surat | Electricity Scope2 (Q4)  →  https://app.esgtech.ai/sites/193/assessment/Q4/2026/5
+  landing cols: []
+  landing btns: ['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Name of Country', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+  sub-nav: ['1', '2', '3', 'Purchased Heat and Steam', 'Renewable Electricity Generation – Avoided Emission', 'Summary']
+
+### Surat | Scope3 (Q16)  →  https://app.esgtech.ai/sites/193/assessment/Q16/2026/5
+  landing cols: []
+  landing btns: ['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Commute Type', 'Select Fuel Type', 'Select Vehicle Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+  sub-nav: ['1', '2', '3', 'Food Consumption', 'Purchased Goods', 'Transmission & Distribution Loss', 'Upstream Activities', 'Downstream Activities', 'Waste Disposal', 'Water Supply', 'Water Treatment', 'Business Travel (Air)', 'Business Travel (Sea)', 'Business Travel (Land)', 'Hotel stay', 'Summary']
+
+  S3: 1  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: 2  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Name of Country', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: 3  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Commute Type', 'Select Fuel Type', 'Select Vehicle Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Food Consumption  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Food Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Purchased Goods  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Type of Goods', 'Select Loop', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Transmission & Distribution Loss  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Name of Country', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Upstream Activities  cols:[] btns:['G\n\nGirish', 'May 2026', 'Bulk Import', 'View History', 'Skip & Next', 'Select Type of Vehicle', 'Select Type of Fuel', 'Select Class', 'Select Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Downstream Activities  cols:[] btns:['G\n\nGirish', 'May 2026', 'Bulk Import', 'View History', 'Skip & Next', 'Select Type of Vehicle', 'Select Type of Fuel', 'Select Class', 'Select Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Waste Disposal  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Type of Goods', 'Select Loop', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Water Supply  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Select Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Water Treatment  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Business Travel (Air)  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Mode of Travel', 'Select Class', 'Select Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Business Travel (Sea)  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Mode of Travel', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Business Travel (Land)  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Type of Fuel', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Hotel stay  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Name of Country', 'Submit', 'Save & Continue']
+
+  S3: Summary  cols:[] btns:['G\n\nGirish', 'May 2026']
+
+### Mumbai | Stationary Combustion (Q1)  →  https://app.esgtech.ai/sites/192/assessment/Q1/2026/5
+  landing cols: []
+  landing btns: ['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+  sub-nav: ['1', '2', '3', 'Mobile Combustion', 'Fugitive Emissions', 'Summary']
+
+### Mumbai | Mobile Combustion (Q2)  →  https://app.esgtech.ai/sites/192/assessment/Q2/2026/5
+  landing cols: []
+  landing btns: ['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+  sub-nav: ['1', '2', '3', 'Mobile Combustion', 'Fugitive Emissions', 'Summary']
+
+### Mumbai | Fugitive Emissions (Q3)  →  https://app.esgtech.ai/sites/192/assessment/Q3/2026/5
+  landing cols: []
+  landing btns: ['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Type of Refrigerant', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+  sub-nav: ['1', '2', '3', 'Mobile Combustion', 'Fugitive Emissions', 'Summary']
+
+### Mumbai | Electricity Scope2 (Q4)  →  https://app.esgtech.ai/sites/192/assessment/Q4/2026/5
+  landing cols: []
+  landing btns: ['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Name of Country', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+  sub-nav: ['1', '2', '3', 'Purchased Heat and Steam', 'Renewable Electricity Generation – Avoided Emission', 'Summary']
+
+### Mumbai | Scope3 (Q16)  →  https://app.esgtech.ai/sites/192/assessment/Q16/2026/5
+  landing cols: []
+  landing btns: ['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Commute Type', 'Select Fuel Type', 'Select Vehicle Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+  sub-nav: ['1', '2', '3', 'Food Consumption', 'Purchased Goods', 'Transmission & Distribution Loss', 'Upstream Activities', 'Downstream Activities', 'Waste Disposal', 'Water Supply', 'Water Treatment', 'Business Travel (Air)', 'Business Travel (Sea)', 'Business Travel (Land)', 'Hotel stay', 'Summary']
+
+  S3: 1  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: 2  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Name of Country', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: 3  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Commute Type', 'Select Fuel Type', 'Select Vehicle Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Food Consumption  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Food Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Purchased Goods  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Type of Goods', 'Select Loop', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Transmission & Distribution Loss  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Name of Country', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Upstream Activities  cols:[] btns:['G\n\nGirish', 'May 2026', 'Bulk Import', 'View History', 'Skip & Next', 'Select Type of Vehicle', 'Select Type of Fuel', 'Select Class', 'Select Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Downstream Activities  cols:[] btns:['G\n\nGirish', 'May 2026', 'Bulk Import', 'View History', 'Skip & Next', 'Select Type of Vehicle', 'Select Type of Fuel', 'Select Class', 'Select Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Waste Disposal  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Type of Goods', 'Select Loop', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Water Supply  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Select Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Water Treatment  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Business Travel (Air)  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Mode of Travel', 'Select Class', 'Select Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Business Travel (Sea)  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Mode of Travel', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Business Travel (Land)  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Type of Fuel', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Hotel stay  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Name of Country', 'Submit', 'Save & Continue']
+
+  S3: Summary  cols:[] btns:['G\n\nGirish', 'May 2026']
+
+### Facets_Surat | Stationary Combustion (Q1)  →  https://app.esgtech.ai/sites/194/assessment/Q1/2026/5
+  landing cols: []
+  landing btns: ['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+  sub-nav: ['1', '2', '3', 'Mobile Combustion', 'Fugitive Emissions', 'Summary']
+
+### Facets_Surat | Mobile Combustion (Q2)  →  https://app.esgtech.ai/sites/194/assessment/Q2/2026/5
+  landing cols: []
+  landing btns: ['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+  sub-nav: ['1', '2', '3', 'Mobile Combustion', 'Fugitive Emissions', 'Summary']
+
+### Facets_Surat | Fugitive Emissions (Q3)  →  https://app.esgtech.ai/sites/194/assessment/Q3/2026/5
+  landing cols: []
+  landing btns: ['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Type of Refrigerant', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+  sub-nav: ['1', '2', '3', 'Mobile Combustion', 'Fugitive Emissions', 'Summary']
+
+### Facets_Surat | Electricity Scope2 (Q4)  →  https://app.esgtech.ai/sites/194/assessment/Q4/2026/5
+  landing cols: ['Date', 'Entry Period', 'Name of Country', 'Unit of Measurement', 'Consumption', 'Source', 'Actions']
+  landing btns: ['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Name of Country', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+  sub-nav: ['1', '2', '3', 'Purchased Heat and Steam', 'Renewable Electricity Generation – Avoided Emission', 'Summary']
+
+### Facets_Surat | Scope3 (Q16)  →  https://app.esgtech.ai/sites/194/assessment/Q16/2026/5
+  landing cols: []
+  landing btns: ['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Commute Type', 'Select Fuel Type', 'Select Vehicle Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+  sub-nav: ['1', '2', '3', 'Food Consumption', 'Purchased Goods', 'Transmission & Distribution Loss', 'Upstream Activities', 'Downstream Activities', 'Waste Disposal', 'Water Supply', 'Water Treatment', 'Business Travel (Air)', 'Business Travel (Sea)', 'Business Travel (Land)', 'Hotel stay', 'Summary']
+
+  S3: 1  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: 2  cols:['Date', 'Entry Period', 'Name of Country', 'Unit of Measurement', 'Consumption', 'Source', 'Actions'] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Name of Country', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: 3  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Commute Type', 'Select Fuel Type', 'Select Vehicle Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Food Consumption  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Food Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Purchased Goods  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Type of Goods', 'Select Loop', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Transmission & Distribution Loss  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Name of Country', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Upstream Activities  cols:[] btns:['G\n\nGirish', 'May 2026', 'Bulk Import', 'View History', 'Skip & Next', 'Select Type of Vehicle', 'Select Type of Fuel', 'Select Class', 'Select Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Downstream Activities  cols:[] btns:['G\n\nGirish', 'May 2026', 'Bulk Import', 'View History', 'Skip & Next', 'Select Type of Vehicle', 'Select Type of Fuel', 'Select Class', 'Select Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Waste Disposal  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Type of Goods', 'Select Loop', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Water Supply  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Select Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Water Treatment  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Business Travel (Air)  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Mode of Travel', 'Select Class', 'Select Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Business Travel (Sea)  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Mode of Travel', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Business Travel (Land)  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Type of Fuel', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Hotel stay  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Name of Country', 'Submit', 'Save & Continue']
+
+  S3: Summary  cols:[] btns:['G\n\nGirish', 'May 2026']
+
+### Dubai | Stationary Combustion (Q1)  →  https://app.esgtech.ai/sites/195/assessment/Q1/2026/5
+  landing cols: []
+  landing btns: ['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+  sub-nav: ['1', '2', '3', 'Mobile Combustion', 'Fugitive Emissions', 'Summary']
+
+### Dubai | Mobile Combustion (Q2)  →  https://app.esgtech.ai/sites/195/assessment/Q2/2026/5
+  landing cols: []
+  landing btns: ['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+  sub-nav: ['1', '2', '3', 'Mobile Combustion', 'Fugitive Emissions', 'Summary']
+
+### Dubai | Fugitive Emissions (Q3)  →  https://app.esgtech.ai/sites/195/assessment/Q3/2026/5
+  landing cols: []
+  landing btns: ['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Type of Refrigerant', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+  sub-nav: ['1', '2', '3', 'Mobile Combustion', 'Fugitive Emissions', 'Summary']
+
+### Dubai | Electricity Scope2 (Q4)  →  https://app.esgtech.ai/sites/195/assessment/Q4/2026/5
+  landing cols: []
+  landing btns: ['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Name of Country', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+  sub-nav: ['1', '2', '3', 'Purchased Heat and Steam', 'Renewable Electricity Generation – Avoided Emission', 'Summary']
+
+### Dubai | Scope3 (Q16)  →  https://app.esgtech.ai/sites/195/assessment/Q16/2026/5
+  landing cols: []
+  landing btns: ['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Commute Type', 'Select Fuel Type', 'Select Vehicle Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+  sub-nav: ['1', '2', '3', 'Food Consumption', 'Purchased Goods', 'Transmission & Distribution Loss', 'Upstream Activities', 'Downstream Activities', 'Waste Disposal', 'Water Supply', 'Water Treatment', 'Business Travel (Air)', 'Business Travel (Sea)', 'Business Travel (Land)', 'Hotel stay', 'Summary']
+
+  S3: 1  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: 2  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Name of Country', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: 3  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Commute Type', 'Select Fuel Type', 'Select Vehicle Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Food Consumption  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Food Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Purchased Goods  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Type of Goods', 'Select Loop', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Transmission & Distribution Loss  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Name of Country', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Upstream Activities  cols:[] btns:['G\n\nGirish', 'May 2026', 'Bulk Import', 'View History', 'Skip & Next', 'Select Type of Vehicle', 'Select Type of Fuel', 'Select Class', 'Select Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Downstream Activities  cols:[] btns:['G\n\nGirish', 'May 2026', 'Bulk Import', 'View History', 'Skip & Next', 'Select Type of Vehicle', 'Select Type of Fuel', 'Select Class', 'Select Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Waste Disposal  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Type of Goods', 'Select Loop', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Water Supply  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Select Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Water Treatment  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Business Travel (Air)  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Mode of Travel', 'Select Class', 'Select Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Business Travel (Sea)  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Mode of Travel', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Business Travel (Land)  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Type of Fuel', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Hotel stay  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Name of Country', 'Submit', 'Save & Continue']
+
+  S3: Summary  cols:[] btns:['G\n\nGirish', 'May 2026']
+
+### Botswana | Stationary Combustion (Q1)  →  https://app.esgtech.ai/sites/196/assessment/Q1/2026/5
+  landing cols: []
+  landing btns: ['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+  sub-nav: ['1', '2', '3', 'Mobile Combustion', 'Fugitive Emissions', 'Summary']
+
+### Botswana | Mobile Combustion (Q2)  →  https://app.esgtech.ai/sites/196/assessment/Q2/2026/5
+  landing cols: []
+  landing btns: ['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+  sub-nav: ['1', '2', '3', 'Mobile Combustion', 'Fugitive Emissions', 'Summary']
+
+### Botswana | Fugitive Emissions (Q3)  →  https://app.esgtech.ai/sites/196/assessment/Q3/2026/5
+  landing cols: []
+  landing btns: ['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Type of Refrigerant', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+  sub-nav: ['1', '2', '3', 'Mobile Combustion', 'Fugitive Emissions', 'Summary']
+
+### Botswana | Electricity Scope2 (Q4)  →  https://app.esgtech.ai/sites/196/assessment/Q4/2026/5
+  landing cols: []
+  landing btns: ['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Name of Country', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+  sub-nav: ['1', '2', '3', 'Purchased Heat and Steam', 'Renewable Electricity Generation – Avoided Emission', 'Summary']
+
+### Botswana | Scope3 (Q16)  →  https://app.esgtech.ai/sites/196/assessment/Q16/2026/5
+  landing cols: []
+  landing btns: ['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Commute Type', 'Select Fuel Type', 'Select Vehicle Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+  sub-nav: ['1', '2', '3', 'Food Consumption', 'Purchased Goods', 'Transmission & Distribution Loss', 'Upstream Activities', 'Downstream Activities', 'Waste Disposal', 'Water Supply', 'Water Treatment', 'Business Travel (Air)', 'Business Travel (Sea)', 'Business Travel (Land)', 'Hotel stay', 'Summary']
+
+  S3: 1  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: 2  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Name of Country', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: 3  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Commute Type', 'Select Fuel Type', 'Select Vehicle Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Food Consumption  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Food Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Purchased Goods  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Type of Goods', 'Select Loop', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Transmission & Distribution Loss  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Name of Country', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Upstream Activities  cols:[] btns:['G\n\nGirish', 'May 2026', 'Bulk Import', 'View History', 'Skip & Next', 'Select Type of Vehicle', 'Select Type of Fuel', 'Select Class', 'Select Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Downstream Activities  cols:[] btns:['G\n\nGirish', 'May 2026', 'Bulk Import', 'View History', 'Skip & Next', 'Select Type of Vehicle', 'Select Type of Fuel', 'Select Class', 'Select Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Waste Disposal  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Type of Goods', 'Select Loop', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Water Supply  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Select Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Water Treatment  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Business Travel (Air)  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Mode of Travel', 'Select Class', 'Select Type', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Business Travel (Sea)  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Mode of Travel', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Business Travel (Land)  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Type of Fuel', 'Select Unit of Measurement', 'Submit', 'Save & Continue']
+
+  S3: Hotel stay  cols:[] btns:['G\n\nGirish', 'May 2026', 'View History', 'Skip & Next', 'Select Name of Country', 'Submit', 'Save & Continue']
+
+  S3: Summary  cols:[] btns:['G\n\nGirish', 'May 2026']

@@ -1,0 +1,2334 @@
+[
+  {
+    "context": "TOP:Dashboard",
+    "url": "https://app.esgtech.ai/dashboard?year=2026&type=ghg",
+    "fields": [],
+    "table_columns": [],
+    "select_options": {},
+    "buttons": [
+      "G\n\nGirish",
+      "CY 2026",
+      "Detailed",
+      "Overall"
+    ],
+    "headings": [
+      "GHG Dashboard",
+      "Total GHG Emissions",
+      "Scope 1",
+      "Scope 2",
+      "Scope 3"
+    ]
+  },
+  {
+    "context": "TOP:GHG Reports",
+    "url": "https://app.esgtech.ai/report",
+    "fields": [
+      {
+        "label": "month",
+        "type": "select",
+        "tag": "select",
+        "name": "month",
+        "id": "",
+        "placeholder": "",
+        "required": false,
+        "unit": "",
+        "options": [
+          {
+            "value": "1",
+            "text": "Jan"
+          },
+          {
+            "value": "2",
+            "text": "Feb"
+          },
+          {
+            "value": "3",
+            "text": "Mar"
+          },
+          {
+            "value": "4",
+            "text": "Apr"
+          },
+          {
+            "value": "5",
+            "text": "May"
+          },
+          {
+            "value": "6",
+            "text": "Jun"
+          },
+          {
+            "value": "7",
+            "text": "Jul"
+          },
+          {
+            "value": "8",
+            "text": "Aug"
+          },
+          {
+            "value": "9",
+            "text": "Sept"
+          },
+          {
+            "value": "10",
+            "text": "Oct"
+          },
+          {
+            "value": "11",
+            "text": "Nov"
+          },
+          {
+            "value": "12",
+            "text": "Dec"
+          }
+        ]
+      },
+      {
+        "label": "year",
+        "type": "number",
+        "tag": "input",
+        "name": "year",
+        "id": "",
+        "placeholder": "----",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "month",
+        "type": "select",
+        "tag": "select",
+        "name": "month",
+        "id": "",
+        "placeholder": "",
+        "required": false,
+        "unit": "",
+        "options": [
+          {
+            "value": "1",
+            "text": "Jan"
+          },
+          {
+            "value": "2",
+            "text": "Feb"
+          },
+          {
+            "value": "3",
+            "text": "Mar"
+          },
+          {
+            "value": "4",
+            "text": "Apr"
+          },
+          {
+            "value": "5",
+            "text": "May"
+          },
+          {
+            "value": "6",
+            "text": "Jun"
+          },
+          {
+            "value": "7",
+            "text": "Jul"
+          },
+          {
+            "value": "8",
+            "text": "Aug"
+          },
+          {
+            "value": "9",
+            "text": "Sept"
+          },
+          {
+            "value": "10",
+            "text": "Oct"
+          },
+          {
+            "value": "11",
+            "text": "Nov"
+          },
+          {
+            "value": "12",
+            "text": "Dec"
+          }
+        ]
+      },
+      {
+        "label": "year",
+        "type": "number",
+        "tag": "input",
+        "name": "year",
+        "id": "",
+        "placeholder": "----",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Search in table...",
+        "type": "text",
+        "tag": "input",
+        "name": "",
+        "id": "",
+        "placeholder": "Search in table...",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Search in table...",
+        "type": "text",
+        "tag": "input",
+        "name": "",
+        "id": "",
+        "placeholder": "Search in table...",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Search in table...",
+        "type": "text",
+        "tag": "input",
+        "name": "",
+        "id": "",
+        "placeholder": "Search in table...",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Search in table...",
+        "type": "text",
+        "tag": "input",
+        "name": "",
+        "id": "",
+        "placeholder": "Search in table...",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Search in table...",
+        "type": "text",
+        "tag": "input",
+        "name": "",
+        "id": "",
+        "placeholder": "Search in table...",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Search in table...",
+        "type": "text",
+        "tag": "input",
+        "name": "",
+        "id": "",
+        "placeholder": "Search in table...",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Search in table...",
+        "type": "text",
+        "tag": "input",
+        "name": "",
+        "id": "",
+        "placeholder": "Search in table...",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Search in table...",
+        "type": "text",
+        "tag": "input",
+        "name": "",
+        "id": "",
+        "placeholder": "Search in table...",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Search in table...",
+        "type": "text",
+        "tag": "input",
+        "name": "",
+        "id": "",
+        "placeholder": "Search in table...",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Search in table...",
+        "type": "text",
+        "tag": "input",
+        "name": "",
+        "id": "",
+        "placeholder": "Search in table...",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Search in table...",
+        "type": "text",
+        "tag": "input",
+        "name": "",
+        "id": "",
+        "placeholder": "Search in table...",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Search in table...",
+        "type": "text",
+        "tag": "input",
+        "name": "",
+        "id": "",
+        "placeholder": "Search in table...",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Search in table...",
+        "type": "text",
+        "tag": "input",
+        "name": "",
+        "id": "",
+        "placeholder": "Search in table...",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Search in table...",
+        "type": "text",
+        "tag": "input",
+        "name": "",
+        "id": "",
+        "placeholder": "Search in table...",
+        "required": false,
+        "unit": "",
+        "options": []
+      }
+    ],
+    "table_columns": [
+      "Date",
+      "Entry Period",
+      "Site Name",
+      "Type",
+      "Unit of Measurement",
+      "Consumption",
+      "Source",
+      "Emission Factor",
+      "GHG Emissions (TCO2Eq)",
+      "Remarks",
+      "Name of Country",
+      "Supporting Document",
+      "Generation",
+      "Avoided Emissions (TCO2Eq)",
+      "Commute Type",
+      "Fuel Type",
+      "Vehicle Type",
+      "Number of Passengers",
+      "Kilo meters Travelled",
+      "Food Type",
+      "Type of Goods",
+      "Loop",
+      "Type of Vehicle",
+      "Type of Fuel",
+      "Class",
+      "Tonnes",
+      "Distance Travelled",
+      "Select Type",
+      "Mode of Travel",
+      "Number of Passenger",
+      "Kilometers Travelled"
+    ],
+    "select_options": {},
+    "buttons": [
+      "G\n\nGirish",
+      "CY",
+      "FY",
+      "All Site",
+      "Select Export Type",
+      "Stationary Combustion\nTotal GHG Emissions: 10.875814 TCO2Eq",
+      "Mobile Combustion\nTotal GHG Emissions: 3.565434 TCO2Eq",
+      "Purchased Electricity\nTotal GHG Emissions: 798.315022 TCO2Eq",
+      "Employee Commute\nTotal GHG Emissions: 209.978931 TCO2Eq",
+      "Food Consumption\nTotal GHG Emissions: 10.96395 TCO2Eq",
+      "Purchased Goods\nTotal GHG Emissions: 7.348368 TCO2Eq",
+      "Transmission & Distribution Loss\nTotal GHG Emissions: 12.033759 TCO2Eq",
+      "Upstream Activities\nTotal GHG Emissions: 0.000004 TCO2Eq",
+      "Downstream Activities\nTotal GHG Emissions: 0.00544 TCO2Eq",
+      "Waste Disposal\nTotal GHG Emissions: 2.310809 TCO2Eq",
+      "Water Supply\nTotal GHG Emissions: 2.109519 TCO2Eq",
+      "Business Travel (Air)\nTotal GHG Emissions: 2.266179 TCO2Eq",
+      "Business Travel (Land)\nTotal GHG Emissions: 0.211377 TCO2Eq"
+    ],
+    "headings": [
+      "Report for All Sites- Calendar Year 2026",
+      "Scope Emission",
+      "Total GHG Emissions",
+      "Avoided Emissions",
+      "Scope 1",
+      "Scope 2",
+      "Scope 3",
+      "Report",
+      "Stationary Combustion",
+      "Mobile Combustion",
+      "Purchased Electricity",
+      "Renewable Electricity Generation – Avoided Emission",
+      "Employee Commute",
+      "Food Consumption",
+      "Purchased Goods",
+      "Transmission & Distribution Loss",
+      "Upstream Activities",
+      "Downstream Activities",
+      "Waste Disposal",
+      "Water Supply",
+      "Business Travel (Air)",
+      "Business Travel (Land)"
+    ]
+  },
+  {
+    "context": "TOP:Organization",
+    "url": "https://app.esgtech.ai/organization",
+    "fields": [
+      {
+        "label": "Organization Code *",
+        "type": "text",
+        "tag": "input",
+        "name": "org_code",
+        "id": "org_code",
+        "placeholder": "Enter Organization Code",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Company Name *",
+        "type": "text",
+        "tag": "input",
+        "name": "company_name",
+        "id": "company_name",
+        "placeholder": "Enter Company Name",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Address *",
+        "type": "text",
+        "tag": "input",
+        "name": "address",
+        "id": "address",
+        "placeholder": "Enter Address",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "City *",
+        "type": "text",
+        "tag": "input",
+        "name": "city",
+        "id": "city",
+        "placeholder": "Enter City",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Zip Code *",
+        "type": "number",
+        "tag": "input",
+        "name": "zip_code",
+        "id": "zip_code",
+        "placeholder": "Enter Zip Code",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Website *",
+        "type": "text",
+        "tag": "input",
+        "name": "website",
+        "id": "website",
+        "placeholder": "Enter Website",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Expiry Date",
+        "type": "text",
+        "tag": "input",
+        "name": "expiry_date",
+        "id": "expiry_date",
+        "placeholder": "Enter Expiry Date",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Brief Description",
+        "type": "text",
+        "tag": "textarea",
+        "name": "",
+        "id": "about",
+        "placeholder": "",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Calendar Year\n\n(Jan to Dec)",
+        "type": "radio",
+        "tag": "input",
+        "name": "measurement_year",
+        "id": "calender-year",
+        "placeholder": "",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Financial Year\n\n(Apr to Mar)",
+        "type": "radio",
+        "tag": "input",
+        "name": "measurement_year",
+        "id": "financial-year",
+        "placeholder": "",
+        "required": false,
+        "unit": "",
+        "options": []
+      }
+    ],
+    "table_columns": [],
+    "select_options": {},
+    "buttons": [
+      "G\n\nGirish",
+      "India",
+      "Gujarat",
+      "Manufacturing",
+      "500+ Employee",
+      "Save"
+    ],
+    "headings": [
+      "Update Organization",
+      "Organization Details",
+      "Measurement Details"
+    ]
+  },
+  {
+    "context": "TOP:Help",
+    "url": "https://app.esgtech.ai/help",
+    "fields": [
+      {
+        "label": "Subject *",
+        "type": "text",
+        "tag": "input",
+        "name": "subject",
+        "id": "subject",
+        "placeholder": "Enter Your Subject",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Brief Description *",
+        "type": "text",
+        "tag": "textarea",
+        "name": "",
+        "id": "brief_description",
+        "placeholder": "Enter Your Message",
+        "required": false,
+        "unit": "",
+        "options": []
+      }
+    ],
+    "table_columns": [],
+    "select_options": {},
+    "buttons": [
+      "G\n\nGirish",
+      "Submit"
+    ],
+    "headings": [
+      "How can we help?",
+      "Contact Us"
+    ]
+  },
+  {
+    "context": "TOP:Settings",
+    "url": "https://app.esgtech.ai/settings",
+    "fields": [],
+    "table_columns": [],
+    "select_options": {},
+    "buttons": [],
+    "headings": []
+  },
+  {
+    "context": "KGIPL-01     Mumbai Office - K. Girdharlal International Pvt (Corporate Office) |btn_0|Update Site",
+    "url": "https://app.esgtech.ai/sites?month=5&year=2026",
+    "fields": [
+      {
+        "label": "Site Code *",
+        "type": "text",
+        "tag": "input",
+        "name": "site_code",
+        "id": "site_code",
+        "placeholder": "Enter Site Code",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Site Name *",
+        "type": "text",
+        "tag": "input",
+        "name": "site_name",
+        "id": "site_name",
+        "placeholder": "Enter Site Name",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Address *",
+        "type": "text",
+        "tag": "input",
+        "name": "address",
+        "id": "address",
+        "placeholder": "Enter Address",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Landmark *",
+        "type": "text",
+        "tag": "input",
+        "name": "landmark",
+        "id": "landmark",
+        "placeholder": "Enter Landmark",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "City *",
+        "type": "text",
+        "tag": "input",
+        "name": "city",
+        "id": "city",
+        "placeholder": "Enter City",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Zip Code *",
+        "type": "number",
+        "tag": "input",
+        "name": "zip_code",
+        "id": "zip_code",
+        "placeholder": "Enter Zip Code",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Brief Description",
+        "type": "text",
+        "tag": "textarea",
+        "name": "",
+        "id": "about",
+        "placeholder": "",
+        "required": false,
+        "unit": "",
+        "options": []
+      }
+    ],
+    "table_columns": [],
+    "select_options": {},
+    "buttons": [
+      "India",
+      "Maharashtra",
+      "Corporate Office",
+      "Close",
+      "Update Site"
+    ],
+    "headings": [
+      "Update Site"
+    ]
+  },
+  {
+    "context": "KGIPL-01     Mumbai Office - K. Girdharlal International Pvt (Corporate Office)  | DataPage",
+    "url": "https://app.esgtech.ai/sites/192/assessment/Q1/2026/5",
+    "fields": [
+      {
+        "label": "Consumption *",
+        "type": "number",
+        "tag": "input",
+        "name": "consumption",
+        "id": "consumption",
+        "placeholder": "Enter Consumption",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Remarks",
+        "type": "text",
+        "tag": "input",
+        "name": "remark",
+        "id": "remark",
+        "placeholder": "Enter Remarks",
+        "required": false,
+        "unit": "",
+        "options": []
+      }
+    ],
+    "table_columns": [],
+    "select_options": {},
+    "buttons": [
+      "G\n\nGirish",
+      "May 2026",
+      "View History",
+      "Skip & Next",
+      "Select Type",
+      "Select Unit of Measurement",
+      "Submit",
+      "Save & Continue"
+    ],
+    "headings": [
+      "GHG Inventory of Direct Emissions from Stationary Combustion"
+    ]
+  },
+  {
+    "context": "KGIPL-01     Mumbai Office - K. Girdharlal International Pvt (Corporate Office)  | DataPage",
+    "url": "https://app.esgtech.ai/report?year=2026&site=192",
+    "fields": [],
+    "table_columns": [],
+    "select_options": {},
+    "buttons": [
+      "G\n\nGirish"
+    ],
+    "headings": []
+  },
+  {
+    "context": "KGIPL-01     Mumbai Office - K. Girdharlal International Pvt (Corporate Office) |btn_3|Delete Site",
+    "url": "https://app.esgtech.ai/sites?month=5&year=2026",
+    "fields": [],
+    "table_columns": [],
+    "select_options": {},
+    "buttons": [
+      "Close",
+      "Delete"
+    ],
+    "headings": [
+      "Delete Site"
+    ]
+  },
+  {
+    "context": "KGIPL-02     K. Girdharlal International Private Limited (Branch Office)     2nd|btn_0|Update Site",
+    "url": "https://app.esgtech.ai/sites?month=5&year=2026",
+    "fields": [
+      {
+        "label": "Site Code *",
+        "type": "text",
+        "tag": "input",
+        "name": "site_code",
+        "id": "site_code",
+        "placeholder": "Enter Site Code",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Site Name *",
+        "type": "text",
+        "tag": "input",
+        "name": "site_name",
+        "id": "site_name",
+        "placeholder": "Enter Site Name",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Address *",
+        "type": "text",
+        "tag": "input",
+        "name": "address",
+        "id": "address",
+        "placeholder": "Enter Address",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Landmark *",
+        "type": "text",
+        "tag": "input",
+        "name": "landmark",
+        "id": "landmark",
+        "placeholder": "Enter Landmark",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "City *",
+        "type": "text",
+        "tag": "input",
+        "name": "city",
+        "id": "city",
+        "placeholder": "Enter City",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Zip Code *",
+        "type": "number",
+        "tag": "input",
+        "name": "zip_code",
+        "id": "zip_code",
+        "placeholder": "Enter Zip Code",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Brief Description",
+        "type": "text",
+        "tag": "textarea",
+        "name": "",
+        "id": "about",
+        "placeholder": "",
+        "required": false,
+        "unit": "",
+        "options": []
+      }
+    ],
+    "table_columns": [],
+    "select_options": {},
+    "buttons": [
+      "India",
+      "Gujarat",
+      "Branch Office",
+      "Close",
+      "Update Site"
+    ],
+    "headings": [
+      "Update Site"
+    ]
+  },
+  {
+    "context": "KGIPL-02     K. Girdharlal International Private Limited (Branch Office)     2nd | DataPage",
+    "url": "https://app.esgtech.ai/sites/193/assessment/Q1/2026/5",
+    "fields": [],
+    "table_columns": [],
+    "select_options": {},
+    "buttons": [
+      "G\n\nGirish"
+    ],
+    "headings": []
+  },
+  {
+    "context": "KGIPL-02     K. Girdharlal International Private Limited (Branch Office)     2nd | DataPage",
+    "url": "https://app.esgtech.ai/report?year=2026&site=193",
+    "fields": [
+      {
+        "label": "month",
+        "type": "select",
+        "tag": "select",
+        "name": "month",
+        "id": "",
+        "placeholder": "",
+        "required": false,
+        "unit": "",
+        "options": [
+          {
+            "value": "1",
+            "text": "Jan"
+          },
+          {
+            "value": "2",
+            "text": "Feb"
+          },
+          {
+            "value": "3",
+            "text": "Mar"
+          },
+          {
+            "value": "4",
+            "text": "Apr"
+          },
+          {
+            "value": "5",
+            "text": "May"
+          },
+          {
+            "value": "6",
+            "text": "Jun"
+          },
+          {
+            "value": "7",
+            "text": "Jul"
+          },
+          {
+            "value": "8",
+            "text": "Aug"
+          },
+          {
+            "value": "9",
+            "text": "Sept"
+          },
+          {
+            "value": "10",
+            "text": "Oct"
+          },
+          {
+            "value": "11",
+            "text": "Nov"
+          },
+          {
+            "value": "12",
+            "text": "Dec"
+          }
+        ]
+      },
+      {
+        "label": "year",
+        "type": "number",
+        "tag": "input",
+        "name": "year",
+        "id": "",
+        "placeholder": "----",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "month",
+        "type": "select",
+        "tag": "select",
+        "name": "month",
+        "id": "",
+        "placeholder": "",
+        "required": false,
+        "unit": "",
+        "options": [
+          {
+            "value": "1",
+            "text": "Jan"
+          },
+          {
+            "value": "2",
+            "text": "Feb"
+          },
+          {
+            "value": "3",
+            "text": "Mar"
+          },
+          {
+            "value": "4",
+            "text": "Apr"
+          },
+          {
+            "value": "5",
+            "text": "May"
+          },
+          {
+            "value": "6",
+            "text": "Jun"
+          },
+          {
+            "value": "7",
+            "text": "Jul"
+          },
+          {
+            "value": "8",
+            "text": "Aug"
+          },
+          {
+            "value": "9",
+            "text": "Sept"
+          },
+          {
+            "value": "10",
+            "text": "Oct"
+          },
+          {
+            "value": "11",
+            "text": "Nov"
+          },
+          {
+            "value": "12",
+            "text": "Dec"
+          }
+        ]
+      },
+      {
+        "label": "year",
+        "type": "number",
+        "tag": "input",
+        "name": "year",
+        "id": "",
+        "placeholder": "----",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Search in table...",
+        "type": "text",
+        "tag": "input",
+        "name": "",
+        "id": "",
+        "placeholder": "Search in table...",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Search in table...",
+        "type": "text",
+        "tag": "input",
+        "name": "",
+        "id": "",
+        "placeholder": "Search in table...",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Search in table...",
+        "type": "text",
+        "tag": "input",
+        "name": "",
+        "id": "",
+        "placeholder": "Search in table...",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Search in table...",
+        "type": "text",
+        "tag": "input",
+        "name": "",
+        "id": "",
+        "placeholder": "Search in table...",
+        "required": false,
+        "unit": "",
+        "options": []
+      }
+    ],
+    "table_columns": [
+      "Date",
+      "Entry Period",
+      "Site Name",
+      "Type",
+      "Unit of Measurement",
+      "Consumption",
+      "Source",
+      "Emission Factor",
+      "GHG Emissions (TCO2Eq)",
+      "Remarks",
+      "Name of Country",
+      "Generation",
+      "Avoided Emissions (TCO2Eq)",
+      "Supporting Document",
+      "Commute Type",
+      "Fuel Type",
+      "Vehicle Type",
+      "Number of Passengers",
+      "Kilo meters Travelled",
+      "Type of Fuel",
+      "Number of Passenger"
+    ],
+    "select_options": {},
+    "buttons": [
+      "G\n\nGirish",
+      "CY",
+      "FY",
+      "K. Girdharlal International Private Limited",
+      "Select Export Type",
+      "Mobile Combustion\nTotal GHG Emissions: 0.471032 TCO2Eq",
+      "Employee Commute\nTotal GHG Emissions: 4.23066 TCO2Eq",
+      "Business Travel (Land)\nTotal GHG Emissions: 0.211377 TCO2Eq"
+    ],
+    "headings": [
+      "Report for K. Girdharlal International Private Limited- Calendar Year 2026",
+      "Scope Emission",
+      "Total GHG Emissions",
+      "Avoided Emissions",
+      "Scope 1",
+      "Scope 3",
+      "Report",
+      "Mobile Combustion",
+      "Scope 2",
+      "Renewable Electricity Generation – Avoided Emission",
+      "Employee Commute",
+      "Business Travel (Land)"
+    ]
+  },
+  {
+    "context": "KGIPL-02     K. Girdharlal International Private Limited (Branch Office)     2nd|btn_3|Delete Site",
+    "url": "https://app.esgtech.ai/sites?month=5&year=2026",
+    "fields": [],
+    "table_columns": [],
+    "select_options": {},
+    "buttons": [
+      "Close",
+      "Delete"
+    ],
+    "headings": [
+      "Delete Site"
+    ]
+  },
+  {
+    "context": "KGIPL-03     Facets Gems Polishing Works Pvt. Ltd. (Factory)     X-03-05, Gujara|btn_0|Update Site",
+    "url": "https://app.esgtech.ai/sites?month=5&year=2026",
+    "fields": [
+      {
+        "label": "Site Code *",
+        "type": "text",
+        "tag": "input",
+        "name": "site_code",
+        "id": "site_code",
+        "placeholder": "Enter Site Code",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Site Name *",
+        "type": "text",
+        "tag": "input",
+        "name": "site_name",
+        "id": "site_name",
+        "placeholder": "Enter Site Name",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Address *",
+        "type": "text",
+        "tag": "input",
+        "name": "address",
+        "id": "address",
+        "placeholder": "Enter Address",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Landmark *",
+        "type": "text",
+        "tag": "input",
+        "name": "landmark",
+        "id": "landmark",
+        "placeholder": "Enter Landmark",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "City *",
+        "type": "text",
+        "tag": "input",
+        "name": "city",
+        "id": "city",
+        "placeholder": "Enter City",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Zip Code *",
+        "type": "number",
+        "tag": "input",
+        "name": "zip_code",
+        "id": "zip_code",
+        "placeholder": "Enter Zip Code",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Brief Description",
+        "type": "text",
+        "tag": "textarea",
+        "name": "",
+        "id": "about",
+        "placeholder": "",
+        "required": false,
+        "unit": "",
+        "options": []
+      }
+    ],
+    "table_columns": [],
+    "select_options": {},
+    "buttons": [
+      "India",
+      "Gujarat",
+      "Factory",
+      "Close",
+      "Update Site"
+    ],
+    "headings": [
+      "Update Site"
+    ]
+  },
+  {
+    "context": "KGIPL-03     Facets Gems Polishing Works Pvt. Ltd. (Factory)     X-03-05, Gujara | DataPage",
+    "url": "https://app.esgtech.ai/sites/194/assessment/Q1/2026/5",
+    "fields": [],
+    "table_columns": [],
+    "select_options": {},
+    "buttons": [
+      "G\n\nGirish"
+    ],
+    "headings": []
+  },
+  {
+    "context": "KGIPL-03     Facets Gems Polishing Works Pvt. Ltd. (Factory)     X-03-05, Gujara | DataPage",
+    "url": "https://app.esgtech.ai/report?year=2026&site=194",
+    "fields": [
+      {
+        "label": "month",
+        "type": "select",
+        "tag": "select",
+        "name": "month",
+        "id": "",
+        "placeholder": "",
+        "required": false,
+        "unit": "",
+        "options": [
+          {
+            "value": "1",
+            "text": "Jan"
+          },
+          {
+            "value": "2",
+            "text": "Feb"
+          },
+          {
+            "value": "3",
+            "text": "Mar"
+          },
+          {
+            "value": "4",
+            "text": "Apr"
+          },
+          {
+            "value": "5",
+            "text": "May"
+          },
+          {
+            "value": "6",
+            "text": "Jun"
+          },
+          {
+            "value": "7",
+            "text": "Jul"
+          },
+          {
+            "value": "8",
+            "text": "Aug"
+          },
+          {
+            "value": "9",
+            "text": "Sept"
+          },
+          {
+            "value": "10",
+            "text": "Oct"
+          },
+          {
+            "value": "11",
+            "text": "Nov"
+          },
+          {
+            "value": "12",
+            "text": "Dec"
+          }
+        ]
+      },
+      {
+        "label": "year",
+        "type": "number",
+        "tag": "input",
+        "name": "year",
+        "id": "",
+        "placeholder": "----",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "month",
+        "type": "select",
+        "tag": "select",
+        "name": "month",
+        "id": "",
+        "placeholder": "",
+        "required": false,
+        "unit": "",
+        "options": [
+          {
+            "value": "1",
+            "text": "Jan"
+          },
+          {
+            "value": "2",
+            "text": "Feb"
+          },
+          {
+            "value": "3",
+            "text": "Mar"
+          },
+          {
+            "value": "4",
+            "text": "Apr"
+          },
+          {
+            "value": "5",
+            "text": "May"
+          },
+          {
+            "value": "6",
+            "text": "Jun"
+          },
+          {
+            "value": "7",
+            "text": "Jul"
+          },
+          {
+            "value": "8",
+            "text": "Aug"
+          },
+          {
+            "value": "9",
+            "text": "Sept"
+          },
+          {
+            "value": "10",
+            "text": "Oct"
+          },
+          {
+            "value": "11",
+            "text": "Nov"
+          },
+          {
+            "value": "12",
+            "text": "Dec"
+          }
+        ]
+      },
+      {
+        "label": "year",
+        "type": "number",
+        "tag": "input",
+        "name": "year",
+        "id": "",
+        "placeholder": "----",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Search in table...",
+        "type": "text",
+        "tag": "input",
+        "name": "",
+        "id": "",
+        "placeholder": "Search in table...",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Search in table...",
+        "type": "text",
+        "tag": "input",
+        "name": "",
+        "id": "",
+        "placeholder": "Search in table...",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Search in table...",
+        "type": "text",
+        "tag": "input",
+        "name": "",
+        "id": "",
+        "placeholder": "Search in table...",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Search in table...",
+        "type": "text",
+        "tag": "input",
+        "name": "",
+        "id": "",
+        "placeholder": "Search in table...",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Search in table...",
+        "type": "text",
+        "tag": "input",
+        "name": "",
+        "id": "",
+        "placeholder": "Search in table...",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Search in table...",
+        "type": "text",
+        "tag": "input",
+        "name": "",
+        "id": "",
+        "placeholder": "Search in table...",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Search in table...",
+        "type": "text",
+        "tag": "input",
+        "name": "",
+        "id": "",
+        "placeholder": "Search in table...",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Search in table...",
+        "type": "text",
+        "tag": "input",
+        "name": "",
+        "id": "",
+        "placeholder": "Search in table...",
+        "required": false,
+        "unit": "",
+        "options": []
+      }
+    ],
+    "table_columns": [
+      "Date",
+      "Entry Period",
+      "Site Name",
+      "Type",
+      "Unit of Measurement",
+      "Consumption",
+      "Source",
+      "Emission Factor",
+      "GHG Emissions (TCO2Eq)",
+      "Remarks",
+      "Name of Country",
+      "Supporting Document",
+      "Generation",
+      "Avoided Emissions (TCO2Eq)",
+      "Commute Type",
+      "Fuel Type",
+      "Vehicle Type",
+      "Number of Passengers",
+      "Kilo meters Travelled",
+      "Type of Goods",
+      "Loop",
+      "Select Type"
+    ],
+    "select_options": {},
+    "buttons": [
+      "G\n\nGirish",
+      "CY",
+      "FY",
+      "Facets Gems Polishing Works Pvt. Ltd.",
+      "Select Export Type",
+      "Stationary Combustion\nTotal GHG Emissions: 10.104568 TCO2Eq",
+      "Purchased Electricity\nTotal GHG Emissions: 748.266154 TCO2Eq",
+      "Employee Commute\nTotal GHG Emissions: 175.746035 TCO2Eq",
+      "Purchased Goods\nTotal GHG Emissions: 4.159536 TCO2Eq",
+      "Transmission & Distribution Loss\nTotal GHG Emissions: 11.060745 TCO2Eq",
+      "Waste Disposal\nTotal GHG Emissions: 1.90373 TCO2Eq",
+      "Water Supply\nTotal GHG Emissions: 2.072353 TCO2Eq"
+    ],
+    "headings": [
+      "Report for Facets Gems Polishing Works Pvt. Ltd.- Calendar Year 2026",
+      "Scope Emission",
+      "Total GHG Emissions",
+      "Avoided Emissions",
+      "Scope 1",
+      "Scope 2",
+      "Scope 3",
+      "Report",
+      "Stationary Combustion",
+      "Purchased Electricity",
+      "Renewable Electricity Generation – Avoided Emission",
+      "Employee Commute",
+      "Purchased Goods",
+      "Transmission & Distribution Loss",
+      "Waste Disposal",
+      "Water Supply"
+    ]
+  },
+  {
+    "context": "KGIPL-03     Facets Gems Polishing Works Pvt. Ltd. (Factory)     X-03-05, Gujara|btn_3|Delete Site",
+    "url": "https://app.esgtech.ai/sites?month=5&year=2026",
+    "fields": [],
+    "table_columns": [],
+    "select_options": {},
+    "buttons": [
+      "Close",
+      "Delete"
+    ],
+    "headings": [
+      "Delete Site"
+    ]
+  },
+  {
+    "context": "KGIPL-04     K. Girdharlal DMCC (Sales Office)     Unit No: AG-03-C, AG Tower, P|btn_0|Update Site",
+    "url": "https://app.esgtech.ai/sites?month=5&year=2026",
+    "fields": [
+      {
+        "label": "Site Code *",
+        "type": "text",
+        "tag": "input",
+        "name": "site_code",
+        "id": "site_code",
+        "placeholder": "Enter Site Code",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Site Name *",
+        "type": "text",
+        "tag": "input",
+        "name": "site_name",
+        "id": "site_name",
+        "placeholder": "Enter Site Name",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Address *",
+        "type": "text",
+        "tag": "input",
+        "name": "address",
+        "id": "address",
+        "placeholder": "Enter Address",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Landmark *",
+        "type": "text",
+        "tag": "input",
+        "name": "landmark",
+        "id": "landmark",
+        "placeholder": "Enter Landmark",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "City *",
+        "type": "text",
+        "tag": "input",
+        "name": "city",
+        "id": "city",
+        "placeholder": "Enter City",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Zip Code *",
+        "type": "number",
+        "tag": "input",
+        "name": "zip_code",
+        "id": "zip_code",
+        "placeholder": "Enter Zip Code",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Brief Description",
+        "type": "text",
+        "tag": "textarea",
+        "name": "",
+        "id": "about",
+        "placeholder": "",
+        "required": false,
+        "unit": "",
+        "options": []
+      }
+    ],
+    "table_columns": [],
+    "select_options": {},
+    "buttons": [
+      "United Arab Emirates",
+      "Dubai",
+      "Sales Office",
+      "Close",
+      "Update Site"
+    ],
+    "headings": [
+      "Update Site"
+    ]
+  },
+  {
+    "context": "KGIPL-04     K. Girdharlal DMCC (Sales Office)     Unit No: AG-03-C, AG Tower, P | DataPage",
+    "url": "https://app.esgtech.ai/sites/195/assessment/Q1/2026/5",
+    "fields": [
+      {
+        "label": "Consumption *",
+        "type": "number",
+        "tag": "input",
+        "name": "consumption",
+        "id": "consumption",
+        "placeholder": "Enter Consumption",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Remarks",
+        "type": "text",
+        "tag": "input",
+        "name": "remark",
+        "id": "remark",
+        "placeholder": "Enter Remarks",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Search in table...",
+        "type": "text",
+        "tag": "input",
+        "name": "",
+        "id": "",
+        "placeholder": "Search in table...",
+        "required": false,
+        "unit": "",
+        "options": []
+      }
+    ],
+    "table_columns": [],
+    "select_options": {},
+    "buttons": [
+      "G\n\nGirish",
+      "May 2026",
+      "View History",
+      "Skip & Next",
+      "Select Type",
+      "Select Unit of Measurement",
+      "Submit",
+      "Save & Continue"
+    ],
+    "headings": [
+      "GHG Inventory of Direct Emissions from Stationary Combustion"
+    ]
+  },
+  {
+    "context": "KGIPL-04     K. Girdharlal DMCC (Sales Office)     Unit No: AG-03-C, AG Tower, P | DataPage",
+    "url": "https://app.esgtech.ai/report?year=2026&site=195",
+    "fields": [
+      {
+        "label": "month",
+        "type": "select",
+        "tag": "select",
+        "name": "month",
+        "id": "",
+        "placeholder": "",
+        "required": false,
+        "unit": "",
+        "options": [
+          {
+            "value": "1",
+            "text": "Jan"
+          },
+          {
+            "value": "2",
+            "text": "Feb"
+          },
+          {
+            "value": "3",
+            "text": "Mar"
+          },
+          {
+            "value": "4",
+            "text": "Apr"
+          },
+          {
+            "value": "5",
+            "text": "May"
+          },
+          {
+            "value": "6",
+            "text": "Jun"
+          },
+          {
+            "value": "7",
+            "text": "Jul"
+          },
+          {
+            "value": "8",
+            "text": "Aug"
+          },
+          {
+            "value": "9",
+            "text": "Sept"
+          },
+          {
+            "value": "10",
+            "text": "Oct"
+          },
+          {
+            "value": "11",
+            "text": "Nov"
+          },
+          {
+            "value": "12",
+            "text": "Dec"
+          }
+        ]
+      },
+      {
+        "label": "year",
+        "type": "number",
+        "tag": "input",
+        "name": "year",
+        "id": "",
+        "placeholder": "----",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "month",
+        "type": "select",
+        "tag": "select",
+        "name": "month",
+        "id": "",
+        "placeholder": "",
+        "required": false,
+        "unit": "",
+        "options": [
+          {
+            "value": "1",
+            "text": "Jan"
+          },
+          {
+            "value": "2",
+            "text": "Feb"
+          },
+          {
+            "value": "3",
+            "text": "Mar"
+          },
+          {
+            "value": "4",
+            "text": "Apr"
+          },
+          {
+            "value": "5",
+            "text": "May"
+          },
+          {
+            "value": "6",
+            "text": "Jun"
+          },
+          {
+            "value": "7",
+            "text": "Jul"
+          },
+          {
+            "value": "8",
+            "text": "Aug"
+          },
+          {
+            "value": "9",
+            "text": "Sept"
+          },
+          {
+            "value": "10",
+            "text": "Oct"
+          },
+          {
+            "value": "11",
+            "text": "Nov"
+          },
+          {
+            "value": "12",
+            "text": "Dec"
+          }
+        ]
+      },
+      {
+        "label": "year",
+        "type": "number",
+        "tag": "input",
+        "name": "year",
+        "id": "",
+        "placeholder": "----",
+        "required": false,
+        "unit": "",
+        "options": []
+      }
+    ],
+    "table_columns": [],
+    "select_options": {},
+    "buttons": [
+      "G\n\nGirish",
+      "CY",
+      "FY",
+      "K. Girdharlal DMCC",
+      "Select Export Type"
+    ],
+    "headings": [
+      "Report for K. Girdharlal DMCC- Calendar Year 2026",
+      "Scope Emission",
+      "Total GHG Emissions",
+      "Avoided Emissions",
+      "Scope 1",
+      "Scope 2",
+      "Scope 3",
+      "Report"
+    ]
+  },
+  {
+    "context": "KGIPL-04     K. Girdharlal DMCC (Sales Office)     Unit No: AG-03-C, AG Tower, P|btn_3|Delete Site",
+    "url": "https://app.esgtech.ai/sites?month=5&year=2026",
+    "fields": [],
+    "table_columns": [],
+    "select_options": {},
+    "buttons": [
+      "Close",
+      "Delete"
+    ],
+    "headings": [
+      "Delete Site"
+    ]
+  },
+  {
+    "context": "KGIPL-05     KG Mfg Botswana Proprietary Ltd (Branch Office)     Plot 64260, Uni|btn_0|Update Site",
+    "url": "https://app.esgtech.ai/sites?month=5&year=2026",
+    "fields": [
+      {
+        "label": "Site Code *",
+        "type": "text",
+        "tag": "input",
+        "name": "site_code",
+        "id": "site_code",
+        "placeholder": "Enter Site Code",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Site Name *",
+        "type": "text",
+        "tag": "input",
+        "name": "site_name",
+        "id": "site_name",
+        "placeholder": "Enter Site Name",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Address *",
+        "type": "text",
+        "tag": "input",
+        "name": "address",
+        "id": "address",
+        "placeholder": "Enter Address",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Landmark *",
+        "type": "text",
+        "tag": "input",
+        "name": "landmark",
+        "id": "landmark",
+        "placeholder": "Enter Landmark",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "City *",
+        "type": "text",
+        "tag": "input",
+        "name": "city",
+        "id": "city",
+        "placeholder": "Enter City",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Zip Code *",
+        "type": "number",
+        "tag": "input",
+        "name": "zip_code",
+        "id": "zip_code",
+        "placeholder": "Enter Zip Code",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Brief Description",
+        "type": "text",
+        "tag": "textarea",
+        "name": "",
+        "id": "about",
+        "placeholder": "",
+        "required": false,
+        "unit": "",
+        "options": []
+      }
+    ],
+    "table_columns": [],
+    "select_options": {},
+    "buttons": [
+      "Botswana",
+      "Southern District",
+      "Branch Office",
+      "Close",
+      "Update Site"
+    ],
+    "headings": [
+      "Update Site"
+    ]
+  },
+  {
+    "context": "KGIPL-05     KG Mfg Botswana Proprietary Ltd (Branch Office)     Plot 64260, Uni | DataPage",
+    "url": "https://app.esgtech.ai/sites/196/assessment/Q1/2026/5",
+    "fields": [
+      {
+        "label": "Consumption *",
+        "type": "number",
+        "tag": "input",
+        "name": "consumption",
+        "id": "consumption",
+        "placeholder": "Enter Consumption",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Remarks",
+        "type": "text",
+        "tag": "input",
+        "name": "remark",
+        "id": "remark",
+        "placeholder": "Enter Remarks",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Search in table...",
+        "type": "text",
+        "tag": "input",
+        "name": "",
+        "id": "",
+        "placeholder": "Search in table...",
+        "required": false,
+        "unit": "",
+        "options": []
+      }
+    ],
+    "table_columns": [],
+    "select_options": {},
+    "buttons": [
+      "G\n\nGirish",
+      "May 2026",
+      "View History",
+      "Skip & Next",
+      "Select Type",
+      "Select Unit of Measurement",
+      "Submit",
+      "Save & Continue"
+    ],
+    "headings": [
+      "GHG Inventory of Direct Emissions from Stationary Combustion"
+    ]
+  },
+  {
+    "context": "KGIPL-05     KG Mfg Botswana Proprietary Ltd (Branch Office)     Plot 64260, Uni | DataPage",
+    "url": "https://app.esgtech.ai/report?year=2026&site=196",
+    "fields": [
+      {
+        "label": "month",
+        "type": "select",
+        "tag": "select",
+        "name": "month",
+        "id": "",
+        "placeholder": "",
+        "required": false,
+        "unit": "",
+        "options": [
+          {
+            "value": "1",
+            "text": "Jan"
+          },
+          {
+            "value": "2",
+            "text": "Feb"
+          },
+          {
+            "value": "3",
+            "text": "Mar"
+          },
+          {
+            "value": "4",
+            "text": "Apr"
+          },
+          {
+            "value": "5",
+            "text": "May"
+          },
+          {
+            "value": "6",
+            "text": "Jun"
+          },
+          {
+            "value": "7",
+            "text": "Jul"
+          },
+          {
+            "value": "8",
+            "text": "Aug"
+          },
+          {
+            "value": "9",
+            "text": "Sept"
+          },
+          {
+            "value": "10",
+            "text": "Oct"
+          },
+          {
+            "value": "11",
+            "text": "Nov"
+          },
+          {
+            "value": "12",
+            "text": "Dec"
+          }
+        ]
+      },
+      {
+        "label": "year",
+        "type": "number",
+        "tag": "input",
+        "name": "year",
+        "id": "",
+        "placeholder": "----",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "month",
+        "type": "select",
+        "tag": "select",
+        "name": "month",
+        "id": "",
+        "placeholder": "",
+        "required": false,
+        "unit": "",
+        "options": [
+          {
+            "value": "1",
+            "text": "Jan"
+          },
+          {
+            "value": "2",
+            "text": "Feb"
+          },
+          {
+            "value": "3",
+            "text": "Mar"
+          },
+          {
+            "value": "4",
+            "text": "Apr"
+          },
+          {
+            "value": "5",
+            "text": "May"
+          },
+          {
+            "value": "6",
+            "text": "Jun"
+          },
+          {
+            "value": "7",
+            "text": "Jul"
+          },
+          {
+            "value": "8",
+            "text": "Aug"
+          },
+          {
+            "value": "9",
+            "text": "Sept"
+          },
+          {
+            "value": "10",
+            "text": "Oct"
+          },
+          {
+            "value": "11",
+            "text": "Nov"
+          },
+          {
+            "value": "12",
+            "text": "Dec"
+          }
+        ]
+      },
+      {
+        "label": "year",
+        "type": "number",
+        "tag": "input",
+        "name": "year",
+        "id": "",
+        "placeholder": "----",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Search in table...",
+        "type": "text",
+        "tag": "input",
+        "name": "",
+        "id": "",
+        "placeholder": "Search in table...",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Search in table...",
+        "type": "text",
+        "tag": "input",
+        "name": "",
+        "id": "",
+        "placeholder": "Search in table...",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Search in table...",
+        "type": "text",
+        "tag": "input",
+        "name": "",
+        "id": "",
+        "placeholder": "Search in table...",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Search in table...",
+        "type": "text",
+        "tag": "input",
+        "name": "",
+        "id": "",
+        "placeholder": "Search in table...",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Search in table...",
+        "type": "text",
+        "tag": "input",
+        "name": "",
+        "id": "",
+        "placeholder": "Search in table...",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Search in table...",
+        "type": "text",
+        "tag": "input",
+        "name": "",
+        "id": "",
+        "placeholder": "Search in table...",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Search in table...",
+        "type": "text",
+        "tag": "input",
+        "name": "",
+        "id": "",
+        "placeholder": "Search in table...",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Search in table...",
+        "type": "text",
+        "tag": "input",
+        "name": "",
+        "id": "",
+        "placeholder": "Search in table...",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Search in table...",
+        "type": "text",
+        "tag": "input",
+        "name": "",
+        "id": "",
+        "placeholder": "Search in table...",
+        "required": false,
+        "unit": "",
+        "options": []
+      },
+      {
+        "label": "Search in table...",
+        "type": "text",
+        "tag": "input",
+        "name": "",
+        "id": "",
+        "placeholder": "Search in table...",
+        "required": false,
+        "unit": "",
+        "options": []
+      }
+    ],
+    "table_columns": [
+      "Date",
+      "Entry Period",
+      "Site Name",
+      "Type",
+      "Unit of Measurement",
+      "Consumption",
+      "Source",
+      "Emission Factor",
+      "GHG Emissions (TCO2Eq)",
+      "Remarks",
+      "Name of Country",
+      "Supporting Document",
+      "Commute Type",
+      "Fuel Type",
+      "Vehicle Type",
+      "Number of Passengers",
+      "Kilo meters Travelled",
+      "Food Type",
+      "Type of Vehicle",
+      "Type of Fuel",
+      "Class",
+      "Tonnes",
+      "Distance Travelled",
+      "Select Type",
+      "Mode of Travel",
+      "Number of Passenger",
+      "Kilometers Travelled"
+    ],
+    "select_options": {},
+    "buttons": [
+      "G\n\nGirish",
+      "CY",
+      "FY",
+      "KG Mfg Botswana Proprietary Ltd",
+      "Select Export Type",
+      "Stationary Combustion\nTotal GHG Emissions: 0.771246 TCO2Eq",
+      "Mobile Combustion\nTotal GHG Emissions: 0.523893 TCO2Eq",
+      "Purchased Electricity\nTotal GHG Emissions: 30.969636 TCO2Eq",
+      "Employee Commute\nTotal GHG Emissions: 4.057053 TCO2Eq",
+      "Food Consumption\nTotal GHG Emissions: 10.96395 TCO2Eq",
+      "Transmission & Distribution Loss\nTotal GHG Emissions: 0.596168 TCO2Eq",
+      "Upstream Activities\nTotal GHG Emissions: 0.000004 TCO2Eq",
+      "Downstream Activities\nTotal GHG Emissions: 0.00544 TCO2Eq",
+      "Water Supply\nTotal GHG Emissions: 0.037112 TCO2Eq",
+      "Business Travel (Air)\nTotal GHG Emissions: 2.266179 TCO2Eq"
+    ],
+    "headings": [
+      "Report for KG Mfg Botswana Proprietary Ltd- Calendar Year 2026",
+      "Scope Emission",
+      "Total GHG Emissions",
+      "Avoided Emissions",
+      "Scope 1",
+      "Scope 2",
+      "Scope 3",
+      "Report",
+      "Stationary Combustion",
+      "Mobile Combustion",
+      "Purchased Electricity",
+      "Employee Commute",
+      "Food Consumption",
+      "Transmission & Distribution Loss",
+      "Upstream Activities",
+      "Downstream Activities",
+      "Water Supply",
+      "Business Travel (Air)"
+    ]
+  },
+  {
+    "context": "KGIPL-05     KG Mfg Botswana Proprietary Ltd (Branch Office)     Plot 64260, Uni|btn_3|Delete Site",
+    "url": "https://app.esgtech.ai/sites?month=5&year=2026",
+    "fields": [],
+    "table_columns": [],
+    "select_options": {},
+    "buttons": [
+      "Close",
+      "Delete"
+    ],
+    "headings": [
+      "Delete Site"
+    ]
+  }
+]

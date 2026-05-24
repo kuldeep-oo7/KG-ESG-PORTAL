@@ -1,0 +1,6740 @@
+{
+  "top_pages": {
+    "Dashboard": {
+      "url": "https://app.esgtech.ai/dashboard?year=2026&type=ghg",
+      "tabs": [],
+      "modals": {},
+      "context": "PAGE:Dashboard",
+      "headings": [
+        "GHG Dashboard",
+        "Total GHG Emissions",
+        "Scope 1",
+        "Scope 2",
+        "Scope 3"
+      ],
+      "buttons": [
+        "G\n\nGirish",
+        "CY 2026",
+        "Detailed",
+        "Overall"
+      ],
+      "table_cols": [],
+      "nav_links": [
+        {
+          "text": "Dashboard",
+          "href": "/dashboard"
+        },
+        {
+          "text": "Sites",
+          "href": "/sites?month=5&year=2026"
+        },
+        {
+          "text": "GHG Reports",
+          "href": "/report"
+        },
+        {
+          "text": "Help",
+          "href": "/help"
+        }
+      ],
+      "page_dds": {}
+    },
+    "GHG Reports": {
+      "url": "https://app.esgtech.ai/report",
+      "tabs": [],
+      "modals": {},
+      "context": "PAGE:GHG Reports",
+      "headings": [
+        "Report for All Sites- Calendar Year 2026",
+        "Scope Emission",
+        "Total GHG Emissions",
+        "Avoided Emissions",
+        "Scope 1",
+        "Scope 2",
+        "Scope 3",
+        "Report",
+        "Stationary Combustion",
+        "Mobile Combustion",
+        "Purchased Electricity",
+        "Renewable Electricity Generation – Avoided Emission",
+        "Employee Commute",
+        "Food Consumption",
+        "Purchased Goods",
+        "Transmission & Distribution Loss",
+        "Upstream Activities",
+        "Downstream Activities",
+        "Waste Disposal",
+        "Water Supply",
+        "Business Travel (Air)",
+        "Business Travel (Land)"
+      ],
+      "buttons": [
+        "G\n\nGirish",
+        "CY",
+        "FY",
+        "All Site",
+        "Select Export Type",
+        "Stationary Combustion\nTotal GHG Emissions: 10.875814 TCO2Eq",
+        "Mobile Combustion\nTotal GHG Emissions: 3.565434 TCO2Eq",
+        "Purchased Electricity\nTotal GHG Emissions: 798.315022 TCO2Eq",
+        "Employee Commute\nTotal GHG Emissions: 209.978931 TCO2Eq",
+        "Food Consumption\nTotal GHG Emissions: 10.96395 TCO2Eq",
+        "Purchased Goods\nTotal GHG Emissions: 7.348368 TCO2Eq",
+        "Transmission & Distribution Loss\nTotal GHG Emissions: 12.033759 TCO2Eq",
+        "Upstream Activities\nTotal GHG Emissions: 0.000004 TCO2Eq",
+        "Downstream Activities\nTotal GHG Emissions: 0.00544 TCO2Eq",
+        "Waste Disposal\nTotal GHG Emissions: 2.310809 TCO2Eq",
+        "Water Supply\nTotal GHG Emissions: 2.109519 TCO2Eq",
+        "Business Travel (Air)\nTotal GHG Emissions: 2.266179 TCO2Eq",
+        "Business Travel (Land)\nTotal GHG Emissions: 0.211377 TCO2Eq"
+      ],
+      "table_cols": [
+        "Date",
+        "Entry Period",
+        "Site Name",
+        "Type",
+        "Unit of Measurement",
+        "Consumption",
+        "Source",
+        "Emission Factor",
+        "GHG Emissions (TCO2Eq)",
+        "Remarks",
+        "Name of Country",
+        "Supporting Document",
+        "Generation",
+        "Avoided Emissions (TCO2Eq)",
+        "Commute Type",
+        "Fuel Type",
+        "Vehicle Type",
+        "Number of Passengers",
+        "Kilo meters Travelled",
+        "Food Type",
+        "Type of Goods",
+        "Loop",
+        "Type of Vehicle",
+        "Type of Fuel",
+        "Class",
+        "Tonnes",
+        "Distance Travelled",
+        "Select Type",
+        "Mode of Travel",
+        "Number of Passenger",
+        "Kilometers Travelled"
+      ],
+      "nav_links": [
+        {
+          "text": "Dashboard",
+          "href": "/dashboard"
+        },
+        {
+          "text": "Sites",
+          "href": "/sites?month=5&year=2026"
+        },
+        {
+          "text": "GHG Reports",
+          "href": "/report"
+        },
+        {
+          "text": "Help",
+          "href": "/help"
+        },
+        {
+          "text": "Dashboard",
+          "href": "/"
+        }
+      ],
+      "page_dds": {
+        "month": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sept",
+          "Oct",
+          "Nov",
+          "Dec"
+        ]
+      }
+    },
+    "Organization": {
+      "url": "https://app.esgtech.ai/organization",
+      "tabs": [],
+      "modals": {},
+      "context": "PAGE:Organization",
+      "headings": [
+        "Update Organization",
+        "Organization Details",
+        "Measurement Details"
+      ],
+      "buttons": [
+        "G\n\nGirish",
+        "India",
+        "Gujarat",
+        "Manufacturing",
+        "500+ Employee",
+        "Save"
+      ],
+      "table_cols": [],
+      "nav_links": [
+        {
+          "text": "Dashboard",
+          "href": "/dashboard"
+        },
+        {
+          "text": "Sites",
+          "href": "/sites?month=5&year=2026"
+        },
+        {
+          "text": "GHG Reports",
+          "href": "/report"
+        },
+        {
+          "text": "Help",
+          "href": "/help"
+        }
+      ],
+      "page_dds": {}
+    },
+    "Help": {
+      "url": "https://app.esgtech.ai/help",
+      "tabs": [],
+      "modals": {},
+      "context": "PAGE:Help",
+      "headings": [
+        "How can we help?",
+        "Contact Us"
+      ],
+      "buttons": [
+        "G\n\nGirish",
+        "Submit"
+      ],
+      "table_cols": [],
+      "nav_links": [
+        {
+          "text": "Dashboard",
+          "href": "/dashboard"
+        },
+        {
+          "text": "Sites",
+          "href": "/sites?month=5&year=2026"
+        },
+        {
+          "text": "GHG Reports",
+          "href": "/report"
+        },
+        {
+          "text": "Help",
+          "href": "/help"
+        },
+        {
+          "text": "Dashboard",
+          "href": "/"
+        }
+      ],
+      "page_dds": {}
+    },
+    "Settings": {
+      "url": "https://app.esgtech.ai/settings",
+      "tabs": [],
+      "modals": {},
+      "context": "PAGE:Settings",
+      "headings": [],
+      "buttons": [],
+      "table_cols": [],
+      "nav_links": [],
+      "page_dds": {}
+    }
+  },
+  "assessment_forms": {
+    "Surat_Q1": {
+      "site_id": 193,
+      "site_name": "Surat",
+      "scope_code": "Q1",
+      "scope_name": "Stationary Combustion",
+      "url": "https://app.esgtech.ai/sites/193/assessment/Q1/2026/5",
+      "landing": {
+        "context": "ASSESS:Surat:Q1",
+        "url": "https://app.esgtech.ai/sites/193/assessment/Q1/2026/5",
+        "headings": [
+          "GHG Inventory of Direct Emissions from Stationary Combustion"
+        ],
+        "buttons": [
+          "G\n\nGirish",
+          "May 2026",
+          "View History",
+          "Skip & Next",
+          "Select Type",
+          "Select Unit of Measurement",
+          "Submit",
+          "Save & Continue"
+        ],
+        "table_cols": [],
+        "tabs": [],
+        "nav_links": [
+          {
+            "text": "Dashboard",
+            "href": "/dashboard"
+          },
+          {
+            "text": "Sites",
+            "href": "/sites?month=5&year=2026"
+          },
+          {
+            "text": "GHG Reports",
+            "href": "/report"
+          },
+          {
+            "text": "Help",
+            "href": "/help"
+          },
+          {
+            "text": "K. Girdharlal International Private Limited",
+            "href": "/sites"
+          }
+        ],
+        "dropdowns": {}
+      },
+      "add_form": {
+        "fields": [
+          {
+            "label": "Consumption *",
+            "type": "number",
+            "tag": "input",
+            "name": "consumption",
+            "placeholder": "Enter Consumption",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Remarks",
+            "type": "text",
+            "tag": "input",
+            "name": "remark",
+            "placeholder": "Enter Remarks",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Type",
+            "type": "text",
+            "tag": "input",
+            "name": "",
+            "placeholder": "Search in table...",
+            "required": false,
+            "unit": ""
+          }
+        ],
+        "dropdowns": {},
+        "cascading_dropdowns": {
+          "_initial": {}
+        }
+      },
+      "sub_categories": {},
+      "existing_rows": [],
+      "sub_navigation": [
+        {
+          "text": "1",
+          "href": "/sites/193/assessment/Q1/2026/5"
+        },
+        {
+          "text": "2",
+          "href": "/sites/193/assessment/Q4/2026/5"
+        },
+        {
+          "text": "3",
+          "href": "/sites/193/assessment/Q16/2026/5"
+        },
+        {
+          "text": "Mobile Combustion",
+          "href": "/sites/193/assessment/Q2/2026/5"
+        },
+        {
+          "text": "Fugitive Emissions",
+          "href": "/sites/193/assessment/Q3/2026/5"
+        },
+        {
+          "text": "Summary",
+          "href": "/sites/193/assessment/scope-summary/2026/5?scope=1"
+        }
+      ]
+    },
+    "Surat_Q2": {
+      "site_id": 193,
+      "site_name": "Surat",
+      "scope_code": "Q2",
+      "scope_name": "Mobile Combustion",
+      "url": "https://app.esgtech.ai/sites/193/assessment/Q2/2026/5",
+      "landing": {
+        "context": "ASSESS:Surat:Q2",
+        "url": "https://app.esgtech.ai/sites/193/assessment/Q2/2026/5",
+        "headings": [
+          "GHG Inventory of Direct Emissions from Mobile Combustion"
+        ],
+        "buttons": [
+          "G\n\nGirish",
+          "May 2026",
+          "View History",
+          "Skip & Next",
+          "Select Type",
+          "Select Unit of Measurement",
+          "Submit",
+          "Save & Continue"
+        ],
+        "table_cols": [],
+        "tabs": [],
+        "nav_links": [
+          {
+            "text": "Dashboard",
+            "href": "/dashboard"
+          },
+          {
+            "text": "Sites",
+            "href": "/sites?month=5&year=2026"
+          },
+          {
+            "text": "GHG Reports",
+            "href": "/report"
+          },
+          {
+            "text": "Help",
+            "href": "/help"
+          },
+          {
+            "text": "K. Girdharlal International Private Limited",
+            "href": "/sites"
+          }
+        ],
+        "dropdowns": {}
+      },
+      "add_form": {
+        "fields": [
+          {
+            "label": "Consumption *",
+            "type": "number",
+            "tag": "input",
+            "name": "consumption",
+            "placeholder": "Enter Consumption",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Remarks",
+            "type": "text",
+            "tag": "input",
+            "name": "remark",
+            "placeholder": "Enter Remarks",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Type",
+            "type": "text",
+            "tag": "input",
+            "name": "",
+            "placeholder": "Search in table...",
+            "required": false,
+            "unit": ""
+          }
+        ],
+        "dropdowns": {},
+        "cascading_dropdowns": {
+          "_initial": {}
+        }
+      },
+      "sub_categories": {},
+      "existing_rows": [],
+      "sub_navigation": [
+        {
+          "text": "1",
+          "href": "/sites/193/assessment/Q1/2026/5"
+        },
+        {
+          "text": "2",
+          "href": "/sites/193/assessment/Q4/2026/5"
+        },
+        {
+          "text": "3",
+          "href": "/sites/193/assessment/Q16/2026/5"
+        },
+        {
+          "text": "Mobile Combustion",
+          "href": "/sites/193/assessment/Q2/2026/5"
+        },
+        {
+          "text": "Fugitive Emissions",
+          "href": "/sites/193/assessment/Q3/2026/5"
+        },
+        {
+          "text": "Summary",
+          "href": "/sites/193/assessment/scope-summary/2026/5?scope=1"
+        }
+      ]
+    },
+    "Surat_Q3": {
+      "site_id": 193,
+      "site_name": "Surat",
+      "scope_code": "Q3",
+      "scope_name": "Fugitive Emissions",
+      "url": "https://app.esgtech.ai/sites/193/assessment/Q3/2026/5",
+      "landing": {
+        "context": "ASSESS:Surat:Q3",
+        "url": "https://app.esgtech.ai/sites/193/assessment/Q3/2026/5",
+        "headings": [
+          "GHG Inventory of Direct Fugitive Emissions"
+        ],
+        "buttons": [
+          "G\n\nGirish",
+          "May 2026",
+          "View History",
+          "Skip & Next",
+          "Select Type of Refrigerant",
+          "Select Unit of Measurement",
+          "Submit",
+          "Save & Continue"
+        ],
+        "table_cols": [],
+        "tabs": [],
+        "nav_links": [
+          {
+            "text": "Dashboard",
+            "href": "/dashboard"
+          },
+          {
+            "text": "Sites",
+            "href": "/sites?month=5&year=2026"
+          },
+          {
+            "text": "GHG Reports",
+            "href": "/report"
+          },
+          {
+            "text": "Help",
+            "href": "/help"
+          },
+          {
+            "text": "K. Girdharlal International Private Limited",
+            "href": "/sites"
+          }
+        ],
+        "dropdowns": {}
+      },
+      "add_form": {
+        "fields": [
+          {
+            "label": "Consumption *",
+            "type": "number",
+            "tag": "input",
+            "name": "consumption",
+            "placeholder": "Enter Consumption",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Remarks",
+            "type": "text",
+            "tag": "input",
+            "name": "remark",
+            "placeholder": "Enter Remarks",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Type of Refrigerant",
+            "type": "text",
+            "tag": "input",
+            "name": "",
+            "placeholder": "Search in table...",
+            "required": false,
+            "unit": ""
+          }
+        ],
+        "dropdowns": {},
+        "cascading_dropdowns": {
+          "_initial": {}
+        }
+      },
+      "sub_categories": {},
+      "existing_rows": [],
+      "sub_navigation": [
+        {
+          "text": "1",
+          "href": "/sites/193/assessment/Q1/2026/5"
+        },
+        {
+          "text": "2",
+          "href": "/sites/193/assessment/Q4/2026/5"
+        },
+        {
+          "text": "3",
+          "href": "/sites/193/assessment/Q16/2026/5"
+        },
+        {
+          "text": "Mobile Combustion",
+          "href": "/sites/193/assessment/Q2/2026/5"
+        },
+        {
+          "text": "Fugitive Emissions",
+          "href": "/sites/193/assessment/Q3/2026/5"
+        },
+        {
+          "text": "Summary",
+          "href": "/sites/193/assessment/scope-summary/2026/5?scope=1"
+        }
+      ]
+    },
+    "Surat_Q4": {
+      "site_id": 193,
+      "site_name": "Surat",
+      "scope_code": "Q4",
+      "scope_name": "Electricity Scope2",
+      "url": "https://app.esgtech.ai/sites/193/assessment/Q4/2026/5",
+      "landing": {
+        "context": "ASSESS:Surat:Q4",
+        "url": "https://app.esgtech.ai/sites/193/assessment/Q4/2026/5",
+        "headings": [
+          "Inventory of Indirect GHG Emissions from Purchased or Acquired Electricity"
+        ],
+        "buttons": [
+          "G\n\nGirish",
+          "May 2026",
+          "View History",
+          "Skip & Next",
+          "Select Name of Country",
+          "Select Unit of Measurement",
+          "Submit",
+          "Save & Continue"
+        ],
+        "table_cols": [],
+        "tabs": [],
+        "nav_links": [
+          {
+            "text": "Dashboard",
+            "href": "/dashboard"
+          },
+          {
+            "text": "Sites",
+            "href": "/sites?month=5&year=2026"
+          },
+          {
+            "text": "GHG Reports",
+            "href": "/report"
+          },
+          {
+            "text": "Help",
+            "href": "/help"
+          },
+          {
+            "text": "K. Girdharlal International Private Limited",
+            "href": "/sites"
+          }
+        ],
+        "dropdowns": {}
+      },
+      "add_form": {
+        "fields": [
+          {
+            "label": "Consumption *",
+            "type": "number",
+            "tag": "input",
+            "name": "consumption",
+            "placeholder": "Enter Consumption",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Remarks",
+            "type": "text",
+            "tag": "input",
+            "name": "remark",
+            "placeholder": "Enter Remarks",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Name of Country",
+            "type": "file",
+            "tag": "input",
+            "name": "",
+            "placeholder": "",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Name of Country",
+            "type": "text",
+            "tag": "input",
+            "name": "",
+            "placeholder": "Search in table...",
+            "required": false,
+            "unit": ""
+          }
+        ],
+        "dropdowns": {},
+        "cascading_dropdowns": {
+          "_initial": {}
+        }
+      },
+      "sub_categories": {},
+      "existing_rows": [],
+      "sub_navigation": [
+        {
+          "text": "1",
+          "href": "/sites/193/assessment/Q1/2026/5"
+        },
+        {
+          "text": "2",
+          "href": "/sites/193/assessment/Q4/2026/5"
+        },
+        {
+          "text": "3",
+          "href": "/sites/193/assessment/Q16/2026/5"
+        },
+        {
+          "text": "Purchased Heat and Steam",
+          "href": "/sites/193/assessment/Q5/2026/5"
+        },
+        {
+          "text": "Renewable Electricity Generation – Avoided Emission",
+          "href": "/sites/193/assessment/Q19/2026/5"
+        },
+        {
+          "text": "Summary",
+          "href": "/sites/193/assessment/scope-summary/2026/5?scope=2"
+        }
+      ]
+    },
+    "Surat_Q16": {
+      "site_id": 193,
+      "site_name": "Surat",
+      "scope_code": "Q16",
+      "scope_name": "Scope3",
+      "url": "https://app.esgtech.ai/sites/193/assessment/Q16/2026/5",
+      "landing": {
+        "context": "ASSESS:Surat:Q16",
+        "url": "https://app.esgtech.ai/sites/193/assessment/Q16/2026/5",
+        "headings": [
+          "Inventory of GHG Emissions due to Employee Commute from home to office and Vice Versa."
+        ],
+        "buttons": [
+          "G\n\nGirish",
+          "May 2026",
+          "View History",
+          "Skip & Next",
+          "Select Commute Type",
+          "Select Fuel Type",
+          "Select Vehicle Type",
+          "Select Unit of Measurement",
+          "Submit",
+          "Save & Continue"
+        ],
+        "table_cols": [],
+        "tabs": [],
+        "nav_links": [
+          {
+            "text": "Dashboard",
+            "href": "/dashboard"
+          },
+          {
+            "text": "Sites",
+            "href": "/sites?month=5&year=2026"
+          },
+          {
+            "text": "GHG Reports",
+            "href": "/report"
+          },
+          {
+            "text": "Help",
+            "href": "/help"
+          },
+          {
+            "text": "K. Girdharlal International Private Limited",
+            "href": "/sites"
+          }
+        ],
+        "dropdowns": {}
+      },
+      "add_form": {
+        "fields": [
+          {
+            "label": "Figure of Distance *",
+            "type": "number",
+            "tag": "input",
+            "name": "consumption",
+            "placeholder": "Enter Figure of Distance",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Number of Passengers *",
+            "type": "number",
+            "tag": "input",
+            "name": "no_of_passenger",
+            "placeholder": "Enter Number of passengers",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Kilo meters Travelled *",
+            "type": "number",
+            "tag": "input",
+            "name": "travel",
+            "placeholder": "Enter Number of Kilo meters Travelled",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Remarks",
+            "type": "text",
+            "tag": "input",
+            "name": "remark",
+            "placeholder": "Additional notes or comments",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Commute Type",
+            "type": "text",
+            "tag": "input",
+            "name": "",
+            "placeholder": "Search in table...",
+            "required": false,
+            "unit": ""
+          }
+        ],
+        "dropdowns": {},
+        "cascading_dropdowns": {
+          "_initial": {}
+        }
+      },
+      "sub_categories": {
+        "1": {
+          "context": "S3|1",
+          "url": "https://app.esgtech.ai/sites/193/assessment/Q1/2026/5",
+          "headings": [
+            "GHG Inventory of Direct Emissions from Stationary Combustion"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Type",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "K. Girdharlal International Private Limited",
+              "href": "/sites"
+            }
+          ]
+        },
+        "2": {
+          "context": "S3|2",
+          "url": "https://app.esgtech.ai/sites/193/assessment/Q4/2026/5",
+          "headings": [
+            "Inventory of Indirect GHG Emissions from Purchased or Acquired Electricity"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Name of Country",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "K. Girdharlal International Private Limited",
+              "href": "/sites"
+            }
+          ]
+        },
+        "3": {
+          "context": "S3|3",
+          "url": "https://app.esgtech.ai/sites/193/assessment/Q16/2026/5",
+          "headings": [
+            "Inventory of GHG Emissions due to Employee Commute from home to office and Vice Versa."
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Commute Type",
+            "Select Fuel Type",
+            "Select Vehicle Type",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "K. Girdharlal International Private Limited",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Food Consumption": {
+          "context": "S3|Food Consumption",
+          "url": "https://app.esgtech.ai/sites/193/assessment/Q15/2026/5",
+          "headings": [
+            "Inventory of GHG Emissions associated with preparation of food for the manpower of the company"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Food Type",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "K. Girdharlal International Private Limited",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Purchased Goods": {
+          "context": "S3|Purchased Goods",
+          "url": "https://app.esgtech.ai/sites/193/assessment/Q8/2026/5",
+          "headings": [
+            "Inventory of Indirect GHG Emissions from the Goods purchased by the organization"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Type of Goods",
+            "Select Loop",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "K. Girdharlal International Private Limited",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Transmission & Distribution Loss": {
+          "context": "S3|Transmission & Distribution Loss",
+          "url": "https://app.esgtech.ai/sites/193/assessment/Q17/2026/5",
+          "headings": [
+            "Inventory of Transmission & Distribution Loss due to Imported Electricity"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Name of Country",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "K. Girdharlal International Private Limited",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Upstream Activities": {
+          "context": "S3|Upstream Activities",
+          "url": "https://app.esgtech.ai/sites/193/assessment/Q13/2026/5",
+          "headings": [
+            "Inventory of GHG Emissions from Upstream transportation of goods"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "Bulk Import",
+            "View History",
+            "Skip & Next",
+            "Select Type of Vehicle",
+            "Select Type of Fuel",
+            "Select Class",
+            "Select Type",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "K. Girdharlal International Private Limited",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Downstream Activities": {
+          "context": "S3|Downstream Activities",
+          "url": "https://app.esgtech.ai/sites/193/assessment/Q18/2026/5",
+          "headings": [
+            "Inventory of GHG Emissions from Downstream transportation of goods"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "Bulk Import",
+            "View History",
+            "Skip & Next",
+            "Select Type of Vehicle",
+            "Select Type of Fuel",
+            "Select Class",
+            "Select Type",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "K. Girdharlal International Private Limited",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Waste Disposal": {
+          "context": "S3|Waste Disposal",
+          "url": "https://app.esgtech.ai/sites/193/assessment/Q9/2026/5",
+          "headings": [
+            "Inventory of GHG Emissions from waste generated in Operations"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Type of Goods",
+            "Select Loop",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "K. Girdharlal International Private Limited",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Water Supply": {
+          "context": "S3|Water Supply",
+          "url": "https://app.esgtech.ai/sites/193/assessment/Q6/2026/5",
+          "headings": [
+            "Inventory of Total Fresh Water Consumption"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Select Type",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "K. Girdharlal International Private Limited",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Water Treatment": {
+          "context": "S3|Water Treatment",
+          "url": "https://app.esgtech.ai/sites/193/assessment/Q7/2026/5",
+          "headings": [
+            "Inventory of Total Water Treated"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Type",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "K. Girdharlal International Private Limited",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Business Travel (Air)": {
+          "context": "S3|Business Travel (Air)",
+          "url": "https://app.esgtech.ai/sites/193/assessment/Q10/2026/5",
+          "headings": [
+            "Inventory of GHG Emissions from transportation by Air"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Mode of Travel",
+            "Select Class",
+            "Select Type",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "K. Girdharlal International Private Limited",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Business Travel (Sea)": {
+          "context": "S3|Business Travel (Sea)",
+          "url": "https://app.esgtech.ai/sites/193/assessment/Q11/2026/5",
+          "headings": [
+            "Inventory of GHG Emissions from transportation by Sea"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Mode of Travel",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "K. Girdharlal International Private Limited",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Business Travel (Land)": {
+          "context": "S3|Business Travel (Land)",
+          "url": "https://app.esgtech.ai/sites/193/assessment/Q12/2026/5",
+          "headings": [
+            "Inventory of GHG Emissions from transportation by Land"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Type of Fuel",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "K. Girdharlal International Private Limited",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Hotel stay": {
+          "context": "S3|Hotel stay",
+          "url": "https://app.esgtech.ai/sites/193/assessment/Q14/2026/5",
+          "headings": [
+            "Inventory of Emissions associated with overnight hotel stays for work purpose"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Name of Country",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "K. Girdharlal International Private Limited",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Summary": {
+          "context": "S3|Summary",
+          "url": "https://app.esgtech.ai/sites/193/assessment/scope-summary/2026/5?scope=3",
+          "headings": [
+            "Scope 3 Emission Summary",
+            "Scope 3 Total Emissions"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "K. Girdharlal International Private Limited",
+              "href": "/sites"
+            }
+          ]
+        }
+      },
+      "existing_rows": [],
+      "sub_navigation": [
+        {
+          "text": "1",
+          "href": "/sites/193/assessment/Q1/2026/5"
+        },
+        {
+          "text": "2",
+          "href": "/sites/193/assessment/Q4/2026/5"
+        },
+        {
+          "text": "3",
+          "href": "/sites/193/assessment/Q16/2026/5"
+        },
+        {
+          "text": "Food Consumption",
+          "href": "/sites/193/assessment/Q15/2026/5"
+        },
+        {
+          "text": "Purchased Goods",
+          "href": "/sites/193/assessment/Q8/2026/5"
+        },
+        {
+          "text": "Transmission & Distribution Loss",
+          "href": "/sites/193/assessment/Q17/2026/5"
+        },
+        {
+          "text": "Upstream Activities",
+          "href": "/sites/193/assessment/Q13/2026/5"
+        },
+        {
+          "text": "Downstream Activities",
+          "href": "/sites/193/assessment/Q18/2026/5"
+        },
+        {
+          "text": "Waste Disposal",
+          "href": "/sites/193/assessment/Q9/2026/5"
+        },
+        {
+          "text": "Water Supply",
+          "href": "/sites/193/assessment/Q6/2026/5"
+        },
+        {
+          "text": "Water Treatment",
+          "href": "/sites/193/assessment/Q7/2026/5"
+        },
+        {
+          "text": "Business Travel (Air)",
+          "href": "/sites/193/assessment/Q10/2026/5"
+        },
+        {
+          "text": "Business Travel (Sea)",
+          "href": "/sites/193/assessment/Q11/2026/5"
+        },
+        {
+          "text": "Business Travel (Land)",
+          "href": "/sites/193/assessment/Q12/2026/5"
+        },
+        {
+          "text": "Hotel stay",
+          "href": "/sites/193/assessment/Q14/2026/5"
+        },
+        {
+          "text": "Summary",
+          "href": "/sites/193/assessment/scope-summary/2026/5?scope=3"
+        }
+      ]
+    },
+    "Mumbai_Q1": {
+      "site_id": 192,
+      "site_name": "Mumbai",
+      "scope_code": "Q1",
+      "scope_name": "Stationary Combustion",
+      "url": "https://app.esgtech.ai/sites/192/assessment/Q1/2026/5",
+      "landing": {
+        "context": "ASSESS:Mumbai:Q1",
+        "url": "https://app.esgtech.ai/sites/192/assessment/Q1/2026/5",
+        "headings": [
+          "GHG Inventory of Direct Emissions from Stationary Combustion"
+        ],
+        "buttons": [
+          "G\n\nGirish",
+          "May 2026",
+          "View History",
+          "Skip & Next",
+          "Select Type",
+          "Select Unit of Measurement",
+          "Submit",
+          "Save & Continue"
+        ],
+        "table_cols": [],
+        "tabs": [],
+        "nav_links": [
+          {
+            "text": "Dashboard",
+            "href": "/dashboard"
+          },
+          {
+            "text": "Sites",
+            "href": "/sites?month=5&year=2026"
+          },
+          {
+            "text": "GHG Reports",
+            "href": "/report"
+          },
+          {
+            "text": "Help",
+            "href": "/help"
+          },
+          {
+            "text": "Mumbai Office - K. Girdharlal International Pvt",
+            "href": "/sites"
+          }
+        ],
+        "dropdowns": {}
+      },
+      "add_form": {
+        "fields": [
+          {
+            "label": "Consumption *",
+            "type": "number",
+            "tag": "input",
+            "name": "consumption",
+            "placeholder": "Enter Consumption",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Remarks",
+            "type": "text",
+            "tag": "input",
+            "name": "remark",
+            "placeholder": "Enter Remarks",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Type",
+            "type": "text",
+            "tag": "input",
+            "name": "",
+            "placeholder": "Search in table...",
+            "required": false,
+            "unit": ""
+          }
+        ],
+        "dropdowns": {},
+        "cascading_dropdowns": {
+          "_initial": {}
+        }
+      },
+      "sub_categories": {},
+      "existing_rows": [],
+      "sub_navigation": [
+        {
+          "text": "1",
+          "href": "/sites/192/assessment/Q1/2026/5"
+        },
+        {
+          "text": "2",
+          "href": "/sites/192/assessment/Q4/2026/5"
+        },
+        {
+          "text": "3",
+          "href": "/sites/192/assessment/Q16/2026/5"
+        },
+        {
+          "text": "Mobile Combustion",
+          "href": "/sites/192/assessment/Q2/2026/5"
+        },
+        {
+          "text": "Fugitive Emissions",
+          "href": "/sites/192/assessment/Q3/2026/5"
+        },
+        {
+          "text": "Summary",
+          "href": "/sites/192/assessment/scope-summary/2026/5?scope=1"
+        }
+      ]
+    },
+    "Mumbai_Q2": {
+      "site_id": 192,
+      "site_name": "Mumbai",
+      "scope_code": "Q2",
+      "scope_name": "Mobile Combustion",
+      "url": "https://app.esgtech.ai/sites/192/assessment/Q2/2026/5",
+      "landing": {
+        "context": "ASSESS:Mumbai:Q2",
+        "url": "https://app.esgtech.ai/sites/192/assessment/Q2/2026/5",
+        "headings": [
+          "GHG Inventory of Direct Emissions from Mobile Combustion"
+        ],
+        "buttons": [
+          "G\n\nGirish",
+          "May 2026",
+          "View History",
+          "Skip & Next",
+          "Select Type",
+          "Select Unit of Measurement",
+          "Submit",
+          "Save & Continue"
+        ],
+        "table_cols": [],
+        "tabs": [],
+        "nav_links": [
+          {
+            "text": "Dashboard",
+            "href": "/dashboard"
+          },
+          {
+            "text": "Sites",
+            "href": "/sites?month=5&year=2026"
+          },
+          {
+            "text": "GHG Reports",
+            "href": "/report"
+          },
+          {
+            "text": "Help",
+            "href": "/help"
+          },
+          {
+            "text": "Mumbai Office - K. Girdharlal International Pvt",
+            "href": "/sites"
+          }
+        ],
+        "dropdowns": {}
+      },
+      "add_form": {
+        "fields": [
+          {
+            "label": "Consumption *",
+            "type": "number",
+            "tag": "input",
+            "name": "consumption",
+            "placeholder": "Enter Consumption",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Remarks",
+            "type": "text",
+            "tag": "input",
+            "name": "remark",
+            "placeholder": "Enter Remarks",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Type",
+            "type": "text",
+            "tag": "input",
+            "name": "",
+            "placeholder": "Search in table...",
+            "required": false,
+            "unit": ""
+          }
+        ],
+        "dropdowns": {},
+        "cascading_dropdowns": {
+          "_initial": {}
+        }
+      },
+      "sub_categories": {},
+      "existing_rows": [],
+      "sub_navigation": [
+        {
+          "text": "1",
+          "href": "/sites/192/assessment/Q1/2026/5"
+        },
+        {
+          "text": "2",
+          "href": "/sites/192/assessment/Q4/2026/5"
+        },
+        {
+          "text": "3",
+          "href": "/sites/192/assessment/Q16/2026/5"
+        },
+        {
+          "text": "Mobile Combustion",
+          "href": "/sites/192/assessment/Q2/2026/5"
+        },
+        {
+          "text": "Fugitive Emissions",
+          "href": "/sites/192/assessment/Q3/2026/5"
+        },
+        {
+          "text": "Summary",
+          "href": "/sites/192/assessment/scope-summary/2026/5?scope=1"
+        }
+      ]
+    },
+    "Mumbai_Q3": {
+      "site_id": 192,
+      "site_name": "Mumbai",
+      "scope_code": "Q3",
+      "scope_name": "Fugitive Emissions",
+      "url": "https://app.esgtech.ai/sites/192/assessment/Q3/2026/5",
+      "landing": {
+        "context": "ASSESS:Mumbai:Q3",
+        "url": "https://app.esgtech.ai/sites/192/assessment/Q3/2026/5",
+        "headings": [
+          "GHG Inventory of Direct Fugitive Emissions"
+        ],
+        "buttons": [
+          "G\n\nGirish",
+          "May 2026",
+          "View History",
+          "Skip & Next",
+          "Select Type of Refrigerant",
+          "Select Unit of Measurement",
+          "Submit",
+          "Save & Continue"
+        ],
+        "table_cols": [],
+        "tabs": [],
+        "nav_links": [
+          {
+            "text": "Dashboard",
+            "href": "/dashboard"
+          },
+          {
+            "text": "Sites",
+            "href": "/sites?month=5&year=2026"
+          },
+          {
+            "text": "GHG Reports",
+            "href": "/report"
+          },
+          {
+            "text": "Help",
+            "href": "/help"
+          },
+          {
+            "text": "Mumbai Office - K. Girdharlal International Pvt",
+            "href": "/sites"
+          }
+        ],
+        "dropdowns": {}
+      },
+      "add_form": {
+        "fields": [
+          {
+            "label": "Consumption *",
+            "type": "number",
+            "tag": "input",
+            "name": "consumption",
+            "placeholder": "Enter Consumption",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Remarks",
+            "type": "text",
+            "tag": "input",
+            "name": "remark",
+            "placeholder": "Enter Remarks",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Type of Refrigerant",
+            "type": "text",
+            "tag": "input",
+            "name": "",
+            "placeholder": "Search in table...",
+            "required": false,
+            "unit": ""
+          }
+        ],
+        "dropdowns": {},
+        "cascading_dropdowns": {
+          "_initial": {}
+        }
+      },
+      "sub_categories": {},
+      "existing_rows": [],
+      "sub_navigation": [
+        {
+          "text": "1",
+          "href": "/sites/192/assessment/Q1/2026/5"
+        },
+        {
+          "text": "2",
+          "href": "/sites/192/assessment/Q4/2026/5"
+        },
+        {
+          "text": "3",
+          "href": "/sites/192/assessment/Q16/2026/5"
+        },
+        {
+          "text": "Mobile Combustion",
+          "href": "/sites/192/assessment/Q2/2026/5"
+        },
+        {
+          "text": "Fugitive Emissions",
+          "href": "/sites/192/assessment/Q3/2026/5"
+        },
+        {
+          "text": "Summary",
+          "href": "/sites/192/assessment/scope-summary/2026/5?scope=1"
+        }
+      ]
+    },
+    "Mumbai_Q4": {
+      "site_id": 192,
+      "site_name": "Mumbai",
+      "scope_code": "Q4",
+      "scope_name": "Electricity Scope2",
+      "url": "https://app.esgtech.ai/sites/192/assessment/Q4/2026/5",
+      "landing": {
+        "context": "ASSESS:Mumbai:Q4",
+        "url": "https://app.esgtech.ai/sites/192/assessment/Q4/2026/5",
+        "headings": [
+          "Inventory of Indirect GHG Emissions from Purchased or Acquired Electricity"
+        ],
+        "buttons": [
+          "G\n\nGirish",
+          "May 2026",
+          "View History",
+          "Skip & Next",
+          "Select Name of Country",
+          "Select Unit of Measurement",
+          "Submit",
+          "Save & Continue"
+        ],
+        "table_cols": [],
+        "tabs": [],
+        "nav_links": [
+          {
+            "text": "Dashboard",
+            "href": "/dashboard"
+          },
+          {
+            "text": "Sites",
+            "href": "/sites?month=5&year=2026"
+          },
+          {
+            "text": "GHG Reports",
+            "href": "/report"
+          },
+          {
+            "text": "Help",
+            "href": "/help"
+          },
+          {
+            "text": "Mumbai Office - K. Girdharlal International Pvt",
+            "href": "/sites"
+          }
+        ],
+        "dropdowns": {}
+      },
+      "add_form": {
+        "fields": [
+          {
+            "label": "Consumption *",
+            "type": "number",
+            "tag": "input",
+            "name": "consumption",
+            "placeholder": "Enter Consumption",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Remarks",
+            "type": "text",
+            "tag": "input",
+            "name": "remark",
+            "placeholder": "Enter Remarks",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Name of Country",
+            "type": "file",
+            "tag": "input",
+            "name": "",
+            "placeholder": "",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Name of Country",
+            "type": "text",
+            "tag": "input",
+            "name": "",
+            "placeholder": "Search in table...",
+            "required": false,
+            "unit": ""
+          }
+        ],
+        "dropdowns": {},
+        "cascading_dropdowns": {
+          "_initial": {}
+        }
+      },
+      "sub_categories": {},
+      "existing_rows": [],
+      "sub_navigation": [
+        {
+          "text": "1",
+          "href": "/sites/192/assessment/Q1/2026/5"
+        },
+        {
+          "text": "2",
+          "href": "/sites/192/assessment/Q4/2026/5"
+        },
+        {
+          "text": "3",
+          "href": "/sites/192/assessment/Q16/2026/5"
+        },
+        {
+          "text": "Purchased Heat and Steam",
+          "href": "/sites/192/assessment/Q5/2026/5"
+        },
+        {
+          "text": "Renewable Electricity Generation – Avoided Emission",
+          "href": "/sites/192/assessment/Q19/2026/5"
+        },
+        {
+          "text": "Summary",
+          "href": "/sites/192/assessment/scope-summary/2026/5?scope=2"
+        }
+      ]
+    },
+    "Mumbai_Q16": {
+      "site_id": 192,
+      "site_name": "Mumbai",
+      "scope_code": "Q16",
+      "scope_name": "Scope3",
+      "url": "https://app.esgtech.ai/sites/192/assessment/Q16/2026/5",
+      "landing": {
+        "context": "ASSESS:Mumbai:Q16",
+        "url": "https://app.esgtech.ai/sites/192/assessment/Q16/2026/5",
+        "headings": [
+          "Inventory of GHG Emissions due to Employee Commute from home to office and Vice Versa."
+        ],
+        "buttons": [
+          "G\n\nGirish",
+          "May 2026",
+          "View History",
+          "Skip & Next",
+          "Select Commute Type",
+          "Select Fuel Type",
+          "Select Vehicle Type",
+          "Select Unit of Measurement",
+          "Submit",
+          "Save & Continue"
+        ],
+        "table_cols": [],
+        "tabs": [],
+        "nav_links": [
+          {
+            "text": "Dashboard",
+            "href": "/dashboard"
+          },
+          {
+            "text": "Sites",
+            "href": "/sites?month=5&year=2026"
+          },
+          {
+            "text": "GHG Reports",
+            "href": "/report"
+          },
+          {
+            "text": "Help",
+            "href": "/help"
+          },
+          {
+            "text": "Mumbai Office - K. Girdharlal International Pvt",
+            "href": "/sites"
+          }
+        ],
+        "dropdowns": {}
+      },
+      "add_form": {
+        "fields": [
+          {
+            "label": "Figure of Distance *",
+            "type": "number",
+            "tag": "input",
+            "name": "consumption",
+            "placeholder": "Enter Figure of Distance",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Number of Passengers *",
+            "type": "number",
+            "tag": "input",
+            "name": "no_of_passenger",
+            "placeholder": "Enter Number of passengers",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Kilo meters Travelled *",
+            "type": "number",
+            "tag": "input",
+            "name": "travel",
+            "placeholder": "Enter Number of Kilo meters Travelled",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Remarks",
+            "type": "text",
+            "tag": "input",
+            "name": "remark",
+            "placeholder": "Additional notes or comments",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Commute Type",
+            "type": "text",
+            "tag": "input",
+            "name": "",
+            "placeholder": "Search in table...",
+            "required": false,
+            "unit": ""
+          }
+        ],
+        "dropdowns": {},
+        "cascading_dropdowns": {
+          "_initial": {}
+        }
+      },
+      "sub_categories": {
+        "1": {
+          "context": "S3|1",
+          "url": "https://app.esgtech.ai/sites/192/assessment/Q1/2026/5",
+          "headings": [
+            "GHG Inventory of Direct Emissions from Stationary Combustion"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Type",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "Mumbai Office - K. Girdharlal International Pvt",
+              "href": "/sites"
+            }
+          ]
+        },
+        "2": {
+          "context": "S3|2",
+          "url": "https://app.esgtech.ai/sites/192/assessment/Q4/2026/5",
+          "headings": [
+            "Inventory of Indirect GHG Emissions from Purchased or Acquired Electricity"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Name of Country",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "Mumbai Office - K. Girdharlal International Pvt",
+              "href": "/sites"
+            }
+          ]
+        },
+        "3": {
+          "context": "S3|3",
+          "url": "https://app.esgtech.ai/sites/192/assessment/Q16/2026/5",
+          "headings": [
+            "Inventory of GHG Emissions due to Employee Commute from home to office and Vice Versa."
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Commute Type",
+            "Select Fuel Type",
+            "Select Vehicle Type",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "Mumbai Office - K. Girdharlal International Pvt",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Food Consumption": {
+          "context": "S3|Food Consumption",
+          "url": "https://app.esgtech.ai/sites/192/assessment/Q15/2026/5",
+          "headings": [
+            "Inventory of GHG Emissions associated with preparation of food for the manpower of the company"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Food Type",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "Mumbai Office - K. Girdharlal International Pvt",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Purchased Goods": {
+          "context": "S3|Purchased Goods",
+          "url": "https://app.esgtech.ai/sites/192/assessment/Q8/2026/5",
+          "headings": [
+            "Inventory of Indirect GHG Emissions from the Goods purchased by the organization"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Type of Goods",
+            "Select Loop",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "Mumbai Office - K. Girdharlal International Pvt",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Transmission & Distribution Loss": {
+          "context": "S3|Transmission & Distribution Loss",
+          "url": "https://app.esgtech.ai/sites/192/assessment/Q17/2026/5",
+          "headings": [
+            "Inventory of Transmission & Distribution Loss due to Imported Electricity"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Name of Country",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "Mumbai Office - K. Girdharlal International Pvt",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Upstream Activities": {
+          "context": "S3|Upstream Activities",
+          "url": "https://app.esgtech.ai/sites/192/assessment/Q13/2026/5",
+          "headings": [
+            "Inventory of GHG Emissions from Upstream transportation of goods"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "Bulk Import",
+            "View History",
+            "Skip & Next",
+            "Select Type of Vehicle",
+            "Select Type of Fuel",
+            "Select Class",
+            "Select Type",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "Mumbai Office - K. Girdharlal International Pvt",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Downstream Activities": {
+          "context": "S3|Downstream Activities",
+          "url": "https://app.esgtech.ai/sites/192/assessment/Q18/2026/5",
+          "headings": [
+            "Inventory of GHG Emissions from Downstream transportation of goods"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "Bulk Import",
+            "View History",
+            "Skip & Next",
+            "Select Type of Vehicle",
+            "Select Type of Fuel",
+            "Select Class",
+            "Select Type",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "Mumbai Office - K. Girdharlal International Pvt",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Waste Disposal": {
+          "context": "S3|Waste Disposal",
+          "url": "https://app.esgtech.ai/sites/192/assessment/Q9/2026/5",
+          "headings": [
+            "Inventory of GHG Emissions from waste generated in Operations"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Type of Goods",
+            "Select Loop",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "Mumbai Office - K. Girdharlal International Pvt",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Water Supply": {
+          "context": "S3|Water Supply",
+          "url": "https://app.esgtech.ai/sites/192/assessment/Q6/2026/5",
+          "headings": [
+            "Inventory of Total Fresh Water Consumption"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Select Type",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "Mumbai Office - K. Girdharlal International Pvt",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Water Treatment": {
+          "context": "S3|Water Treatment",
+          "url": "https://app.esgtech.ai/sites/192/assessment/Q7/2026/5",
+          "headings": [
+            "Inventory of Total Water Treated"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Type",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "Mumbai Office - K. Girdharlal International Pvt",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Business Travel (Air)": {
+          "context": "S3|Business Travel (Air)",
+          "url": "https://app.esgtech.ai/sites/192/assessment/Q10/2026/5",
+          "headings": [
+            "Inventory of GHG Emissions from transportation by Air"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Mode of Travel",
+            "Select Class",
+            "Select Type",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "Mumbai Office - K. Girdharlal International Pvt",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Business Travel (Sea)": {
+          "context": "S3|Business Travel (Sea)",
+          "url": "https://app.esgtech.ai/sites/192/assessment/Q11/2026/5",
+          "headings": [
+            "Inventory of GHG Emissions from transportation by Sea"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Mode of Travel",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "Mumbai Office - K. Girdharlal International Pvt",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Business Travel (Land)": {
+          "context": "S3|Business Travel (Land)",
+          "url": "https://app.esgtech.ai/sites/192/assessment/Q12/2026/5",
+          "headings": [
+            "Inventory of GHG Emissions from transportation by Land"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Type of Fuel",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "Mumbai Office - K. Girdharlal International Pvt",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Hotel stay": {
+          "context": "S3|Hotel stay",
+          "url": "https://app.esgtech.ai/sites/192/assessment/Q14/2026/5",
+          "headings": [
+            "Inventory of Emissions associated with overnight hotel stays for work purpose"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Name of Country",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "Mumbai Office - K. Girdharlal International Pvt",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Summary": {
+          "context": "S3|Summary",
+          "url": "https://app.esgtech.ai/sites/192/assessment/scope-summary/2026/5?scope=3",
+          "headings": [
+            "Scope 3 Emission Summary",
+            "Scope 3 Total Emissions"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "Mumbai Office - K. Girdharlal International Pvt",
+              "href": "/sites"
+            }
+          ]
+        }
+      },
+      "existing_rows": [],
+      "sub_navigation": [
+        {
+          "text": "1",
+          "href": "/sites/192/assessment/Q1/2026/5"
+        },
+        {
+          "text": "2",
+          "href": "/sites/192/assessment/Q4/2026/5"
+        },
+        {
+          "text": "3",
+          "href": "/sites/192/assessment/Q16/2026/5"
+        },
+        {
+          "text": "Food Consumption",
+          "href": "/sites/192/assessment/Q15/2026/5"
+        },
+        {
+          "text": "Purchased Goods",
+          "href": "/sites/192/assessment/Q8/2026/5"
+        },
+        {
+          "text": "Transmission & Distribution Loss",
+          "href": "/sites/192/assessment/Q17/2026/5"
+        },
+        {
+          "text": "Upstream Activities",
+          "href": "/sites/192/assessment/Q13/2026/5"
+        },
+        {
+          "text": "Downstream Activities",
+          "href": "/sites/192/assessment/Q18/2026/5"
+        },
+        {
+          "text": "Waste Disposal",
+          "href": "/sites/192/assessment/Q9/2026/5"
+        },
+        {
+          "text": "Water Supply",
+          "href": "/sites/192/assessment/Q6/2026/5"
+        },
+        {
+          "text": "Water Treatment",
+          "href": "/sites/192/assessment/Q7/2026/5"
+        },
+        {
+          "text": "Business Travel (Air)",
+          "href": "/sites/192/assessment/Q10/2026/5"
+        },
+        {
+          "text": "Business Travel (Sea)",
+          "href": "/sites/192/assessment/Q11/2026/5"
+        },
+        {
+          "text": "Business Travel (Land)",
+          "href": "/sites/192/assessment/Q12/2026/5"
+        },
+        {
+          "text": "Hotel stay",
+          "href": "/sites/192/assessment/Q14/2026/5"
+        },
+        {
+          "text": "Summary",
+          "href": "/sites/192/assessment/scope-summary/2026/5?scope=3"
+        }
+      ]
+    },
+    "Facets_Surat_Q1": {
+      "site_id": 194,
+      "site_name": "Facets_Surat",
+      "scope_code": "Q1",
+      "scope_name": "Stationary Combustion",
+      "url": "https://app.esgtech.ai/sites/194/assessment/Q1/2026/5",
+      "landing": {
+        "context": "ASSESS:Facets_Surat:Q1",
+        "url": "https://app.esgtech.ai/sites/194/assessment/Q1/2026/5",
+        "headings": [
+          "GHG Inventory of Direct Emissions from Stationary Combustion"
+        ],
+        "buttons": [
+          "G\n\nGirish",
+          "May 2026",
+          "View History",
+          "Skip & Next",
+          "Select Type",
+          "Select Unit of Measurement",
+          "Submit",
+          "Save & Continue"
+        ],
+        "table_cols": [],
+        "tabs": [],
+        "nav_links": [
+          {
+            "text": "Dashboard",
+            "href": "/dashboard"
+          },
+          {
+            "text": "Sites",
+            "href": "/sites?month=5&year=2026"
+          },
+          {
+            "text": "GHG Reports",
+            "href": "/report"
+          },
+          {
+            "text": "Help",
+            "href": "/help"
+          },
+          {
+            "text": "Facets Gems Polishing Works Pvt. Ltd.",
+            "href": "/sites"
+          }
+        ],
+        "dropdowns": {}
+      },
+      "add_form": {
+        "fields": [
+          {
+            "label": "Consumption *",
+            "type": "number",
+            "tag": "input",
+            "name": "consumption",
+            "placeholder": "Enter Consumption",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Remarks",
+            "type": "text",
+            "tag": "input",
+            "name": "remark",
+            "placeholder": "Enter Remarks",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Type",
+            "type": "text",
+            "tag": "input",
+            "name": "",
+            "placeholder": "Search in table...",
+            "required": false,
+            "unit": ""
+          }
+        ],
+        "dropdowns": {},
+        "cascading_dropdowns": {
+          "_initial": {}
+        }
+      },
+      "sub_categories": {},
+      "existing_rows": [],
+      "sub_navigation": [
+        {
+          "text": "1",
+          "href": "/sites/194/assessment/Q1/2026/5"
+        },
+        {
+          "text": "2",
+          "href": "/sites/194/assessment/Q4/2026/5"
+        },
+        {
+          "text": "3",
+          "href": "/sites/194/assessment/Q16/2026/5"
+        },
+        {
+          "text": "Mobile Combustion",
+          "href": "/sites/194/assessment/Q2/2026/5"
+        },
+        {
+          "text": "Fugitive Emissions",
+          "href": "/sites/194/assessment/Q3/2026/5"
+        },
+        {
+          "text": "Summary",
+          "href": "/sites/194/assessment/scope-summary/2026/5?scope=1"
+        }
+      ]
+    },
+    "Facets_Surat_Q2": {
+      "site_id": 194,
+      "site_name": "Facets_Surat",
+      "scope_code": "Q2",
+      "scope_name": "Mobile Combustion",
+      "url": "https://app.esgtech.ai/sites/194/assessment/Q2/2026/5",
+      "landing": {
+        "context": "ASSESS:Facets_Surat:Q2",
+        "url": "https://app.esgtech.ai/sites/194/assessment/Q2/2026/5",
+        "headings": [
+          "GHG Inventory of Direct Emissions from Mobile Combustion"
+        ],
+        "buttons": [
+          "G\n\nGirish",
+          "May 2026",
+          "View History",
+          "Skip & Next",
+          "Select Type",
+          "Select Unit of Measurement",
+          "Submit",
+          "Save & Continue"
+        ],
+        "table_cols": [],
+        "tabs": [],
+        "nav_links": [
+          {
+            "text": "Dashboard",
+            "href": "/dashboard"
+          },
+          {
+            "text": "Sites",
+            "href": "/sites?month=5&year=2026"
+          },
+          {
+            "text": "GHG Reports",
+            "href": "/report"
+          },
+          {
+            "text": "Help",
+            "href": "/help"
+          },
+          {
+            "text": "Facets Gems Polishing Works Pvt. Ltd.",
+            "href": "/sites"
+          }
+        ],
+        "dropdowns": {}
+      },
+      "add_form": {
+        "fields": [
+          {
+            "label": "Consumption *",
+            "type": "number",
+            "tag": "input",
+            "name": "consumption",
+            "placeholder": "Enter Consumption",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Remarks",
+            "type": "text",
+            "tag": "input",
+            "name": "remark",
+            "placeholder": "Enter Remarks",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Type",
+            "type": "text",
+            "tag": "input",
+            "name": "",
+            "placeholder": "Search in table...",
+            "required": false,
+            "unit": ""
+          }
+        ],
+        "dropdowns": {},
+        "cascading_dropdowns": {
+          "_initial": {}
+        }
+      },
+      "sub_categories": {},
+      "existing_rows": [],
+      "sub_navigation": [
+        {
+          "text": "1",
+          "href": "/sites/194/assessment/Q1/2026/5"
+        },
+        {
+          "text": "2",
+          "href": "/sites/194/assessment/Q4/2026/5"
+        },
+        {
+          "text": "3",
+          "href": "/sites/194/assessment/Q16/2026/5"
+        },
+        {
+          "text": "Mobile Combustion",
+          "href": "/sites/194/assessment/Q2/2026/5"
+        },
+        {
+          "text": "Fugitive Emissions",
+          "href": "/sites/194/assessment/Q3/2026/5"
+        },
+        {
+          "text": "Summary",
+          "href": "/sites/194/assessment/scope-summary/2026/5?scope=1"
+        }
+      ]
+    },
+    "Facets_Surat_Q3": {
+      "site_id": 194,
+      "site_name": "Facets_Surat",
+      "scope_code": "Q3",
+      "scope_name": "Fugitive Emissions",
+      "url": "https://app.esgtech.ai/sites/194/assessment/Q3/2026/5",
+      "landing": {
+        "context": "ASSESS:Facets_Surat:Q3",
+        "url": "https://app.esgtech.ai/sites/194/assessment/Q3/2026/5",
+        "headings": [
+          "GHG Inventory of Direct Fugitive Emissions"
+        ],
+        "buttons": [
+          "G\n\nGirish",
+          "May 2026",
+          "View History",
+          "Skip & Next",
+          "Select Type of Refrigerant",
+          "Select Unit of Measurement",
+          "Submit",
+          "Save & Continue"
+        ],
+        "table_cols": [],
+        "tabs": [],
+        "nav_links": [
+          {
+            "text": "Dashboard",
+            "href": "/dashboard"
+          },
+          {
+            "text": "Sites",
+            "href": "/sites?month=5&year=2026"
+          },
+          {
+            "text": "GHG Reports",
+            "href": "/report"
+          },
+          {
+            "text": "Help",
+            "href": "/help"
+          },
+          {
+            "text": "Facets Gems Polishing Works Pvt. Ltd.",
+            "href": "/sites"
+          }
+        ],
+        "dropdowns": {}
+      },
+      "add_form": {
+        "fields": [
+          {
+            "label": "Consumption *",
+            "type": "number",
+            "tag": "input",
+            "name": "consumption",
+            "placeholder": "Enter Consumption",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Remarks",
+            "type": "text",
+            "tag": "input",
+            "name": "remark",
+            "placeholder": "Enter Remarks",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Type of Refrigerant",
+            "type": "text",
+            "tag": "input",
+            "name": "",
+            "placeholder": "Search in table...",
+            "required": false,
+            "unit": ""
+          }
+        ],
+        "dropdowns": {},
+        "cascading_dropdowns": {
+          "_initial": {}
+        }
+      },
+      "sub_categories": {},
+      "existing_rows": [],
+      "sub_navigation": [
+        {
+          "text": "1",
+          "href": "/sites/194/assessment/Q1/2026/5"
+        },
+        {
+          "text": "2",
+          "href": "/sites/194/assessment/Q4/2026/5"
+        },
+        {
+          "text": "3",
+          "href": "/sites/194/assessment/Q16/2026/5"
+        },
+        {
+          "text": "Mobile Combustion",
+          "href": "/sites/194/assessment/Q2/2026/5"
+        },
+        {
+          "text": "Fugitive Emissions",
+          "href": "/sites/194/assessment/Q3/2026/5"
+        },
+        {
+          "text": "Summary",
+          "href": "/sites/194/assessment/scope-summary/2026/5?scope=1"
+        }
+      ]
+    },
+    "Facets_Surat_Q4": {
+      "site_id": 194,
+      "site_name": "Facets_Surat",
+      "scope_code": "Q4",
+      "scope_name": "Electricity Scope2",
+      "url": "https://app.esgtech.ai/sites/194/assessment/Q4/2026/5",
+      "landing": {
+        "context": "ASSESS:Facets_Surat:Q4",
+        "url": "https://app.esgtech.ai/sites/194/assessment/Q4/2026/5",
+        "headings": [
+          "Inventory of Indirect GHG Emissions from Purchased or Acquired Electricity"
+        ],
+        "buttons": [
+          "G\n\nGirish",
+          "May 2026",
+          "View History",
+          "Skip & Next",
+          "Select Name of Country",
+          "Select Unit of Measurement",
+          "Submit",
+          "Save & Continue"
+        ],
+        "table_cols": [
+          "Date",
+          "Entry Period",
+          "Name of Country",
+          "Unit of Measurement",
+          "Consumption",
+          "Source",
+          "Actions"
+        ],
+        "tabs": [],
+        "nav_links": [
+          {
+            "text": "Dashboard",
+            "href": "/dashboard"
+          },
+          {
+            "text": "Sites",
+            "href": "/sites?month=5&year=2026"
+          },
+          {
+            "text": "GHG Reports",
+            "href": "/report"
+          },
+          {
+            "text": "Help",
+            "href": "/help"
+          },
+          {
+            "text": "Facets Gems Polishing Works Pvt. Ltd.",
+            "href": "/sites"
+          }
+        ],
+        "dropdowns": {}
+      },
+      "add_form": {
+        "fields": [
+          {
+            "label": "Consumption *",
+            "type": "number",
+            "tag": "input",
+            "name": "consumption",
+            "placeholder": "Enter Consumption",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Remarks",
+            "type": "text",
+            "tag": "input",
+            "name": "remark",
+            "placeholder": "Enter Remarks",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Name of Country",
+            "type": "file",
+            "tag": "input",
+            "name": "",
+            "placeholder": "",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Name of Country",
+            "type": "text",
+            "tag": "input",
+            "name": "",
+            "placeholder": "Search in table...",
+            "required": false,
+            "unit": ""
+          }
+        ],
+        "dropdowns": {},
+        "cascading_dropdowns": {
+          "_initial": {}
+        }
+      },
+      "sub_categories": {},
+      "existing_rows": [],
+      "sub_navigation": [
+        {
+          "text": "1",
+          "href": "/sites/194/assessment/Q1/2026/5"
+        },
+        {
+          "text": "2",
+          "href": "/sites/194/assessment/Q4/2026/5"
+        },
+        {
+          "text": "3",
+          "href": "/sites/194/assessment/Q16/2026/5"
+        },
+        {
+          "text": "Purchased Heat and Steam",
+          "href": "/sites/194/assessment/Q5/2026/5"
+        },
+        {
+          "text": "Renewable Electricity Generation – Avoided Emission",
+          "href": "/sites/194/assessment/Q19/2026/5"
+        },
+        {
+          "text": "Summary",
+          "href": "/sites/194/assessment/scope-summary/2026/5?scope=2"
+        }
+      ]
+    },
+    "Facets_Surat_Q16": {
+      "site_id": 194,
+      "site_name": "Facets_Surat",
+      "scope_code": "Q16",
+      "scope_name": "Scope3",
+      "url": "https://app.esgtech.ai/sites/194/assessment/Q16/2026/5",
+      "landing": {
+        "context": "ASSESS:Facets_Surat:Q16",
+        "url": "https://app.esgtech.ai/sites/194/assessment/Q16/2026/5",
+        "headings": [
+          "Inventory of GHG Emissions due to Employee Commute from home to office and Vice Versa."
+        ],
+        "buttons": [
+          "G\n\nGirish",
+          "May 2026",
+          "View History",
+          "Skip & Next",
+          "Select Commute Type",
+          "Select Fuel Type",
+          "Select Vehicle Type",
+          "Select Unit of Measurement",
+          "Submit",
+          "Save & Continue"
+        ],
+        "table_cols": [],
+        "tabs": [],
+        "nav_links": [
+          {
+            "text": "Dashboard",
+            "href": "/dashboard"
+          },
+          {
+            "text": "Sites",
+            "href": "/sites?month=5&year=2026"
+          },
+          {
+            "text": "GHG Reports",
+            "href": "/report"
+          },
+          {
+            "text": "Help",
+            "href": "/help"
+          },
+          {
+            "text": "Facets Gems Polishing Works Pvt. Ltd.",
+            "href": "/sites"
+          }
+        ],
+        "dropdowns": {}
+      },
+      "add_form": {
+        "fields": [
+          {
+            "label": "Figure of Distance *",
+            "type": "number",
+            "tag": "input",
+            "name": "consumption",
+            "placeholder": "Enter Figure of Distance",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Number of Passengers *",
+            "type": "number",
+            "tag": "input",
+            "name": "no_of_passenger",
+            "placeholder": "Enter Number of passengers",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Kilo meters Travelled *",
+            "type": "number",
+            "tag": "input",
+            "name": "travel",
+            "placeholder": "Enter Number of Kilo meters Travelled",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Remarks",
+            "type": "text",
+            "tag": "input",
+            "name": "remark",
+            "placeholder": "Additional notes or comments",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Commute Type",
+            "type": "text",
+            "tag": "input",
+            "name": "",
+            "placeholder": "Search in table...",
+            "required": false,
+            "unit": ""
+          }
+        ],
+        "dropdowns": {},
+        "cascading_dropdowns": {
+          "_initial": {}
+        }
+      },
+      "sub_categories": {
+        "1": {
+          "context": "S3|1",
+          "url": "https://app.esgtech.ai/sites/194/assessment/Q1/2026/5",
+          "headings": [
+            "GHG Inventory of Direct Emissions from Stationary Combustion"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Type",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "Facets Gems Polishing Works Pvt. Ltd.",
+              "href": "/sites"
+            }
+          ]
+        },
+        "2": {
+          "context": "S3|2",
+          "url": "https://app.esgtech.ai/sites/194/assessment/Q4/2026/5",
+          "headings": [
+            "Inventory of Indirect GHG Emissions from Purchased or Acquired Electricity"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Name of Country",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [
+            "Date",
+            "Entry Period",
+            "Name of Country",
+            "Unit of Measurement",
+            "Consumption",
+            "Source",
+            "Actions"
+          ],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "Facets Gems Polishing Works Pvt. Ltd.",
+              "href": "/sites"
+            }
+          ]
+        },
+        "3": {
+          "context": "S3|3",
+          "url": "https://app.esgtech.ai/sites/194/assessment/Q16/2026/5",
+          "headings": [
+            "Inventory of GHG Emissions due to Employee Commute from home to office and Vice Versa."
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Commute Type",
+            "Select Fuel Type",
+            "Select Vehicle Type",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "Facets Gems Polishing Works Pvt. Ltd.",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Food Consumption": {
+          "context": "S3|Food Consumption",
+          "url": "https://app.esgtech.ai/sites/194/assessment/Q15/2026/5",
+          "headings": [
+            "Inventory of GHG Emissions associated with preparation of food for the manpower of the company"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Food Type",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "Facets Gems Polishing Works Pvt. Ltd.",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Purchased Goods": {
+          "context": "S3|Purchased Goods",
+          "url": "https://app.esgtech.ai/sites/194/assessment/Q8/2026/5",
+          "headings": [
+            "Inventory of Indirect GHG Emissions from the Goods purchased by the organization"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Type of Goods",
+            "Select Loop",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "Facets Gems Polishing Works Pvt. Ltd.",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Transmission & Distribution Loss": {
+          "context": "S3|Transmission & Distribution Loss",
+          "url": "https://app.esgtech.ai/sites/194/assessment/Q17/2026/5",
+          "headings": [
+            "Inventory of Transmission & Distribution Loss due to Imported Electricity"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Name of Country",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "Facets Gems Polishing Works Pvt. Ltd.",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Upstream Activities": {
+          "context": "S3|Upstream Activities",
+          "url": "https://app.esgtech.ai/sites/194/assessment/Q13/2026/5",
+          "headings": [
+            "Inventory of GHG Emissions from Upstream transportation of goods"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "Bulk Import",
+            "View History",
+            "Skip & Next",
+            "Select Type of Vehicle",
+            "Select Type of Fuel",
+            "Select Class",
+            "Select Type",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "Facets Gems Polishing Works Pvt. Ltd.",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Downstream Activities": {
+          "context": "S3|Downstream Activities",
+          "url": "https://app.esgtech.ai/sites/194/assessment/Q18/2026/5",
+          "headings": [
+            "Inventory of GHG Emissions from Downstream transportation of goods"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "Bulk Import",
+            "View History",
+            "Skip & Next",
+            "Select Type of Vehicle",
+            "Select Type of Fuel",
+            "Select Class",
+            "Select Type",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "Facets Gems Polishing Works Pvt. Ltd.",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Waste Disposal": {
+          "context": "S3|Waste Disposal",
+          "url": "https://app.esgtech.ai/sites/194/assessment/Q9/2026/5",
+          "headings": [
+            "Inventory of GHG Emissions from waste generated in Operations"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Type of Goods",
+            "Select Loop",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "Facets Gems Polishing Works Pvt. Ltd.",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Water Supply": {
+          "context": "S3|Water Supply",
+          "url": "https://app.esgtech.ai/sites/194/assessment/Q6/2026/5",
+          "headings": [
+            "Inventory of Total Fresh Water Consumption"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Select Type",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "Facets Gems Polishing Works Pvt. Ltd.",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Water Treatment": {
+          "context": "S3|Water Treatment",
+          "url": "https://app.esgtech.ai/sites/194/assessment/Q7/2026/5",
+          "headings": [
+            "Inventory of Total Water Treated"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Type",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "Facets Gems Polishing Works Pvt. Ltd.",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Business Travel (Air)": {
+          "context": "S3|Business Travel (Air)",
+          "url": "https://app.esgtech.ai/sites/194/assessment/Q10/2026/5",
+          "headings": [
+            "Inventory of GHG Emissions from transportation by Air"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Mode of Travel",
+            "Select Class",
+            "Select Type",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "Facets Gems Polishing Works Pvt. Ltd.",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Business Travel (Sea)": {
+          "context": "S3|Business Travel (Sea)",
+          "url": "https://app.esgtech.ai/sites/194/assessment/Q11/2026/5",
+          "headings": [
+            "Inventory of GHG Emissions from transportation by Sea"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Mode of Travel",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "Facets Gems Polishing Works Pvt. Ltd.",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Business Travel (Land)": {
+          "context": "S3|Business Travel (Land)",
+          "url": "https://app.esgtech.ai/sites/194/assessment/Q12/2026/5",
+          "headings": [
+            "Inventory of GHG Emissions from transportation by Land"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Type of Fuel",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "Facets Gems Polishing Works Pvt. Ltd.",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Hotel stay": {
+          "context": "S3|Hotel stay",
+          "url": "https://app.esgtech.ai/sites/194/assessment/Q14/2026/5",
+          "headings": [
+            "Inventory of Emissions associated with overnight hotel stays for work purpose"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Name of Country",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "Facets Gems Polishing Works Pvt. Ltd.",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Summary": {
+          "context": "S3|Summary",
+          "url": "https://app.esgtech.ai/sites/194/assessment/scope-summary/2026/5?scope=3",
+          "headings": [
+            "Scope 3 Emission Summary",
+            "Scope 3 Total Emissions"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "Facets Gems Polishing Works Pvt. Ltd.",
+              "href": "/sites"
+            }
+          ]
+        }
+      },
+      "existing_rows": [],
+      "sub_navigation": [
+        {
+          "text": "1",
+          "href": "/sites/194/assessment/Q1/2026/5"
+        },
+        {
+          "text": "2",
+          "href": "/sites/194/assessment/Q4/2026/5"
+        },
+        {
+          "text": "3",
+          "href": "/sites/194/assessment/Q16/2026/5"
+        },
+        {
+          "text": "Food Consumption",
+          "href": "/sites/194/assessment/Q15/2026/5"
+        },
+        {
+          "text": "Purchased Goods",
+          "href": "/sites/194/assessment/Q8/2026/5"
+        },
+        {
+          "text": "Transmission & Distribution Loss",
+          "href": "/sites/194/assessment/Q17/2026/5"
+        },
+        {
+          "text": "Upstream Activities",
+          "href": "/sites/194/assessment/Q13/2026/5"
+        },
+        {
+          "text": "Downstream Activities",
+          "href": "/sites/194/assessment/Q18/2026/5"
+        },
+        {
+          "text": "Waste Disposal",
+          "href": "/sites/194/assessment/Q9/2026/5"
+        },
+        {
+          "text": "Water Supply",
+          "href": "/sites/194/assessment/Q6/2026/5"
+        },
+        {
+          "text": "Water Treatment",
+          "href": "/sites/194/assessment/Q7/2026/5"
+        },
+        {
+          "text": "Business Travel (Air)",
+          "href": "/sites/194/assessment/Q10/2026/5"
+        },
+        {
+          "text": "Business Travel (Sea)",
+          "href": "/sites/194/assessment/Q11/2026/5"
+        },
+        {
+          "text": "Business Travel (Land)",
+          "href": "/sites/194/assessment/Q12/2026/5"
+        },
+        {
+          "text": "Hotel stay",
+          "href": "/sites/194/assessment/Q14/2026/5"
+        },
+        {
+          "text": "Summary",
+          "href": "/sites/194/assessment/scope-summary/2026/5?scope=3"
+        }
+      ]
+    },
+    "Dubai_Q1": {
+      "site_id": 195,
+      "site_name": "Dubai",
+      "scope_code": "Q1",
+      "scope_name": "Stationary Combustion",
+      "url": "https://app.esgtech.ai/sites/195/assessment/Q1/2026/5",
+      "landing": {
+        "context": "ASSESS:Dubai:Q1",
+        "url": "https://app.esgtech.ai/sites/195/assessment/Q1/2026/5",
+        "headings": [
+          "GHG Inventory of Direct Emissions from Stationary Combustion"
+        ],
+        "buttons": [
+          "G\n\nGirish",
+          "May 2026",
+          "View History",
+          "Skip & Next",
+          "Select Type",
+          "Select Unit of Measurement",
+          "Submit",
+          "Save & Continue"
+        ],
+        "table_cols": [],
+        "tabs": [],
+        "nav_links": [
+          {
+            "text": "Dashboard",
+            "href": "/dashboard"
+          },
+          {
+            "text": "Sites",
+            "href": "/sites?month=5&year=2026"
+          },
+          {
+            "text": "GHG Reports",
+            "href": "/report"
+          },
+          {
+            "text": "Help",
+            "href": "/help"
+          },
+          {
+            "text": "K. Girdharlal DMCC",
+            "href": "/sites"
+          }
+        ],
+        "dropdowns": {}
+      },
+      "add_form": {
+        "fields": [
+          {
+            "label": "Consumption *",
+            "type": "number",
+            "tag": "input",
+            "name": "consumption",
+            "placeholder": "Enter Consumption",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Remarks",
+            "type": "text",
+            "tag": "input",
+            "name": "remark",
+            "placeholder": "Enter Remarks",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Type",
+            "type": "text",
+            "tag": "input",
+            "name": "",
+            "placeholder": "Search in table...",
+            "required": false,
+            "unit": ""
+          }
+        ],
+        "dropdowns": {},
+        "cascading_dropdowns": {
+          "_initial": {}
+        }
+      },
+      "sub_categories": {},
+      "existing_rows": [],
+      "sub_navigation": [
+        {
+          "text": "1",
+          "href": "/sites/195/assessment/Q1/2026/5"
+        },
+        {
+          "text": "2",
+          "href": "/sites/195/assessment/Q4/2026/5"
+        },
+        {
+          "text": "3",
+          "href": "/sites/195/assessment/Q16/2026/5"
+        },
+        {
+          "text": "Mobile Combustion",
+          "href": "/sites/195/assessment/Q2/2026/5"
+        },
+        {
+          "text": "Fugitive Emissions",
+          "href": "/sites/195/assessment/Q3/2026/5"
+        },
+        {
+          "text": "Summary",
+          "href": "/sites/195/assessment/scope-summary/2026/5?scope=1"
+        }
+      ]
+    },
+    "Dubai_Q2": {
+      "site_id": 195,
+      "site_name": "Dubai",
+      "scope_code": "Q2",
+      "scope_name": "Mobile Combustion",
+      "url": "https://app.esgtech.ai/sites/195/assessment/Q2/2026/5",
+      "landing": {
+        "context": "ASSESS:Dubai:Q2",
+        "url": "https://app.esgtech.ai/sites/195/assessment/Q2/2026/5",
+        "headings": [
+          "GHG Inventory of Direct Emissions from Mobile Combustion"
+        ],
+        "buttons": [
+          "G\n\nGirish",
+          "May 2026",
+          "View History",
+          "Skip & Next",
+          "Select Type",
+          "Select Unit of Measurement",
+          "Submit",
+          "Save & Continue"
+        ],
+        "table_cols": [],
+        "tabs": [],
+        "nav_links": [
+          {
+            "text": "Dashboard",
+            "href": "/dashboard"
+          },
+          {
+            "text": "Sites",
+            "href": "/sites?month=5&year=2026"
+          },
+          {
+            "text": "GHG Reports",
+            "href": "/report"
+          },
+          {
+            "text": "Help",
+            "href": "/help"
+          },
+          {
+            "text": "K. Girdharlal DMCC",
+            "href": "/sites"
+          }
+        ],
+        "dropdowns": {}
+      },
+      "add_form": {
+        "fields": [
+          {
+            "label": "Consumption *",
+            "type": "number",
+            "tag": "input",
+            "name": "consumption",
+            "placeholder": "Enter Consumption",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Remarks",
+            "type": "text",
+            "tag": "input",
+            "name": "remark",
+            "placeholder": "Enter Remarks",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Type",
+            "type": "text",
+            "tag": "input",
+            "name": "",
+            "placeholder": "Search in table...",
+            "required": false,
+            "unit": ""
+          }
+        ],
+        "dropdowns": {},
+        "cascading_dropdowns": {
+          "_initial": {}
+        }
+      },
+      "sub_categories": {},
+      "existing_rows": [],
+      "sub_navigation": [
+        {
+          "text": "1",
+          "href": "/sites/195/assessment/Q1/2026/5"
+        },
+        {
+          "text": "2",
+          "href": "/sites/195/assessment/Q4/2026/5"
+        },
+        {
+          "text": "3",
+          "href": "/sites/195/assessment/Q16/2026/5"
+        },
+        {
+          "text": "Mobile Combustion",
+          "href": "/sites/195/assessment/Q2/2026/5"
+        },
+        {
+          "text": "Fugitive Emissions",
+          "href": "/sites/195/assessment/Q3/2026/5"
+        },
+        {
+          "text": "Summary",
+          "href": "/sites/195/assessment/scope-summary/2026/5?scope=1"
+        }
+      ]
+    },
+    "Dubai_Q3": {
+      "site_id": 195,
+      "site_name": "Dubai",
+      "scope_code": "Q3",
+      "scope_name": "Fugitive Emissions",
+      "url": "https://app.esgtech.ai/sites/195/assessment/Q3/2026/5",
+      "landing": {
+        "context": "ASSESS:Dubai:Q3",
+        "url": "https://app.esgtech.ai/sites/195/assessment/Q3/2026/5",
+        "headings": [
+          "GHG Inventory of Direct Fugitive Emissions"
+        ],
+        "buttons": [
+          "G\n\nGirish",
+          "May 2026",
+          "View History",
+          "Skip & Next",
+          "Select Type of Refrigerant",
+          "Select Unit of Measurement",
+          "Submit",
+          "Save & Continue"
+        ],
+        "table_cols": [],
+        "tabs": [],
+        "nav_links": [
+          {
+            "text": "Dashboard",
+            "href": "/dashboard"
+          },
+          {
+            "text": "Sites",
+            "href": "/sites?month=5&year=2026"
+          },
+          {
+            "text": "GHG Reports",
+            "href": "/report"
+          },
+          {
+            "text": "Help",
+            "href": "/help"
+          },
+          {
+            "text": "K. Girdharlal DMCC",
+            "href": "/sites"
+          }
+        ],
+        "dropdowns": {}
+      },
+      "add_form": {
+        "fields": [
+          {
+            "label": "Consumption *",
+            "type": "number",
+            "tag": "input",
+            "name": "consumption",
+            "placeholder": "Enter Consumption",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Remarks",
+            "type": "text",
+            "tag": "input",
+            "name": "remark",
+            "placeholder": "Enter Remarks",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Type of Refrigerant",
+            "type": "text",
+            "tag": "input",
+            "name": "",
+            "placeholder": "Search in table...",
+            "required": false,
+            "unit": ""
+          }
+        ],
+        "dropdowns": {},
+        "cascading_dropdowns": {
+          "_initial": {}
+        }
+      },
+      "sub_categories": {},
+      "existing_rows": [],
+      "sub_navigation": [
+        {
+          "text": "1",
+          "href": "/sites/195/assessment/Q1/2026/5"
+        },
+        {
+          "text": "2",
+          "href": "/sites/195/assessment/Q4/2026/5"
+        },
+        {
+          "text": "3",
+          "href": "/sites/195/assessment/Q16/2026/5"
+        },
+        {
+          "text": "Mobile Combustion",
+          "href": "/sites/195/assessment/Q2/2026/5"
+        },
+        {
+          "text": "Fugitive Emissions",
+          "href": "/sites/195/assessment/Q3/2026/5"
+        },
+        {
+          "text": "Summary",
+          "href": "/sites/195/assessment/scope-summary/2026/5?scope=1"
+        }
+      ]
+    },
+    "Dubai_Q4": {
+      "site_id": 195,
+      "site_name": "Dubai",
+      "scope_code": "Q4",
+      "scope_name": "Electricity Scope2",
+      "url": "https://app.esgtech.ai/sites/195/assessment/Q4/2026/5",
+      "landing": {
+        "context": "ASSESS:Dubai:Q4",
+        "url": "https://app.esgtech.ai/sites/195/assessment/Q4/2026/5",
+        "headings": [
+          "Inventory of Indirect GHG Emissions from Purchased or Acquired Electricity"
+        ],
+        "buttons": [
+          "G\n\nGirish",
+          "May 2026",
+          "View History",
+          "Skip & Next",
+          "Select Name of Country",
+          "Select Unit of Measurement",
+          "Submit",
+          "Save & Continue"
+        ],
+        "table_cols": [],
+        "tabs": [],
+        "nav_links": [
+          {
+            "text": "Dashboard",
+            "href": "/dashboard"
+          },
+          {
+            "text": "Sites",
+            "href": "/sites?month=5&year=2026"
+          },
+          {
+            "text": "GHG Reports",
+            "href": "/report"
+          },
+          {
+            "text": "Help",
+            "href": "/help"
+          },
+          {
+            "text": "K. Girdharlal DMCC",
+            "href": "/sites"
+          }
+        ],
+        "dropdowns": {}
+      },
+      "add_form": {
+        "fields": [
+          {
+            "label": "Consumption *",
+            "type": "number",
+            "tag": "input",
+            "name": "consumption",
+            "placeholder": "Enter Consumption",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Remarks",
+            "type": "text",
+            "tag": "input",
+            "name": "remark",
+            "placeholder": "Enter Remarks",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Name of Country",
+            "type": "file",
+            "tag": "input",
+            "name": "",
+            "placeholder": "",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Name of Country",
+            "type": "text",
+            "tag": "input",
+            "name": "",
+            "placeholder": "Search in table...",
+            "required": false,
+            "unit": ""
+          }
+        ],
+        "dropdowns": {},
+        "cascading_dropdowns": {
+          "_initial": {}
+        }
+      },
+      "sub_categories": {},
+      "existing_rows": [],
+      "sub_navigation": [
+        {
+          "text": "1",
+          "href": "/sites/195/assessment/Q1/2026/5"
+        },
+        {
+          "text": "2",
+          "href": "/sites/195/assessment/Q4/2026/5"
+        },
+        {
+          "text": "3",
+          "href": "/sites/195/assessment/Q16/2026/5"
+        },
+        {
+          "text": "Purchased Heat and Steam",
+          "href": "/sites/195/assessment/Q5/2026/5"
+        },
+        {
+          "text": "Renewable Electricity Generation – Avoided Emission",
+          "href": "/sites/195/assessment/Q19/2026/5"
+        },
+        {
+          "text": "Summary",
+          "href": "/sites/195/assessment/scope-summary/2026/5?scope=2"
+        }
+      ]
+    },
+    "Dubai_Q16": {
+      "site_id": 195,
+      "site_name": "Dubai",
+      "scope_code": "Q16",
+      "scope_name": "Scope3",
+      "url": "https://app.esgtech.ai/sites/195/assessment/Q16/2026/5",
+      "landing": {
+        "context": "ASSESS:Dubai:Q16",
+        "url": "https://app.esgtech.ai/sites/195/assessment/Q16/2026/5",
+        "headings": [
+          "Inventory of GHG Emissions due to Employee Commute from home to office and Vice Versa."
+        ],
+        "buttons": [
+          "G\n\nGirish",
+          "May 2026",
+          "View History",
+          "Skip & Next",
+          "Select Commute Type",
+          "Select Fuel Type",
+          "Select Vehicle Type",
+          "Select Unit of Measurement",
+          "Submit",
+          "Save & Continue"
+        ],
+        "table_cols": [],
+        "tabs": [],
+        "nav_links": [
+          {
+            "text": "Dashboard",
+            "href": "/dashboard"
+          },
+          {
+            "text": "Sites",
+            "href": "/sites?month=5&year=2026"
+          },
+          {
+            "text": "GHG Reports",
+            "href": "/report"
+          },
+          {
+            "text": "Help",
+            "href": "/help"
+          },
+          {
+            "text": "K. Girdharlal DMCC",
+            "href": "/sites"
+          }
+        ],
+        "dropdowns": {}
+      },
+      "add_form": {
+        "fields": [
+          {
+            "label": "Figure of Distance *",
+            "type": "number",
+            "tag": "input",
+            "name": "consumption",
+            "placeholder": "Enter Figure of Distance",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Number of Passengers *",
+            "type": "number",
+            "tag": "input",
+            "name": "no_of_passenger",
+            "placeholder": "Enter Number of passengers",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Kilo meters Travelled *",
+            "type": "number",
+            "tag": "input",
+            "name": "travel",
+            "placeholder": "Enter Number of Kilo meters Travelled",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Remarks",
+            "type": "text",
+            "tag": "input",
+            "name": "remark",
+            "placeholder": "Additional notes or comments",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Commute Type",
+            "type": "text",
+            "tag": "input",
+            "name": "",
+            "placeholder": "Search in table...",
+            "required": false,
+            "unit": ""
+          }
+        ],
+        "dropdowns": {},
+        "cascading_dropdowns": {
+          "_initial": {}
+        }
+      },
+      "sub_categories": {
+        "1": {
+          "context": "S3|1",
+          "url": "https://app.esgtech.ai/sites/195/assessment/Q1/2026/5",
+          "headings": [
+            "GHG Inventory of Direct Emissions from Stationary Combustion"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Type",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "K. Girdharlal DMCC",
+              "href": "/sites"
+            }
+          ]
+        },
+        "2": {
+          "context": "S3|2",
+          "url": "https://app.esgtech.ai/sites/195/assessment/Q4/2026/5",
+          "headings": [
+            "Inventory of Indirect GHG Emissions from Purchased or Acquired Electricity"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Name of Country",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "K. Girdharlal DMCC",
+              "href": "/sites"
+            }
+          ]
+        },
+        "3": {
+          "context": "S3|3",
+          "url": "https://app.esgtech.ai/sites/195/assessment/Q16/2026/5",
+          "headings": [
+            "Inventory of GHG Emissions due to Employee Commute from home to office and Vice Versa."
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Commute Type",
+            "Select Fuel Type",
+            "Select Vehicle Type",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "K. Girdharlal DMCC",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Food Consumption": {
+          "context": "S3|Food Consumption",
+          "url": "https://app.esgtech.ai/sites/195/assessment/Q15/2026/5",
+          "headings": [
+            "Inventory of GHG Emissions associated with preparation of food for the manpower of the company"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Food Type",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "K. Girdharlal DMCC",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Purchased Goods": {
+          "context": "S3|Purchased Goods",
+          "url": "https://app.esgtech.ai/sites/195/assessment/Q8/2026/5",
+          "headings": [
+            "Inventory of Indirect GHG Emissions from the Goods purchased by the organization"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Type of Goods",
+            "Select Loop",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "K. Girdharlal DMCC",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Transmission & Distribution Loss": {
+          "context": "S3|Transmission & Distribution Loss",
+          "url": "https://app.esgtech.ai/sites/195/assessment/Q17/2026/5",
+          "headings": [
+            "Inventory of Transmission & Distribution Loss due to Imported Electricity"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Name of Country",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "K. Girdharlal DMCC",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Upstream Activities": {
+          "context": "S3|Upstream Activities",
+          "url": "https://app.esgtech.ai/sites/195/assessment/Q13/2026/5",
+          "headings": [
+            "Inventory of GHG Emissions from Upstream transportation of goods"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "Bulk Import",
+            "View History",
+            "Skip & Next",
+            "Select Type of Vehicle",
+            "Select Type of Fuel",
+            "Select Class",
+            "Select Type",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "K. Girdharlal DMCC",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Downstream Activities": {
+          "context": "S3|Downstream Activities",
+          "url": "https://app.esgtech.ai/sites/195/assessment/Q18/2026/5",
+          "headings": [
+            "Inventory of GHG Emissions from Downstream transportation of goods"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "Bulk Import",
+            "View History",
+            "Skip & Next",
+            "Select Type of Vehicle",
+            "Select Type of Fuel",
+            "Select Class",
+            "Select Type",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "K. Girdharlal DMCC",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Waste Disposal": {
+          "context": "S3|Waste Disposal",
+          "url": "https://app.esgtech.ai/sites/195/assessment/Q9/2026/5",
+          "headings": [
+            "Inventory of GHG Emissions from waste generated in Operations"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Type of Goods",
+            "Select Loop",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "K. Girdharlal DMCC",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Water Supply": {
+          "context": "S3|Water Supply",
+          "url": "https://app.esgtech.ai/sites/195/assessment/Q6/2026/5",
+          "headings": [
+            "Inventory of Total Fresh Water Consumption"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Select Type",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "K. Girdharlal DMCC",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Water Treatment": {
+          "context": "S3|Water Treatment",
+          "url": "https://app.esgtech.ai/sites/195/assessment/Q7/2026/5",
+          "headings": [
+            "Inventory of Total Water Treated"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Type",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "K. Girdharlal DMCC",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Business Travel (Air)": {
+          "context": "S3|Business Travel (Air)",
+          "url": "https://app.esgtech.ai/sites/195/assessment/Q10/2026/5",
+          "headings": [
+            "Inventory of GHG Emissions from transportation by Air"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Mode of Travel",
+            "Select Class",
+            "Select Type",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "K. Girdharlal DMCC",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Business Travel (Sea)": {
+          "context": "S3|Business Travel (Sea)",
+          "url": "https://app.esgtech.ai/sites/195/assessment/Q11/2026/5",
+          "headings": [
+            "Inventory of GHG Emissions from transportation by Sea"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Mode of Travel",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "K. Girdharlal DMCC",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Business Travel (Land)": {
+          "context": "S3|Business Travel (Land)",
+          "url": "https://app.esgtech.ai/sites/195/assessment/Q12/2026/5",
+          "headings": [
+            "Inventory of GHG Emissions from transportation by Land"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Type of Fuel",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "K. Girdharlal DMCC",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Hotel stay": {
+          "context": "S3|Hotel stay",
+          "url": "https://app.esgtech.ai/sites/195/assessment/Q14/2026/5",
+          "headings": [
+            "Inventory of Emissions associated with overnight hotel stays for work purpose"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Name of Country",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "K. Girdharlal DMCC",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Summary": {
+          "context": "S3|Summary",
+          "url": "https://app.esgtech.ai/sites/195/assessment/scope-summary/2026/5?scope=3",
+          "headings": [
+            "Scope 3 Emission Summary",
+            "Scope 3 Total Emissions"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "K. Girdharlal DMCC",
+              "href": "/sites"
+            }
+          ]
+        }
+      },
+      "existing_rows": [],
+      "sub_navigation": [
+        {
+          "text": "1",
+          "href": "/sites/195/assessment/Q1/2026/5"
+        },
+        {
+          "text": "2",
+          "href": "/sites/195/assessment/Q4/2026/5"
+        },
+        {
+          "text": "3",
+          "href": "/sites/195/assessment/Q16/2026/5"
+        },
+        {
+          "text": "Food Consumption",
+          "href": "/sites/195/assessment/Q15/2026/5"
+        },
+        {
+          "text": "Purchased Goods",
+          "href": "/sites/195/assessment/Q8/2026/5"
+        },
+        {
+          "text": "Transmission & Distribution Loss",
+          "href": "/sites/195/assessment/Q17/2026/5"
+        },
+        {
+          "text": "Upstream Activities",
+          "href": "/sites/195/assessment/Q13/2026/5"
+        },
+        {
+          "text": "Downstream Activities",
+          "href": "/sites/195/assessment/Q18/2026/5"
+        },
+        {
+          "text": "Waste Disposal",
+          "href": "/sites/195/assessment/Q9/2026/5"
+        },
+        {
+          "text": "Water Supply",
+          "href": "/sites/195/assessment/Q6/2026/5"
+        },
+        {
+          "text": "Water Treatment",
+          "href": "/sites/195/assessment/Q7/2026/5"
+        },
+        {
+          "text": "Business Travel (Air)",
+          "href": "/sites/195/assessment/Q10/2026/5"
+        },
+        {
+          "text": "Business Travel (Sea)",
+          "href": "/sites/195/assessment/Q11/2026/5"
+        },
+        {
+          "text": "Business Travel (Land)",
+          "href": "/sites/195/assessment/Q12/2026/5"
+        },
+        {
+          "text": "Hotel stay",
+          "href": "/sites/195/assessment/Q14/2026/5"
+        },
+        {
+          "text": "Summary",
+          "href": "/sites/195/assessment/scope-summary/2026/5?scope=3"
+        }
+      ]
+    },
+    "Botswana_Q1": {
+      "site_id": 196,
+      "site_name": "Botswana",
+      "scope_code": "Q1",
+      "scope_name": "Stationary Combustion",
+      "url": "https://app.esgtech.ai/sites/196/assessment/Q1/2026/5",
+      "landing": {
+        "context": "ASSESS:Botswana:Q1",
+        "url": "https://app.esgtech.ai/sites/196/assessment/Q1/2026/5",
+        "headings": [
+          "GHG Inventory of Direct Emissions from Stationary Combustion"
+        ],
+        "buttons": [
+          "G\n\nGirish",
+          "May 2026",
+          "View History",
+          "Skip & Next",
+          "Select Type",
+          "Select Unit of Measurement",
+          "Submit",
+          "Save & Continue"
+        ],
+        "table_cols": [],
+        "tabs": [],
+        "nav_links": [
+          {
+            "text": "Dashboard",
+            "href": "/dashboard"
+          },
+          {
+            "text": "Sites",
+            "href": "/sites?month=5&year=2026"
+          },
+          {
+            "text": "GHG Reports",
+            "href": "/report"
+          },
+          {
+            "text": "Help",
+            "href": "/help"
+          },
+          {
+            "text": "KG Mfg Botswana Proprietary Ltd",
+            "href": "/sites"
+          }
+        ],
+        "dropdowns": {}
+      },
+      "add_form": {
+        "fields": [
+          {
+            "label": "Consumption *",
+            "type": "number",
+            "tag": "input",
+            "name": "consumption",
+            "placeholder": "Enter Consumption",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Remarks",
+            "type": "text",
+            "tag": "input",
+            "name": "remark",
+            "placeholder": "Enter Remarks",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Type",
+            "type": "text",
+            "tag": "input",
+            "name": "",
+            "placeholder": "Search in table...",
+            "required": false,
+            "unit": ""
+          }
+        ],
+        "dropdowns": {},
+        "cascading_dropdowns": {
+          "_initial": {}
+        }
+      },
+      "sub_categories": {},
+      "existing_rows": [],
+      "sub_navigation": [
+        {
+          "text": "1",
+          "href": "/sites/196/assessment/Q1/2026/5"
+        },
+        {
+          "text": "2",
+          "href": "/sites/196/assessment/Q4/2026/5"
+        },
+        {
+          "text": "3",
+          "href": "/sites/196/assessment/Q16/2026/5"
+        },
+        {
+          "text": "Mobile Combustion",
+          "href": "/sites/196/assessment/Q2/2026/5"
+        },
+        {
+          "text": "Fugitive Emissions",
+          "href": "/sites/196/assessment/Q3/2026/5"
+        },
+        {
+          "text": "Summary",
+          "href": "/sites/196/assessment/scope-summary/2026/5?scope=1"
+        }
+      ]
+    },
+    "Botswana_Q2": {
+      "site_id": 196,
+      "site_name": "Botswana",
+      "scope_code": "Q2",
+      "scope_name": "Mobile Combustion",
+      "url": "https://app.esgtech.ai/sites/196/assessment/Q2/2026/5",
+      "landing": {
+        "context": "ASSESS:Botswana:Q2",
+        "url": "https://app.esgtech.ai/sites/196/assessment/Q2/2026/5",
+        "headings": [
+          "GHG Inventory of Direct Emissions from Mobile Combustion"
+        ],
+        "buttons": [
+          "G\n\nGirish",
+          "May 2026",
+          "View History",
+          "Skip & Next",
+          "Select Type",
+          "Select Unit of Measurement",
+          "Submit",
+          "Save & Continue"
+        ],
+        "table_cols": [],
+        "tabs": [],
+        "nav_links": [
+          {
+            "text": "Dashboard",
+            "href": "/dashboard"
+          },
+          {
+            "text": "Sites",
+            "href": "/sites?month=5&year=2026"
+          },
+          {
+            "text": "GHG Reports",
+            "href": "/report"
+          },
+          {
+            "text": "Help",
+            "href": "/help"
+          },
+          {
+            "text": "KG Mfg Botswana Proprietary Ltd",
+            "href": "/sites"
+          }
+        ],
+        "dropdowns": {}
+      },
+      "add_form": {
+        "fields": [
+          {
+            "label": "Consumption *",
+            "type": "number",
+            "tag": "input",
+            "name": "consumption",
+            "placeholder": "Enter Consumption",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Remarks",
+            "type": "text",
+            "tag": "input",
+            "name": "remark",
+            "placeholder": "Enter Remarks",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Type",
+            "type": "text",
+            "tag": "input",
+            "name": "",
+            "placeholder": "Search in table...",
+            "required": false,
+            "unit": ""
+          }
+        ],
+        "dropdowns": {},
+        "cascading_dropdowns": {
+          "_initial": {}
+        }
+      },
+      "sub_categories": {},
+      "existing_rows": [],
+      "sub_navigation": [
+        {
+          "text": "1",
+          "href": "/sites/196/assessment/Q1/2026/5"
+        },
+        {
+          "text": "2",
+          "href": "/sites/196/assessment/Q4/2026/5"
+        },
+        {
+          "text": "3",
+          "href": "/sites/196/assessment/Q16/2026/5"
+        },
+        {
+          "text": "Mobile Combustion",
+          "href": "/sites/196/assessment/Q2/2026/5"
+        },
+        {
+          "text": "Fugitive Emissions",
+          "href": "/sites/196/assessment/Q3/2026/5"
+        },
+        {
+          "text": "Summary",
+          "href": "/sites/196/assessment/scope-summary/2026/5?scope=1"
+        }
+      ]
+    },
+    "Botswana_Q3": {
+      "site_id": 196,
+      "site_name": "Botswana",
+      "scope_code": "Q3",
+      "scope_name": "Fugitive Emissions",
+      "url": "https://app.esgtech.ai/sites/196/assessment/Q3/2026/5",
+      "landing": {
+        "context": "ASSESS:Botswana:Q3",
+        "url": "https://app.esgtech.ai/sites/196/assessment/Q3/2026/5",
+        "headings": [
+          "GHG Inventory of Direct Fugitive Emissions"
+        ],
+        "buttons": [
+          "G\n\nGirish",
+          "May 2026",
+          "View History",
+          "Skip & Next",
+          "Select Type of Refrigerant",
+          "Select Unit of Measurement",
+          "Submit",
+          "Save & Continue"
+        ],
+        "table_cols": [],
+        "tabs": [],
+        "nav_links": [
+          {
+            "text": "Dashboard",
+            "href": "/dashboard"
+          },
+          {
+            "text": "Sites",
+            "href": "/sites?month=5&year=2026"
+          },
+          {
+            "text": "GHG Reports",
+            "href": "/report"
+          },
+          {
+            "text": "Help",
+            "href": "/help"
+          },
+          {
+            "text": "KG Mfg Botswana Proprietary Ltd",
+            "href": "/sites"
+          }
+        ],
+        "dropdowns": {}
+      },
+      "add_form": {
+        "fields": [
+          {
+            "label": "Consumption *",
+            "type": "number",
+            "tag": "input",
+            "name": "consumption",
+            "placeholder": "Enter Consumption",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Remarks",
+            "type": "text",
+            "tag": "input",
+            "name": "remark",
+            "placeholder": "Enter Remarks",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Type of Refrigerant",
+            "type": "text",
+            "tag": "input",
+            "name": "",
+            "placeholder": "Search in table...",
+            "required": false,
+            "unit": ""
+          }
+        ],
+        "dropdowns": {},
+        "cascading_dropdowns": {
+          "_initial": {}
+        }
+      },
+      "sub_categories": {},
+      "existing_rows": [],
+      "sub_navigation": [
+        {
+          "text": "1",
+          "href": "/sites/196/assessment/Q1/2026/5"
+        },
+        {
+          "text": "2",
+          "href": "/sites/196/assessment/Q4/2026/5"
+        },
+        {
+          "text": "3",
+          "href": "/sites/196/assessment/Q16/2026/5"
+        },
+        {
+          "text": "Mobile Combustion",
+          "href": "/sites/196/assessment/Q2/2026/5"
+        },
+        {
+          "text": "Fugitive Emissions",
+          "href": "/sites/196/assessment/Q3/2026/5"
+        },
+        {
+          "text": "Summary",
+          "href": "/sites/196/assessment/scope-summary/2026/5?scope=1"
+        }
+      ]
+    },
+    "Botswana_Q4": {
+      "site_id": 196,
+      "site_name": "Botswana",
+      "scope_code": "Q4",
+      "scope_name": "Electricity Scope2",
+      "url": "https://app.esgtech.ai/sites/196/assessment/Q4/2026/5",
+      "landing": {
+        "context": "ASSESS:Botswana:Q4",
+        "url": "https://app.esgtech.ai/sites/196/assessment/Q4/2026/5",
+        "headings": [
+          "Inventory of Indirect GHG Emissions from Purchased or Acquired Electricity"
+        ],
+        "buttons": [
+          "G\n\nGirish",
+          "May 2026",
+          "View History",
+          "Skip & Next",
+          "Select Name of Country",
+          "Select Unit of Measurement",
+          "Submit",
+          "Save & Continue"
+        ],
+        "table_cols": [],
+        "tabs": [],
+        "nav_links": [
+          {
+            "text": "Dashboard",
+            "href": "/dashboard"
+          },
+          {
+            "text": "Sites",
+            "href": "/sites?month=5&year=2026"
+          },
+          {
+            "text": "GHG Reports",
+            "href": "/report"
+          },
+          {
+            "text": "Help",
+            "href": "/help"
+          },
+          {
+            "text": "KG Mfg Botswana Proprietary Ltd",
+            "href": "/sites"
+          }
+        ],
+        "dropdowns": {}
+      },
+      "add_form": {
+        "fields": [
+          {
+            "label": "Consumption *",
+            "type": "number",
+            "tag": "input",
+            "name": "consumption",
+            "placeholder": "Enter Consumption",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Remarks",
+            "type": "text",
+            "tag": "input",
+            "name": "remark",
+            "placeholder": "Enter Remarks",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Name of Country",
+            "type": "file",
+            "tag": "input",
+            "name": "",
+            "placeholder": "",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Name of Country",
+            "type": "text",
+            "tag": "input",
+            "name": "",
+            "placeholder": "Search in table...",
+            "required": false,
+            "unit": ""
+          }
+        ],
+        "dropdowns": {},
+        "cascading_dropdowns": {
+          "_initial": {}
+        }
+      },
+      "sub_categories": {},
+      "existing_rows": [],
+      "sub_navigation": [
+        {
+          "text": "1",
+          "href": "/sites/196/assessment/Q1/2026/5"
+        },
+        {
+          "text": "2",
+          "href": "/sites/196/assessment/Q4/2026/5"
+        },
+        {
+          "text": "3",
+          "href": "/sites/196/assessment/Q16/2026/5"
+        },
+        {
+          "text": "Purchased Heat and Steam",
+          "href": "/sites/196/assessment/Q5/2026/5"
+        },
+        {
+          "text": "Renewable Electricity Generation – Avoided Emission",
+          "href": "/sites/196/assessment/Q19/2026/5"
+        },
+        {
+          "text": "Summary",
+          "href": "/sites/196/assessment/scope-summary/2026/5?scope=2"
+        }
+      ]
+    },
+    "Botswana_Q16": {
+      "site_id": 196,
+      "site_name": "Botswana",
+      "scope_code": "Q16",
+      "scope_name": "Scope3",
+      "url": "https://app.esgtech.ai/sites/196/assessment/Q16/2026/5",
+      "landing": {
+        "context": "ASSESS:Botswana:Q16",
+        "url": "https://app.esgtech.ai/sites/196/assessment/Q16/2026/5",
+        "headings": [
+          "Inventory of GHG Emissions due to Employee Commute from home to office and Vice Versa."
+        ],
+        "buttons": [
+          "G\n\nGirish",
+          "May 2026",
+          "View History",
+          "Skip & Next",
+          "Select Commute Type",
+          "Select Fuel Type",
+          "Select Vehicle Type",
+          "Select Unit of Measurement",
+          "Submit",
+          "Save & Continue"
+        ],
+        "table_cols": [],
+        "tabs": [],
+        "nav_links": [
+          {
+            "text": "Dashboard",
+            "href": "/dashboard"
+          },
+          {
+            "text": "Sites",
+            "href": "/sites?month=5&year=2026"
+          },
+          {
+            "text": "GHG Reports",
+            "href": "/report"
+          },
+          {
+            "text": "Help",
+            "href": "/help"
+          },
+          {
+            "text": "KG Mfg Botswana Proprietary Ltd",
+            "href": "/sites"
+          }
+        ],
+        "dropdowns": {}
+      },
+      "add_form": {
+        "fields": [
+          {
+            "label": "Figure of Distance *",
+            "type": "number",
+            "tag": "input",
+            "name": "consumption",
+            "placeholder": "Enter Figure of Distance",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Number of Passengers *",
+            "type": "number",
+            "tag": "input",
+            "name": "no_of_passenger",
+            "placeholder": "Enter Number of passengers",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Kilo meters Travelled *",
+            "type": "number",
+            "tag": "input",
+            "name": "travel",
+            "placeholder": "Enter Number of Kilo meters Travelled",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Remarks",
+            "type": "text",
+            "tag": "input",
+            "name": "remark",
+            "placeholder": "Additional notes or comments",
+            "required": false,
+            "unit": ""
+          },
+          {
+            "label": "Commute Type",
+            "type": "text",
+            "tag": "input",
+            "name": "",
+            "placeholder": "Search in table...",
+            "required": false,
+            "unit": ""
+          }
+        ],
+        "dropdowns": {},
+        "cascading_dropdowns": {
+          "_initial": {}
+        }
+      },
+      "sub_categories": {
+        "1": {
+          "context": "S3|1",
+          "url": "https://app.esgtech.ai/sites/196/assessment/Q1/2026/5",
+          "headings": [
+            "GHG Inventory of Direct Emissions from Stationary Combustion"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Type",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "KG Mfg Botswana Proprietary Ltd",
+              "href": "/sites"
+            }
+          ]
+        },
+        "2": {
+          "context": "S3|2",
+          "url": "https://app.esgtech.ai/sites/196/assessment/Q4/2026/5",
+          "headings": [
+            "Inventory of Indirect GHG Emissions from Purchased or Acquired Electricity"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Name of Country",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "KG Mfg Botswana Proprietary Ltd",
+              "href": "/sites"
+            }
+          ]
+        },
+        "3": {
+          "context": "S3|3",
+          "url": "https://app.esgtech.ai/sites/196/assessment/Q16/2026/5",
+          "headings": [
+            "Inventory of GHG Emissions due to Employee Commute from home to office and Vice Versa."
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Commute Type",
+            "Select Fuel Type",
+            "Select Vehicle Type",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "KG Mfg Botswana Proprietary Ltd",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Food Consumption": {
+          "context": "S3|Food Consumption",
+          "url": "https://app.esgtech.ai/sites/196/assessment/Q15/2026/5",
+          "headings": [
+            "Inventory of GHG Emissions associated with preparation of food for the manpower of the company"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Food Type",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "KG Mfg Botswana Proprietary Ltd",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Purchased Goods": {
+          "context": "S3|Purchased Goods",
+          "url": "https://app.esgtech.ai/sites/196/assessment/Q8/2026/5",
+          "headings": [
+            "Inventory of Indirect GHG Emissions from the Goods purchased by the organization"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Type of Goods",
+            "Select Loop",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "KG Mfg Botswana Proprietary Ltd",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Transmission & Distribution Loss": {
+          "context": "S3|Transmission & Distribution Loss",
+          "url": "https://app.esgtech.ai/sites/196/assessment/Q17/2026/5",
+          "headings": [
+            "Inventory of Transmission & Distribution Loss due to Imported Electricity"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Name of Country",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "KG Mfg Botswana Proprietary Ltd",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Upstream Activities": {
+          "context": "S3|Upstream Activities",
+          "url": "https://app.esgtech.ai/sites/196/assessment/Q13/2026/5",
+          "headings": [
+            "Inventory of GHG Emissions from Upstream transportation of goods"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "Bulk Import",
+            "View History",
+            "Skip & Next",
+            "Select Type of Vehicle",
+            "Select Type of Fuel",
+            "Select Class",
+            "Select Type",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "KG Mfg Botswana Proprietary Ltd",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Downstream Activities": {
+          "context": "S3|Downstream Activities",
+          "url": "https://app.esgtech.ai/sites/196/assessment/Q18/2026/5",
+          "headings": [
+            "Inventory of GHG Emissions from Downstream transportation of goods"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "Bulk Import",
+            "View History",
+            "Skip & Next",
+            "Select Type of Vehicle",
+            "Select Type of Fuel",
+            "Select Class",
+            "Select Type",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "KG Mfg Botswana Proprietary Ltd",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Waste Disposal": {
+          "context": "S3|Waste Disposal",
+          "url": "https://app.esgtech.ai/sites/196/assessment/Q9/2026/5",
+          "headings": [
+            "Inventory of GHG Emissions from waste generated in Operations"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Type of Goods",
+            "Select Loop",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "KG Mfg Botswana Proprietary Ltd",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Water Supply": {
+          "context": "S3|Water Supply",
+          "url": "https://app.esgtech.ai/sites/196/assessment/Q6/2026/5",
+          "headings": [
+            "Inventory of Total Fresh Water Consumption"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Select Type",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "KG Mfg Botswana Proprietary Ltd",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Water Treatment": {
+          "context": "S3|Water Treatment",
+          "url": "https://app.esgtech.ai/sites/196/assessment/Q7/2026/5",
+          "headings": [
+            "Inventory of Total Water Treated"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Type",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "KG Mfg Botswana Proprietary Ltd",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Business Travel (Air)": {
+          "context": "S3|Business Travel (Air)",
+          "url": "https://app.esgtech.ai/sites/196/assessment/Q10/2026/5",
+          "headings": [
+            "Inventory of GHG Emissions from transportation by Air"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Mode of Travel",
+            "Select Class",
+            "Select Type",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "KG Mfg Botswana Proprietary Ltd",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Business Travel (Sea)": {
+          "context": "S3|Business Travel (Sea)",
+          "url": "https://app.esgtech.ai/sites/196/assessment/Q11/2026/5",
+          "headings": [
+            "Inventory of GHG Emissions from transportation by Sea"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Mode of Travel",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "KG Mfg Botswana Proprietary Ltd",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Business Travel (Land)": {
+          "context": "S3|Business Travel (Land)",
+          "url": "https://app.esgtech.ai/sites/196/assessment/Q12/2026/5",
+          "headings": [
+            "Inventory of GHG Emissions from transportation by Land"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Type of Fuel",
+            "Select Unit of Measurement",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "KG Mfg Botswana Proprietary Ltd",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Hotel stay": {
+          "context": "S3|Hotel stay",
+          "url": "https://app.esgtech.ai/sites/196/assessment/Q14/2026/5",
+          "headings": [
+            "Inventory of Emissions associated with overnight hotel stays for work purpose"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026",
+            "View History",
+            "Skip & Next",
+            "Select Name of Country",
+            "Submit",
+            "Save & Continue"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "KG Mfg Botswana Proprietary Ltd",
+              "href": "/sites"
+            }
+          ]
+        },
+        "Summary": {
+          "context": "S3|Summary",
+          "url": "https://app.esgtech.ai/sites/196/assessment/scope-summary/2026/5?scope=3",
+          "headings": [
+            "Scope 3 Emission Summary",
+            "Scope 3 Total Emissions"
+          ],
+          "buttons": [
+            "G\n\nGirish",
+            "May 2026"
+          ],
+          "table_cols": [],
+          "tabs": [],
+          "nav_links": [
+            {
+              "text": "Dashboard",
+              "href": "/dashboard"
+            },
+            {
+              "text": "Sites",
+              "href": "/sites?month=5&year=2026"
+            },
+            {
+              "text": "GHG Reports",
+              "href": "/report"
+            },
+            {
+              "text": "Help",
+              "href": "/help"
+            },
+            {
+              "text": "KG Mfg Botswana Proprietary Ltd",
+              "href": "/sites"
+            }
+          ]
+        }
+      },
+      "existing_rows": [],
+      "sub_navigation": [
+        {
+          "text": "1",
+          "href": "/sites/196/assessment/Q1/2026/5"
+        },
+        {
+          "text": "2",
+          "href": "/sites/196/assessment/Q4/2026/5"
+        },
+        {
+          "text": "3",
+          "href": "/sites/196/assessment/Q16/2026/5"
+        },
+        {
+          "text": "Food Consumption",
+          "href": "/sites/196/assessment/Q15/2026/5"
+        },
+        {
+          "text": "Purchased Goods",
+          "href": "/sites/196/assessment/Q8/2026/5"
+        },
+        {
+          "text": "Transmission & Distribution Loss",
+          "href": "/sites/196/assessment/Q17/2026/5"
+        },
+        {
+          "text": "Upstream Activities",
+          "href": "/sites/196/assessment/Q13/2026/5"
+        },
+        {
+          "text": "Downstream Activities",
+          "href": "/sites/196/assessment/Q18/2026/5"
+        },
+        {
+          "text": "Waste Disposal",
+          "href": "/sites/196/assessment/Q9/2026/5"
+        },
+        {
+          "text": "Water Supply",
+          "href": "/sites/196/assessment/Q6/2026/5"
+        },
+        {
+          "text": "Water Treatment",
+          "href": "/sites/196/assessment/Q7/2026/5"
+        },
+        {
+          "text": "Business Travel (Air)",
+          "href": "/sites/196/assessment/Q10/2026/5"
+        },
+        {
+          "text": "Business Travel (Sea)",
+          "href": "/sites/196/assessment/Q11/2026/5"
+        },
+        {
+          "text": "Business Travel (Land)",
+          "href": "/sites/196/assessment/Q12/2026/5"
+        },
+        {
+          "text": "Hotel stay",
+          "href": "/sites/196/assessment/Q14/2026/5"
+        },
+        {
+          "text": "Summary",
+          "href": "/sites/196/assessment/scope-summary/2026/5?scope=3"
+        }
+      ]
+    }
+  }
+}

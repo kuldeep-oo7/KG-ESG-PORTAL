@@ -1,0 +1,1042 @@
+[
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/?_rsc=17yrj",
+    "path": "/",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/admin/user/setting?_rsc=1hxec",
+    "path": "/admin/user/setting",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/api/auth/get-session",
+    "path": "/api/auth/get-session",
+    "status": 200,
+    "request_body": null,
+    "response_preview": "{\"user\":{\"name\":\"Girish\",\"email\":\"[REDACTED_EMAIL]\",\"emailVerified\":true,\"image\":null,\"createdAt\":\"2024-11-21T11:06:15.000Z\",\"updatedAt\":\"2024-11-21T11:06:15.000Z\",\"role\":\"Manager\",\"banned\":null,\"banReason\":null,\"banExpires\":null,\"mobile\":\"[REDACTED_MOBILE]\",\"designation\":\"Sr. Head Compilance\",\"org_id\":\"50\",\"org_code\":\"KG-001\",\"active\":true,\"is_super_admin\":null,\"phone\":null,\"id\":\"109\",\"access\":\"ghg_emission\"},\"session\":{\"expiresAt\":\"2026-05-31T05:41:07.066Z\",\"token\":\"[REDACTED]\",\"createdAt\":\"2026-05-24T05:41:07.066Z\",\"updatedAt\":\"2026-05-24T05:41:07.066Z\",\"ipAddress\":\"[REDACTED_IP]\",\"userAgent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36\",\"userId\":\"109\",\"impersonatedBy\":null,\"id\":\"StjlitNS9rZmuJPCBa75osGiS7ygC3jA\"}}"
+  },
+  {
+    "method": "POST",
+    "url": "https://app.esgtech.ai/api/auth/sign-in/email",
+    "path": "/api/auth/sign-in/email",
+    "status": 200,
+    "request_body": "{\"email\":\"[REDACTED_EMAIL]\",\"password\":\"[REDACTED]\"}",
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/api/questions/by-scope?scope=3&siteId=193&year=2026&month=5",
+    "path": "/api/questions/by-scope",
+    "status": 200,
+    "request_body": null,
+    "response_preview": "{\"data\":[{\"id\":16,\"ques_code\":\"Q16\",\"name\":\"Employee Commute\",\"title\":\"Inventory of  GHG Emissions due to Employee Commute from home to office and Vice Versa.\",\"description\":null,\"sort_order\":601,\"faq_link\":\"\",\"created_at\":\"2023-12-06T06:03:25.000Z\",\"updated_at\":\"2023-12-06T06:03:25.000Z\",\"match_assessment_id\":0},{\"id\":15,\"ques_code\":\"Q15\",\"name\":\"Food Consumption\",\"title\":\"Inventory of  GHG Emissions associated with preparation of food for the manpower of the company\",\"description\":null,\"sort_order\":701,\"faq_link\":\"\",\"created_at\":\"2023-12-06T06:03:25.000Z\",\"updated_at\":\"2023-12-06T06:03:25.000Z\",\"match_assessment_id\":0},{\"id\":8,\"ques_code\":\"Q8\",\"name\":\"Purchased Goods\",\"title\":\"Inventory of Indirect GHG Emissions from the Goods purchased by the organization\",\"description\":null,\"sort_order\":801,\"faq_link\":\"\",\"created_at\":\"2023-12-06T06:03:25.000Z\",\"updated_at\":\"2023-12-06T06:03:25.000Z\",\"match_assessment_id\":0},{\"id\":17,\"ques_code\":\"Q17\",\"name\":\"Transmission & Distribution Loss\",\"title\":\"Inventory of Transmission & Distribution Loss due to Imported Electricity\",\"description\":null,\"sort_order\":901,\"faq_link\":\"\",\"created_at\":\"2023-12-25T18:30:00.000Z\",\"updated_at\":\"2023-12-25T18:30:00.000Z\",\"match_assessment_id\":0},{\"id\":13,\"ques_code\":\"Q13\",\"name\":\"Upstream Activities\",\"title\":\"Inventory of GHG Emissions from Upstream transportation of goods\",\"description\":null,\"sort_order\":1001,\"faq_link\":\"\",\"created_at\":\"2023-12-06T06:03:25.000Z\",\"updated_at\":\"2023-12-06T06:03:25.000Z\",\"match_assessment_id\":0},{\"id\":18,\"ques_code\":\"Q18\",\"name\":\"Downstream Activities\",\"title\":\"Inventory of GHG Emissions from Downstream transportation of goods\",\"description\":null,\"sort_order\":1101,\"faq_link\":\"\",\"created_at\":\"2024-01-04T07:18:29.000Z\",\"updated_at\":\"2024-01-04T07:18:29.000Z\",\"match_assessment_id\":0},{\"id\":9,\"ques_code\":\"Q9\",\"name\":\"Waste Disposal\",\"title\":\"Inventory of GHG Emissions from waste generated in Operations \",\"description\":null,\"sort_order\":1201,\"faq_link\":\"\",\"created_at\":\"2023-12-06T06:03:25.000Z\",\"updated_at\":\"2023-12-06T06:03:25.000Z\",\"match_assessment_id\":0},{\"id\":6,\"ques_code\":\"Q6\",\"name\":\"Water Supply\",\"title\":\"Inventory of Total Fresh Water Consumption\",\"description\":null,\"sort_order\":1301,\"faq_link\":\"\",\"created_at\":\"2023-12-06T06:03:25.000Z\",\"updated_at\":\"2023-12-06T06:03:25.000Z\",\"match_assessment_id\":0},{\"id\":7,\"ques_code\":\"Q7\",\"name\":\"Water Treatment\",\"title\":\"Inventory of Total Water Treated\",\"description\":null,\"sort_order\":1401,\"faq_link\":\"\",\"created_at\":\"2023-12-06T06:03:25.000Z\",\"updated_at\":\"2023-12-06T06:03:25.000Z\",\"match_assessment_id\":0},{\"id\":10,\"ques_code\":\"Q10\",\"name\":\"Business Travel (Air)\",\"title\":\"Inventory of GHG Emissions from transportation by Air\",\"description\":null,\"sort_order\":1501,\"faq_link\":\"\",\"created_at\":\"2023-12-06T06:03:25.000Z\",\"updated_at\":\"2023-12-06T06:03:25.000Z\",\"match_assessment_id\":0},{\"id\":11,\"ques_code\":\"Q11\",\"name\":\"Business Travel (Sea)\",\"title\":\"Inventory of GHG Emissions from transportation by Sea\",\"description\":null,\"sort_order\":1601,\"faq_link\":\"\",\"created_at\":\"2023-12-06T06:03:25.000Z\",\"updated_at\":\"2023-12-06T06:03:25.000Z\",\"match_assessment_id\":0},{\"id\":12,\"ques_code\":\"Q12\",\"name\":\"Business Travel (Land)\",\"title\":\"Inventory of GHG Emissions from transportation by Land\",\"description\":null,\"sort_order\":1701,\"faq_link\":\"\",\"created_at\":\"2023-12-06T06:03:25.000Z\",\"updated_at\":\"2023-12-06T06:03:25.000Z\",\"match_assessment_id\":0},{\"id\":14,\"ques_code\":\"Q14\",\"name\":\"Hotel stay\",\"title\":\"Inventory of Emissions associated with overnight hotel stays for work purpose\",\"description\":null,\"sort_order\":1801,\"faq_link\":\"\",\"created_at\":\"2023-12-06T06:03:25.000Z\",\"updated_at\":\"2023-12-06T06:03:25.000Z\",\"match_assessment_id\":0}],\"message\":\"Questions retrieved successfully\",\"status\":\"success\",\"status_code\":200}"
+  },
+  {
+    "method": "POST",
+    "url": "https://app.esgtech.ai/api/states",
+    "path": "/api/states",
+    "status": 200,
+    "request_body": "{\"country_code\":\"IN\"}",
+    "response_preview": "{\"data\":[{\"name\":\"Andaman and Nicobar Islands\",\"country_code\":\"IN\",\"iso2\":\"AN\"},{\"name\":\"Andhra Pradesh\",\"country_code\":\"IN\",\"iso2\":\"AP\"},{\"name\":\"Arunachal Pradesh\",\"country_code\":\"IN\",\"iso2\":\"AR\"},{\"name\":\"Assam\",\"country_code\":\"IN\",\"iso2\":\"AS\"},{\"name\":\"Bihar\",\"country_code\":\"IN\",\"iso2\":\"BR\"},{\"name\":\"Chandigarh\",\"country_code\":\"IN\",\"iso2\":\"CH\"},{\"name\":\"Chhattisgarh\",\"country_code\":\"IN\",\"iso2\":\"CT\"},{\"name\":\"Dadra and Nagar Haveli and Daman and Diu\",\"country_code\":\"IN\",\"iso2\":\"DH\"},{\"name\":\"Delhi\",\"country_code\":\"IN\",\"iso2\":\"DL\"},{\"name\":\"Goa\",\"country_code\":\"IN\",\"iso2\":\"GA\"},{\"name\":\"Gujarat\",\"country_code\":\"IN\",\"iso2\":\"GJ\"},{\"name\":\"Haryana\",\"country_code\":\"IN\",\"iso2\":\"HR\"},{\"name\":\"Himachal Pradesh\",\"country_code\":\"IN\",\"iso2\":\"HP\"},{\"name\":\"Jammu and Kashmir\",\"country_code\":\"IN\",\"iso2\":\"JK\"},{\"name\":\"Jharkhand\",\"country_code\":\"IN\",\"iso2\":\"JH\"},{\"name\":\"Karnataka\",\"country_code\":\"IN\",\"iso2\":\"KA\"},{\"name\":\"Kerala\",\"country_code\":\"IN\",\"iso2\":\"KL\"},{\"name\":\"Ladakh\",\"country_code\":\"IN\",\"iso2\":\"LA\"},{\"name\":\"Lakshadweep\",\"country_code\":\"IN\",\"iso2\":\"LD\"},{\"name\":\"Madhya Pradesh\",\"country_code\":\"IN\",\"iso2\":\"MP\"},{\"name\":\"Maharashtra\",\"country_code\":\"IN\",\"iso2\":\"MH\"},{\"name\":\"Manipur\",\"country_code\":\"IN\",\"iso2\":\"MN\"},{\"name\":\"Meghalaya\",\"country_code\":\"IN\",\"iso2\":\"ML\"},{\"name\":\"Mizoram\",\"country_code\":\"IN\",\"iso2\":\"MZ\"},{\"name\":\"Nagaland\",\"country_code\":\"IN\",\"iso2\":\"NL\"},{\"name\":\"Odisha\",\"country_code\":\"IN\",\"iso2\":\"OR\"},{\"name\":\"Puducherry\",\"country_code\":\"IN\",\"iso2\":\"PY\"},{\"name\":\"Punjab\",\"country_code\":\"IN\",\"iso2\":\"PB\"},{\"name\":\"Rajasthan\",\"country_code\":\"IN\",\"iso2\":\"RJ\"},{\"name\":\"Sikkim\",\"country_code\":\"IN\",\"iso2\":\"SK\"},{\"name\":\"Tamil Nadu\",\"country_code\":\"IN\",\"iso2\":\"TN\"},{\"name\":\"Telangana\",\"country_code\":\"IN\",\"iso2\":\"TG\"},{\"name\":\"Tripura\",\"country_code\":\"IN\",\"iso2\":\"TR\"},{\"name\":\"Uttar Pradesh\",\"country_code\":\"IN\",\"iso2\":\"UP\"},{\"name\":\"Uttarakhand\",\"country_code\":\"IN\",\"iso2\":\"UT\"},{\"name\":\"West Bengal\",\"country_code\":\"IN\",\"iso2\":\"WB\"}],\"message\":\"ok\",\"status\":\"success\",\"status_code\":200}"
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/dashboard",
+    "path": "/dashboard",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/help?_rsc=18t7j",
+    "path": "/help",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/login",
+    "path": "/login",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/organization?_rsc=18t7j",
+    "path": "/organization",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/report?_rsc=18t7j",
+    "path": "/report",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/reset-password?_rsc=17yrj",
+    "path": "/reset-password",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/settings",
+    "path": "/settings",
+    "status": 404,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites?month=5&year=2026&_rsc=18t7j",
+    "path": "/sites",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/192/assessment/Q1/2026/5",
+    "path": "/sites/192/assessment/Q1/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/192/assessment/Q10/2026/5?_rsc=1hgsr",
+    "path": "/sites/192/assessment/Q10/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/192/assessment/Q11/2026/5?_rsc=1hgsr",
+    "path": "/sites/192/assessment/Q11/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/192/assessment/Q12/2026/5?_rsc=1hgsr",
+    "path": "/sites/192/assessment/Q12/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/192/assessment/Q13/2026/5?_rsc=1hgsr",
+    "path": "/sites/192/assessment/Q13/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/192/assessment/Q14/2026/5?_rsc=1hgsr",
+    "path": "/sites/192/assessment/Q14/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/192/assessment/Q15/2026/5?_rsc=1hgsr",
+    "path": "/sites/192/assessment/Q15/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/192/assessment/Q16/2026/5?_rsc=fg4tf",
+    "path": "/sites/192/assessment/Q16/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/192/assessment/Q17/2026/5?_rsc=1hgsr",
+    "path": "/sites/192/assessment/Q17/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/192/assessment/Q18/2026/5?_rsc=1hgsr",
+    "path": "/sites/192/assessment/Q18/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/192/assessment/Q19/2026/5?_rsc=1y1mn",
+    "path": "/sites/192/assessment/Q19/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/192/assessment/Q2/2026/5?_rsc=fg4tf",
+    "path": "/sites/192/assessment/Q2/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/192/assessment/Q3/2026/5?_rsc=fg4tf",
+    "path": "/sites/192/assessment/Q3/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/192/assessment/Q4/2026/5?_rsc=fg4tf",
+    "path": "/sites/192/assessment/Q4/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/192/assessment/Q5/2026/5?_rsc=1y1mn",
+    "path": "/sites/192/assessment/Q5/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/192/assessment/Q6/2026/5?_rsc=1hgsr",
+    "path": "/sites/192/assessment/Q6/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/192/assessment/Q7/2026/5?_rsc=1hgsr",
+    "path": "/sites/192/assessment/Q7/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/192/assessment/Q8/2026/5?_rsc=1hgsr",
+    "path": "/sites/192/assessment/Q8/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/192/assessment/Q9/2026/5?_rsc=1hgsr",
+    "path": "/sites/192/assessment/Q9/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/192/assessment/energy?_rsc=fg4tf",
+    "path": "/sites/192/assessment/energy",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/192/assessment/intensity?_rsc=fg4tf",
+    "path": "/sites/192/assessment/intensity",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/192/assessment/scope-summary/2026/5?scope=1&_rsc=fg4tf",
+    "path": "/sites/192/assessment/scope-summary/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/192/assessment/summary/2026/5?_rsc=fg4tf",
+    "path": "/sites/192/assessment/summary/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/193/assessment/Q1/2026/5",
+    "path": "/sites/193/assessment/Q1/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/193/assessment/Q10/2026/5?_rsc=11zit",
+    "path": "/sites/193/assessment/Q10/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/193/assessment/Q11/2026/5?_rsc=11zit",
+    "path": "/sites/193/assessment/Q11/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/193/assessment/Q12/2026/5?_rsc=11zit",
+    "path": "/sites/193/assessment/Q12/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/193/assessment/Q13/2026/5?_rsc=11zit",
+    "path": "/sites/193/assessment/Q13/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/193/assessment/Q14/2026/5?_rsc=11zit",
+    "path": "/sites/193/assessment/Q14/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/193/assessment/Q15/2026/5?_rsc=11zit",
+    "path": "/sites/193/assessment/Q15/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/193/assessment/Q16/2026/5?_rsc=1b9kj",
+    "path": "/sites/193/assessment/Q16/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/193/assessment/Q17/2026/5?_rsc=11zit",
+    "path": "/sites/193/assessment/Q17/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/193/assessment/Q18/2026/5?_rsc=11zit",
+    "path": "/sites/193/assessment/Q18/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/193/assessment/Q19/2026/5?_rsc=utybe",
+    "path": "/sites/193/assessment/Q19/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/193/assessment/Q2/2026/5?_rsc=1b9kj",
+    "path": "/sites/193/assessment/Q2/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/193/assessment/Q3/2026/5?_rsc=1b9kj",
+    "path": "/sites/193/assessment/Q3/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/193/assessment/Q4/2026/5?_rsc=1b9kj",
+    "path": "/sites/193/assessment/Q4/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/193/assessment/Q5/2026/5?_rsc=utybe",
+    "path": "/sites/193/assessment/Q5/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/193/assessment/Q6/2026/5?_rsc=11zit",
+    "path": "/sites/193/assessment/Q6/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/193/assessment/Q7/2026/5?_rsc=11zit",
+    "path": "/sites/193/assessment/Q7/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/193/assessment/Q8/2026/5?_rsc=11zit",
+    "path": "/sites/193/assessment/Q8/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/193/assessment/Q9/2026/5?_rsc=11zit",
+    "path": "/sites/193/assessment/Q9/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/193/assessment/energy?_rsc=1b9kj",
+    "path": "/sites/193/assessment/energy",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/193/assessment/intensity?_rsc=1b9kj",
+    "path": "/sites/193/assessment/intensity",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/193/assessment/scope-summary/2026/5?scope=1&_rsc=1b9kj",
+    "path": "/sites/193/assessment/scope-summary/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/193/assessment/summary/2026/5?_rsc=1b9kj",
+    "path": "/sites/193/assessment/summary/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/194/assessment/Q1/2026/5",
+    "path": "/sites/194/assessment/Q1/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/194/assessment/Q10/2026/5?_rsc=mi8vs",
+    "path": "/sites/194/assessment/Q10/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/194/assessment/Q11/2026/5?_rsc=mi8vs",
+    "path": "/sites/194/assessment/Q11/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/194/assessment/Q12/2026/5?_rsc=mi8vs",
+    "path": "/sites/194/assessment/Q12/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/194/assessment/Q13/2026/5?_rsc=mi8vs",
+    "path": "/sites/194/assessment/Q13/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/194/assessment/Q14/2026/5?_rsc=mi8vs",
+    "path": "/sites/194/assessment/Q14/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/194/assessment/Q15/2026/5?_rsc=mi8vs",
+    "path": "/sites/194/assessment/Q15/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/194/assessment/Q16/2026/5?_rsc=81w7j",
+    "path": "/sites/194/assessment/Q16/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/194/assessment/Q17/2026/5?_rsc=mi8vs",
+    "path": "/sites/194/assessment/Q17/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/194/assessment/Q18/2026/5?_rsc=mi8vs",
+    "path": "/sites/194/assessment/Q18/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/194/assessment/Q19/2026/5?_rsc=1qne1",
+    "path": "/sites/194/assessment/Q19/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/194/assessment/Q2/2026/5?_rsc=81w7j",
+    "path": "/sites/194/assessment/Q2/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/194/assessment/Q3/2026/5?_rsc=81w7j",
+    "path": "/sites/194/assessment/Q3/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/194/assessment/Q4/2026/5?_rsc=81w7j",
+    "path": "/sites/194/assessment/Q4/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/194/assessment/Q5/2026/5?_rsc=1qne1",
+    "path": "/sites/194/assessment/Q5/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/194/assessment/Q6/2026/5?_rsc=mi8vs",
+    "path": "/sites/194/assessment/Q6/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/194/assessment/Q7/2026/5?_rsc=mi8vs",
+    "path": "/sites/194/assessment/Q7/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/194/assessment/Q8/2026/5?_rsc=mi8vs",
+    "path": "/sites/194/assessment/Q8/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/194/assessment/Q9/2026/5?_rsc=mi8vs",
+    "path": "/sites/194/assessment/Q9/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/194/assessment/energy?_rsc=81w7j",
+    "path": "/sites/194/assessment/energy",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/194/assessment/intensity?_rsc=81w7j",
+    "path": "/sites/194/assessment/intensity",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/194/assessment/scope-summary/2026/5?scope=1&_rsc=81w7j",
+    "path": "/sites/194/assessment/scope-summary/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/194/assessment/summary/2026/5?_rsc=81w7j",
+    "path": "/sites/194/assessment/summary/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/195/assessment/Q1/2026/5",
+    "path": "/sites/195/assessment/Q1/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/195/assessment/Q10/2026/5?_rsc=70yxt",
+    "path": "/sites/195/assessment/Q10/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/195/assessment/Q11/2026/5?_rsc=70yxt",
+    "path": "/sites/195/assessment/Q11/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/195/assessment/Q12/2026/5?_rsc=70yxt",
+    "path": "/sites/195/assessment/Q12/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/195/assessment/Q13/2026/5?_rsc=70yxt",
+    "path": "/sites/195/assessment/Q13/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/195/assessment/Q14/2026/5?_rsc=70yxt",
+    "path": "/sites/195/assessment/Q14/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/195/assessment/Q15/2026/5?_rsc=70yxt",
+    "path": "/sites/195/assessment/Q15/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/195/assessment/Q16/2026/5?_rsc=13vbx",
+    "path": "/sites/195/assessment/Q16/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/195/assessment/Q17/2026/5?_rsc=70yxt",
+    "path": "/sites/195/assessment/Q17/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/195/assessment/Q18/2026/5?_rsc=70yxt",
+    "path": "/sites/195/assessment/Q18/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/195/assessment/Q19/2026/5?_rsc=nfppi",
+    "path": "/sites/195/assessment/Q19/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/195/assessment/Q2/2026/5?_rsc=13vbx",
+    "path": "/sites/195/assessment/Q2/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/195/assessment/Q3/2026/5?_rsc=13vbx",
+    "path": "/sites/195/assessment/Q3/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/195/assessment/Q4/2026/5?_rsc=13vbx",
+    "path": "/sites/195/assessment/Q4/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/195/assessment/Q5/2026/5?_rsc=nfppi",
+    "path": "/sites/195/assessment/Q5/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/195/assessment/Q6/2026/5?_rsc=70yxt",
+    "path": "/sites/195/assessment/Q6/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/195/assessment/Q7/2026/5?_rsc=70yxt",
+    "path": "/sites/195/assessment/Q7/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/195/assessment/Q8/2026/5?_rsc=70yxt",
+    "path": "/sites/195/assessment/Q8/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/195/assessment/Q9/2026/5?_rsc=70yxt",
+    "path": "/sites/195/assessment/Q9/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/195/assessment/energy?_rsc=13vbx",
+    "path": "/sites/195/assessment/energy",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/195/assessment/intensity?_rsc=13vbx",
+    "path": "/sites/195/assessment/intensity",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/195/assessment/scope-summary/2026/5?scope=1&_rsc=13vbx",
+    "path": "/sites/195/assessment/scope-summary/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/195/assessment/summary/2026/5?_rsc=13vbx",
+    "path": "/sites/195/assessment/summary/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/196/assessment/Q1/2026/5",
+    "path": "/sites/196/assessment/Q1/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/196/assessment/Q10/2026/5?_rsc=1qkt1",
+    "path": "/sites/196/assessment/Q10/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/196/assessment/Q11/2026/5?_rsc=1qkt1",
+    "path": "/sites/196/assessment/Q11/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/196/assessment/Q12/2026/5?_rsc=1qkt1",
+    "path": "/sites/196/assessment/Q12/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/196/assessment/Q13/2026/5?_rsc=1qkt1",
+    "path": "/sites/196/assessment/Q13/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/196/assessment/Q14/2026/5?_rsc=1qkt1",
+    "path": "/sites/196/assessment/Q14/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/196/assessment/Q15/2026/5?_rsc=1qkt1",
+    "path": "/sites/196/assessment/Q15/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/196/assessment/Q16/2026/5?_rsc=nnlo1",
+    "path": "/sites/196/assessment/Q16/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/196/assessment/Q17/2026/5?_rsc=1qkt1",
+    "path": "/sites/196/assessment/Q17/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/196/assessment/Q18/2026/5?_rsc=1qkt1",
+    "path": "/sites/196/assessment/Q18/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/196/assessment/Q19/2026/5?_rsc=1j95f",
+    "path": "/sites/196/assessment/Q19/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/196/assessment/Q2/2026/5?_rsc=nnlo1",
+    "path": "/sites/196/assessment/Q2/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/196/assessment/Q3/2026/5?_rsc=nnlo1",
+    "path": "/sites/196/assessment/Q3/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/196/assessment/Q4/2026/5?_rsc=nnlo1",
+    "path": "/sites/196/assessment/Q4/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/196/assessment/Q5/2026/5?_rsc=1j95f",
+    "path": "/sites/196/assessment/Q5/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/196/assessment/Q6/2026/5?_rsc=1qkt1",
+    "path": "/sites/196/assessment/Q6/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/196/assessment/Q7/2026/5?_rsc=1qkt1",
+    "path": "/sites/196/assessment/Q7/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/196/assessment/Q8/2026/5?_rsc=1qkt1",
+    "path": "/sites/196/assessment/Q8/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/196/assessment/Q9/2026/5?_rsc=1qkt1",
+    "path": "/sites/196/assessment/Q9/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/196/assessment/energy?_rsc=nnlo1",
+    "path": "/sites/196/assessment/energy",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/196/assessment/intensity?_rsc=nnlo1",
+    "path": "/sites/196/assessment/intensity",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/196/assessment/scope-summary/2026/5?scope=1&_rsc=nnlo1",
+    "path": "/sites/196/assessment/scope-summary/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/sites/196/assessment/summary/2026/5?_rsc=nnlo1",
+    "path": "/sites/196/assessment/summary/2026/5",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  },
+  {
+    "method": "GET",
+    "url": "https://app.esgtech.ai/user/setting?_rsc=18t7j",
+    "path": "/user/setting",
+    "status": 200,
+    "request_body": null,
+    "response_preview": null
+  }
+]

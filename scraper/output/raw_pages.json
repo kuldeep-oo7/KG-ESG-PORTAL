@@ -1,0 +1,751 @@
+[
+  {
+    "link": {
+      "text": "https://app.esgtech.ai/",
+      "url": "https://app.esgtech.ai/"
+    },
+    "schema": {
+      "section": "https://app.esgtech.ai/",
+      "url": "https://app.esgtech.ai/",
+      "fields": [],
+      "table_columns": [],
+      "dropdowns": [
+        "CY 2026"
+      ],
+      "buttons": [
+        "G\n\nGirish",
+        "CY 2026",
+        "Detailed",
+        "Overall"
+      ]
+    }
+  },
+  {
+    "link": {
+      "text": "Dashboard",
+      "url": "https://app.esgtech.ai/dashboard"
+    },
+    "schema": {
+      "section": "Dashboard",
+      "url": "https://app.esgtech.ai/dashboard",
+      "fields": [],
+      "table_columns": [],
+      "dropdowns": [
+        "CY 2026"
+      ],
+      "buttons": [
+        "G\n\nGirish",
+        "CY 2026",
+        "Detailed",
+        "Overall"
+      ]
+    }
+  },
+  {
+    "link": {
+      "text": "Sites",
+      "url": "https://app.esgtech.ai/sites?month=5&year=2026"
+    },
+    "schema": {
+      "section": "Sites",
+      "url": "https://app.esgtech.ai/sites?month=5&year=2026",
+      "fields": [],
+      "table_columns": [
+        "Site",
+        "Summary of GHG Emissions",
+        "Total GHG Emissions (TCO2Eq)",
+        "Expiry Date",
+        "Actions"
+      ],
+      "dropdowns": [],
+      "buttons": [
+        "G\n\nGirish",
+        "May 2026",
+        "Create New Site"
+      ]
+    }
+  },
+  {
+    "link": {
+      "text": "GHG Reports",
+      "url": "https://app.esgtech.ai/report"
+    },
+    "schema": {
+      "section": "GHG Reports",
+      "url": "https://app.esgtech.ai/report",
+      "fields": [
+        {
+          "label": "date",
+          "type": "month",
+          "name": "date",
+          "id": "",
+          "placeholder": "",
+          "required": false,
+          "unit": "",
+          "options": []
+        },
+        {
+          "label": "month",
+          "type": "text",
+          "name": "month",
+          "id": "",
+          "placeholder": "",
+          "required": false,
+          "unit": "",
+          "options": [
+            {
+              "value": "1",
+              "text": "Jan"
+            },
+            {
+              "value": "2",
+              "text": "Feb"
+            },
+            {
+              "value": "3",
+              "text": "Mar"
+            },
+            {
+              "value": "4",
+              "text": "Apr"
+            },
+            {
+              "value": "5",
+              "text": "May"
+            },
+            {
+              "value": "6",
+              "text": "Jun"
+            },
+            {
+              "value": "7",
+              "text": "Jul"
+            },
+            {
+              "value": "8",
+              "text": "Aug"
+            },
+            {
+              "value": "9",
+              "text": "Sept"
+            },
+            {
+              "value": "10",
+              "text": "Oct"
+            },
+            {
+              "value": "11",
+              "text": "Nov"
+            },
+            {
+              "value": "12",
+              "text": "Dec"
+            }
+          ]
+        },
+        {
+          "label": "year",
+          "type": "number",
+          "name": "year",
+          "id": "",
+          "placeholder": "----",
+          "required": false,
+          "unit": "",
+          "options": []
+        },
+        {
+          "label": "date",
+          "type": "month",
+          "name": "date",
+          "id": "",
+          "placeholder": "",
+          "required": false,
+          "unit": "",
+          "options": []
+        },
+        {
+          "label": "month",
+          "type": "text",
+          "name": "month",
+          "id": "",
+          "placeholder": "",
+          "required": false,
+          "unit": "",
+          "options": [
+            {
+              "value": "1",
+              "text": "Jan"
+            },
+            {
+              "value": "2",
+              "text": "Feb"
+            },
+            {
+              "value": "3",
+              "text": "Mar"
+            },
+            {
+              "value": "4",
+              "text": "Apr"
+            },
+            {
+              "value": "5",
+              "text": "May"
+            },
+            {
+              "value": "6",
+              "text": "Jun"
+            },
+            {
+              "value": "7",
+              "text": "Jul"
+            },
+            {
+              "value": "8",
+              "text": "Aug"
+            },
+            {
+              "value": "9",
+              "text": "Sept"
+            },
+            {
+              "value": "10",
+              "text": "Oct"
+            },
+            {
+              "value": "11",
+              "text": "Nov"
+            },
+            {
+              "value": "12",
+              "text": "Dec"
+            }
+          ]
+        },
+        {
+          "label": "year",
+          "type": "number",
+          "name": "year",
+          "id": "",
+          "placeholder": "----",
+          "required": false,
+          "unit": "",
+          "options": []
+        },
+        {
+          "label": "Search in table...",
+          "type": "text",
+          "name": "",
+          "id": "",
+          "placeholder": "Search in table...",
+          "required": false,
+          "unit": "",
+          "options": []
+        },
+        {
+          "label": "Search in table...",
+          "type": "text",
+          "name": "",
+          "id": "",
+          "placeholder": "Search in table...",
+          "required": false,
+          "unit": "",
+          "options": []
+        },
+        {
+          "label": "Search in table...",
+          "type": "text",
+          "name": "",
+          "id": "",
+          "placeholder": "Search in table...",
+          "required": false,
+          "unit": "",
+          "options": []
+        },
+        {
+          "label": "Search in table...",
+          "type": "text",
+          "name": "",
+          "id": "",
+          "placeholder": "Search in table...",
+          "required": false,
+          "unit": "",
+          "options": []
+        },
+        {
+          "label": "Search in table...",
+          "type": "text",
+          "name": "",
+          "id": "",
+          "placeholder": "Search in table...",
+          "required": false,
+          "unit": "",
+          "options": []
+        },
+        {
+          "label": "Search in table...",
+          "type": "text",
+          "name": "",
+          "id": "",
+          "placeholder": "Search in table...",
+          "required": false,
+          "unit": "",
+          "options": []
+        },
+        {
+          "label": "Search in table...",
+          "type": "text",
+          "name": "",
+          "id": "",
+          "placeholder": "Search in table...",
+          "required": false,
+          "unit": "",
+          "options": []
+        },
+        {
+          "label": "Search in table...",
+          "type": "text",
+          "name": "",
+          "id": "",
+          "placeholder": "Search in table...",
+          "required": false,
+          "unit": "",
+          "options": []
+        },
+        {
+          "label": "Search in table...",
+          "type": "text",
+          "name": "",
+          "id": "",
+          "placeholder": "Search in table...",
+          "required": false,
+          "unit": "",
+          "options": []
+        },
+        {
+          "label": "Search in table...",
+          "type": "text",
+          "name": "",
+          "id": "",
+          "placeholder": "Search in table...",
+          "required": false,
+          "unit": "",
+          "options": []
+        },
+        {
+          "label": "Search in table...",
+          "type": "text",
+          "name": "",
+          "id": "",
+          "placeholder": "Search in table...",
+          "required": false,
+          "unit": "",
+          "options": []
+        },
+        {
+          "label": "Search in table...",
+          "type": "text",
+          "name": "",
+          "id": "",
+          "placeholder": "Search in table...",
+          "required": false,
+          "unit": "",
+          "options": []
+        },
+        {
+          "label": "Search in table...",
+          "type": "text",
+          "name": "",
+          "id": "",
+          "placeholder": "Search in table...",
+          "required": false,
+          "unit": "",
+          "options": []
+        }
+      ],
+      "table_columns": [
+        "Date",
+        "Entry Period",
+        "Site Name",
+        "Type",
+        "Unit of Measurement",
+        "Consumption",
+        "Source",
+        "Emission Factor",
+        "GHG Emissions (TCO2Eq)",
+        "Name of Country",
+        "Commute Type",
+        "Fuel Type",
+        "Vehicle Type",
+        "Number of Passengers",
+        "Kilo meters Travelled",
+        "Food Type",
+        "Type of Goods",
+        "Loop",
+        "Type of Vehicle",
+        "Type of Fuel",
+        "Class",
+        "Tonnes",
+        "Distance Travelled",
+        "Generation",
+        "Select Type",
+        "Mode of Travel",
+        "Number of Passenger",
+        "Kilometers Travelled"
+      ],
+      "dropdowns": [
+        "All Site",
+        "Select Export Type",
+        "Date\nEntry Period\nSite Name\nType\nUnit of Measurement\nConsumption\nSource\nEmission Factor\nGHG Emissions (TCO2Eq)\n3 - February - 2026\nJanuary - 2026\nFacets Gems Polishing Works Pvt. Ltd.\nLiquid fuels - Diesel (average biofuel blend)\nlitres\n700\nDefra v 1.0\n2.57082\n1.799574\n15 - May - 2026\nJanuary - 2026\nFacets Gems Polishing Works Pvt. Ltd.\nGaseous fuels - Natural gas\ncubic metres\n896.802\nDefra v 1.0\n2.06672\n1.853439\n28 - February - 2026\nFebruary - 2026\nFacets Gems Polishing Works Pvt. Ltd.\nLiquid fuels - Diesel (average biofuel blend)\nlitres\n50\nDefra v 1.0\n2.57082\n0.128541\n15 - May - 2026\nFebruary - 2026\nFacets Gems Polishing Works Pvt. Ltd.\nGaseous fuels - Natural gas\ncubic metres\n964.444\nDefra v 1.0\n2.06672\n1.993236\n15 - May - 2026\nMarch - 2026\nFacets Gems Polishing Works Pvt. Ltd.\nGaseous fuels - Natural gas\ncubic metres\n922\nDefra v 1.0\n2.06672\n1.905516\n15 - May - 2026\nApril - 2026\nFacets Gems Polishing Works Pvt. Ltd.\nGaseous fuels - Natural gas\ncubic metres\n1173\nDefra v 1.0\n2.06672\n2.424263\n19 - May - 2026\nApril - 2026\nKG Mfg Botswana Proprietary Ltd\nLiquid fuels - Diesel (average biofuel blend)\nlitres\n300\nDefra v 1.0\n2.57082\n0.771246",
+        "3 - February - 2026\nJanuary - 2026\nFacets Gems Polishing Works Pvt. Ltd.\nLiquid fuels - Diesel (average biofuel blend)\nlitres\n700\nDefra v 1.0\n2.57082\n1.799574\n15 - May - 2026\nJanuary - 2026\nFacets Gems Polishing Works Pvt. Ltd.\nGaseous fuels - Natural gas\ncubic metres\n896.802\nDefra v 1.0\n2.06672\n1.853439\n28 - February - 2026\nFebruary - 2026\nFacets Gems Polishing Works Pvt. Ltd.\nLiquid fuels - Diesel (average biofuel blend)\nlitres\n50\nDefra v 1.0\n2.57082\n0.128541\n15 - May - 2026\nFebruary - 2026\nFacets Gems Polishing Works Pvt. Ltd.\nGaseous fuels - Natural gas\ncubic metres\n964.444\nDefra v 1.0\n2.06672\n1.993236\n15 - May - 2026\nMarch - 2026\nFacets Gems Polishing Works Pvt. Ltd.\nGaseous fuels - Natural gas\ncubic metres\n922\nDefra v 1.0\n2.06672\n1.905516\n15 - May - 2026\nApril - 2026\nFacets Gems Polishing Works Pvt. Ltd.\nGaseous fuels - Natural gas\ncubic metres\n1173\nDefra v 1.0\n2.06672\n2.424263\n19 - May - 2026\nApril - 2026\nKG Mfg Botswana Proprietary Ltd\nLiquid fuels - Diesel (average biofuel blend)\nlitres\n300\nDefra v 1.0\n2.57082\n0.771246",
+        "to  of       Page  of",
+        "Date\nEntry Period\nSite Name\nType\nUnit of Measurement\nConsumption\nSource\nEmission Factor\nGHG Emissions (TCO2Eq)\n4 - February - 2026\nJanuary - 2026\nK. Girdharlal International Private Limited\nHybrid - Small car\nkm\n1334\nDefra v 1.0\n0.11413\n0.152249\n4 - February - 2026\nJanuary - 2026\nK. Girdharlal International Private Limited\nPetrol - Small car\nkm\n2228\nDefra v 1.0\n0.14308\n0.318782\n11 - February - 2026\nJanuary - 2026\nKG Mfg Botswana Proprietary Ltd\nPetrol - Average car\nkm\n503.6\nDefra v 1.0\n0.16272\n0.081946\n6 - April - 2026\nJanuary - 2026\nMumbai Office - K. Girdharlal International Pvt\nDiesel - Average car\nkm\n2570\nDefra v 1.0\n0.17304\n0.444713\n5 - March - 2026\nFebruary - 2026\nKG Mfg Botswana Proprietary Ltd\nPetrol - Average car\nkm\n698\nDefra v 1.0\n0.16272\n0.113579\n6 - April - 2026\nFebruary - 2026\nMumbai Office - K. Girdharlal International Pvt\nDiesel - Average car\nkm\n4798\nDefra v 1.0\n0.17304\n0.830246\n9 - April - 2026\nMarch - 2026\nKG Mfg Botswana Proprietary Ltd\nPetrol - Average car\nkm\n1022\nDefra v 1.0\n0.16272\n0.1663\n15 - May - 2026\nMarch - 2026\nMumbai Office - K. Girdharlal International Pvt\nDiesel - Average car\nkm\n4558\nDefra v 1.0\n0.17304\n0.788716\n8 - May - 2026\nApril - 2026\nKG Mfg Botswana Proprietary Ltd\nPetrol - Average car\nkm\n996\nDefra v 1.0\n0.16272\n0.162069\n15 - May - 2026\nApril - 2026\nMumbai Office - K. Girdharlal International Pvt\nDiesel - Average car\nkm\n2929\nDefra v 1.0\n0.17304\n0.506834",
+        "4 - February - 2026\nJanuary - 2026\nK. Girdharlal International Private Limited\nHybrid - Small car\nkm\n1334\nDefra v 1.0\n0.11413\n0.152249\n4 - February - 2026\nJanuary - 2026\nK. Girdharlal International Private Limited\nPetrol - Small car\nkm\n2228\nDefra v 1.0\n0.14308\n0.318782\n11 - February - 2026\nJanuary - 2026\nKG Mfg Botswana Proprietary Ltd\nPetrol - Average car\nkm\n503.6\nDefra v 1.0\n0.16272\n0.081946\n6 - April - 2026\nJanuary - 2026\nMumbai Office - K. Girdharlal International Pvt\nDiesel - Average car\nkm\n2570\nDefra v 1.0\n0.17304\n0.444713\n5 - March - 2026\nFebruary - 2026\nKG Mfg Botswana Proprietary Ltd\nPetrol - Average car\nkm\n698\nDefra v 1.0\n0.16272\n0.113579\n6 - April - 2026\nFebruary - 2026\nMumbai Office - K. Girdharlal International Pvt\nDiesel - Average car\nkm\n4798\nDefra v 1.0\n0.17304\n0.830246\n9 - April - 2026\nMarch - 2026\nKG Mfg Botswana Proprietary Ltd\nPetrol - Average car\nkm\n1022\nDefra v 1.0\n0.16272\n0.1663\n15 - May - 2026\nMarch - 2026\nMumbai Office - K. Girdharlal International Pvt\nDiesel - Average car\nkm\n4558\nDefra v 1.0\n0.17304\n0.788716\n8 - May - 2026\nApril - 2026\nKG Mfg Botswana Proprietary Ltd\nPetrol - Average car\nkm\n996\nDefra v 1.0\n0.16272\n0.162069\n15 - May - 2026\nApril - 2026\nMumbai Office - K. Girdharlal International Pvt\nDiesel - Average car\nkm\n2929\nDefra v 1.0\n0.17304\n0.506834",
+        "Date\nEntry Period\nSite Name\nName of Country\nUnit of Measurement\nConsumption\nSource\nEmission Factor\nGHG Emissions (TCO2Eq)\n30 - January - 2026\nJanuary - 2026\nKG Mfg Botswana Proprietary Ltd\nCountry - Botswana\nkWh\n6939.64\nCaDI 2025\n0.97662\n6.777391\n19 - March - 2026\nJanuary - 2026\nFacets Gems Polishing Works Pvt. Ltd.\nCountry - India\nkWh\n132322.5\nCaDI 2025\n0.95182\n125.947202\n11 - May - 2026\nJanuary - 2026\nMumbai Office - K. Girdharlal International Pvt\nCountry - India\nkWh\n5093\nCaDI 2025\n0.95182\n4.847619\n28 - February - 2026\nFebruary - 2026\nFacets Gems Polishing Works Pvt. Ltd.\nCountry - India\nkWh\n131587.5\nCaDI 2025\n0.95182\n125.247614\n5 - March - 2026\nFebruary - 2026\nKG Mfg Botswana Proprietary Ltd\nCountry - Botswana\nkWh\n7605.22\nCaDI 2025\n0.97662\n7.42741\n11 - May - 2026\nFebruary - 2026\nMumbai Office - K. Girdharlal International Pvt\nCountry - India\nkWh\n4724\nCaDI 2025\n0.95182\n4.496398\n27 - March - 2026\nMarch - 2026\nFacets Gems Polishing Works Pvt. Ltd.\nCountry - India\nkWh\n146662.5\nCaDI 2025\n0.95182\n139.596301\n30 - March - 2026\nMarch - 2026\nKG Mfg Botswana Proprietary Ltd\nCountry - Botswana\nkWh\n8467.66\nCaDI 2025\n0.97662\n8.269686\n11 - May - 2026\nMarch - 2026\nMumbai Office - K. Girdharlal International Pvt\nCountry - India\nkWh\n5110\nCaDI 2025\n0.95182\n4.8638\n11 - May - 2026\nApril - 2026\nKG Mfg Botswana Proprietary Ltd\nCountry - Botswana\nkWh\n8698.52\nCaDI 2025\n0.97662\n8.495149\n11 - May - 2026\nApril - 2026\nMumbai Office - K. Girdharlal International Pvt\nCountry - India\nkWh\n5118\nCaDI 2025\n0.95182\n4.871415\n12 - May - 2026\nApril - 2026\nFacets Gems Polishing Works Pvt. Ltd.\nCountry - India\nkWh\n177765\nCaDI 2025\n0.95182\n169.200282\n20 - May - 2026\nMay - 2026\nFacets Gems Polishing Works Pvt. Ltd.\nCountry - India\nkWh\n197805\nCaDI 2025\n0.95182\n188.274755",
+        "30 - January - 2026\nJanuary - 2026\nKG Mfg Botswana Proprietary Ltd\nCountry - Botswana\nkWh\n6939.64\nCaDI 2025\n0.97662\n6.777391\n19 - March - 2026\nJanuary - 2026\nFacets Gems Polishing Works Pvt. Ltd.\nCountry - India\nkWh\n132322.5\nCaDI 2025\n0.95182\n125.947202\n11 - May - 2026\nJanuary - 2026\nMumbai Office - K. Girdharlal International Pvt\nCountry - India\nkWh\n5093\nCaDI 2025\n0.95182\n4.847619\n28 - February - 2026\nFebruary - 2026\nFacets Gems Polishing Works Pvt. Ltd.\nCountry - India\nkWh\n131587.5\nCaDI 2025\n0.95182\n125.247614\n5 - March - 2026\nFebruary - 2026\nKG Mfg Botswana Proprietary Ltd\nCountry - Botswana\nkWh\n7605.22\nCaDI 2025\n0.97662\n7.42741\n11 - May - 2026\nFebruary - 2026\nMumbai Office - K. Girdharlal International Pvt\nCountry - India\nkWh\n4724\nCaDI 2025\n0.95182\n4.496398\n27 - March - 2026\nMarch - 2026\nFacets Gems Polishing Works Pvt. Ltd.\nCountry - India\nkWh\n146662.5\nCaDI 2025\n0.95182\n139.596301\n30 - March - 2026\nMarch - 2026\nKG Mfg Botswana Proprietary Ltd\nCountry - Botswana\nkWh\n8467.66\nCaDI 2025\n0.97662\n8.269686\n11 - May - 2026\nMarch - 2026\nMumbai Office - K. Girdharlal International Pvt\nCountry - India\nkWh\n5110\nCaDI 2025\n0.95182\n4.8638\n11 - May - 2026\nApril - 2026\nKG Mfg Botswana Proprietary Ltd\nCountry - Botswana\nkWh\n8698.52\nCaDI 2025\n0.97662\n8.495149\n11 - May - 2026\nApril - 2026\nMumbai Office - K. Girdharlal International Pvt\nCountry - India\nkWh\n5118\nCaDI 2025\n0.95182\n4.871415\n12 - May - 2026\nApril - 2026\nFacets Gems Polishing Works Pvt. Ltd.\nCountry - India\nkWh\n177765\nCaDI 2025\n0.95182\n169.200282\n20 - May - 2026\nMay - 2026\nFacets Gems Polishing Works Pvt. Ltd.\nCountry - India\nkWh\n197805\nCaDI 2025\n0.95182\n188.274755"
+      ],
+      "buttons": [
+        "G\n\nGirish",
+        "CY",
+        "FY",
+        "All Site",
+        "Select Export Type",
+        "Stationary Combustion\nTotal GHG Emissions: 10.875814 TCO2Eq",
+        "Mobile Combustion\nTotal GHG Emissions: 3.565434 TCO2Eq",
+        "Employee Commute\nTotal GHG Emissions: 209.978931 TCO2Eq",
+        "Food Consumption\nTotal GHG Emissions: 10.96395 TCO2Eq",
+        "Purchased Goods\nTotal GHG Emissions: 7.348368 TCO2Eq",
+        "Upstream Activities\nTotal GHG Emissions: 0.000004 TCO2Eq",
+        "Downstream Activities\nTotal GHG Emissions: 0.00544 TCO2Eq",
+        "Waste Disposal\nTotal GHG Emissions: 2.310809 TCO2Eq",
+        "Water Supply\nTotal GHG Emissions: 2.109519 TCO2Eq",
+        "Business Travel (Air)\nTotal GHG Emissions: 2.266179 TCO2Eq",
+        "Business Travel (Land)\nTotal GHG Emissions: 0.211377 TCO2Eq"
+      ]
+    }
+  },
+  {
+    "link": {
+      "text": "Help",
+      "url": "https://app.esgtech.ai/help"
+    },
+    "schema": {
+      "section": "Help",
+      "url": "https://app.esgtech.ai/help",
+      "fields": [
+        {
+          "label": "Subject *",
+          "type": "text",
+          "name": "subject",
+          "id": "subject",
+          "placeholder": "Enter Your Subject",
+          "required": false,
+          "unit": "",
+          "options": []
+        },
+        {
+          "label": "Brief Description *",
+          "type": "text",
+          "name": "",
+          "id": "brief_description",
+          "placeholder": "Enter Your Message",
+          "required": false,
+          "unit": "",
+          "options": []
+        }
+      ],
+      "table_columns": [],
+      "dropdowns": [],
+      "buttons": [
+        "G\n\nGirish",
+        "Submit"
+      ]
+    }
+  },
+  {
+    "link": {
+      "text": "https://app.esgtech.ai/organization",
+      "url": "https://app.esgtech.ai/organization"
+    },
+    "schema": {
+      "section": "https://app.esgtech.ai/organization",
+      "url": "https://app.esgtech.ai/organization",
+      "fields": [
+        {
+          "label": "Organization Code *",
+          "type": "text",
+          "name": "org_code",
+          "id": "org_code",
+          "placeholder": "Enter Organization Code",
+          "required": false,
+          "unit": "",
+          "options": []
+        },
+        {
+          "label": "Company Name *",
+          "type": "text",
+          "name": "company_name",
+          "id": "company_name",
+          "placeholder": "Enter Company Name",
+          "required": false,
+          "unit": "",
+          "options": []
+        },
+        {
+          "label": "Address *",
+          "type": "text",
+          "name": "address",
+          "id": "address",
+          "placeholder": "Enter Address",
+          "required": false,
+          "unit": "",
+          "options": []
+        },
+        {
+          "label": "City *",
+          "type": "text",
+          "name": "city",
+          "id": "city",
+          "placeholder": "Enter City",
+          "required": false,
+          "unit": "",
+          "options": []
+        },
+        {
+          "label": "Zip Code *",
+          "type": "number",
+          "name": "zip_code",
+          "id": "zip_code",
+          "placeholder": "Enter Zip Code",
+          "required": false,
+          "unit": "",
+          "options": []
+        },
+        {
+          "label": "Website *",
+          "type": "text",
+          "name": "website",
+          "id": "website",
+          "placeholder": "Enter Website",
+          "required": false,
+          "unit": "",
+          "options": []
+        },
+        {
+          "label": "Expiry Date",
+          "type": "text",
+          "name": "expiry_date",
+          "id": "expiry_date",
+          "placeholder": "Enter Expiry Date",
+          "required": false,
+          "unit": "",
+          "options": []
+        },
+        {
+          "label": "Brief Description",
+          "type": "text",
+          "name": "",
+          "id": "about",
+          "placeholder": "",
+          "required": false,
+          "unit": "",
+          "options": []
+        },
+        {
+          "label": "Calendar Year\n\n(Jan to Dec)",
+          "type": "radio",
+          "name": "measurement_year",
+          "id": "calender-year",
+          "placeholder": "",
+          "required": false,
+          "unit": "",
+          "options": []
+        },
+        {
+          "label": "Financial Year\n\n(Apr to Mar)",
+          "type": "radio",
+          "name": "measurement_year",
+          "id": "financial-year",
+          "placeholder": "",
+          "required": false,
+          "unit": "",
+          "options": []
+        }
+      ],
+      "table_columns": [],
+      "dropdowns": [
+        "India",
+        "Gujarat",
+        "Manufacturing",
+        "500+ Employee",
+        "1-50 Employee",
+        "51-100 Employee",
+        "101-500 Employee"
+      ],
+      "buttons": [
+        "G\n\nGirish",
+        "India",
+        "Gujarat",
+        "Manufacturing",
+        "500+ Employee",
+        "Save"
+      ]
+    }
+  },
+  {
+    "link": {
+      "text": "Privacy Policy",
+      "url": "https://esgtech.ai/privacy-policy/"
+    },
+    "schema": {
+      "section": "Privacy Policy",
+      "url": "https://esgtech.ai/privacy-policy/",
+      "fields": [
+        {
+          "label": "Email",
+          "type": "text",
+          "name": "et_pb_signup_email",
+          "id": "et_pb_signup_email",
+          "placeholder": "Email",
+          "required": false,
+          "unit": "",
+          "options": []
+        },
+        {
+          "label": "et_pb_signup_provider",
+          "type": "hidden",
+          "name": "et_pb_signup_provider",
+          "id": "",
+          "placeholder": "",
+          "required": false,
+          "unit": "",
+          "options": []
+        },
+        {
+          "label": "et_pb_signup_list_id",
+          "type": "hidden",
+          "name": "et_pb_signup_list_id",
+          "id": "",
+          "placeholder": "",
+          "required": false,
+          "unit": "",
+          "options": []
+        },
+        {
+          "label": "et_pb_signup_account_name",
+          "type": "hidden",
+          "name": "et_pb_signup_account_name",
+          "id": "",
+          "placeholder": "",
+          "required": false,
+          "unit": "",
+          "options": []
+        },
+        {
+          "label": "et_pb_signup_ip_address",
+          "type": "hidden",
+          "name": "et_pb_signup_ip_address",
+          "id": "",
+          "placeholder": "",
+          "required": false,
+          "unit": "",
+          "options": []
+        },
+        {
+          "label": "et_pb_signup_checksum",
+          "type": "hidden",
+          "name": "et_pb_signup_checksum",
+          "id": "",
+          "placeholder": "",
+          "required": false,
+          "unit": "",
+          "options": []
+        }
+      ],
+      "table_columns": [],
+      "dropdowns": [
+        "Home\n \nAbout\n \nBlog\n \nLogin\n \nBook a Demo\nPrivacy Policy\n\nESGTECH.AI RESPECT YOUR PRIVACY AND COMMITTED TO PROTECTING IT.\n\nCoverage\n\nESGtech (“Company,” “we,” “us,” or “our”) respects your privacy. This Privacy Policy Statement (“Privacy Policy”) describes the ways we collect information from and about you, and what we do with the information, so that you may decide whether or not to provide information to us. By accessing our website, or purchasing our products or services, you agree to this Privacy Policy in addition to any other agreements we might have with you. In the event that such agreements contain terms that conflict with this Privacy Policy, the terms of those agreements will prevail.\n\nPurpose & Scope\n\nThe Privacy Policy applies primarily to information that we collect online; however, it may apply to some of the data that you provide to us offline and/or through other means, as well (for example, via telephone, or through the mail).\nThe Privacy Policy documents and describes the manner in which our organisation collects information from all our Users/Viewers of our Services. While providing our Services on behalf of our registered users, we collect information related to Viewers. The use of information collected on behalf of our Users is governed primarily by our contract for the engagement with them and the privacy policies governing their organization. We are not accountable for the privacy policies and practices undertaken by our users or any other third-parties Some information is collected through the use of cookies, web beacons and tracking technologies. Please refer to the cookie policy for more details on the type of cookies being used.\n\nOur Collection of your Information\nPersonal Information\n\nThe information we collect may include your personal information, such as your name, contact information, IP addresses, product and service selections, and other things that identify you. We collect personal information from you at several different points, including but not limited to the following:\n\nwhen we correspond with you as a customer or prospective customer;\nwhen you visit our website or use the platform;\nwhen you register as an end-user of our services and an account is created for you;\nwhen you fill the request for quote form;\nwhen you check the cost estimate for your required software via instant quote form;\nwhen you contact us for help;\nwhen you attend our customer conferences or webinars; and\nwhen the site sends us error reports or application analytics data.\nOur Use of your Personal Information\n\nESGtech may use information that we collect about you to:\n\ndeliver the products and services that you have requested;\nmanage your customer relationship and provide you with customer support;\nperform research and analysis about your use of, or interest in, our products, services, or content, or products, services or content offered by others;\ncommunicate with you by e-mail, Skype, WhatsApp, social media, telephone or mobile devices about products or services that may be of interest to you either from us or other third parties;\ndevelop and display content and advertising tailored to your interests on our site and other websites;\nenforce our terms and conditions;\nmanage our business, and\nperform functions as otherwise described to you at the time of collection.\nHow we collect Data about you?\n\nWe may collect different data from or about you depending on how you use our platform for your company and different the sites as below:\n\nData provided by registered users:\nAccount creation and login\n\nWhen you create an account or login into your account, we collect personal information such as first name, last name, mobile number, email address and password.\n\nData provided by non-registered users:\nAccess pre-existing user’s content\n\nWhen you request to view a pre-existing user’s content the user may ask for personal information such as email address in order to open a ESGtech’s account.\nESGtech collects and stores this personal information on behalf of its Users. When you provide this personal information, you do so in accordance with that user’s privacy practices and policies. ESGtech is not responsible for the privacy practices of its Users, and only processes this information in accordance with the applicable agreement it has with each User. For any issues pertaining to processing of such personal information, please contact the user directly.\n\nData collected through automated means:\nSystem Data\n\nTechnical data about your computer or device, like device type, operation system and the IP address. This data helps us improve the delivery of our web pages and to measure traffic on the Site. The collection of data will also depend on the individual settings of your device and software. It is recommended to refer to the policies of your device manufacturer or software provider to learn about information they might share with us.\n\nUser Generated Data:\nAccount Creation, Login and Usage as a viewer\n\nWe collect information and material (user-generated content) provided to us voluntarily by our users or the viewers to publish and process on our platform. The user-generated content is inclusive of text, photos & videos associated with the accounts/emails used to create an account with ESGtech or to access links as viewers.\n\nData Collected from Third Parties:\nIntegration of Third Parties such as Google Drive, OneDrive, Dropbox, Box\n\nWhen you connect your existing cloud storage such as Google Drive, we access your account on your behalf to get information about your files & folders. When you choose to create a Google Drive file link in ESGtech, we download the selected file(s)from your Google Drive and store it in our own storage for reliability purposes.\n\nData collected during transactions:\nTransactional Data\n\nOn the basis of types of services requested, ESGtech also collects information such as: For the purpose of promotion codes, name of the person associated with such a code will also be collected\n\ntype of service that has been requested\norder details for such a request\npayment & transaction information (such as merchant’s name, payment, method, chargeable amount for the service)\ndate and time the service provided\nOur Disclosure of your Personal Information to Third Parties\nwe may provide your information to affiliated entities within our group, as well as with vendors who perform functions on our behalf; such parties provide hosting, domain, security and maintenance services, virtual infrastructure, payment processing, analysis and other services for us;\nthird party contractors may have access to our databases. Usually, these contractors sign a standard confidentiality agreement;\nwe may share your data with any parent company, subsidiaries, joint ventures, other entities under common control, or third-party acquirers. We expect these other entities will honor this Privacy Policy;\nwe may allow a potential acquirer or merger partner to review our databases, although we would restrict their use and disclosure of this data during the diligence phase;\nas required by law enforcement, government officials, or other third parties pursuant to a subpoena, court order, or other legal process or requirement applicable to ESGtech; or when we believe, in our sole discretion, that the disclosure of personal information is necessary to prevent physical harm or financial loss; to report suspected illegal activity or to investigate violations of our agreements or company policies; to enforce our terms and conditions, to protect the security or integrity of our products and services, and\nwhen you give us consent to do so.\nPlease note that these third parties may be in other countries where the laws on processing personal information may be less stringent than in your country.\nOur Security Measures to Protect your Personal Information\n\nESGtech uses industry-standard technologies when transferring and receiving data exchanged between ESGtech and other companies to help ensure its security. This site has security measures in place to help protect information under our control from the risk of accidental or unlawful destruction or accidental loss, alteration, or unauthorized disclosure or access. However, “perfect security” does not exist on the Internet. Also, if this website contains links to other sites, ESGtech is not responsible for the security practices or the content of such sites.\n\nHow we use your personal information?\n\nThe above personal information may be used for the following purposes:\nTo provide you with information about our offerings and/or our periodic newsletters;\n\nTo respond to your requests;\nFor creation or development of business intelligence or data analytics in relation to the Offerings provided by us (for this purpose we may share the Personal Information with certain software or tools available online);\nTo manage our relationship with you;\nFor internal record keeping;\nTo provide you with authorization to login and use your user account;\nTo verify your identity;\nTo maintain correct and up-to-date information about you;\nTo identify you as a contracting party;\nTo improve our website;\nTo enable automated handling of the subscriptions;\nTo otherwise be able to provide the services to you and\nTo comply with our legal or statutory obligations.\nOur Use of Cookies, Web Beacons, Web Analytics Services, and Links\nCookies. Many of our web pages use “cookies.” Cookies are text files we place in your computer’s browser to store your preferences. Cookies, by themselves, do not tell us your e-mail address or other personally identifiable information unless you choose to provide this information to us by, for example, registering at one of our sites. However, once you choose to furnish the site with personal information, this information may be linked to the data stored in the cookie. We use cookies to understand site usage and to improve the content and offerings on our sites. We also may use cookies to offer you products, programs, or services. You have many choices with regards to the management of cookies on your computer. All major browsers allow you to block or delete cookies from your system. To learn more about your ability to manage cookies, please consult the privacy features in your browser.\nWeb Analytics Services. We use Google Analytics, a service for the marketing analysis of the site provided by Google, Inc. Google Analytics uses cookies to allow us to see how you use our site, so we can improve your experience. Google’s ability to use and share information collected by Google Analytics about your visits to the site is restricted by the Google Analytics Terms of Use available at http://www.google.com/analytics/terms/us.html and the Google Privacy Policy available at http://www.google.com/policies/privacy/. You can prevent Google Analytics from recognizing you on return visits to the site by disabling cookies in your browser. If you prefer to not have data reported by Google Analytics, you can install the Google Analytics Opt-out Browser Add-on available at https://tools.google.com/dlpage/gaoptout.\nWebsite Links. We may create links to other web sites. We will make a reasonable effort to link only to sites that meet similar standards for maintaining each individual’s right to privacy. However, many other sites that are not associated with or authorized by ESGtech may have links leading to our site. ESGtech cannot control these links and we are not responsible for any content appearing on these sites. Since this website does not control the privacy policies of third parties, you are subject to the privacy practices of that third party. We encourage you to ask questions before you disclose any personal information to others.\nWho has access to your date withing our organisation?\n\nWithin our organization, access to your data is limited to those persons who require access in order to provide you with the products and services, which you purchase from us, to contact you, and to respond to your inquiries, including requests for refund. Those staff members may be on teams such as: marketing, events, development, executive, customer support. Employees only have access to data that is relevant to their team, on a ‘need to know’ basis.\n\nWho do we share your data with outside our organisation and why?\nProcessors\n\nWe may use service providers & third parties for operating and improving the Sites, to assist with certain functions, such as payment processing, email transmission, conducting surveys or contests, data hosting, managing our ads, third-party solutions for marketing and analytics, and some aspects of our technical and customer support. We take measures to ensure that these service providers access, process, and store information about you only for the purposes we authorize, through the execution of Data Processing Agreements.\n\nAuthorities\n\nWe may access, preserve, and disclose information about you to third parties, including the content of messages if we believe disclosure is in accordance with or required by, applicable law, regulation, legal process, or audits. We may also disclose information about you if we believe that your actions are inconsistent with our Terms of Service or related guidelines and policies, or if necessary to protect the rights, property, or safety of, or prevent fraud or abuse of, Company or others.\n\nTransfer of business\n\nIf we (or our assets) are acquired, or if we go out of business, enter bankruptcy, or go through some other change of control, personal information could be one of the assets transferred to or acquired by a third party.\n\nWhy and for how long do we store information we collect from you?\n\nWe retain certain information collected from you while you are a member on the site, and in certain cases where you have deleted your account, for the following reasons:\n\nSo that you can use our Sites;\nTo ensure that we do not communicate with you if you have asked us not to;\nTo provide you with a refund, if entitled;\nTo better understand the traffic to our Sites so that we can provide all members with the best possible experience;\nTo detect and prevent abuse of our Sites, illegal activities and breaches of our Terms of Service; and\nTo comply with applicable legal, tax or accounting requirements.\nWe retain user data for as long as necessary for the purposes described above. This means that we retain different categories of data for different periods of time depending on the type of data, the category of user to whom the data relates to, and the purposes for which we collected the data.\nYour rights under the GDPR\n\nYou have certain rights if you are within the EU this includes:\n\nRight to access\n\nThis right allows you to obtain a copy of your personal data, as well as other supplementary information.\n\nRight to restrict processing\n\nYou have the right to restrict the processing of your personal data in certain circumstances.\n\nRight to rectification\n\nYou have the right to have any incomplete or inaccurate information we hold about you corrected.\n\nRight to object to processing\n\nThe right to object allows you to stop or prevent us from processing your personal data. This right exists where we are relying on a legitimate interest as the legal basis for processing your Personal Data. You also have the right to object where we are processing your Personal data for direct marketing purposes.\n\nRight to erasure\n\nYou have the right to ask us to delete or remove Personal data when the personal data is no longer necessary for the purpose which you originally collected or processed.\n\nLegal Basis for Processing your Personal Data (EEA and Switzerland only)\n\nWith respect to personal data collected from individuals from the European Economic Area or Switzerland, our legal basis for collecting and using the personal data will depend on the personal data concerned and the specific context in which we collect it. ESGtech will normally collect personal data from you only where: (a) we have your consent to do so, (b) where we need the personal data to perform a contract with you (e.g. to deliver the services you have requested), or (c) where the processing is in our or a third party’s legitimate interests (and not overridden by your data protection interests or fundamental rights and freedoms).\n\nLinks to other websites\n\nOur Sites may contain links to other websites that are not operated by us. If you click on a third-party link, you will be directed to that third-party’s site. We strongly advise you to review the Privacy Policy of every site you visit.\nThird parties are under no obligation to comply with this Privacy Policy with respect to Personal Data that you provide directly to those third parties or that those third parties collect for themselves. We do not control the third-party sites that may be accessible through our Services. Thus, this Privacy Policy does not apply to information you provide to third-party sites or gathered by the third parties that operate them.\n\nLimiting Use, Disclosure, Retention\n\nESGtech identifies the purposes for which the information is being collected before or at the time of collection. The collection of your personal data will be limited to that which is needed for the purposes identified by ESGtech. Unless you consent, or we are required by law, we will only use the personal data for the purposes for which it was collected. If ESGtech will be processing your personal data for another purpose, later on, ESGtech will seek your further legal permission or consent; except where the other purpose is compatible with the original purpose. We will keep your personal data only as long as required to serve those purposes. We will also retain and use your personal data for as long as necessary to comply with our legal obligations, resolve disputes, and enforce our agreements.\n\nYour Access to and Updating of your Personal data\n\nReasonable access to your personal data may be provided upon request made to ESGtech at the contact information provided below. If access cannot be provided within that time frame, ESGtech will provide the requesting party a date when the information will be provided. If for some reason access is denied, we will provide an explanation as to why access has been denied. We may charge a reasonable fee in advance for copying and sending the information requested. If you would like us to delete any persona data held about you, we will do so on request unless we need to hold the information as part of the provision of products and services to you.\nIf you would like us to delete any persona data held about you, we will do so on request unless we need to hold the information as part of the provision of products and services to you.\n\nMarketing Communications\n\nWe offer those who provide personal contact information a means to choose how we use the information provided. You may manage your receipt of marketing and non- transactional communications by clicking on the “unsubscribe” link located on the bottom of our marketing emails.\n\nChanges to our Privacy Policy\n\nWe may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. If we make any material changes to the Policy, we will notify you via email, through a notification posted on the Services, or as required by applicable law. You can see when the Policy was last updated by checking the date at the bottom of this page. You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective from when they are posted on this page.\n\nContacting Us\n\nWe have designated a Data Protection Officer who is responsible for monitoring ESGtech’s ongoing compliance with this Privacy Policy. If you have any questions about this Privacy Policy, the practices or concerns of this site, please contact us at contact@esgtech.ai.\nLast updated: 01 Jan 2024\n\nUnlock Limitless Sustainability\n\nOpen the door to a world of endless possibilities for sustainable future. Our AI enabled ESG technology enables you to break through creative barriers that captivates your stakeholders and secure your enterprise future.\n\nBOOK A DEMO\nDrop us an email and we will\nget back to you.\n✉ contact@esgtech.ai\nQuick Links\n\nHome\n\nBlog\n\nContact\n\nNews & Updates\n\nSUBSCRIBE\n\n© Copyright 2024 ESGtech.ai | All rights reserved\n\nPrivacy Policy | Terms of Service",
+        "Select Page"
+      ],
+      "buttons": []
+    }
+  },
+  {
+    "link": {
+      "text": "Terms of Service",
+      "url": "https://esgtech.ai/terms-of-service/"
+    },
+    "schema": {
+      "section": "Terms of Service",
+      "url": "https://esgtech.ai/terms-of-service/",
+      "fields": [
+        {
+          "label": "Email",
+          "type": "text",
+          "name": "et_pb_signup_email",
+          "id": "et_pb_signup_email",
+          "placeholder": "Email",
+          "required": false,
+          "unit": "",
+          "options": []
+        },
+        {
+          "label": "et_pb_signup_provider",
+          "type": "hidden",
+          "name": "et_pb_signup_provider",
+          "id": "",
+          "placeholder": "",
+          "required": false,
+          "unit": "",
+          "options": []
+        },
+        {
+          "label": "et_pb_signup_list_id",
+          "type": "hidden",
+          "name": "et_pb_signup_list_id",
+          "id": "",
+          "placeholder": "",
+          "required": false,
+          "unit": "",
+          "options": []
+        },
+        {
+          "label": "et_pb_signup_account_name",
+          "type": "hidden",
+          "name": "et_pb_signup_account_name",
+          "id": "",
+          "placeholder": "",
+          "required": false,
+          "unit": "",
+          "options": []
+        },
+        {
+          "label": "et_pb_signup_ip_address",
+          "type": "hidden",
+          "name": "et_pb_signup_ip_address",
+          "id": "",
+          "placeholder": "",
+          "required": false,
+          "unit": "",
+          "options": []
+        },
+        {
+          "label": "et_pb_signup_checksum",
+          "type": "hidden",
+          "name": "et_pb_signup_checksum",
+          "id": "",
+          "placeholder": "",
+          "required": false,
+          "unit": "",
+          "options": []
+        }
+      ],
+      "table_columns": [],
+      "dropdowns": [
+        "Home\n \nAbout\n \nBlog\n \nLogin\n \nBook a Demo\nTerms of Service (or Use)\n\nThis Terms of Use Agreement (“Agreement”) governs the use of services (“Services”) provided on or in connection with the ESGtech website, application and platform, located at app.esgtech.ai  (“website”) and related web-based applications (collectively, the “platform”) operated by ESGtech (“Company,” “we,” “us,” or “our”). By accessing or using the Platform, you agree to be bound by this Agreement and all of its terms without change\n\nAcceptance of Terms\n\nBy accessing our Platform or using our Services, you agree to be bound by these terms of use, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws. If you do not agree with any of these terms, you are prohibited from using or accessing the Services or the Platform.\n\nEligibility\n\nYou represent and warrant that you are at least 18 years of age. If you are under the age of 18, you may not, under any circumstances or for any reason, use the Services.\n\nAccount registration and responsibilities\n\nTo use the services, you may need to register for an account. You agree to provide us with accurate, complete and updated information for your account. ESGtech may need to use this information to contact you.\nYou are solely responsible for maintaining the confidentiality of your account and password, for restricting access to your computer, and for all activities that occur under your account or password. Please make sure the information you provide to us upon registration and at all other times is true, accurate, current, and complete to the best of your knowledge.\n\nService usage and restrictions\n\nYou agree to use the services only for purposes as permitted by this agreement and any applicable law, regulation, or generally accepted practices in the relevant jurisdictions.\nYou agree not to (a) access (or attempt to access) the administrative interface of the services by any means other than through the interface provided by ESGtech in connection with the services, unless you have been specifically allowed to do so in a separate agreement with ESGtech, or (b) engage in any activity that interferes with or disrupts the services (or the servers and networks connected to the Services).\nYou may not access the services for the purpose of bringing an intellectual property infringement claim against ESGtech or for the purpose of creating a product or service competitive with the services.\n\nContent\n\nAll content posted or otherwise submitted to the platform, is the sole responsibility of the account holder from which such content originates. You acknowledge and agree that you, and not ESGtech, are entirely responsible for all content that you post, or otherwise submit to the platform.\nESGtech does not control user-submitted content and, as such, does not guarantee the accuracy, integrity or quality of such content. You understand that by using the Platform you may be exposed to content that is offensive, indecent or objectionable.\n\nIntellectual Property\n\nESGtech provides paid services for which users need to pay with real money. These Services are subject to fees, taxes, and currency rates as stated on the payment page. We don’t offer refunds for our Services unless required by law.\n\nPayments and refund policy\n\nESGtech provides paid services for which users need to pay with real money. These Services are subject to fees, taxes, and currency rates as stated on the payment page. We don’t offer refunds for our Services unless required by law.\n\nTermination\n\nWe may terminate or suspend your account and bar access to the service immediately, without prior notice or liability, under our sole discretion, for any reason whatsoever and without limitation, including but not limited to a breach of the Terms.\n\nChanges to terms\n\nWe reserve the right to modify or replace these terms at any time. If a revision is material we will provide at least 30 days’ notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.\n\nContacting Us\n\nWe have designated a Data Protection Officer who is responsible for monitoring ESGtech’s ongoing compliance with this Privacy Policy. If you have any questions about these terms, please contact us at contact@esgtech.ai.\n\nLast updated: 01 Jan 2024\n\nUnlock Limitless Sustainability\n\nOpen the door to a world of endless possibilities for sustainable future. Our AI enabled ESG technology enables you to break through creative barriers that captivates your stakeholders and secure your enterprise future.\n\nBOOK A DEMO\nDrop us an email and we will\nget back to you.\n✉ contact@esgtech.ai\nQuick Links\n\nHome\n\nBlog\n\nContact\n\nNews & Updates\n\nSUBSCRIBE\n\n© Copyright 2024 ESGtech.ai | All rights reserved\n\nPrivacy Policy | Terms of Service",
+        "Select Page"
+      ],
+      "buttons": []
+    }
+  }
+]
