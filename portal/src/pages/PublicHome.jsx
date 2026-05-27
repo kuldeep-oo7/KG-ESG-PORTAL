@@ -4,7 +4,6 @@ import {
   CalendarDays,
   Clock,
   Download,
-  FileText,
   Image,
   Leaf,
   Mail,
@@ -62,7 +61,36 @@ const MONTHS = [
   ['FEB', 'Financial literacy and tax awareness', 'Planning', 'Education'],
 ]
 
-const NEWSLETTERS = []
+const NEWSLETTERS = [
+  {
+    issue: 'Issue 01 - FY 2026-27',
+    title: 'Seeds of Change',
+    period: 'March - June 2026 - Quarter 1',
+    summary: 'Women\'s Day inclusion program, health & eye check-up camps, Labour\'s Day celebration, and our Environment Day tree plantation drive.',
+    tone: 'from-[#064E3B] to-[#10B981]',
+  },
+  {
+    issue: 'Issue 02 - FY 2026-27',
+    title: 'Growing Together',
+    period: 'July - September 2026 - Quarter 2',
+    summary: 'Local school & Anganwadi support, animal welfare program, Independence Day celebrations, and our governance & POSH awareness seminar.',
+    tone: 'from-[#065f46] to-[#34d399]',
+  },
+  {
+    issue: 'Issue 03 - FY 2026-27',
+    title: 'Community in Action',
+    period: 'October - December 2026 - Quarter 3',
+    summary: 'Clean-up drive, Men\'s Day & Donation Drive, energy conservation program, Diwali celebrations, and the Christmas Carnival.',
+    tone: 'from-[#047857] to-[#6ee7b7]',
+  },
+  {
+    issue: 'Issue 04 - FY 2026-27',
+    title: 'Sustaining Tomorrow',
+    period: 'January - March 2027 - Quarter 4',
+    summary: 'Sustainability expert sessions, financial literacy & tax awareness workshop, Uttrayan celebrations, and annual FY 2026-27 impact highlights.',
+    tone: 'from-[#064E3B] to-[#059669]',
+  },
+]
 
 const GALLERY = [
   ['Women\'s Day', 'Inclusion & equality program'],
@@ -188,49 +216,36 @@ export default function PublicHome() {
 
         <section id="newsletter" className="mx-auto max-w-7xl px-6 py-14">
           <SectionHeader title="Newsletter">Quarterly CSR updates, sustainability progress, and community impact stories.</SectionHeader>
-          {NEWSLETTERS.length > 0 ? (
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-              {NEWSLETTERS.map(newsletter => (
-                <article key={newsletter.href} className="overflow-hidden rounded-xl bg-white shadow-[0_2px_14px_rgba(6,78,59,.09)]">
-                  <div className="bg-gradient-to-br from-[#064E3B] to-[#10B981] p-6 text-white">
-                    <p className="text-xs font-bold uppercase tracking-widest text-white/65">{newsletter.issue}</p>
-                    <h3 className="mt-2 min-h-14 text-lg font-extrabold leading-tight">{newsletter.title}</h3>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {NEWSLETTERS.map(newsletter => (
+              <article key={newsletter.issue} className="overflow-hidden rounded-xl bg-white shadow-[0_2px_14px_rgba(6,78,59,.09)]">
+                <div className={`flex h-[155px] flex-col items-center justify-center gap-2 bg-gradient-to-br ${newsletter.tone} p-5 text-center text-white`}>
+                  <p className="text-[11px] font-bold uppercase tracking-widest text-white/65">{newsletter.issue}</p>
+                  <h3 className="text-lg font-extrabold leading-tight">{newsletter.title}</h3>
+                </div>
+                <div className="p-5">
+                  <p className="text-xs font-semibold text-slate-500">{newsletter.period}</p>
+                  <p className="mt-2 min-h-[108px] text-sm leading-6 text-slate-600">{newsletter.summary}</p>
+                  <div className="mt-4 flex gap-2">
+                    <button
+                      type="button"
+                      onClick={() => setMessage(`${newsletter.title} newsletter preview will open once the PDF is uploaded.`)}
+                      className="rounded-lg bg-[#10B981] px-4 py-2 text-xs font-extrabold text-[#064E3B] hover:bg-emerald-400"
+                    >
+                      View
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setMessage(`${newsletter.title} download will be available once the PDF is uploaded.`)}
+                      className="rounded-lg border border-[#064E3B] px-4 py-2 text-xs font-extrabold text-[#064E3B] hover:bg-[#064E3B] hover:text-white"
+                    >
+                      <Download className="inline h-3.5 w-3.5" /> Download
+                    </button>
                   </div>
-                  <div className="p-5">
-                    <p className="text-xs font-semibold text-slate-500">{newsletter.period}</p>
-                    <p className="mt-2 text-sm leading-6 text-slate-600">{newsletter.summary}</p>
-                    <div className="mt-4 flex gap-2">
-                      <a
-                        href={newsletter.href}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="rounded-lg bg-[#10B981] px-4 py-2 text-xs font-extrabold text-[#064E3B]"
-                      >
-                        View
-                      </a>
-                      <a
-                        href={newsletter.href}
-                        download
-                        className="rounded-lg border border-[#064E3B] px-4 py-2 text-xs font-extrabold text-[#064E3B]"
-                      >
-                        <Download className="inline h-3.5 w-3.5" /> Download
-                      </a>
-                    </div>
-                  </div>
-                </article>
-              ))}
-            </div>
-          ) : (
-            <div className="rounded-xl border border-dashed border-emerald-200 bg-white p-8 text-center shadow-[0_2px_14px_rgba(6,78,59,.06)]">
-              <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-emerald-100 text-[#064E3B]">
-                <FileText className="h-6 w-6" />
-              </span>
-              <h3 className="mt-4 text-lg font-extrabold text-[#064E3B]">No newsletters uploaded yet</h3>
-              <p className="mx-auto mt-2 max-w-xl text-sm leading-6 text-slate-600">
-                Add newsletter PDFs or images to the publishing folder and they will appear here with View and Download actions.
-              </p>
-            </div>
-          )}
+                </div>
+              </article>
+            ))}
+          </div>
         </section>
 
         <section id="gallery" className="mx-auto max-w-7xl px-6 py-14">

@@ -44,8 +44,8 @@ For quick back-and-forth messages between agents, use `COORDINATION_CHAT.md`. Ke
 ### 2026-05-27 - Codex public newsletter section
 
 - Checked `E:\HACKATHON\newsletter`; the folder is currently empty, so there are no newsletter PDFs/images to publish yet.
-- Updated `portal/src/pages/PublicHome.jsx` to remove fake placeholder newsletters and render an empty uploaded-newsletter state until real files are available.
-- Kept the section ready for real newsletter entries with working View and Download link rendering.
+- Read `mockup_a_final (1).html` and restored the four mockup newsletter cards: Seeds of Change, Growing Together, Community in Action, and Sustaining Tomorrow.
+- Kept View and Download buttons functional with user feedback until real PDF files are available.
 - Verified `npx eslint src/pages/PublicHome.jsx` passes.
 - Verified `npm run build` passes. Vite chunk-size warning remains pre-existing.
 
