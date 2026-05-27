@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import {
   CalendarDays,
@@ -84,28 +84,14 @@ function SectionHeader({ title, children }) {
 
 export default function PublicHome() {
   const navigate = useNavigate()
-  const [active, setActive] = useState(() => {
-    const hash = window.location.hash.replace('#', '')
-    return NAV_ITEMS.some(([id]) => id === hash) ? hash : 'events'
-  })
+  const [active, setActive] = useState('events')
   const [openMonth, setOpenMonth] = useState('JUN')
   const [galleryFilter, setGalleryFilter] = useState('All Events')
   const [message, setMessage] = useState('')
 
-  function jump(id) {
+  function showTab(id) {
     setActive(id)
-    window.history.replaceState(null, '', `#${id}`)
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
-
-  useEffect(() => {
-    const hash = window.location.hash.replace('#', '')
-    if (NAV_ITEMS.some(([id]) => id === hash)) {
-      requestAnimationFrame(() => {
-        document.getElementById(hash)?.scrollIntoView({ behavior: 'auto', block: 'start' })
-      })
-    }
-  }, [])
 
   function submitContact(e) {
     e.preventDefault()
@@ -116,7 +102,7 @@ export default function PublicHome() {
     <div className="min-h-screen bg-[#FBFAFC] text-slate-900">
       <header className="sticky top-0 z-50 bg-[#064E3B] shadow-lg shadow-emerald-950/20">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
-          <button onClick={() => jump('events')} className="flex items-center gap-3 text-left">
+          <button onClick={() => showTab('events')} className="flex items-center gap-3 text-left">
             <img src={logoImg} alt="K.GIRDHARLAL" className="h-10 w-auto rounded bg-white object-contain" />
             <div>
               <p className="text-sm font-extrabold tracking-wide text-white">K. <span className="text-[#10B981]">Girdharlal</span></p>
@@ -127,7 +113,7 @@ export default function PublicHome() {
             {NAV_ITEMS.map(([id, label]) => (
               <button
                 key={id}
-                onClick={() => jump(id)}
+                onClick={() => showTab(id)}
                 className={`rounded-lg px-3 py-2 text-sm font-semibold transition-colors ${active === id ? 'bg-white/10 text-white' : 'text-white/70 hover:bg-white/10 hover:text-white'}`}
               >
                 {label}
@@ -144,7 +130,7 @@ export default function PublicHome() {
       </header>
 
       <main>
-        <section id="events" className="mx-auto max-w-7xl px-6 py-14">
+        {active === 'events' && <section className="mx-auto max-w-7xl px-6 py-14">
           <SectionHeader title="Upcoming Events">
             Confirmed CSR events. Register your spot or learn more about each initiative before accessing the internal dashboard.
           </SectionHeader>
@@ -175,9 +161,9 @@ export default function PublicHome() {
               </article>
             ))}
           </div>
-        </section>
+        </section>}
 
-        <section id="calendar" className="mx-auto max-w-7xl px-6 py-14">
+        {active === 'calendar' && <section className="mx-auto max-w-7xl px-6 py-14">
           <SectionHeader title="CSR Calendar">Month-wise CSR activity planning with status, category, and SDG context.</SectionHeader>
           <div className="rounded-xl bg-white p-5 shadow-[0_2px_14px_rgba(6,78,59,.09)]">
             {MONTHS.map(([tag, title, status, category]) => (
@@ -195,9 +181,9 @@ export default function PublicHome() {
               </div>
             ))}
           </div>
-        </section>
+        </section>}
 
-        <section id="newsletter" className="mx-auto max-w-7xl px-6 py-14">
+        {active === 'newsletter' && <section className="mx-auto max-w-7xl px-6 py-14">
           <SectionHeader title="Newsletter">Quarterly CSR updates, sustainability progress, and community impact stories.</SectionHeader>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {NEWSLETTERS.map(newsletter => (
@@ -229,9 +215,9 @@ export default function PublicHome() {
               </article>
             ))}
           </div>
-        </section>
+        </section>}
 
-        <section id="gallery" className="mx-auto max-w-7xl px-6 py-14">
+        {active === 'gallery' && <section className="mx-auto max-w-7xl px-6 py-14">
           <SectionHeader title="Gallery">Moments from CSR initiatives, employee drives, and community celebrations.</SectionHeader>
           <div className="mb-6 flex flex-wrap gap-2">
             {['All Events', 'Environment', 'Health', 'Community', 'Celebrations'].map(tab => (
@@ -249,9 +235,9 @@ export default function PublicHome() {
               </div>
             ))}
           </div>
-        </section>
+        </section>}
 
-        <section id="contact" className="mx-auto max-w-7xl px-6 py-14">
+        {active === 'contact' && <section className="mx-auto max-w-7xl px-6 py-14">
           <SectionHeader title="Contact Us">Reach our CSR team for queries, partnerships, volunteer opportunities, or event collaborations.</SectionHeader>
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
             <div className="space-y-5">
@@ -280,7 +266,7 @@ export default function PublicHome() {
               {message && <p className="mt-3 text-sm font-semibold text-[#059669]">{message}</p>}
             </form>
           </div>
-        </section>
+        </section>}
       </main>
     </div>
   )

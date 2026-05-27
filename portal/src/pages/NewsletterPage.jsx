@@ -18,7 +18,7 @@ export default function NewsletterPage() {
     return (
       <div className="min-h-screen bg-[#FBFAFC] px-6 py-10 text-slate-900">
         <div className="mx-auto max-w-7xl">
-          <Link to="/#newsletter" className="inline-flex items-center gap-2 text-sm font-extrabold text-[#064E3B]">
+          <Link to="/" className="inline-flex items-center gap-2 text-sm font-extrabold text-[#064E3B]">
             <ArrowLeft className="h-4 w-4" /> Back to public site
           </Link>
           <div className="mt-8 flex items-end justify-between gap-4">
@@ -42,7 +42,7 @@ export default function NewsletterPage() {
   return (
     <div className="min-h-screen bg-[#FBFAFC] px-6 py-10 text-slate-900">
       <div className="mx-auto max-w-7xl">
-        <Link to="/#newsletter" className="inline-flex items-center gap-2 text-sm font-extrabold text-[#064E3B]">
+        <Link to="/" className="inline-flex items-center gap-2 text-sm font-extrabold text-[#064E3B]">
           <ArrowLeft className="h-4 w-4" /> Back to public site
         </Link>
         <div className="mt-8 grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">

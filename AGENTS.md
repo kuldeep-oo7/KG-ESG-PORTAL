@@ -48,6 +48,7 @@ For quick back-and-forth messages between agents, use `COORDINATION_CHAT.md`. Ke
 - Added real newsletter routes with visual covers and detail pages at `/newsletter` and `/newsletter/:slug`, backed by `portal/src/data/newsletters.js`.
 - Updated public Newsletter cards so View opens the newsletter detail page and Open launches the detail route in a new tab.
 - Replaced temporary SVG cover artwork with PNG images extracted from `K. Girdharlal Sustainability Report 2025.pdf` into `portal/public/newsletter/real-newsletter-*.png`.
+- Changed public-page navigation from scroll-to-section behavior to tab-style rendering; only the selected section is visible.
 - Verified `npx eslint src/pages/PublicHome.jsx` passes.
 - Verified `npm run build` passes. Vite chunk-size warning remains pre-existing.
 
