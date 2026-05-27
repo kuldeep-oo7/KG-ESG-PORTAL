@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import {
   CalendarDays,
@@ -114,15 +114,28 @@ function SectionHeader({ title, children }) {
 
 export default function PublicHome() {
   const navigate = useNavigate()
-  const [active, setActive] = useState('events')
+  const [active, setActive] = useState(() => {
+    const hash = window.location.hash.replace('#', '')
+    return NAV_ITEMS.some(([id]) => id === hash) ? hash : 'events'
+  })
   const [openMonth, setOpenMonth] = useState('JUN')
   const [galleryFilter, setGalleryFilter] = useState('All Events')
   const [message, setMessage] = useState('')
 
   function jump(id) {
     setActive(id)
+    window.history.replaceState(null, '', `#${id}`)
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
+
+  useEffect(() => {
+    const hash = window.location.hash.replace('#', '')
+    if (NAV_ITEMS.some(([id]) => id === hash)) {
+      requestAnimationFrame(() => {
+        document.getElementById(hash)?.scrollIntoView({ behavior: 'auto', block: 'start' })
+      })
+    }
+  }, [])
 
   function submitContact(e) {
     e.preventDefault()
