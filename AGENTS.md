@@ -35,8 +35,62 @@ For quick back-and-forth messages between agents, use `COORDINATION_CHAT.md`. Ke
 | Claude | Stub pages (Login, ResetPassword, CSR, Social, Governance) | `portal/src/pages/Login.jsx`, `portal/src/pages/ResetPassword.jsx`, `portal/src/pages/CSR.jsx`, `portal/src/pages/Social.jsx`, `portal/src/pages/Governance.jsx` | COMPLETE | 2026-05-24 |
 | Claude | Auth pages full design (Login + ResetPassword) | `portal/src/pages/Login.jsx`, `portal/src/pages/ResetPassword.jsx` | COMPLETE | 2026-05-24 |
 | Claude | Help page redesign | `portal/src/pages/Help.jsx` | COMPLETE | 2026-05-24 |
+| Codex | Social Add Activity full-page audit | `portal/src/pages/Social.jsx`, `AGENTS.md` | COMPLETE | 2026-05-25 |
+| Codex | CSR Add Activity button/functionality audit | `portal/src/pages/CSR.jsx`, `AGENTS.md` | COMPLETE | 2026-05-26 |
+| Codex | Public pre-login page + newsletter section | `portal/src/App.jsx`, `portal/src/pages/PublicHome.jsx`, `portal/src/pages/Login.jsx`, `portal/src/components/Navbar.jsx`, `AGENTS.md` | COMPLETE | 2026-05-27 |
 
 ## Handoff Log
+
+### 2026-05-27 - Codex public newsletter section
+
+- Checked `E:\HACKATHON\newsletter`; the folder is currently empty, so there are no newsletter PDFs/images to publish yet.
+- Updated `portal/src/pages/PublicHome.jsx` to remove fake placeholder newsletters and render an empty uploaded-newsletter state until real files are available.
+- Kept the section ready for real newsletter entries with working View and Download link rendering.
+- Verified `npx eslint src/pages/PublicHome.jsx` passes.
+- Verified `npm run build` passes. Vite chunk-size warning remains pre-existing.
+
+### 2026-05-26 - Codex CSR Add Activity controls audit
+
+- Audited visible CSR dashboard and Add Activity wizard controls in `portal/src/pages/CSR.jsx`.
+- Wired dashboard buttons/selectors: Dashboard now gives feedback, Monthly/Quarterly chart selector updates state, View All toggles the active projects table.
+- Wired wizard actions: Save Draft changes state and shows feedback, active Add Activity tab returns to Activity Details, Submit/Submit Activity submits and closes the overlay.
+- Wired NGO partner buttons: View Profile shows verification feedback and Change Partner swaps partner/contact fields.
+- Wired upload controls: file input appends selected files to attachment state and each remove button deletes its attachment.
+- Added reusable notification feedback for button outcomes.
+- Verified `npx eslint src/pages/CSR.jsx` passes.
+- Verified `npm run build` passes. Vite chunk-size warning remains pre-existing.
+- Browser-checked key controls at `http://127.0.0.1:3001/csr`: Quarterly, View All, Add Activity, Save Draft, View Profile, Change Partner, Upload remove, Submit Activity. No runtime errors.
+
+### 2026-05-25 - Codex CSR Add Activity flow
+
+- Read the local CSR references including `csr 3rd page.png` and `NEW CSR PAGE.png`.
+- Updated `portal/src/pages/CSR.jsx` so the Add Activity wizard removes the Project Selection screen and starts directly at Activity Details.
+- Remapped the CSR wizard to 8 steps: Activity Details, Location, NGO / Implementation Partner, Timeline, Financials, Beneficiaries, Impact, Uploads & Evidence.
+- Updated the sidebar, progress, step headers, CTA text, and Location page numbering to match the new no-project-selection flow.
+- Re-audited the CSR wizard after user feedback and replaced the remaining generic NGO, Timeline, and Financials screens with screenshot-style visual summary panels that render immediately with seeded values.
+- Fixed CSR Add Activity form behavior: added Month to Activity Details, removed the Activity Details Category field, replaced Road Safety with Rural Dev., added conditional Other Details input, made location summary update from the selected state/district/village/setting, made Timeline dates editable as text with dynamic milestone labels, and saved the selected Activity Type.
+- Verified `npx eslint src/pages/CSR.jsx` passes.
+- Verified `npm run build` passes. Vite chunk-size warning remains pre-existing.
+- Browser-checked the CSR add-activity overlay at `http://127.0.0.1:3001/csr`, including the updated NGO, Timeline, and Financials screens, without runtime errors.
+
+### 2026-05-25 - Codex Social Add Activity flow
+
+- Read the local references `social add activity pages 1.png` through `social add activity pages 6 7 8.png`.
+- Updated `portal/src/pages/Social.jsx` from the older 8-step overlay toward the referenced 7-step Add Activity flow: Activity Details, Conducted By, Timeline, Participants, Cost, Impact & Outcome, Documents & Proof.
+- Added the Conducted By trainer/agency page with internal/external toggle, trainer cards, add-new-trainer affordance, and contact/fee fields.
+- Seeded the add form with the values shown in the screenshots so the preview state resembles the reference.
+- Reworked page 1 Activity Details to match `social add activity pages 1.png`: page shell, Save Draft/Submit actions, Activity Wizard progress card, large step header, five activity-type cards, description, mode/location row, and meeting link.
+- Audited and reworked the remaining live wizard pages against the reference set:
+  - Page 3 Timeline now uses the two-column field/calendar layout with reminders and status progression.
+  - Page 4 Participants now uses the reference input row and gender donut.
+  - Page 5 Cost now uses total cost, PO reference, and the dark cost snapshot.
+  - Page 6 Impact & Outcome now uses outcome notes, assessment selection, and a dark outcome snapshot.
+  - Page 7 Documents & Proof now uses the upload drop zone and proof file cards.
+- Added step-change scroll reset so switching pages starts at the top of the Add Activity flow.
+- Verified `npx eslint src/pages/Social.jsx` passes.
+- Verified `npm run build` passes. Vite chunk-size warning remains pre-existing.
+- Browser-clicked through all 7 wizard steps with Playwright. No runtime errors; Recharts still emits pre-existing chart sizing warnings.
+- Full `npm run lint` still has unrelated pre-existing errors in `Navbar.jsx`, `SiteLayout.jsx`, and `Dashboard.jsx`.
 
 ### 2026-05-24 - Claude (auth pages full design)
 

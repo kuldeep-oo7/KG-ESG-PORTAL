@@ -1,10 +1,10 @@
 import { useState, useRef, useEffect } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
-import { Settings, Search, Bell, ChevronDown, LogOut, User, HelpCircle, X } from 'lucide-react'
+import { Settings, Search, Bell, LogOut, User, HelpCircle } from 'lucide-react'
 import logoImg from '../assets/logo.jfif'
 
 const NAV_ITEMS = [
-  { label: 'Dashboard',   to: '/',           end: true },
+  { label: 'Dashboard',   to: '/dashboard',  end: true },
   { label: 'Sites',       to: '/sites',      end: false },
   { label: 'GHG Reports', to: '/reports',    end: false },
   { label: 'CSR',         to: '/csr',        end: false },
@@ -68,7 +68,7 @@ function ProfileDropdown({ onClose, navigate }) {
       </button>
       <div className="border-t border-slate-100 mt-1" />
       <button
-        onClick={() => { onClose(); navigate('/login') }}
+        onClick={() => { onClose(); navigate('/') }}
         className="w-full flex items-center gap-3 px-4 py-2.5 text-sm text-red-500 hover:bg-red-50 transition-colors text-left"
       >
         <LogOut className="w-4 h-4" />
@@ -90,10 +90,10 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
-      <div className="flex items-center gap-6 px-6 h-16">
+      <div className="flex items-center gap-6 px-6 h-16 max-w-[1440px] mx-auto w-full">
 
         {/* Logo + brand name */}
-        <NavLink to="/" className="flex items-center gap-2.5 shrink-0 no-underline">
+        <NavLink to="/dashboard" className="flex items-center gap-2.5 shrink-0 no-underline">
           <img
             src={logoImg}
             alt="K.GIRDHARLAL"

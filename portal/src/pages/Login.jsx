@@ -2,103 +2,23 @@ import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { Eye, EyeOff, Mail } from 'lucide-react'
 import logoImg from '../assets/logo.jfif'
+import authPanelImg from '../assets/auth-panel.png'
 
 // ─── Right panel — reused on all auth pages ─────────────────────────────────
 function AuthRightPanel() {
   return (
-    <div
-      className="hidden md:flex md:w-[60%] relative flex-col items-center justify-center overflow-hidden"
-      style={{
-        background: 'linear-gradient(135deg, #022C22 0%, #064E3B 55%, #0D9488 100%)',
-      }}
-    >
-      {/* Radial circuit overlay */}
-      <div
-        aria-hidden="true"
-        style={{
-          position: 'absolute',
-          inset: 0,
-          backgroundImage:
-            'radial-gradient(circle at 20% 30%, rgba(16,185,129,0.12) 0%, transparent 50%), ' +
-            'radial-gradient(circle at 80% 70%, rgba(6,78,59,0.35) 0%, transparent 55%), ' +
-            'radial-gradient(circle at 60% 15%, rgba(13,148,136,0.10) 0%, transparent 40%)',
-          pointerEvents: 'none',
-        }}
+    <div className="hidden md:block md:w-[60%] h-screen overflow-hidden bg-[#022C22] relative">
+      <img
+        src={authPanelImg}
+        alt="One platform. Complete ESG. Trace. Report. Improve."
+        className="h-full w-full object-cover"
       />
-
-      {/* Geometric grid SVG */}
-      <svg
-        aria-hidden="true"
-        style={{
-          position: 'absolute',
-          inset: 0,
-          width: '100%',
-          height: '100%',
-          opacity: 0.06,
-        }}
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <defs>
-          <pattern id="login-grid" width="40" height="40" patternUnits="userSpaceOnUse">
-            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#10B981" strokeWidth="0.8" />
-          </pattern>
-          <pattern id="login-dots" width="40" height="40" patternUnits="userSpaceOnUse">
-            <circle cx="20" cy="20" r="1.2" fill="#10B981" />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#login-grid)" />
-        <rect width="100%" height="100%" fill="url(#login-dots)" />
-      </svg>
-
-      {/* Pagination dots — top right */}
-      <div className="absolute top-8 right-8 flex gap-2">
-        {[true, false, false].map((active, i) => (
-          <span
-            key={i}
-            className="block rounded-full"
-            style={{
-              width: active ? 20 : 8,
-              height: 8,
-              background: active ? '#10B981' : 'rgba(255,255,255,0.3)',
-            }}
-          />
-        ))}
-      </div>
-
-      {/* Main card */}
-      <div
-        className="relative z-10 rounded-2xl px-10 py-10 max-w-sm w-full mx-8"
-        style={{ background: 'rgba(2,44,34,0.65)', backdropFilter: 'blur(6px)' }}
-      >
-        <p
-          className="text-white font-bold leading-tight mb-2"
-          style={{ fontFamily: '"Hanken Grotesk", Inter, sans-serif', fontSize: '2.4rem' }}
-        >
-          One platform.
-        </p>
-        <p
-          className="font-bold leading-tight mb-6"
-          style={{
-            fontFamily: '"Hanken Grotesk", Inter, sans-serif',
-            fontSize: '2.4rem',
-            color: '#10B981',
-          }}
-        >
-          Complete ESG.
-        </p>
-
-        {/* Short green separator */}
-        <div
-          className="mb-4"
-          style={{ width: 48, height: 3, background: '#10B981', borderRadius: 2 }}
-        />
-
-        <p
-          className="text-white/50 uppercase tracking-widest"
-          style={{ fontSize: '0.65rem', letterSpacing: '0.2em' }}
-        >
-          TRACE.&nbsp;&nbsp;REPORT.&nbsp;&nbsp;IMPROVE.
-        </p>
+      <div className="absolute left-10 top-10 flex items-center gap-3 rounded-2xl border border-white/15 bg-white/10 px-4 py-3 backdrop-blur-md">
+        <img src={logoImg} alt="K.GIRDHARLAL" className="h-10 w-auto rounded bg-white object-contain p-1" />
+        <div>
+          <p className="text-sm font-bold tracking-wide text-white">K.GIRDHARLAL</p>
+          <p className="text-[8px] uppercase tracking-[0.22em] text-white/55">ESG Portal</p>
+        </div>
       </div>
     </div>
   )
@@ -113,15 +33,15 @@ export default function Login() {
 
   function handleSubmit(e) {
     e.preventDefault()
-    navigate('/')
+    navigate('/dashboard')
   }
 
   return (
-    <div className="flex min-h-screen w-full font-sans">
+    <div className="flex h-screen w-full overflow-hidden font-sans">
       {/* ── Left panel ────────────────────────────────────────────────────── */}
-      <div className="flex flex-col w-full md:w-[40%] bg-white px-10 py-10 justify-center min-h-screen">
+      <div className="flex h-screen flex-col w-full md:w-[40%] bg-white px-10 py-8 justify-center overflow-y-auto">
         {/* Logo block */}
-        <div className="mb-12">
+        <div className="mb-8">
           <div className="flex items-center gap-3 mb-1">
             <img src={logoImg} alt="K.GIRDHARLAL" className="h-10 w-auto object-contain rounded" />
             <span
@@ -146,12 +66,12 @@ export default function Login() {
         >
           Sign In
         </h1>
-        <p className="text-sm text-slate-500 mb-8">
+        <p className="text-sm text-slate-500 mb-6">
           Welcome back! Please enter your details.
         </p>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           {/* Email */}
           <div className="flex flex-col gap-1.5">
             <label htmlFor="email" className="text-sm font-medium text-slate-700">

@@ -5,6 +5,7 @@ import Dashboard from './pages/Dashboard'
 import Sites from './pages/Sites'
 import GHGReports from './pages/GHGReports'
 import Help from './pages/Help'
+import PublicHome from './pages/PublicHome'
 import Login from './pages/Login'
 import ResetPassword from './pages/ResetPassword'
 import CSR from './pages/CSR'
@@ -83,11 +84,12 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         {/* Auth pages — no Layout wrapper */}
+        <Route path="/"                element={<PublicHome />} />
         <Route path="/login"           element={<Login />} />
         <Route path="/forgot-password" element={<ResetPassword />} />
 
         {/* Main app */}
-        <Route path="/"          element={<Layout><Dashboard /></Layout>} />
+        <Route path="/dashboard" element={<Layout><Dashboard /></Layout>} />
         <Route path="/sites"     element={<Layout><Sites /></Layout>} />
         <Route path="/reports"   element={<Layout><GHGReports /></Layout>} />
         <Route path="/csr"       element={<Layout><CSR /></Layout>} />
