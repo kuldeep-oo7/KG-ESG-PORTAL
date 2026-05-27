@@ -47,7 +47,7 @@ For quick back-and-forth messages between agents, use `COORDINATION_CHAT.md`. Ke
 - Read `mockup_a_final (1).html` and restored the four mockup newsletter cards: Seeds of Change, Growing Together, Community in Action, and Sustaining Tomorrow.
 - Added real newsletter routes with visual covers and detail pages at `/newsletter` and `/newsletter/:slug`, backed by `portal/src/data/newsletters.js`.
 - Updated public Newsletter cards so View opens the newsletter detail page and Open launches the detail route in a new tab.
-- Added actual newsletter cover image assets in `portal/public/newsletter/*.svg` and render them with `img` tags on list/detail pages.
+- Replaced temporary SVG cover artwork with PNG images extracted from `K. Girdharlal Sustainability Report 2025.pdf` into `portal/public/newsletter/real-newsletter-*.png`.
 - Verified `npx eslint src/pages/PublicHome.jsx` passes.
 - Verified `npm run build` passes. Vite chunk-size warning remains pre-existing.
 
