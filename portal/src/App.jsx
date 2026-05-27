@@ -6,6 +6,7 @@ import Sites from './pages/Sites'
 import GHGReports from './pages/GHGReports'
 import Help from './pages/Help'
 import PublicHome from './pages/PublicHome'
+import NewsletterPage from './pages/NewsletterPage'
 import Login from './pages/Login'
 import ResetPassword from './pages/ResetPassword'
 import CSR from './pages/CSR'
@@ -85,6 +86,8 @@ export default function App() {
       <Routes>
         {/* Auth pages — no Layout wrapper */}
         <Route path="/"                element={<PublicHome />} />
+        <Route path="/newsletter"      element={<NewsletterPage />} />
+        <Route path="/newsletter/:slug" element={<NewsletterPage />} />
         <Route path="/login"           element={<Login />} />
         <Route path="/forgot-password" element={<ResetPassword />} />
 
