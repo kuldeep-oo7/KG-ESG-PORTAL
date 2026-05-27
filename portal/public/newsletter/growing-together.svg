@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-label="Growing Together newsletter cover">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#065F46"/>
+      <stop offset=".62" stop-color="#059669"/>
+      <stop offset="1" stop-color="#34D399"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="760" fill="url(#bg)"/>
+  <circle cx="1000" cy="150" r="210" fill="#D1FAE5" opacity=".16"/>
+  <circle cx="230" cy="615" r="260" fill="#022C22" opacity=".24"/>
+  <g transform="translate(136 158)">
+    <rect x="0" y="175" width="250" height="220" rx="18" fill="#ECFDF5" opacity=".22"/>
+    <rect x="298" y="105" width="250" height="290" rx="18" fill="#ECFDF5" opacity=".28"/>
+    <rect x="596" y="30" width="250" height="365" rx="18" fill="#ECFDF5" opacity=".22"/>
+    <path d="M60 252h130M60 302h130M358 180h130M358 230h130M358 280h130M656 112h130M656 162h130M656 212h130" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round" opacity=".85"/>
+    <path d="M154 160c40-72 118-104 234-96-58 108-136 140-234 96z" fill="#D1FAE5" opacity=".9"/>
+    <path d="M466 82c58-54 136-68 235-41-76 86-154 100-235 41z" fill="#A7F3D0" opacity=".86"/>
+  </g>
+  <rect x="86" y="78" width="176" height="52" rx="26" fill="#FFFFFF" opacity=".94"/>
+  <text x="174" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#064E3B">K.GIRDHARLAL</text>
+  <text x="86" y="642" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#D1FAE5" letter-spacing="5">ISSUE 02 / FY 2026-27</text>
+  <text x="86" y="700" font-family="Arial, sans-serif" font-size="70" font-weight="800" fill="#FFFFFF">Growing Together</text>
+</svg>

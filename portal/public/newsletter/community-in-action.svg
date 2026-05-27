@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-label="Community in Action newsletter cover">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#047857"/>
+      <stop offset=".52" stop-color="#10B981"/>
+      <stop offset="1" stop-color="#6EE7B7"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="760" fill="url(#bg)"/>
+  <path d="M0 0h1200v760H0z" fill="#022C22" opacity=".08"/>
+  <g transform="translate(145 145)" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" opacity=".88">
+    <circle cx="158" cy="98" r="58" fill="#ECFDF5" fill-opacity=".22"/>
+    <circle cx="450" cy="88" r="58" fill="#ECFDF5" fill-opacity=".22"/>
+    <circle cx="738" cy="106" r="58" fill="#ECFDF5" fill-opacity=".22"/>
+    <path d="M68 316c26-92 86-138 180-138s154 46 180 138"/>
+    <path d="M360 306c26-92 86-138 180-138s154 46 180 138"/>
+    <path d="M648 322c26-92 86-138 180-138s154 46 180 138"/>
+    <path d="M110 388c198 78 420 78 668 0"/>
+    <path d="M94 454c260 96 548 96 862 0"/>
+  </g>
+  <circle cx="1030" cy="84" r="150" fill="#ECFDF5" opacity=".18"/>
+  <circle cx="80" cy="710" r="210" fill="#064E3B" opacity=".2"/>
+  <rect x="86" y="78" width="176" height="52" rx="26" fill="#FFFFFF" opacity=".94"/>
+  <text x="174" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#064E3B">K.GIRDHARLAL</text>
+  <text x="86" y="642" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#064E3B" letter-spacing="5">ISSUE 03 / FY 2026-27</text>
+  <text x="86" y="700" font-family="Arial, sans-serif" font-size="70" font-weight="800" fill="#FFFFFF">Community in Action</text>
+</svg>

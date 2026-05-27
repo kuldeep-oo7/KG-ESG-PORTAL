@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-label="Sustaining Tomorrow newsletter cover">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#064E3B"/>
+      <stop offset=".58" stop-color="#065F46"/>
+      <stop offset="1" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="760" fill="url(#bg)"/>
+  <circle cx="1010" cy="150" r="190" fill="#10B981" opacity=".18"/>
+  <path d="M170 478c190-154 390-154 600 0" fill="none" stroke="#D1FAE5" stroke-width="26" stroke-linecap="round" opacity=".5"/>
+  <g transform="translate(190 130)">
+    <path d="M360 410V170" stroke="#ECFDF5" stroke-width="22" stroke-linecap="round"/>
+    <path d="M360 276c-98-24-168-88-210-192 128 8 198 72 210 192z" fill="#A7F3D0" opacity=".88"/>
+    <path d="M384 226c42-108 136-168 282-180-38 134-132 194-282 180z" fill="#D1FAE5" opacity=".9"/>
+    <path d="M384 344c74-88 178-118 312-90-72 112-176 142-312 90z" fill="#6EE7B7" opacity=".86"/>
+    <rect x="190" y="430" width="340" height="42" rx="21" fill="#ECFDF5" opacity=".3"/>
+  </g>
+  <path d="M0 635c170-54 344-56 522-8 176 47 402 46 678-4v137H0z" fill="#ECFDF5" opacity=".13"/>
+  <rect x="86" y="78" width="176" height="52" rx="26" fill="#FFFFFF" opacity=".94"/>
+  <text x="174" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#064E3B">K.GIRDHARLAL</text>
+  <text x="86" y="642" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#D1FAE5" letter-spacing="5">ISSUE 04 / FY 2026-27</text>
+  <text x="86" y="700" font-family="Arial, sans-serif" font-size="70" font-weight="800" fill="#FFFFFF">Sustaining Tomorrow</text>
+</svg>

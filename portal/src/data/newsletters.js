@@ -7,6 +7,7 @@ export const newsletters = [
     period: 'March - June 2026',
     quarter: 'Quarter 1',
     tone: 'from-[#064E3B] via-[#047857] to-[#10B981]',
+    cover: '/newsletter/seeds-of-change.svg',
     summary: 'Women\'s Day inclusion program, health and eye check-up camps, Labour\'s Day celebration, and Environment Day tree plantation drive.',
     highlights: [
       'Women\'s Day inclusion and equality program',
@@ -29,6 +30,7 @@ export const newsletters = [
     period: 'July - September 2026',
     quarter: 'Quarter 2',
     tone: 'from-[#065f46] via-[#059669] to-[#34d399]',
+    cover: '/newsletter/growing-together.svg',
     summary: 'Local school and Anganwadi support, animal welfare program, Independence Day celebrations, and governance and POSH awareness seminar.',
     highlights: [
       'School and Anganwadi support outreach',
@@ -51,6 +53,7 @@ export const newsletters = [
     period: 'October - December 2026',
     quarter: 'Quarter 3',
     tone: 'from-[#047857] via-[#10B981] to-[#6ee7b7]',
+    cover: '/newsletter/community-in-action.svg',
     summary: 'Clean-up drive, Men\'s Day and Donation Drive, energy conservation program, Diwali celebrations, and Christmas Carnival.',
     highlights: [
       'Community clean-up drive',
@@ -73,6 +76,7 @@ export const newsletters = [
     period: 'January - March 2027',
     quarter: 'Quarter 4',
     tone: 'from-[#064E3B] via-[#065f46] to-[#059669]',
+    cover: '/newsletter/sustaining-tomorrow.svg',
     summary: 'Sustainability expert sessions, financial literacy and tax awareness workshop, Uttrayan celebrations, and annual FY 2026-27 impact highlights.',
     highlights: [
       'Sustainability expert sessions',

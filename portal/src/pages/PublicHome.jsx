@@ -202,13 +202,14 @@ export default function PublicHome() {
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {NEWSLETTERS.map(newsletter => (
               <article key={newsletter.issue} className="overflow-hidden rounded-xl bg-white shadow-[0_2px_14px_rgba(6,78,59,.09)]">
-                <div className={`flex h-[155px] flex-col items-center justify-center gap-2 bg-gradient-to-br ${newsletter.tone} p-5 text-center text-white`}>
-                  <p className="text-[11px] font-bold uppercase tracking-widest text-white/65">{newsletter.issue} - {newsletter.year}</p>
-                  <h3 className="text-lg font-extrabold leading-tight">{newsletter.title}</h3>
-                </div>
+                <Link to={`/newsletter/${newsletter.slug}`} className="block h-[190px] overflow-hidden bg-[#064E3B]">
+                  <img src={newsletter.cover} alt={`${newsletter.title} newsletter cover`} className="h-full w-full object-cover transition duration-300 hover:scale-105" />
+                </Link>
                 <div className="p-5">
+                  <p className="text-[11px] font-bold uppercase tracking-widest text-[#059669]">{newsletter.issue} - {newsletter.year}</p>
+                  <h3 className="mt-2 text-lg font-extrabold leading-tight text-[#064E3B]">{newsletter.title}</h3>
                   <p className="text-xs font-semibold text-slate-500">{newsletter.period} - {newsletter.quarter}</p>
-                  <p className="mt-2 min-h-[108px] text-sm leading-6 text-slate-600">{newsletter.summary}</p>
+                  <p className="mt-2 min-h-[96px] text-sm leading-6 text-slate-600">{newsletter.summary}</p>
                   <div className="mt-4 flex gap-2">
                     <Link
                       to={`/newsletter/${newsletter.slug}`}

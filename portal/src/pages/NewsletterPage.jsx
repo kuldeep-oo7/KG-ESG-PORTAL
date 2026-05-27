@@ -1,29 +1,11 @@
 import { Link, useParams } from 'react-router-dom'
 import { ArrowLeft, CalendarDays, Download, Leaf, Sparkles } from 'lucide-react'
-import logoImg from '../assets/logo.jfif'
 import { newsletters } from '../data/newsletters'
 
 function Cover({ newsletter, large = false }) {
   return (
-    <div className={`relative overflow-hidden rounded-xl bg-gradient-to-br ${newsletter.tone} p-6 text-white shadow-[0_18px_45px_rgba(6,78,59,.22)] ${large ? 'min-h-[520px]' : 'min-h-[300px]'}`}>
-      <div className="absolute right-[-80px] top-[-80px] h-56 w-56 rounded-full border border-white/20" />
-      <div className="absolute bottom-[-80px] left-[-70px] h-52 w-52 rounded-full border border-white/15" />
-      <div className="relative flex h-full min-h-[inherit] flex-col">
-        <div className="flex items-center justify-between">
-          <img src={logoImg} alt="K.GIRDHARLAL" className="h-12 rounded bg-white object-contain p-1" />
-          <span className="rounded-full bg-white/15 px-3 py-1 text-xs font-bold uppercase tracking-widest text-white/75">{newsletter.year}</span>
-        </div>
-        <div className="my-auto py-12">
-          <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-white/65">{newsletter.issue} / {newsletter.quarter}</p>
-          <h1 className={`${large ? 'text-5xl' : 'text-3xl'} mt-4 font-extrabold leading-tight`}>{newsletter.title}</h1>
-          <p className="mt-4 max-w-lg text-sm leading-7 text-white/78">{newsletter.summary}</p>
-        </div>
-        <div className="flex flex-wrap gap-2">
-          {newsletter.sdgs.map(sdg => (
-            <span key={sdg} className="rounded-full bg-white/15 px-3 py-1 text-xs font-bold text-white/80">{sdg}</span>
-          ))}
-        </div>
-      </div>
+    <div className={`overflow-hidden rounded-xl bg-[#064E3B] shadow-[0_18px_45px_rgba(6,78,59,.22)] ${large ? 'min-h-[520px]' : 'min-h-[300px]'}`}>
+      <img src={newsletter.cover} alt={`${newsletter.title} newsletter cover`} className="h-full min-h-[inherit] w-full object-cover" />
     </div>
   )
 }
