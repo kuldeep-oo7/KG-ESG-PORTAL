@@ -359,14 +359,6 @@ export default function GHGReports() {
             Financial Year 2026 &nbsp;·&nbsp; Measurement period: Apr 2026 – Mar 2027
           </p>
         </div>
-        <div className="flex items-center gap-3 mt-1">
-          <button
-            onClick={handleExport}
-            className="flex items-center gap-2 bg-[#064E3B] hover:bg-[#065F46] text-white text-sm font-medium px-5 py-2.5 rounded-xl transition-colors shadow-sm no-print"
-          >
-            <Download className="w-4 h-4" /> Export Report
-          </button>
-        </div>
       </div>
 
       {/* Scope summary cards — 5 in a row */}
