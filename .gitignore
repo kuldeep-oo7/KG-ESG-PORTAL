@@ -24,3 +24,8 @@ Thumbs.db
 # Editor
 .vscode/
 *.swp
+
+# Server local files
+server/node_modules/
+server/database.db
+server/database.db-journal

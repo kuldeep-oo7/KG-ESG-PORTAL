@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { Mail } from 'lucide-react'
-import logoImg from '../assets/logo.jfif'
+import logoImg from '../assets/logo-full.png'
 import authPanelImg from '../assets/auth-panel.png'
 
 // ─── Right panel ───────────────────────────────────────────────────────────────
@@ -38,23 +38,9 @@ export default function ResetPassword() {
     <div className="flex h-screen w-full overflow-hidden font-sans">
       {/* ── Left panel ────────────────────────────────────────────────────── */}
       <div className="flex h-screen flex-col w-full md:w-[40%] bg-white px-10 py-8 justify-center overflow-y-auto">
-        {/* Logo block */}
-        <div className="mb-8">
-          <div className="flex items-center gap-3 mb-1">
-            <img src={logoImg} alt="K.GIRDHARLAL" className="h-10 w-auto object-contain rounded" />
-            <span
-              className="font-bold text-[#064E3B]"
-              style={{ fontFamily: '"Hanken Grotesk", Inter, sans-serif', fontSize: '1.1rem' }}
-            >
-              K.GIRDHARLAL
-            </span>
-          </div>
-          <p
-            className="text-[#064E3B]/60 uppercase"
-            style={{ fontSize: '8px', letterSpacing: '0.2em' }}
-          >
-            THERE&apos;S MORE TO MAKING DIAMONDS
-          </p>
+        {/* Logo block — centered */}
+        <div className="mb-8 flex justify-center">
+          <img src={logoImg} alt="K.GIRDHARLAL" className="w-56 h-auto object-contain" />
         </div>
 
         {/* Heading */}

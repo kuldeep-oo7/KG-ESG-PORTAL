@@ -1,0 +1,1492 @@
+﻿
+===== SC 1- Fuels =====
+UK Government GHG Conversion Factors for Company Reporting									
+Fuels									
+Index									
+Emissions source:	Fuels	Next publication date: 	June 2026	Factor set:	Full set				
+Scope:	Scope 1	Version:	1	Year:	2025				
+Fuels conversion factors should be used for primary fuel sources combusted at a site or in an asset owned or controlled by the reporting organisation.									
+Guidance									
+● Gross calorific value (CV)/ net CV basis:
+- Organisations should determine whether to use the net or gross calorific value of fuels according to their data and the systems to which it is attributable. For example, the majority of energy billing is provided on a gross CV basis whereas transportation is based on a net CV basis. In other sources, gross and net CVs may be referred to as higher heating values or lower heating values respectively.
+What is the difference?
+- Gross calorific value (CV) or higher heating value (HHV) is the CV under laboratory conditions and is commonly utilised for the use of natural gas in heating and cooling systems. 
+- Net CV or lower heating value (LHV) is the useful calorific value in typical real world conditions (e.g. boiler plant or transportation). The difference is essentially the latent heat of the water vapour produced (which can be recovered in laboratory or sealed conditions).
+It is recommended to apply a consistent calorific value (CV) basis across all energy sources. Where natural gas consumption data is available in kWh, using it directly can help to avoid conversion errors and decisions around CV basis. Where data is only available in cubic metres (m³), users may wish to use Net CV to convert to kWh for consistency with other factors in this set, many of which are only published on a Net CV basis.									
+●  'Diesel (average biofuel blend)'/'diesel (100% mineral oil)' - typically organisations purchasing forecourt fuel should use 'diesel (average biofuel blend)'. It should be noted that any fuel an organisation reports in Scope 1 that has biofuel content must have the ‘outside of scopes’ portion reported separately as per the 'WBCSD/WRI GHG Protocol (chapter 9)'.  See information about the outside of scopes emissions in the example section below.
+
+● In 2019 update, a new factor for natural gas, "natural gas (100% mineral blend)", was added in. The difference between the "natural gas" and  "natural gas (100% mineral blend)" factors is that the former refers to the natural gas received through the gas mains grid network in the UK containing a limited biogas content. Therefore, any organisation that reports emissions from natural gas use should use the "natural gas" factor. The natural gas (100% mineral blend) factor can be used for calculating bespoke fuel mixtures.									
+●  If any fuel type or unit has no result in the table, this is an indication the conversion factor is not available or does not exist.
+
+● Users of the aviation turbine fuel or aviation spirit factors may need to apply a 1.7 multiplier to the CO2 factor to account for the radiative forcing effects of emissions at altitude. Further explanation of this is provided in the Conversion Factors Methodology Paper.									
+Example of calculating emissions from fuels									
+Company A needs to report the Scope 1 emissions from its natural gas and diesel use.  									
+●  For natural gas consumption it selects a kWh conversion factor on a gross CV basis - this is the basis of most energy bills.  It reports in CO2e for all fuels combusted at its premises.									
+●  It is faced with two different types of diesel conversion factors, '100% mineral fuel' and 'diesel (average biofuel blend)'. Since it fills up its vehicles at a national chain of filling stations, it selects the average biofuel blend (this is the correct conversion factor for standard forecourt fuel, which contains a small blend of biofuel).									
+The activity data (that is, litres) is multiplied by the appropriate conversion factor to produce company A's fuel emissions. 
+Organisations should determine whether to use the net or gross calorific value of fuels according to their data and the systems to which it is attributable. For example, the majority of energy billing is provided on a gross CV basis whereas transportation is based on a net CV basis. In other sources, gross and net CVs may be referred to as higher heating values or lower heating values respectively.									
+Since company A is reporting a type of fuel that has biofuel content, it should also account for the ‘biogenic’ part of this fuel. To calculate this, it must also multiply the total litres of fuel used by the ‘outside of scopes’ fuel factor for ‘forecourt fuels- diesel (average biofuel blend)’ and report as a separate line item within its report called ‘outside of scopes’. This will not be included in the organisation's emissions total, but displayed separately within the emissions report. This ensures that the organisation is being transparent with regard to all potential sources of CO2 from its activities.  									
+For more information refer to the ‘Outside of scopes’ tab for guidance.									
+Activity	Fuel	Unit	kg CO2e	kg CO2e of CO2 per unit	kg CO2e of CH4 per unit	kg CO2e of N2O per unit		Note	
+Gaseous fuels	Butane	tonnes	3033.38067	3029.26	2.52	1.60067			Emission factor Not Available
+		litres	1.74533	1.74296	0.00144	0.00092			
+		kWh (Net CV)	0.24107	0.24074	0.0002	0.00012			
+		kWh (Gross CV)	0.22241	0.2221	0.00019	0.00012			
+	CNG	tonnes	2575.46441	2570.42	3.8528	1.19161			
+		litres	0.4507	0.44982	0.00067	0.0002			
+		kWh (Net CV)	0.2027	0.20229	0.00031	0.0001			
+		kWh (Gross CV)	0.18296	0.18259	0.00028	9e-05			
+	LNG	tonnes	2603.30441	2598.26	3.8528	1.19161			
+		litres	1.17797	1.17568	0.00175	0.00054			
+		kWh (Net CV)	0.20489	0.20448	0.00031	0.0001			
+		kWh (Gross CV)	0.18494	0.18457	0.00028	9e-05			
+	LPG	tonnes	2939.36095	2935.18	2.5536	1.62735			
+		litres	1.55713	1.55491	0.00136	0.00086			
+		kWh (Net CV)	0.23032	0.22999	0.0002	0.00012			
+		kWh (Gross CV)	0.2145	0.21419	0.00019	0.00012			
+	Natural gas	tonnes	2575.46441	2570.42	3.8528	1.19161			
+		cubic metres	2.06672	2.0627	0.00307	0.00095			
+		kWh (Net CV)	0.2027	0.20229	0.00031	0.0001			
+		kWh (Gross CV)	0.18296	0.18259	0.00028	9e-05			
+	Natural gas (100% mineral blend)	tonnes	2603.30441	2598.26	3.8528	1.19161			
+		cubic metres	2.08906	2.08504	0.00307	0.00095			
+		kWh (Net CV)	0.20489	0.20448	0.00031	0.0001			
+		kWh (Gross CV)	0.18494	0.18457	0.00028	9e-05			
+	Other petroleum gas	tonnes	2578.24647	2575.7	1.3104	1.23607			
+		litres	0.94442	0.94348	0.00048	0.00045			
+		kWh (Net CV)	0.19917	0.19897	0.0001	0.0001			
+		kWh (Gross CV)	0.18323	0.18305	9e-05	9e-05			
+	Propane	tonnes	2997.63233	2993.4	2.5872	1.64513			
+		litres	1.54358	1.5414	0.00133	0.00084			
+		kWh (Net CV)	0.23258	0.23225	0.0002	0.00012			
+		kWh (Gross CV)	0.2141	0.21381	0.00018	0.00012			
+Activity	Fuel	Unit	kg CO2e	kg CO2e of CO2 per unit	kg CO2e of CH4 per unit	kg CO2e of N2O per unit			
+Liquid fuels	Aviation spirit	tonnes	3193.6948	3127.67	39.5248	26.5			
+		litres	2.33116	2.28297	0.02885	0.01934			
+		kWh (Net CV)	0.25666	0.25135	0.00318	0.00213			
+		kWh (Gross CV)	0.24382	0.23878	0.00301	0.00203			
+	Aviation turbine fuel	tonnes	3178.3652	3149.67	2.1952	26.5			
+		litres	2.54269	2.51973	0.00176	0.0212			
+		kWh (Net CV)	0.26061	0.25826	0.00018	0.00217			
+		kWh (Gross CV)	0.24758	0.24535	0.00017	0.00206			
+	Burning oil	tonnes	3165.04181	3149.67	8.4	6.97181			
+		litres	2.54016	2.52782	0.00674	0.00559			
+		kWh (Net CV)	0.25975	0.25849	0.00069	0.00057			
+		kWh (Gross CV)	0.24677	0.24557	0.00066	0.00054			
+	Diesel (average biofuel blend)	tonnes	3087.94462	3048.71	0.3472	38.88742			
+		litres	2.57082	2.53763	0.00029	0.0329			
+		kWh (Net CV)	0.25953	0.2562	3e-05	0.0033			
+		kWh (Gross CV)	0.24411	0.24098	2e-05	0.0031			
+	Diesel (100% mineral diesel)	tonnes	3203.91143	3164.33	0.3472	39.23423			
+		litres	2.66155	2.62818	0.00029	0.03308			
+		kWh (Net CV)	0.26808	0.26475	3e-05	0.0033			
+		kWh (Gross CV)	0.25199	0.24887	2e-05	0.00309			
+	Fuel oil	tonnes	3228.89019	3216.38	5.3872	7.12299			
+		litres	3.17492	3.16262	0.0053	0.00701			
+		kWh (Net CV)	0.28523	0.28413	0.00047	0.00063			
+		kWh (Gross CV)	0.26813	0.26709	0.00045	0.0006			
+	Gas oil	tonnes	3226.57859	3190	3.6848	32.89379			
+		litres	2.75541	2.72417	0.00315	0.02809			
+		kWh (Net CV)	0.27288	0.26978	0.00031	0.00278			
+		kWh (Gross CV)	0.2565	0.25359	0.00029	0.00261			
+	Lubricants	tonnes	3180.99992	3171.09	3.4272	6.48272			
+		litres	2.74934	2.74078	0.00296	0.0056			
+		kWh (Net CV)	0.281	0.28013	0.0003	0.00057			
+		kWh (Gross CV)	0.26414	0.26332	0.00028	0.00054			
+	Naphtha	tonnes	3142.3789	3131.33	3.8192	7.2297			
+		litres	2.11894	2.11149	0.00258	0.00487			
+		kWh (Net CV)	0.24891	0.24804	0.0003	0.00057			
+		kWh (Gross CV)	0.23647	0.23564	0.00029	0.00054			
+	Petrol (average biofuel blend)	tonnes	2772.97935	2754.25	10.8416	7.88775			
+		litres	2.06916	2.05523	0.00806	0.00587			
+		kWh (Net CV)	0.23181	0.23026	0.0009	0.00065			
+		kWh (Gross CV)	0.21956	0.21811	0.00084	0.00061			
+	Petrol (100% mineral petrol)	tonnes	3154.08213	3135	11.0432	8.03893			
+		litres	2.33984	2.32567	0.0082	0.00597			
+		kWh (Net CV)	0.25431	0.25276	0.0009	0.00065			
+		kWh (Gross CV)	0.24159	0.24013	0.00085	0.00061			
+	Processed fuel oils - residual oil	tonnes	3228.89019	3216.38	5.3872	7.12299			
+		litres	3.17492	3.16262	0.0053	0.00701			
+		kWh (Net CV)	0.28523	0.28413	0.00047	0.00063			
+		kWh (Gross CV)	0.26813	0.26709	0.00045	0.0006			
+	Processed fuel oils - distillate oil	tonnes	3226.57859	3190	3.6848	32.89379			
+		litres	2.75541	2.72417	0.00315	0.02809			
+		kWh (Net CV)	0.27288	0.26978	0.00031	0.00278			
+		kWh (Gross CV)	0.2565	0.25359	0.00029	0.00261			
+	Refinery miscellaneous	tonnes	2944.32093	2933.33	3.7968	7.19413			
+		litres							
+		kWh (Net CV)	0.25961	0.25864	0.00034	0.00063			
+		kWh (Gross CV)	0.24663	0.24571	0.00031	0.0006			
+	Waste oils	tonnes	3219.37916	3171.09	3.5504	44.73876			
+		litres	2.74924	2.70801	0.00302	0.0382			
+		kWh (Net CV)	0.27459	0.27047	0.0003	0.00381			
+		kWh (Gross CV)	0.25641	0.25256	0.00028	0.00357			
+	Marine gas oil	tonnes	3245.30441	3205.99	0.9072	38.40721			
+		litres	2.77139	2.73782	0.00077	0.0328			
+		kWh (Net CV)	0.27445	0.27113	8e-05	0.00325			
+		kWh (Gross CV)	0.25798	0.25486	7e-05	0.00305			
+	Marine fuel oil	tonnes	3154.75334	3113.99	1.4224	39.34094			
+		litres	3.10202	3.06194	0.0014	0.03868			
+		kWh (Net CV)	0.27869	0.27509	0.00012	0.00348			
+		kWh (Gross CV)	0.26197	0.25858	0.00012	0.00326			
+Activity	Fuel	Unit	kg CO2e	kg CO2e of CO2 per unit	kg CO2e of CH4 per unit	kg CO2e of N2O per unit			
+Solid fuels	Coal (industrial)	tonnes	2395.28994	2370.72	7.6384	16.93154			
+		kWh (Net CV)	0.33944	0.33595	0.00109	0.0024			
+		kWh (Gross CV)	0.32246	0.31915	0.00103	0.00228			
+	Coal (electricity generation)	tonnes	2225.22448	2213.33	0.672	11.22248			
+		kWh (Net CV)	0.33621	0.33443	0.0001	0.00168			
+		kWh (Gross CV)	0.31939	0.3177	0.0001	0.00159			
+	Coal (domestic)	tonnes	2904.95234	2632	240.352	32.60034			
+		kWh (Net CV)	0.36549	0.33115	0.03024	0.0041			
+		kWh (Gross CV)	0.34721	0.31459	0.02873	0.00389			
+	Coking coal	tonnes	3164.65002	3144.16	8.4672	12.02282			
+		kWh (Net CV)	0.37675	0.37431	0.00101	0.00143			
+		kWh (Gross CV)	0.3579	0.35559	0.00095	0.00136			
+	Petroleum coke	tonnes	3386.57168	3377.05	3.8304	5.69128			
+		kWh (Net CV)	0.35887	0.35786	0.0004	0.0006			
+		kWh (Gross CV)	0.34092	0.33997	0.00038	0.00057			
+	Coal (electricity generation - home produced coal only)	tonnes	2221.7467	2209.87	0.672	11.2047			
+		kWh (Net CV)	0.33621	0.33443	0.0001	0.00168			
+		kWh (Gross CV)	0.31939	0.3177	0.0001	0.00159			
+FAQs									
+I need a conversion factor for ‘therms’, how can I convert the kWh conversion factors to suit my needs?									
+We provide a specific conversion table at the back of these listings to allow organisations to convert the conversion factors into different units where required.   Please see the ‘Conversions’ tab.									
+I need a conversion factor for my specific % biofuel blend, rather than the “average biofuel blend” factor that is reported here.									
+The steps taken to calculate this by hand are straightforward and can be illustrated using the following worked example (consistent for all biofuels, conventional fuels, scopes and units):
+
+Company B wants to report on its Scope 1 fuel emissions (in kgCO2e/litre) from a specific biodiesel blend of X%. Using 2021 values, it is known that:
+●100% mineral diesel conversion factor = 2.706 kgCO2e/litre
+●Biodiesel ME conversion factor (see Bioenergy sheet) = 0.168 kgCO2e/litre
+
+Therefore, X% biodiesel blend conversion factor = (X% x 0.168) + [(1-X%) x 2.706]									
+Do the factors for fuels include the indirect effects of non-CO2 emissions (water vapour, contrails, NOX, etc.) or radiative forcing?									
+The aviation fuel factors currently only account for the direct effect of CO2, CH4 and N2O emissions. Organisations should include the indirect effects of non-CO2 emissions when reporting air travel emissions to capture the full climate impact of their travel, as indicated in the ‘Business travel- air’ tab.   This includes where the tonnage of aviation fuel used/uplifted is directly recorded.  To do this, it is recommended that a multiplier of 1.7 is applied to the CO2 component only of the direct emissions from aviation, and then summed with the CH4 and N2O direct emissions to calculate total kgCO2e (including direct and indirect effects). Further information can be found in the ‘Business travel- air’ tab and the air transport section of the Methodology Paper.
+
+The effects of radiative forcing are not considered to be significant for fuels used in other forms of transport. They may even be negative for shipping due to the high sulphur content of fuels used.									
+For information about how the conversion factors have been derived, please refer to the 'Methodology paper' that accompanies the conversion factors.									
+
+===== SC1 - Bioenergy =====
+UK Government GHG Conversion Factors for Company Reporting									
+Bioenergy									
+Index									
+Emissions source:	Bioenergy	Next publication date: 	June 2026	Factor set:	Full set				
+Scope:	Scope 1	Version:	1	Year:	2025				
+Bioenergy conversion factors should be used for the combustion of fuels produced from recently living sources (such as trees) at a site or in an asset under the direct control of the reporting organisation. All factors are on a net calorific value basis.									
+Guidance									
+●  Within the Scope 1 conversion factors for biofuels, the CO2 emissions value is set as net ‘0’ to account for the CO2 absorbed by fast-growing bioenergy sources during their growth. The Scope 1 conversion factors presented in this listing contain values for N2O and CH4 emissions (which are not absorbed during growth).									
+●  Although the Scope 1 conversion factors contain a ‘0’ value for CO2 emissions, organisations must account for the impact of the CO2 released through combustion of the fuel.  Organisations should refer to the ‘outside of scopes’ listing in the 'outside of scopes' tab to find the true values for CO2 emissions.  These emissions should be calculated in the same way as the Scope 1 emissions, but should be listed as a separate line item within its report called ‘outside of scopes’. This should not be included within the organisation's emissions total, but displayed separately within the emissions report. This ensures that the organisation is being transparent with regard to all potential sources of CO2 from its activities.   									
+For more information refer to the ‘outside of scopes’ tab for guidance.									
+Example of calculating emissions from bioenergy									
+Company B reports its emissions from standard biodiesel use in its delivery vehicles.  It has data on how many litres have been consumed and it needs to publicly report its Scope 1 emissions. 									
+The activity data (litres of fuel) is multiplied by the appropriate conversion factor to produce company B's Scope 1 biodiesel emissions.									
+Activity	Fuel	Unit	kg CO2e						
+Biofuel	Bioethanol	litres	0.00901						
+		GJ	0.42339						
+		kg	0.01135						
+	Biodiesel ME	litres	0.16751						
+		GJ	5.05961						
+		kg	0.18822						
+	Biomethane (compressed)	litres							
+		GJ	0.10625						
+		kg	0.00521						
+	Biodiesel ME (from used cooking oil)	litres	0.16751						
+		GJ	5.05961						
+		kg	0.18822						
+	Biodiesel ME (from tallow)	litres	0.16751						
+		GJ	5.05961						
+		kg	0.18822						
+	Biodiesel HVO	litres	0.03558						
+		GJ	1.03677						
+		kg	0.04562						
+	Biopropane	litres	0.00213						
+		GJ	0.08952						
+		kg	0.00415						
+	Development diesel	litres	0.03705						
+		GJ	1.03677						
+		kg	0.04461						
+	Development petrol	litres	0.01402						
+		GJ	0.42339						
+		kg	0.0189						
+	Off road biodiesel	litres	0.16751						
+		GJ	5.05961						
+		kg	0.18822						
+	Biomethane (liquified)	litres							
+		GJ	0.10625						
+		kg	0.00521						
+	Methanol (bio)	litres	0.00669						
+		GJ	0.42339						
+		kg	0.00844						
+	Avtur (renewable)	litres	0.02531						
+		GJ	0.7234						
+		kg	0.03179						
+Activity	Fuel	Unit	kg CO2e						
+Biomass	Wood logs	tonnes	46.98508						
+		kWh	0.0115						
+	Wood chips	tonnes	43.43964						
+		kWh	0.0115						
+	Wood pellets	tonnes	55.19389						
+		kWh	0.0115						
+	Grass/straw	tonnes	47.35709						
+		kWh	0.01273						
+Activity	Fuel	Unit	kg CO2e						
+Biogas	Biogas	tonnes	1.24314						
+		kWh	0.00022						
+	Landfill gas	tonnes	0.69696						
+		kWh	0.0002						
+FAQs									
+I need a conversion factor for my specific % biofuel blend, rather than the “average biofuel blend” factor that is reported here.									
+The steps taken to calculate this by hand are straightforward and can be illustrated using the following worked example (consistent for all biofuels, conventional fuels, scopes and units):
+
+Company B wants to report on its Scope 1 fuel emissions (in kgCO2e/litre) from a specific biodiesel blend of X%. Using 2021 values, it is known that:
+●100% mineral diesel conversion factor = 2.706 kgCO2e/litre
+●Biodiesel ME conversion factor (see Bioenergy sheet) = 0.168 kgCO2e/litre
+
+Therefore, X% biodiesel blend conversion factor = (X% x 0.168) + [(1-X%) x 2.706]									
+For information about how the conversion factors have been derived, please refer to the 'Methodology paper' that accompanies the conversion factors.									
+
+===== SC1-Mobile com =====
+UK Government GHG Conversion Factors for Company Reporting									
+Passenger vehicles									
+Index									
+Emissions source:	Passenger vehicles	Next publication date: 	June 2026	Factor set:	Full set				
+Scope:	Scope 1	Version:	1	Year:	2025				
+Passenger vehicles conversion factors should be used to report travel in cars and on motorcycles that are owned or controlled by the reporting organisation. This does not include employee-owned vehicles that are used for business purposes.									
+Guidance									
+●  For vehicles where an organisation has data in litres of fuel or kWh electricity consumed, the ‘fuels’ or 'electricity' conversion factors should be applied, which provide more accurate emissions results.									
+●  For vehicles that run on biofuels, please refer to the ‘bioenergy’ conversion factors. It should be noted that any vehicle running on biofuel should also have an ‘outside of scopes’ CO2 figure reported separately. See the 'Outside of scopes' tab for more detail on this.									
+●  The market segment conversion factors related to the vehicle market segments specifically defined by the UK Society of Motor Manufacturers and Traders (SMMT).									
+●  Where a vehicle is used by an organization, but not owned, categorize of emissions (Scope 1, 2, or 3) depend on the lease type (finance/capital or operating) and chosen boundary approach (financial, operational, or equity control). Finance leases treat the vehicle as owned, placing fuel use in Scope 1 and electricity in Scope 2. Operating leases hinge on the boundary approach: equity/financial control puts all emissions in Scope 3, while operational control categorizes fuel as Scope 1 and electricity as Scope 2. Refer to GHG Protocol's "Business travel-land" or "Managed assets-vehicles" for Scope 3 reporting factors.  Information on type of lease can be understood directly from the lease agreement or based on how the asset is recorded on the organisations balance sheet.									
+● For vehicles using electricity (i.e. Plug-in Hybrid Electric Vehicles / Range-Extended Electric Vehicles and Battery Electric Vehicles) the emission factors presented here only include the conventional fuel use (i.e. petrol or diesel), where relevant, and you should IN ADDITION use the emission factors provided in the 'UK electricity for EVs' and 'UK electricity T&D for EVs' tables to calculate the emissions due to the average electricity consumption. A more detailed methodology for calculating emissions from vehicles using electricity can be found in the FAQs at the bottom of this tab.									
+● All of the factors presented for motorbikes are for petrol									
+● Please see the FAQs at the bottom of this page for further information on the conversion factors for passenger vehicles. 									
+Example of calculating emissions from passenger vehicles
+
+									
+Company E reports the emissions from the mileage travelled in its company cars, a Scope 1 emission.									
+Company E uses conversion factors appropriate to each of its cars. For example, for its 1.6-litre diesel car, it uses a 'medium car: diesel' factor. It owns some vehicles for which engine size and fuel type data are not available, so it uses the 'average car: unknown fuel type' factor. 									
+In some cases, the company knows what model the car is. In this case, it may choose to apply a conversion factor by market segment instead (found in the 'cars (by market segment)' table).  									
+The activity data (km) is multiplied by the appropriate conversion factors to produce company E's passenger vehicle emissions.									
+			Diesel				Petrol		
+Activity	Type	Unit	kg CO2e	kg CO2e of CO2 per unit	kg CO2e of CH4 per unit	kg CO2e of N2O per unit	kg CO2e	kg CO2e of CO2 per unit	kg CO2e of CH4 per unit
+Cars (by market segment)	Mini	km	0.10996	0.10828	4.6368e-06	0.00167	0.13063	0.12995	0.00036
+		miles	0.17696	0.17425	1e-05	0.00269	0.21022	0.20913	0.00057
+	Supermini	km	0.13452	0.13284	4.6368e-06	0.00167	0.14276	0.14208	0.00036
+		miles	0.21649	0.21378	1e-05	0.00269	0.22974	0.22865	0.00057
+	Lower medium	km	0.14517	0.14349	4.6368e-06	0.00167	0.16123	0.16055	0.00036
+		miles	0.23363	0.23092	1e-05	0.00269	0.25948	0.25839	0.00057
+	Upper medium	km	0.16194	0.16026	4.6368e-06	0.00167	0.18535	0.18467	0.00036
+		miles	0.26063	0.25792	1e-05	0.00269	0.29828	0.29719	0.00057
+	Executive	km	0.17088	0.1692	4.6368e-06	0.00167	0.20073	0.20005	0.00036
+		miles	0.27501	0.2723	1e-05	0.00269	0.32304	0.32195	0.00057
+	Luxury	km	0.20632	0.20464	4.6368e-06	0.00167	0.30752	0.30684	0.00036
+		miles	0.33205	0.32934	1e-05	0.00269	0.4949	0.49381	0.00057
+	Sports	km	0.17323	0.17155	4.6368e-06	0.00167	0.23396	0.23328	0.00036
+		miles	0.27879	0.27608	1e-05	0.00269	0.37652	0.37543	0.00057
+	Dual purpose 4X4	km	0.19973	0.19805	4.6368e-06	0.00167	0.19219	0.19151	0.00036
+		miles	0.32145	0.31874	1e-05	0.00269	0.3093	0.30821	0.00057
+	MPV	km	0.18072	0.17904	4.6368e-06	0.00167	0.17903	0.17835	0.00036
+		miles	0.29085	0.28814	1e-05	0.00269	0.28812	0.28703	0.00057
+			Diesel				Petrol		
+Activity	Type	Unit	kg CO2e	kg CO2e of CO2 per unit	kg CO2e of CH4 per unit	kg CO2e of N2O per unit	kg CO2e	kg CO2e of CO2 per unit	kg CO2e of CH4 per unit
+Cars (by size)	Small car	km	0.1434	0.14172	4.6368e-06	0.00167	0.14308	0.1424	0.00036
+		miles	0.23078	0.22807	1e-05	0.00269	0.23027	0.22918	0.00057
+	Medium car	km	0.17174	0.17006	4.6368e-06	0.00167	0.17474	0.17406	0.00036
+		miles	0.27639	0.27368	1e-05	0.00269	0.28121	0.28012	0.00057
+	Large car	km	0.21007	0.20839	4.6368e-06	0.00167	0.26828	0.2676	0.00036
+		miles	0.33808	0.33537	1e-05	0.00269	0.43175	0.43066	0.00057
+	Average car	km	0.17304	0.17136	4.6368e-06	0.00167	0.16272	0.16204	0.00036
+		miles	0.27849	0.27578	1e-05	0.00269	0.26187	0.26078	0.00057
+Activity	Type	Unit	kg CO2e	kg CO2e of CO2 per unit	kg CO2e of CH4 per unit	kg CO2e of N2O per unit			
+Motorbike	Small	km	0.08319	0.08094	0.00175	0.0005			
+		miles	0.13389	0.13027	0.00282	0.0008			
+	Medium	km	0.10107	0.09826	0.00228	0.00053			
+		miles	0.16265	0.15813	0.00367	0.00085			
+	Large	km	0.13252	0.13072	0.00127	0.00053			
+		miles	0.21326	0.21037	0.00204	0.00085			
+	Average	km	0.11367	0.11138	0.00177	0.00052			
+		miles	0.18293	0.17925	0.00284	0.00084			
+FAQs									
+Do the conversion factors take into account the age of vehicles?									
+The conversion factors are based on information from the Department for Transport which regularly analyses the mix of cars on the road in the UK through Driver and Vehicle Licensing Agency (DVLA) records and automatic number plate recognition (ANPR) data. The conversion factors are updated each year to reflect changes in the spectrum of cars of different types and ages being driven.									
+I know the average fuel consumption of my passenger vehicles in miles per gallon (mpg) and mileage; can this be used to improve my calculations?									
+The mpg of the vehicle should be used to convert the distance travelled into litres of fuel used (refer to the 'Conversions' tab to find values to assist this calculation). The conversion factor for litres of fuel can then be applied. This will give a more accurate view of the actual emissions from the vehicle (the conversion factors for vehicle mileage represent the average mpg of the whole UK vehicle population). Therefore, knowing your vehicle’s actual mpg and using this value will yield more precise results.									
+I know the average gCO2/km of my passenger vehicles as well as mileage; can this be used to improve my calculations?									
+If you know the manufacturer's gCO2/km data, this may be used as an alternative (and more precise) calculation for your passenger vehicle’s emissions. The factors provided by manufacturers should be uplifted. Please see the methodology paper published alongside the Conversion Factors on the correct uplift factor to use.									
+Which tables do I need to use to capture all the emissions resulting from the use of my plug-in electric vehicles (PHEVs)?									
+	Method 1: Energy consumption								
+	Emissions =  Total energy consumption (fuel, electricity)  x  Emission Factors (fuel, electricity)								
+		Scope	Car	Car	Van	Van	Includes		
+			Plug-in Hybrid Electric Vehicle	Battery Electric Vehicle	Plug-in Hybrid Electric Vehicle	Battery Electric Vehicle			
+	Fuels	Scope 1	YES	NO	YES	NO	Scope 1 emissions from use of petrol or diesel.		
+	WTT- fuels	Scope 3	YES	NO	YES	NO	WTT Scope 3 emissions from use of petrol and diesel.		
+	UK Electricity	Scope 2	YES	YES	YES	YES	Scope 2 emissions from use of electricity.		
+	Transmission and distribution	Scope 3	YES	YES	YES	YES	Scope 3 emissions from T&D losses from use of electricity.		
+	WTT- UK & overseas elec	Scope 3	YES	YES	YES	YES	Scope 3 emissions from WTT emissions from use of electricity.		
+	Method 2: Generic vehicle emission factors								
+	Emissions =  Total activity for vehicle category (in km, miles or tonne-km)  x  Emission Factor								
+	Note: the emission factors already account for the average share of driving using electricity or conventional fuel for plug-in hybrid electric vehicles, so the total number of km / miles / tonne-km should be used in calculations.								
+	Sum of elements:      A + C   OR  B + C								
+		Scope	Car	Car	Van	Van	Includes		
+			Plug-in Hybrid Electric Vehicle	Battery Electric Vehicle	Plug-in Hybrid Electric Vehicle	Battery Electric Vehicle			
+A	Passenger vehicles	Scope 1	YES	NO			Only Scope 1 emissions from petrol or diesel use.		
+A	Delivery vehicles	Scope 1			YES	NO	Only Scope 1 emissions from petrol or diesel use.		
+A	UK electricity for EVs	Scope 2	YES	YES	YES	YES	Only Scope 2 emissions from electricity use.		
+A	UK electricity T&D for EVs	Scope 3	YES	YES	YES	YES	Only Scope 3 emissions from electricity T&D losses.		
+	OR								
+B	Business travel- land	Scope 3	YES	YES			Sum of Scope 1 and Scope 2, plus Scope 3 electricity T&D losses.		
+B	Freighting goods	Scope 3			YES	YES	Sum of Scope 1 and Scope 2, plus Scope 3 electricity T&D losses.		
+B	Managed assets- vehicles	Scope 3	YES	YES	YES	YES	Sum of Scope 1 and Scope 2, plus Scope 3 electricity T&D losses.		
+	AND								
+C	WTT- pass vehs & travel- land	Scope 3	YES	YES			Only Scope 3 WTT emissions (all fuel types, electricity)		
+C	WTT- delivery vehs & freight	Scope 3			YES	YES	Only Scope 3 WTT emissions (all fuel types, electricity)		
+	Example: 
+Company B wants to report on its Scope 1 fuel emissions from a large PHEV car (if the car model is known, the market and size can be checked from the table in the Methodology Paper):								
+	Situation A) 
+Company B has data in fuel (in litres) and electricity (kWh) consumed, the ‘fuels’ and 'UK electricity' conversion factors should be applied, which provide more accurate emissions results. 
+"Method 1: Energy consumption" should be used.
+Emissions =  Total energy consumption (fuel, electricity)  x  Emission Factors (fuel, electricity)
+- Some PHEVs' onboard data can provide information on the electric and fuel consumption, try to consult the vehicle's user manual or contact the manufacturer for instructions on accessing this information. These can be used to estimate fuel (in litres) and electricity (kWh) consumed.								
+	Situation B) 
+If there is no data available to estimate fuel/electricity consumption, or how much of the mileage is driven by fuel compared to mileage driven by electricity. Only the total mileage is known.
+"Method 2: Generic vehicle emission factors" should be used.	
+Emissions =  Total activity for vehicle category (in km, miles or tonne-km)  x  Emission Factor									
+	A worked example of "Method 2: Generic vehicle emission factors":
+- The PHEV car has travelled 10,000 miles in a year.
+- In 2023, the conversion factors for PHEV Car (Large): 0.11397 kg CO2e / mile;
+Emissions =  Total activity for vehicle category (in km, miles or tonne-km)  x  Emission Factor
+= 10,000 miles x 0.11397 kg CO2e / mile = 1140 kg CO2e. 
+Note: the emission factors already account for the average share of driving using electricity or conventional fuel for plug-in hybrid electric vehicles, so the total number of km / miles / tonne-km should be used in calculations.
+Emissions from the electricity consumed by the PHEV can be calculated by applying conversion factors in Scope 2 "UK electricity for EVs", Scope 3 "UK electricity T&D for EVs" and "WTT- pass vehs & travel- land".
+
+Note: If the PHEVs are mostly charged in an organisation's sites, care should be taken to avoid double counting with an organisation's general electricity consumption.								
+	Note: The Plug-in Hybrid Electric Vehicle category also includes Range-Extended Electric Vehicles (also known as REEVs, ER-EVs or REX).								
+Why are emission factors for certain types of electric vehicle missing?									
+At the moment there are only a limited number of electric vehicle models on the market, and certain categories are not yet represented by battery electric vehicle or plug-in hybrid electric vehicles.  Emission factors will be added in future updates for these vehicle types, when models in these categories become available in the UK market/fleet.									
+Why are emission factors for certain market segment or size of electric vehicle different from other segments or from what is expected?									
+The factors for battery electric vehicles or plug-in hybrid electric vehicles across various market segments and sizes are calculated through the weighted average of registered vehicle models in the UK. It is important to note that certain market segments or sizes of electric vehicles may exhibit limited availability of models or a lack of new vehicle registrations in recent years. Consequently, the calculated factors might be influenced by one or two specific vehicle models within these segments, potentially leading to skewed results.
+Additionally, these factors are derived from data collected 1 to 2 years prior to publication. Therefore, there exists a possibility that they may not accurately represent the latest vehicle models currently available in the market. As such, users are advised to exercise discretion and consider the potential limitations of these factors when interpreting and applying them in their analyses or decision-making processes.									
+Are the radiative forcing effects of non-CO2 emissions considered?									
+Aviation is the only form of transport where the effects of radiative forcing are considered to be significant.									
+For information about how the conversion factors have been derived, please refer to the 'Methodology paper' that accompanies the conversion factors.									
+
+===== SC1-Mobile com2 =====
+UK Government GHG Conversion Factors for Company Reporting									
+Delivery vehicles									
+Index									
+Emissions source:	Delivery vehicles	Next publication date: 	June 2026	Factor set:	Full set				
+Scope:	Scope 1	Version:	1	Year:	2025				
+Delivery vehicles conversion factors should be used to report travel in vans/light goods vehicles (LGVs) and heavy goods vehicles (HGVs) owned or controlled by the reporting organisation.  This does not include hired vans or courier services provided by other organisations.									
+Guidance									
+●  For delivery vehicles where an organisation has data in litres of fuel or kWh electricity used, the ‘fuels’ or 'electricity' conversion factors should be applied, which provide more accurate emissions results.									
+●  For delivery vehicles that run on biofuels, please refer to the ‘Bioenergy' sheet in this workbook. Note any vehicle running on biofuel should also have an ‘outside of scopes’ CO2 figure reported separately. See the 'Outside of scopes' tab for more detail on this.									
+●  All HGVs are assumed to be diesel (there are few alternatively fuelled HGVs on the road in the UK).									
+●  Emissions from a vehicle used by an organisation, but isn't owned by them, can be reported in Scope 3 instead of Scope 1, using the same factors. These factors can also be found in the Scope 3 under ‘freighting goods’ or ‘managed assets -vehicles’.									
+● For delivery vehicles using electricity (i.e. Plug-in Hybrid Electric Vehicles and Battery Electric Vehicles) the emission factors presented here only include the conventional fuel use (i.e. petrol or diesel), where relevant, and you should IN ADDITION use the emission factors provided in the 'UK electricity for EVs' and 'UK electricity T&D for EVs' tables to calculate the emissions due to the average electricity consumption.									
+● Please see the FAQs at the bottom of this page for further information on the conversion factors for delivery vehicles. 									
+Example of calculating emissions from delivery vehicles									
+Company F needs to report the emissions from its vans and HGVs - this is a Scope 1 emission. 									
+Company F uses conversion factors appropriate to each of its vans. For example, its largest van can be laden up to a maximum gross vehicle weight of 3.5 tonnes. Therefore company F selects the class III (1.74 tonne - 3.5 tonne) van.									
+For its other HGVs, company F knows the vehicles fall into the ‘rigid >3.5t-7.5t’ category. However, it does not know, on average, how full its HGVs are. Therefore, it selects  the conversion factor with the 'average laden' weight.									
+The activity data (km) for each set of vans and HGVs is multiplied by the appropriate conversion factors to produce company F's delivery vehicle emissions.									
+			Diesel				Petrol		
+Activity	Type	Unit	kg CO2e	kg CO2e of CO2 per unit	kg CO2e of CH4 per unit	kg CO2e of N2O per unit	kg CO2e	kg CO2e of CO2 per unit	kg CO2e of CH4 per unit
+Vans	Class I (up to 1.305 tonnes)	km	0.15738	0.15572	4.86077670538599e-06	0.00165	0.20188	0.20118	0.00027
+		miles	0.25329	0.25061	1e-05	0.00267	0.3249	0.32377	0.00043
+	Class II (1.305 to 1.74 tonnes)	km	0.1926	0.19094	4.86077670538599e-06	0.00165	0.20874	0.20804	0.00027
+		miles	0.30996	0.30728	1e-05	0.00267	0.33594	0.33481	0.00043
+	Class III (1.74 to 3.5 tonnes)	km	0.27878	0.27712	4.86077670538599e-06	0.00165	0.33845	0.33775	0.00027
+		miles	0.44866	0.44598	1e-05	0.00267	0.54468	0.54355	0.00043
+	Average (up to 3.5 tonnes)	km	0.25561	0.25395	4.86077670538599e-06	0.00165	0.21335	0.21265	0.00027
+		miles	0.41138	0.4087	1e-05	0.00267	0.34336	0.34223	0.00043
+			0% Laden				50% Laden		
+Activity	Type	Unit	kg CO2e	kg CO2e of CO2 per unit	kg CO2e of CH4 per unit	kg CO2e of N2O per unit	kg CO2e	kg CO2e of CO2 per unit	kg CO2e of CH4 per unit
+HGV (all diesel)	Rigid (>3.5 - 7.5 tonnes)	km	0.46138	0.45595	0.00011	0.00532	0.50103	0.4956	0.00011
+		miles	0.74251	0.73378	0.00018	0.00855	0.80632	0.79759	0.00018
+	Rigid (>7.5 tonnes-17 tonnes)	km	0.55061	0.54399	0.00013	0.00648	0.62832	0.6217	0.00013
+		miles	0.88612	0.87546	0.00022	0.01043	1.01119	1.00053	0.00022
+	Rigid (>17 tonnes)	km	0.774	0.76318	0.00022	0.01059	0.94152	0.9307	0.00022
+		miles	1.24562	1.22821	0.00037	0.01704	1.51523	1.49782	0.00037
+	All rigids	km	0.67912	0.67005	0.00019	0.00888	0.80803	0.79896	0.00019
+		miles	1.09292	1.07833	0.0003	0.01429	1.3004	1.28581	0.0003
+	Articulated (>3.5 - 33t)	km	0.62775	0.61554	0.00012	0.01209	0.78163	0.76942	0.00012
+		miles	1.01024	0.99061	0.00019	0.01944	1.25789	1.23826	0.00019
+	Articulated (>33t)	km	0.64734	0.63282	0.00015	0.01438	0.85827	0.84375	0.00015
+		miles	1.04178	1.01842	0.00022	0.02314	1.38125	1.35789	0.00022
+	All artics	km	0.64659	0.63216	0.00015	0.01428	0.85536	0.84093	0.00015
+		miles	1.04057	1.01736	0.00022	0.02299	1.37656	1.35335	0.00022
+	All HGVs	km	0.65975	0.64764	0.00016	0.01195	0.83589	0.82378	0.00016
+		miles	1.06176	1.04228	0.00026	0.01923	1.34523	1.32575	0.00026
+			0% Laden				50% Laden		
+Activity	Type	Unit	kg CO2e	kg CO2e of CO2 per unit	kg CO2e of CH4 per unit	kg CO2e of N2O per unit	kg CO2e	kg CO2e of CO2 per unit	kg CO2e of CH4 per unit
+HGVs refrigerated (all diesel)	Rigid (>3.5 - 7.5 tonnes)	km	0.54937	0.54394	0.00011	0.00532	0.59667	0.59124	0.00011
+		miles	0.88412	0.87539	0.00018	0.00855	0.96024	0.95151	0.00018
+	Rigid (>7.5 tonnes-17 tonnes)	km	0.65559	0.64897	0.00013	0.00648	0.7483	0.74168	0.00013
+		miles	1.05508	1.04442	0.00022	0.01043	1.20428	1.19362	0.00022
+	Rigid (>17 tonnes)	km	0.92128	0.91046	0.00022	0.01059	1.12114	1.11032	0.00022
+		miles	1.48266	1.46525	0.00037	0.01704	1.8043	1.78689	0.00037
+	All rigids	km	0.80843	0.79936	0.00019	0.00888	0.96223	0.95316	0.00019
+		miles	1.30103	1.28644	0.0003	0.01429	1.54855	1.53396	0.0003
+	Articulated (>3.5 - 33t)	km	0.72566	0.71345	0.00012	0.01209	0.90403	0.89182	0.00012
+		miles	1.16782	1.14819	0.00019	0.01944	1.45487	1.43524	0.00019
+	Articulated (>33t)	km	0.748	0.73348	0.00015	0.01438	0.99249	0.97797	0.00015
+		miles	1.20378	1.18042	0.00022	0.02314	1.59725	1.57389	0.00022
+	All artics	km	0.74715	0.73272	0.00015	0.01428	0.98913	0.9747	0.00015
+		miles	1.20241	1.1792	0.00022	0.02299	1.59184	1.56863	0.00022
+	All HGVs	km	0.77175	0.75964	0.00016	0.01195	0.97835	0.96624	0.00016
+		miles	1.242	1.22252	0.00026	0.01923	1.5745	1.55502	0.00026
+FAQs									
+What is gross vehicle weight?									
+The gross vehicle weight value is the maximum operating weight of the vehicle including passengers, cargo and any additional body work (for example, tail lift or box section). This excludes the weight of any additional trailers.									
+What is an average payload?									
+Payload is the weight of goods being transported by a vehicle – typically stated in tonnes. Average payload in this context is the average amount of goods a vehicle of a given type is carrying.									
+Which tables do I need to use to capture all the emissions resulting from the use of my plug-in electric vehicles (PHEVs)?									
+	Method 1: Energy consumption								
+	Emissions =  Total energy consumption (fuel, electricity)  x  Emission Factors (fuel, electricity)								
+		Scope	Car	Car	Van	Van	Includes		
+			Plug-in Hybrid Electric Vehicle	Battery Electric Vehicle	Plug-in Hybrid Electric Vehicle	Battery Electric Vehicle			
+	Fuels	Scope 1	YES	NO	YES	NO	Scope 1 emissions from use of petrol or diesel.		
+	WTT- fuels	Scope 3	YES	NO	YES	NO	WTT Scope 3 emissions from use of petrol and diesel.		
+	UK Electricity	Scope 2	YES	YES	YES	YES	Scope 2 emissions from use of electricity.		
+	Transmission and distribution	Scope 3	YES	YES	YES	YES	Scope 3 emissions from T&D losses from use of electricity.		
+	WTT- UK & overseas elec	Scope 3	YES	YES	YES	YES	Scope 3 emissions from WTT emissions from use of electricity.		
+	Method 2: Generic vehicle emission factors								
+	Emissions =  Total activity for vehicle category (in km, miles or tonne-km)  x  Emission Factor								
+	Note: the emission factors already account for the average share of driving using electricity or conventional fuel for plug-in hybrid electric vehicles, so the total number of km / miles / tonne-km should be used in calculations.								
+	Sum of elements:      A + C   OR  B + C								
+		Scope	Car	Car	Van	Van	Includes		
+			Plug-in Hybrid Electric Vehicle	Battery Electric Vehicle	Plug-in Hybrid Electric Vehicle	Battery Electric Vehicle			
+A	Passenger vehicles	Scope 1	YES	NO			Only Scope 1 emissions from petrol or diesel use.		
+A	Delivery vehicles	Scope 1			YES	NO	Only Scope 1 emissions from petrol or diesel use.		
+A	UK electricity for EVs	Scope 2	YES	YES	YES	YES	Only Scope 2 emissions from electricity use.		
+A	UK electricity T&D for EVs	Scope 3	YES	YES	YES	YES	Only Scope 3 emissions from electricity T&D losses.		
+	OR								
+B	Business travel- land	Scope 3	YES	YES			Sum of Scope 1 and Scope 2, plus Scope 3 electricity T&D losses.		
+B	Freighting goods	Scope 3			YES	YES	Sum of Scope 1 and Scope 2, plus Scope 3 electricity T&D losses.		
+B	Managed assets- vehicles	Scope 3	YES	YES	YES	YES	Sum of Scope 1 and Scope 2, plus Scope 3 electricity T&D losses.		
+	AND								
+C	WTT- pass vehs & travel- land	Scope 3	YES	YES			Only Scope 3 WTT emissions (all fuel types, electricity)		
+C	WTT- delivery vehs & freight	Scope 3			YES	YES	Only Scope 3 WTT emissions (all fuel types, electricity)		
+	Example: 
+Company B wants to report on its Scope 1 fuel emissions from a large PHEV car (if the car model is known, the market and size can be checked from the table in the Methodology Paper):								
+	Situation A) 
+Company B has data in fuel (in litres) and electricity (kWh) consumed, the ‘fuels’ and 'UK electricity' conversion factors should be applied, which provide more accurate emissions results. 
+"Method 1: Energy consumption" should be used.
+Emissions =  Total energy consumption (fuel, electricity)  x  Emission Factors (fuel, electricity)
+- Some PHEVs' onboard data can provide information on the electric and fuel consumption, try to consult the vehicle's user manual or contact the manufacturer for instructions on accessing this information. These can be used to estimate fuel (in litres) and electricity (kWh) consumed.								
+	Situation B) 
+If there is no data available to estimate fuel/electricity consumption, or how much of the mileage is driven by fuel compared to mileage driven by electricity. Only the total mileage is known.
+"Method 2: Generic vehicle emission factors" should be used.	
+Emissions =  Total activity for vehicle category (in km, miles or tonne-km)  x  Emission Factor									
+	A worked example of "Method 2: Generic vehicle emission factors":
+- The PHEV car has travelled 10,000 miles in a year.
+- In 2023, the conversion factors for PHEV Car (Large): 0.11397 kg CO2e / mile;
+Emissions =  Total activity for vehicle category (in km, miles or tonne-km)  x  Emission Factor
+= 10,000 miles x 0.11397 kg CO2e / mile = 1140 kg CO2e. 
+Note: the emission factors already account for the average share of driving using electricity or conventional fuel for plug-in hybrid electric vehicles, so the total number of km / miles / tonne-km should be used in calculations.
+Emissions from the electricity consumed by the PHEV can be calculated by applying conversion factors in Scope 2 "UK electricity for EVs", Scope 3 "UK electricity T&D for EVs" and "WTT- pass vehs & travel- land".
+
+Note: If the PHEVs are mostly charged in an organisation's sites, care should be taken to avoid double counting with an organisation's general electricity consumption.								
+	Note: The Plug-in Hybrid Electric Vehicle category also includes Range-Extended Electric Vehicles (also known as REEVs, ER-EVs or REX).								
+Why are emission factors for certain types of electric vehicle missing?									
+At the moment there are only a limited number of electric vehicle models on the market, and certain categories are not yet represented by battery electric vehicle or plug-in hybrid electric vehicles.  Emission factors  will be added in future updates for these vehicle types, when models in these categories become available in the UK market/fleet.									
+Are the radiative forcing effects of non-CO2 emissions considered?									
+Aviation is the only form of transport where the effects of radiative forcing are considered to be significant.									
+For information about how the conversion factors have been derived, please refer to the 'Methodology paper' that accompanies the conversion factors.									
+
+===== SC1 - Fugitive Emission =====
+UK Government GHG Conversion Factors for Company Reporting									
+Refrigerant & other									
+Index									
+Emissions source:	Refrigerant & other	Next publication date: 	June 2026	Factor set:	Full set				
+Scope:	Scope 1	Version:	1	Year:	2025				
+Refrigerant and other conversion factors should be used for the purpose of reporting leakage from air-conditioning, refrigeration units or the release to the atmosphere of other gases that have global warming potential (GWP).									
+Guidance									
+●  The refrigerants and gases in the table are slightly different to the other conversion factor tables.  In this case the gases emitted have a global warming influence themselves and the conversion factor allows the global warming potential (GWP) of that gas to be expressed in terms of kilogrammes of carbon dioxide equivalent (kg CO2e), this is slightly different to most of the factors where the emissions occur after combustion/use of the fuel/material etc.  These conversions can, however, be used in the normal way for reporting purposes.									
+●  The Kyoto Protocol and Montreal Protocol listed gases are primarily based on the Intergovernmental Panel on Climate Change (IPCC) Fifth Assessment Report (AR5) over a 100-year period excl. feedback loops (this is consistent with reporting under the Paris Agreement). In some cases AR4, AR6 or estimates presented in the EU F-gas regulations annexes are used instead where AR5 values are not available.
+									
+●  From 01 Jan 2019,  the Kigali amendment came into force, HFCs and HFC blends are now both Kyoto Protocol and Montreal Gases.									
+Example of calculating emissions from refrigerants and other process gases with a GWP									
+Company D need to report on the refrigerants that leak from their air conditioning equipment at their HQ each year (sometimes called fugitive emissions).  These are considered to be Scope 1 emissions for company D.  To calculate the leakage, they simply note how much they have had to 'top up' the refrigerant over the last year.									
+The 'top up' data (in kg) is multiplied by the applicable conversion factor to their refrigerant type to produce company D's direct emissions from refrigerant.									
+			Emissions including only Kyoto products	Emissions including only non-Kyoto products	Total emissions including non-Kyoto products				
+Activity	Emission	Unit	kg CO2e	kg CO2e	kg CO2e				
+Kyoto protocol products	Carbon dioxide	kg	1		1				
+	Methane	kg	28		28				
+	Nitrous oxide	kg	265		265				
+	HFC-23	kg	12400		12400				
+	HFC-32	kg	677		677				
+	HFC-41	kg	116		116				
+	HFC-125	kg	3170		3170				
+	HFC-134	kg	1120		1120				
+	HFC-134a	kg	1300		1300				
+	HFC-143	kg	328		328				
+	HFC-143a	kg	4800		4800				
+	HFC-152a	kg	138		138				
+	HFC-227ea	kg	3350		3350				
+	HFC-236fa	kg	8060		8060				
+	HFC-245fa	kg	858		858				
+	HFC-43-I0mee	kg	1650		1650				
+	Perfluoromethane (PFC-14)	kg	6630		6630				
+	Perfluoroethane (PFC-116)	kg	11100		11100				
+	Perfluoropropane (PFC-218)	kg	8900		8900				
+	Perfluorocyclobutane (PFC-318)	kg	9540		9540				
+	Perfluorobutane (PFC-3-1-10)	kg	9200		9200				
+	Perfluoropentane (PFC-4-1-12)	kg	8550		8550				
+	Perfluorohexane (PFC-5-1-14)	kg	7910		7910				
+	PFC-9-1-18	kg	7190		7190				
+	Perfluorocyclopropane	kg	9200		9200				
+	Sulphur hexafluoride (SF6)	kg	23500		23500				
+	HFC-152	kg	16		16				
+	HFC-161	kg	4		4				
+	HFC-236cb	kg	1210		1210				
+	HFC-236ea	kg	1330		1330				
+	HFC-245ca	kg	716		716				
+	HFC-365mfc	kg	804		804				
+	Nitrogen trifluoride	kg	16100		16100				
+			Emissions including only Kyoto products	Emissions including only non-Kyoto products	Total emissions including non-Kyoto products				
+Activity	Emission	Unit	kg CO2e	kg CO2e	kg CO2e				
+Blends	R401A	kg	18	1112	1130				
+	R401B	kg	15	1221	1236				
+	R401C	kg	21	855	876				
+	R402A	kg	1902	669	2571				
+	R402B	kg	1205	1056	2261				
+	R403A	kg	1780	1320	3100				
+	R403B	kg	3471	986	4457				
+	R404A	kg	3943		3943				
+	R405A	kg	3920	901	4821				
+	R406A	kg		1780	1780				
+	R407A	kg	1923		1923				
+	R407B	kg	2547		2547				
+	R407C	kg	1624		1624				
+	R407D	kg	1487		1487				
+	R407E	kg	1425		1425				
+	R407F	kg	1674		1674				
+	R408A	kg	2430	827	3257				
+	R409A	kg		1485	1485				
+	R409B	kg		1474	1474				
+	R410A	kg	1924		1924				
+	R410B	kg	2048		2048				
+	R411A	kg	15	1540	1555				
+	R411B	kg	4	1654	1659				
+	R412A	kg	445	1727	2172				
+	R413A	kg	1945		1945				
+	R414A	kg		1375	1375				
+	R414B	kg		1274	1274				
+	R415A	kg	25	1443	1468				
+	R415B	kg	104	440	544				
+	R416A	kg	767	208	975				
+	R417A	kg	2127		2127				
+	R417B	kg	2742		2742				
+	R417C	kg	1643		1643				
+	R418A	kg	3	1690	1693				
+	R419A	kg	2688		2688				
+	R419B	kg	2161		2161				
+	R420A	kg	1144	238	1382				
+	R421A	kg	2385		2385				
+	R421B	kg	2890		2890				
+	R422A	kg	2847		2847				
+	R422B	kg	2290		2290				
+	R422C	kg	2794		2794				
+	R422D	kg	2473		2473				
+	R422E	kg	2350		2350				
+	R423A	kg	2274		2274				
+	R424A	kg	2212		2212				
+	R425A	kg	1431		1431				
+	R426A	kg	1371		1371				
+	R427A	kg	2024		2024				
+	R428A	kg	3417		3417				
+	R429A	kg	13.8	1.5	15.3				
+	R430A	kg	105	1	106				
+	R431A	kg	40		40				
+	R432A	kg		1.8	1.8				
+	R433A	kg		0.64	0.64				
+	R433B	kg		0.16	0.16				
+	R433C	kg		0.55	0.55				
+	R434A	kg	3075		3076				
+	R435A	kg	27.6	0.8	28.4				
+	R436A	kg		1.35	1.35				
+	R436B	kg		1.47	1.47				
+	R437A	kg	1639		1639				
+	R438A	kg	2059		2059				
+	R439A	kg	1828		1828				
+	R440A	kg	156		156				
+	R441A	kg		0.23	0.23				
+	R442A	kg	1754		1754				
+	R443A	kg		1	1				
+	R444A	kg	88	1	89				
+	R445A	kg	117	1	118				
+	R500	kg	36	7528	7564				
+	R501	kg		3870	3870				
+	R502	kg		4786	4786				
+	R503	kg	4972	8326	13299				
+	R504	kg	326	3973	4299				
+	R505	kg		7956	7956				
+	R506	kg		3857	3857				
+	R507A	kg	3985		3985				
+	R508A	kg	11607		11607				
+	R508B	kg	11698		11698				
+	R509A	kg	4984	774	5758				
+	R510A	kg		1.24	1.24				
+	R511A	kg	6.9	0.1	7				
+	R512A	kg	196		196				
+			Emissions including only Kyoto products	Emissions including only non-Kyoto products	Total emissions including non-Kyoto products				
+Activity	Emission	Unit	kg CO2e	kg CO2e	kg CO2e				
+Montreal protocol products	CFC-11/R11 = trichlorofluoromethane	kg		4660	4660				
+	CFC-12/R12 = dichlorodifluoromethane	kg		10200	10200				
+	CFC-13	kg		13900	13900				
+	CFC-113	kg		5820	5820				
+	CFC-114	kg		8590	8590				
+	CFC-115	kg		7670	7670				
+	Halon-1211	kg		1750	1750				
+	Halon-1301	kg		6290	6290				
+	Halon-2402	kg		1470	1470				
+	Carbon tetrachloride	kg		1730	1730				
+	Methyl bromide	kg		2	2				
+	Methyl chloroform	kg		160	160				
+	HCFC-22/R22 = chlorodifluoromethane	kg		1760	1760				
+	HCFC-123	kg		79	79				
+	HCFC-124	kg		527	527				
+	HCFC-141b	kg		782	782				
+	HCFC-142b	kg		1980	1980				
+	HCFC-225ca	kg		127	127				
+	HCFC-225cb	kg		525	525				
+	HCFC-21	kg		148	148				
+			Emissions including only Kyoto products	Emissions including only non-Kyoto products	Total emissions including non-Kyoto products				
+Activity	Emission	Unit	kg CO2e	kg CO2e	kg CO2e				
+Fluorinated ethers	HFE-125	kg		12400	12400				
+	HFE-134	kg		5560	5560				
+	HFE-143a	kg		523	523				
+	HCFE-235da2	kg		491	491				
+	HFE-245cb2	kg		654	654				
+	HFE-245fa2	kg		812	812				
+	HFE-254cb2	kg		301	301				
+	HFE-347mcc3	kg		530	530				
+	HFE-347pcf2	kg		889	889				
+	HFE-356pcc3	kg		413	413				
+	HFE-449sl (HFE-7100)	kg		421	421				
+	HFE-569sf2 (HFE-7200)	kg		57	57				
+	HFE-43-10pccc124 (H-Galden1040x)	kg		2820	2820				
+	HFE-236ca12 (HG-10)	kg		5350	5350				
+	HFE-338pcc13 (HG-01)	kg		2910	2910				
+			Emissions including only Kyoto products	Emissions including only non-Kyoto products	Total emissions including non-Kyoto products				
+Activity	Emission	Unit	kg CO2e	kg CO2e	kg CO2e				
+Other products	Trifluoromethyl sulphur pentafluoride	kg		17400	17400				
+	PFPMIE	kg		9710	9710				
+	Dimethylether	kg		1	1				
+	Methylene chloride	kg		9	9				
+	Methyl chloride	kg		12	12				
+	R290 = propane	kg		0.06	0.06				
+	R600A = isobutane	kg		3	3				
+	R600 = butane	kg		0.006	0.006				
+	R601 = n-pentane	kg		5	5				
+	R601A = isopentane	kg		5	5				
+	R170 = ethane	kg		0.437	0.437				
+	R1270 = propylene	kg		2	2				
+	R1234yf*	kg		1	1				
+	R1234ze*	kg		1	1				
+* There is no specific figure available, however it is known that the GWP factor is less than 1 kg CO2e									
+FAQs									
+Is there any guidance to help me calculate the refrigerant leakage for my particular air conditioning system?									
+Further guidance on how to calculate refrigerant leakage is provided in the government 'Environmental reporting guidelines'.									
+Do I need to report all refrigerant types and gases with global warming potential in Scope 1?									
+No, only Kyoto Protocol gases need to be reported under Scope 1, all non-Kyoto gases (e.g. Montreal Protocol gases) should be reported separately.									
+What should I do if the product I use doesn't appear on this list?									
+Information on the global warming potential and charge size should be included on a label on products containing these products. As stated at https://www.gov.uk/guidance/labelling-f-gas-equipment-you-produce-import-or-install: 
+[Producers, importers or installers of F-gas equipment] must label all products you produce, import or install that contain regulated F-gas. The label must include the:
+•	industry name for the F-gas
+•	mass of F-gas in the equipment (kg)
+•	weight of the F-gas in equivalent tonnes of carbon dioxide
+•	global warming potential of the F-gas
+									
+Labelling requirements have been in place since at least July 2007 when the 2006 EU F-gas regulations (Regulation (EC) No 842/2006) entered into force, and even systems that were installed before this date, if containing more than 3kg of refrigerant, are required to have labels documenting the required regular servicing conducted. In the unlikely scenario where the label does not specify this F-gas information or you cannot find the label, your service engineer should be able to provide the relevant information.
+Examples of what labels looks like can be found below.
+Note that the GWPs presented on these labels will be included non-Kyoto components, and they use the values specified in legislation (at the time of writing, these are mostly AR4 values, whereas the data presented here are based on AR5 values). Because of the different basis of GWP values, you might want to investigate the composition of the refrigerant on the label by referring to the ASHRAE designations (https://www.ashrae.org/technical-resources/standards-and-guidelines/ashrae-refrigerant-designations), and use the GWP values for each component given above to determine the AR5 GWP of your refrigerant. The AR4 GWP in most cases will be similar to the AR5 value, so the value on the label can be used to check that your calculated value is in the right ballpark.. The non-Kyoto components in newer blends are typically low-GWP, so the GWP will generally be dominated by the Kyoto components.
+Note that many substances have multiple names (e.g. as below, HFC-134a is often referred to as R134a).									
+For information about the derivation of the conversion factors please refer to accompanying 'Methodology paper' to the conversion factors, which is available on the conversion factors website.									
+
+===== sc 2-UK electricity =====
+UK Government GHG Conversion Factors for Company Reporting									
+UK electricity									
+Index									
+Emissions source:	UK electricity	Next publication date: 	June 2026	Factor set:	Full set				
+Scope:	Scope 2	Version:	1	Year:	2025				
+UK electricity conversion factors should be used to report on electricity used by an organisation at sites owned/controlled by them.  This is reported as a Scope 2, indirect emission.  The conversion factors in this listing are for the electricity supplied to the grid that organisations purchase - they do not include the emissions associated with the transmission and distribution of electricity.									
+Guidance									
+●  The year displayed alongside the electricity factors is the reporting year for which users should apply these factors. This is based on a calendar reporting year.									
+●  The Government's 'Environmental reporting guidelines' require that Scope 2 electricity emissions are reported using location-based grid average emissions factors. A market-based Scope 2 figure may optionally be reported but only in addition to the location-based figure. Market-based emissions reflect a contractual entitlement to claim an emissions rate, allowing for a reduced emission figure where, for example, a renewable energy tariff is backed by certificates to track attributes associated with energy generation. The location-based emissions reflect the average emission of the grid where the energy consumption occurs and is calculated using these UK Electricity grid average factors below. Organisations using a market-based figure may want to consider adding narrative information on whether their contractual arrangements cause additional renewable electricity generation.									
+●  We advise that organisations also account for the transmission and distribution (T&D) losses of the electricity they purchase, which occur between the power station and their site(s). They should do so using the ‘transmission and distribution’ factors for UK electricity. The emissions from T&D should be accounted for in Scope 3.									
+●  Organisations that generate renewable energy or purchase green energy should refer to chapter 2 of the Government's 'Environmental reporting guidelines' for information on how to account for their electricity use.									
+●  If an organisation voluntarily reports the electricity used at a site/for an asset in its supply chain that is not directly under its ownership or control, it may report this electricity in Scope 3. A duplicate set of conversion factors have been provided for this purpose in the Scope 3 listing, under ‘managed assets- electricity’.									
+● Where electricity is onsite generated from a renewable source such as PV then the kWh should be reported under scope 1 with 0 emissions for both the electricity fuel source and 0 emissions for the T&D value.									
+● Organisations seeking to account for the biogenic CO2 emissions of the electricity they purchase, which come from the combustion of biomass in power stations, should do so using the 'Outside of Scopes' factor for UK electricity.									
+Why has the electricity factor changed?									
+The UK electricity factor is prone to fluctuate from year to year as the fuel mix consumed in UK power stations (and auto-generators) and the proportion of net imported electricity changes.
+
+These annual changes can be large as the factor depends very heavily on the relative prices of coal and natural gas as well as fluctuations in peak demand and renewables. Given the importance of this factor, the explanation for fluctuations will be presented here henceforth.
+
+In the 2019 GHG Conversion Factors, there was a 10% decrease in the UK Electricity CO2e factor compared to the previous year. In the 2020 update, the CO2e factor decreased (compared with 2019) again by 9%. In the 2021 update, the CO2e factor again decreased by 9% (in comparison to the 2020 update). The above decreases are all due to a decrease in coal use in electricity generation and an increase in renewable generation.
+
+In the 2025 update, the UK Electricity CO2e factor has reduced by approximately 15% since 2024. The decrease is due to less natural gas use in power stations, an increase in renewable energy, and an increase in net imports of relatively low carbon electricity.									
+Example of calculating emissions from UK electricity									
+Company G reports the emissions from the electricity it uses, which can be found by reading its electricity meters or gathering data from utility bills. 									
+The kWh electricity use is multiplied by the ‘electricity generated’ figure appropriate to the reporting year to produce company G's UK Scope 2 electricity emissions.									
+Activity	Country	Unit	Year	kg CO2e	kg CO2e of CO2 per unit	kg CO2e of CH4 per unit	kg CO2e of N2O per unit		
+Electricity generated	Electricity: UK	kWh	2025	0.177	0.17489	0.0009	0.00122		
+FAQs									
+I am not publishing a company report, but I need a factor for ‘electricity consumption’ instead of ‘electricity generation’ what should I do?									
+For company reporting purposes, organisations should use the ‘electricity generation’ figures for Scope 2 electricity and may use the ‘T&D’ factors found in the 'Transmission and distribution' tab for reporting Scope 3 losses.  However, for other reporting contexts (where specific scopes do not need to be reported) the ‘electricity consumption’ figure can be calculated by adding together the ‘electricity generation’ and the ‘T&D’ values within each year.									
+I previously used a 5-year grid rolling average factors. These factors are based on 1-year average factors and look quite different, what should I do?									
+Please refer to the 'What's new in 2013'  section of the ‘What’s new’ tab of the 2013 GHG Conversion factors spreadsheet for full instructions on how to rebaseline your data to compensate for the changes made.									
+For information about how the conversion factors have been derived, please refer to the 'Methodology paper' that accompanies the conversion factors.									
+
+===== Overseas electricity =====
+UK Government GHG Conversion Factors for Company Reporting									
+Overseas electricity									
+Index									
+Emissions source:	Overseas electricity	Next publication date: 	June 2026	Factor set:	Full set				
+Scope:	Scope 2	Version:	1	Year:	2025				
+Overseas electricity conversion factors should be used to report on electricity used by an organisation at international sites owned/controlled by them.  Electricity should be reported as a Scope 2, indirect emissions source.  									
+Guidance									
+● We no longer provide overseas CO2 emission factors. They are available for sale from the International Energy Agency (IEA) website.									
+● There are some freely available overseas electricity factors which can be found on national websites. For example: 									
+- The EEA publishes electricity factors for EU countries, found here.									
+- The US EPA publishes electricity factors for the US found here.									
+- The SEAI publishes factors for the Republic of Ireland, found here. NI is included in the UK Electricity factors.									
+- The RTE publishes the French electricity factor, found here. 									
+● Further, the IEA now also publishes data for transmission and distribution losses, also available from International Energy Agency (IEA) website. These are also no longer provided as part of these conversion factors.									
+●  The conversion factors supplied by the IEA do not include the emissions associated with the extraction, refining and transportation of primary fuels before their use in the generation of electricity. We no longer provide overseas the WTT data for overseas electricity use or emissions factors for the Scope 2. They are available for sale from the CO2 Emissions from Fuel Combustion online data service at the International Energy Agency (IEA) website.									
+
+===== SC 2- Heat and steam =====
+UK Government GHG Conversion Factors for Company Reporting									
+Heat and steam									
+Index									
+Emissions source:	Heat and steam	Next publication date: 	June 2026	Factor set:	Full set				
+Scope:	Scope 2	Version:	1	Year:	2025				
+Heat and steam conversion factors should be used to report emissions within organisations that purchase heat/steam energy for heating purposes or for use in specific industrial processes. District heat and steam factors are also available.									
+Guidance									
+●  The year displayed alongside the heat and steam factors is the reporting year for which users should apply these factors. This is based on a calendar reporting year.									
+●  It should be recognised that these conversion factors are based on an industry average fuel mix for combined heat and power (CHP) based heat and steam (in the absence of statistics from non-CHP operators). Therefore, if better supplier-specific data become available, which are based on a true fuel mix for an organisation’s specific infrastructure, then these should be used as a better alternative.									
+●  It should be noted that to calculate the distribution impact of district heat and steam figures, users should refer to the 'Transmission and distribution' tab and add these emissions to their Scope 3 accounting.									
+Calculating emissions from heat and steam									
+Company I reports the emissions from the purchase of heat and steam for its 'site 1'.  It keeps records of the kWh use per year.									
+At 'site 2’, company I is on a district heating network. It keeps separate records for kWh use via the district heat and steam network since it also wishes to voluntarily report Scope 3 distribution emissions associated with this source.									
+The activity data are multiplied by the appropriate year's conversion factors to produce company I's Scope 2 heat and steam, and district heating emissions. To report the transmission and distribution impact for 'site 2', associated with delivering the steam over a distance, company I refers to the 'transmission and distribution' listings.									
+Activity	Type	Unit	Year	kg CO2e	kg CO2e of CO2 per unit	kg CO2e of CH4 per unit	kg CO2e of N2O per unit		
+Heat and steam	Onsite heat and steam	kWh	2025	0.17529	0.17355	0.00122	0.00052		
+	District heat and steam	kWh	2025	0.17529	0.17355	0.00122	0.00052		
+FAQs									
+How do I calculate emissions from cooling?
+									
+There are no specific emissions factors for air conditioning or other cooling technologies. To calculate emissions from purchased cooling, use data on the energy consumption (e.g. electricity or natural gas consumption) of the machines performing the cooling.									
+For information about how the conversion factors have been derived, please refer to the 'Methodology paper' that accompanies the conversion factors.									
+
+===== SC3 - Trans and distribution =====
+Transmission and distribution									
+Index									
+Emissions source:	Transmission and distribution	Next publication date: 	June 2026	Factor set:	Full set				
+Scope:	Scope 3	Version:	1	Year:	2025				
+Transmission and distribution (T&D) factors should be used to report the Scope 3 emissions associated with grid losses (the energy loss that occurs in getting the electricity from the power plant to the organisations that purchase it).									
+Guidance									
+● To account for electricity emissions fully, organisations should account for the T&D loss associated with its purchased power.  									
+●  The year displayed alongside the factors is the reporting year for which users should apply these factors. This is based on a calendar reporting year.									
+● Transmission and distribution losses are no longer published for overseas electricity, since these are now calculated and published by the IEA.									
+● Where electricity is onsite generated from a renewable source such as PV then the kWh should be reported under scope 1 with 0 emissions for both the electricity fuel source and 0 emissions for the T&D value.									
+Calculating emissions from T&D									
+Company H reports the emissions from T&D losses associated with its electricity use - this is a Scope 3 emission.   									
+For every kWh of electricity company H purchases, it reports its associated energy losses using the T&D factor for that year.         									
+Every kWh company H uses is multiplied by the appropriate T&D conversion factor to produce its Scope 3 T&D emissions impact.									
+Activity	Type	Unit	Year	kg CO2e	kg CO2e of CO2 per unit	kg CO2e of CH4 per unit	kg CO2e of N2O per unit		
+T&D- UK electricity	Electricity: UK	kWh	2025	0.01853	0.01834	8e-05	0.00011		
+Activity	Type	Unit	Year	kg CO2e	kg CO2e of CO2 per unit	kg CO2e of CH4 per unit	kg CO2e of N2O per unit		
+Distribution - district heat & steam	5% loss	kWh	2025	0.00945	0.00936	7e-05	3e-05		
+FAQs									
+Is reporting T&D compulsory?									
+As with other Scope 3 impacts, reporting T&D is voluntary. However, it is considered best practice for UK reporting.									
+I am not publishing a company report, but I need a factor for ‘electricity consumption’. What should I do?									
+For company reporting purposes, organisations should use the ‘electricity generation’ figures for Scope 2 electricity and may use the ‘T&D’ factors for reporting Scope 3 losses. However, for other reporting contexts (where specific scopes do not need to be reported) the ‘electricity consumption’ figure can be calculated by adding together the ‘electricity generation’ and ‘T&D’ values within each year for each country.									
+For information about how the conversion factors have been derived, please refer to the 'Methodology paper' that accompanies the conversion factors.									
+
+===== SC 3- Water supply =====
+UK Government GHG Conversion Factors for Company Reporting									
+Water supply									
+Index									
+Emissions source:	Water supply	Next publication date: 	June 2026	Factor set:	Full set				
+Scope:	Scope 3	Version:	1	Year:	2025				
+Water supply conversion factors should be used to account for water delivered through the mains supply network.									
+Guidance									
+●  To provide a full picture of your Scope 3 water emissions, you should also refer to the ‘Water treatment’ tab as both portions, supply and treatment, should be reported on for water.									
+Example of calculating emissions from water supply									
+Company J reports its emissions from mains water, a Scope 3 emissions source. It gathers data from its utility bills and water meters.									
+Company J multiplies the water used (cubic metres (m3)) by the appropriate year's conversion factor called ‘water supply’ to produce its emissions.									
+Activity	Type	Unit	kg CO2e						
+Water supply	Water supply	cubic metres	0.1913						
+		million litres	191.30156						
+For information about how the conversion factors have been derived, please refer to the Methodology paper' that accompanies the conversion factors.									
+
+===== SC- 3 Water treatment =====
+UK Government GHG Conversion Factors for Company Reporting									
+Water treatment									
+Index									
+Emissions source:	Water treatment	Next publication date: 	June 2026	Factor set:	Full set				
+Scope:	Scope 3	Version:	1	Year:	2025				
+Water treatment conversion factors should be used for water returned into the sewage system through mains drains.									
+Guidance									
+●  To provide a full picture of your Scope 3 water emissions, you should also refer to the ‘Water supply’ listing as both portions, supply and treatment, should be reported on for water.									
+Example of calculating emissions from water treatment									
+Company J report its emissions from mains water treatment, a Scope 3 emissions source.  It gathers data from its utility bills.									
+Company J multiplies the volume of water disposed of via the drains (in cubic metres (m3)) by the appropriate year's conversion factor called ‘water treatment’ to produce its emissions.									
+Activity	Type	Unit	kg CO2e						
+Water treatment	Water treatment	cubic metres	0.17088						
+		million litres	170.87549						
+For information about how the conversion factors have been derived, please refer to the 'Methodology paper' that accompanies the conversion factors.									
+
+===== S 3- Purchase Good =====
+UK Government GHG Conversion Factors for Company Reporting									
+Purchase Goods									
+Index									
+Emissions source:	Material use	Next publication date: 	June 2026	Factor set:	Full set				
+Scope:	Scope 3	Version:	1	Year:	2025				
+Material use conversion factors should be used to report on consumption of procured materials based on their origin (that is, comprised of primary material or recycled materials). For primary materials, these factors cover the extraction, primary processing, manufacturing and transportation materials to the point of sale, not the materials in use. For secondary materials, the factors cover sorting, processing, manufacturing and transporting to the point of sale, not the materials in use. These factors are useful for reporting efficiencies gained through reduced procurement of material or the benefit of procuring items that are the product of a previous recycling process.									
+Guidance									
+●  To calculate the emissions from procured materials made from a variety of materials, the emissions may be added up and should be apportioned by the required weights of each material. 									
+●  These factors cannot be used to determine the relative merit of different recycling or waste management options.   									
+●  All of the factors in the tables are positive numbers, because these figures do not consider avoided burdens. They account for ‘cradle-to-gate’ emissions. Therefore, the recycled material values (which, in some cases, could be negative values) do not include avoided emissions from not using primary materials.									
+Example of calculating material use emissions									
+Company K reports its emissions from purchasing steel cans made from primary metals (to be filled with a product and sold). At a separate site, company K wishes to report the emissions from purchasing metals that are the product of a previous closed-loop recycling process (also to be filled with a product and sold).  For the procurement of cans that have been newly manufactured. it selects the ‘metal steel cans’ material type and selects the 'primary material production' conversion factor. For the procurement of cans that are made from second-generation metals that have already been recycled, it selects the ‘metal steel cans’ row and the 'closed-loop' conversion factor. The carbon benefits of procuring the second generation metals quickly becomes clear.									
+The activity data for each site (tonnes of metal procured) are multiplied by the relevant conversion factor to produce company K's Scope 3 procured material emissions.    									
+			Primary material production	Re-used	Open-loop source	Closed-loop source			
+Activity	Material	Unit	kg CO2e	kg CO2e	kg CO2e	kg CO2e			
+Construction	Aggregates	tonnes	7.79306	2.21		3.21835			
+	Average construction	tonnes	75.00675						
+	Asbestos	tonnes	27						
+	Asphalt	tonnes	39.21249	1.73826		28.67835			
+	Bricks	tonnes	241.79306						
+	Concrete	tonnes	118.79306			3.21835			
+	Insulation	tonnes	1861.79306			1852.12293			
+	Metals	tonnes	3824.09335			1638.74406			
+	Soils	tonnes				1.00835			
+	Mineral oil	tonnes	1401			676			
+	Plasterboard	tonnes	120.05			32.17			
+	Tyres	tonnes	3335.5719	731.21789					
+	Wood	tonnes	269.50416	38.54288					
+			Primary material production	Re-used	Open-loop source	Closed-loop source			
+Activity	Material	Unit	kg CO2e	kg CO2e	kg CO2e	kg CO2e			
+Other	Books	tonnes							
+	Glass	tonnes	1402.76667			823.18954			
+	Clothing	tonnes	22310	152.25					
+	Food and drink	tonnes	3701.40359						
+			Primary material production	Re-used	Open-loop source	Closed-loop source			
+Activity	Material	Unit	kg CO2e	kg CO2e	kg CO2e	kg CO2e			
+Organic	Compost derived from garden waste	tonnes	112.08811						
+	Compost derived from food and garden waste	tonnes	114.90473						
+			Primary material production	Re-used	Open-loop source	Closed-loop source			
+Activity	Material	Unit	kg CO2e	kg CO2e	kg CO2e	kg CO2e			
+Electrical items	Electrical items - fridges and freezers	tonnes	4363.33333						
+	Electrical items - large	tonnes	3267						
+	Electrical items - IT	tonnes	24865.47556						
+	Electrical items - small	tonnes	5647.94563						
+	Batteries - Alkaline	tonnes	4633.47826						
+	Batteries - Li ion	tonnes	6308						
+	Batteries - NiMh	tonnes	28380						
+			Primary material production	Re-used	Open-loop source	Closed-loop source			
+Activity	Material	Unit	kg CO2e	kg CO2e	kg CO2e	kg CO2e			
+Metal	Metal: aluminium cans and foil (excl. forming)	tonnes	9115.90131			995.0779			
+	Metal: mixed cans	tonnes	5114.62131			1525.52488			
+	Metal: scrap metal	tonnes	3473.11953			1706.42359			
+	Metal: steel cans	tonnes	2863.90131			1823.90131			
+			Primary material production	Re-used	Open-loop source	Closed-loop source			
+Activity	Material	Unit	kg CO2e	kg CO2e	kg CO2e	kg CO2e			
+Plastic	Plastics: average plastics	tonnes	3172.49932			1575.39106			
+	Plastics: average plastic film	tonnes	2916.50513			1103.56537			
+	Plastics: average plastic rigid	tonnes	3354.28062			1915.72549			
+	Plastics: HDPE (incl. forming)	tonnes	3095.15524			1770.79099			
+	Plastics: LDPE and LLDPE (incl. forming)	tonnes	2965.0779			1097.90131			
+	Plastics: PET (incl. forming)	tonnes	3863.90131			2213.90131			
+	Plastics: PP (incl. forming)	tonnes	2577.57172			1312.57172			
+	Plastics: PS (incl. forming)	tonnes	4376.80391			2669.76255			
+	Plastics: PVC (incl. forming)	tonnes	2944.75615			1847.82267			
+			Primary material production	Re-used	Open-loop source	Closed-loop source			
+Activity	Material	Unit	kg CO2e	kg CO2e	kg CO2e	kg CO2e			
+Paper	Paper and board: board	tonnes	1199.72542			1098.11442			
+	Paper and board: mixed	tonnes	1288.50358			1068.77475			
+	Paper and board: paper	tonnes	1345.0779			1050.0779			
+FAQs									
+Can I use these factor for my waste?									
+No, these factors are not appropriate. For specific end-of-life figures, please see the ‘Waste disposal’ tab.									
+For information about how the conversion factors have been derived, please refer to the 'Methodology paper' that accompanies the conversion factors.									
+
+===== S 3- Waste disposal =====
+UK Government GHG Conversion Factors for Company Reporting									
+Waste disposal									
+Index									
+Emissions source:	Waste disposal	Next publication date: 	June 2026	Factor set:	Full set				
+Scope:	Scope 3	Version:	1	Year:	2025				
+Waste disposal figures should be used for end-of-life disposal of different materials using a variety of different disposal methods.									
+Guidance									
+●  To calculate the emissions from multiple waste streams, the emissions sub totals may be added up.									
+●  These factors cannot be used to determine the relative lifecycle merit of different waste management options. This is because the emissions from energy recovery, recycling, composting and anaerobic digestion are attributed to the user of the recycled materials, not the producer of the waste, in line with GHG Protocol Guidelines.      									
+●  For landfill, the factors in the tables include collection, transportation and landfill emissions (‘gate to grave’). For incineration with energy recovery and recycling, the factors consider transport to an energy recovery or materials reclamation facility only. This is in line with GHG Protocol Guidelines, with subsequent emissions attributed to electricity generation or recycled material production respectively.  									
+● Users looking to quantify the emissions impact from waste management of the wastes they produce based on how they are disposed may wish to review WRAP's Carbon Waste and Resources Metric. Note that outputs from this metric are not suitable for reporting Scope 3 emissions.									
+https://wrap.org.uk/resources/report/carbon-waste-and-resources-metric									
+Example of calculating emissions from waste disposal									
+Company K sends 0.5 tonnes of food waste to landfill each year, but has a white paper recycling scheme in place.									
+To calculate the emissions from the food waste, it selects the ‘organic: food and drink waste' category and the appropriate ‘landfill’ factor. It multiplies this factor by the 0.5 tonnes of food waste and to get a waste disposal sub-total. For the white paper, it selects the ‘paper and board: paper’ category and the closed-loop factor (since the paper is sent for recycling into other paper products). This is multiplied by the mass of the white paper recycled to give a further waste disposal sub-total.									
+Company K’s total waste emissions are calculated by adding the two waste disposal subtotals together.									
+			Open-loop	Closed-loop	Incineration with energy recovery	Composting	Landfill	Anaerobic digestion	
+Activity	Waste type	Unit	kg CO2e	kg CO2e	kg CO2e	kg CO2e	kg CO2e	kg CO2e	
+Construction	Aggregates	tonnes	1.00835	1.00835			1.26338		
+	Average construction	tonnes	1.00835	1.00835	4.68568				
+	Asbestos	tonnes					5.9416		
+	Asphalt	tonnes	1.00835	1.00835			1.26338		
+	Bricks	tonnes	1.00835				1.26338		
+	Concrete	tonnes	1.00835	1.00835			1.26338		
+	Insulation	tonnes		1.00835			1.26338		
+	Metals	tonnes		1.00835			1.26435		
+	Soils	tonnes		1.00835			19.54671		
+	Mineral oil	tonnes		4.68568	4.68568				
+	Plasterboard	tonnes		4.68568			71.95		
+	Tyres	tonnes		4.68568					
+	Wood	tonnes		4.68568	4.68568	8.98311	925.34348		
+			Open-loop	Closed-loop	Incineration with energy recovery	Composting	Landfill	Anaerobic digestion	
+Activity	Waste type	Unit	kg CO2e	kg CO2e	kg CO2e	kg CO2e	kg CO2e	kg CO2e	
+Other	Books	tonnes		4.68568	4.68568	8.98311	1164.4894		
+	Glass	tonnes	4.68568	4.68568	4.68568		8.98311		
+	Clothing	tonnes		4.68568	4.68568		496.78228		
+			Open-loop	Closed-loop	Incineration with energy recovery	Composting	Landfill	Anaerobic digestion	
+Activity	Waste type	Unit	kg CO2e	kg CO2e	kg CO2e	kg CO2e	kg CO2e	kg CO2e	
+Refuse	Household residual waste	tonnes			4.68568		497.24244		
+	Organic: food and drink waste	tonnes			4.68568	8.98311	700.30886	8.98311	
+	Organic: garden waste	tonnes			4.68568	8.98311	646.70557	8.98311	
+	Organic: mixed food and garden waste	tonnes			4.68568	8.98311	656.08614	8.98311	
+	Commercial and industrial waste	tonnes			4.68568		520.5327		
+			Open-loop	Closed-loop	Incineration with energy recovery	Composting	Landfill	Anaerobic digestion	
+Activity	Waste type	Unit	kg CO2e	kg CO2e	kg CO2e	kg CO2e	kg CO2e	kg CO2e	
+Electrical items	WEEE - fridges and freezers	tonnes	4.68568				8.98311		
+	WEEE - large	tonnes	4.68568		4.68568		8.98311		
+	WEEE - mixed	tonnes	4.68568		4.68568		8.98311		
+	WEEE - small	tonnes	4.68568		4.68568		8.98311		
+	Batteries	tonnes	4.68568				8.98311		
+			Open-loop	Closed-loop	Incineration with energy recovery	Composting	Landfill	Anaerobic digestion	
+Activity	Waste type	Unit	kg CO2e	kg CO2e	kg CO2e	kg CO2e	kg CO2e	kg CO2e	
+Metal	Metal: aluminium cans and foil (excl. forming)	tonnes	4.68568	4.68568	4.68568		8.98311		
+	Metal: mixed cans	tonnes	4.68568	4.68568	4.68568		8.98311		
+	Metal: scrap metal	tonnes	4.68568	4.68568	4.68568		8.98311		
+	Metal: steel cans	tonnes	4.68568	4.68568	4.68568		8.98311		
+			Open-loop	Closed-loop	Incineration with energy recovery	Composting	Landfill	Anaerobic digestion	
+Activity	Waste type	Unit	kg CO2e	kg CO2e	kg CO2e	kg CO2e	kg CO2e	kg CO2e	
+Plastic	Plastics: average plastics	tonnes	4.68568	4.68568	4.68568		8.98311		
+	Plastics: average plastic film	tonnes	4.68568	4.68568	4.68568		8.98311		
+	Plastics: average plastic rigid	tonnes	4.68568	4.68568	4.68568		8.98311		
+	Plastics: HDPE (incl. forming)	tonnes	4.68568	4.68568	4.68568		8.98311		
+	Plastics: LDPE and LLDPE (incl. forming)	tonnes	4.68568	4.68568	4.68568		8.98311		
+	Plastics: PET (incl. forming)	tonnes	4.68568	4.68568	4.68568		8.98311		
+	Plastics: PP (incl. forming)	tonnes	4.68568	4.68568	4.68568		8.98311		
+	Plastics: PS (incl. forming)	tonnes	4.68568	4.68568	4.68568		8.98311		
+	Plastics: PVC (incl. forming)	tonnes	4.68568	4.68568	4.68568		8.98311		
+			Open-loop	Closed-loop	Incineration with energy recovery	Composting	Landfill	Anaerobic digestion	
+Activity	Waste type	Unit	kg CO2e	kg CO2e	kg CO2e	kg CO2e	kg CO2e	kg CO2e	
+Paper	Paper and board: board	tonnes		4.68568	4.68568	8.98311	1164.4894		
+	Paper and board: mixed	tonnes		4.68568	4.68568	8.98311	1164.4894		
+	Paper and board: paper	tonnes		4.68568	4.68568	8.98311	1164.4894		
+FAQs									
+Can I use these materials factors for goods my organisation procures?									
+No, these factors are not appropriate. For specific procurement factors, please see the ‘Material use' tab.									
+How do I calculate the weight of my waste?									
+There are a variety of different methods to work out the amount of waste your organisation generates. Waste transfer/consignment notes from your commercial waste collector are a good place to start as it may have specific information on the waste that has been collected from you. Alternatively, the commercial waste collector may be able to advise on an average weight you can apply given the waste infrastructure you have on site or you can conduct a waste audit - this is where a member of staff samples the composition of your waste and weighs the waste and/or recycling generated on a regular basis.									
+Why there are no conversion factors for the disposal method "Re-use"?									
+"Re-use" is not within the scope of the GHG conversion factors because it is not a waste disposal method. Only the disposal of waste at the end of its life is within scope.									
+For information about how the conversion factors have been derived, please refer to the 'Methodology paper' that accompanies the conversion factors.									
+
+===== S 3- Business travel- air =====
+UK Government GHG Conversion Factors for Company Reporting									
+Business travel- air									
+Index									
+Emissions source:	Business travel- air	Next publication date: 	June 2026	Factor set:	Full set				
+Scope:	Scope 3	Version:	1	Year:	2025				
+Air conversion factors should be used to report Scope 3 emissions for individuals flying for work purposes.									
+Guidance									
+●  Emissions from aviation have both direct (CO2, CH4 and N2O) and indirect (non-CO2 emissions e.g. water vapour, contrails, NOx) climate change effects. Two sets of emission factors are presented here; one that includes the indirect effects of non-CO2 emissions and one that represents direct effects only. The entirety of the indirect effects have been applied to the CO2 factor, causing an increase of 70%.									
+●  Organisations should include the indirect effects of non-CO2 emissions when reporting air travel emissions to capture the full climate impact of their travel. However, it should be noted that there is significant scientific uncertainty around the magnitude of the indirect effect of non-CO2 aviation emissions and it is an active area of research. Further information can be found in the air transport section of the Methodology Paper. 									
+●  Organisations should produce comparable reporting. Therefore, they should avoid reporting emissions including indirect effects of non-CO2 emissions in one year and direct effects only in another year as this may skew the interpretation of their reporting.									
+Example of calculating emissions from air travel									
+Company L reports its emissions from flights over the course of a year. To do so it requests a report from its dedicated travel agent, which reports the distances travelled for domestic, short-haul and long-haul flights, in each class of travel (ranging from economy to first class).									
+A subsidiary of company L does not use the same travel agent. Instead, it uses its expenses system to note the flight type, distance and class of travel each time an employee flies. 									
+The company then multiplies the distance (km) travelled in each class for each category of journey by the appropriate conversion factor. Company L uses the factor set that includes indirect effects of non-CO2 emissions.  Where the ‘haul’ of the journey is known, but the class is unknown, the company uses the ‘average passenger’ factor.									
+				With RF				Without RF	
+Activity	Haul	Class	Unit	kg CO2e	kg CO2e of CO2 per unit	kg CO2e of CH4 per unit	kg CO2e of N2O per unit	kg CO2e	kg CO2e of CO2 per unit
+Flights	Domestic, to/from UK	Average passenger	passenger.km	0.22928	0.22771	0.00022	0.00134	0.13552	0.13395
+	Short-haul, to/from UK	Average passenger	passenger.km	0.12786	0.12693	1e-05	0.00092	0.07559	0.07466
+		Economy class	passenger.km	0.12576	0.12485	1e-05	0.0009	0.07435	0.07344
+		Business class	passenger.km	0.18863	0.18727	1e-05	0.00135	0.11152	0.11016
+	Long-haul, to/from UK	Average passenger	passenger.km	0.15282	0.15152	1e-05	0.00129	0.09043	0.08913
+		Economy class	passenger.km	0.11704	0.11604	1e-05	0.00099	0.06926	0.06826
+		Premium economy class	passenger.km	0.18726	0.18567	1e-05	0.00157	0.11081	0.10922
+		Business class	passenger.km	0.3394	0.33652	2e-05	0.00285	0.20083	0.19795
+		First class	passenger.km	0.46814	0.46417	3e-05	0.00394	0.27701	0.27304
+	International, to/from non-UK	Average passenger	passenger.km	0.14253	0.14166	1e-05	0.00086	0.0842	0.08333
+		Economy class	passenger.km	0.10916	0.10849	1e-05	0.00067	0.06449	0.06382
+		Premium economy class	passenger.km	0.17465	0.17358	1e-05	0.00106	0.10318	0.10211
+		Business class	passenger.km	0.31656	0.31462	2e-05	0.00192	0.18701	0.18507
+		First class	passenger.km	0.43663	0.43396	2e-05	0.00265	0.25794	0.25527
+FAQs									
+How do you define domestic, short-haul, long-haul and international flights?									
+Territories around the world and their haul length relative to the UK are shown on the Haul Definition sheet. Broadly speaking the definition of domestic flights, are those within the UK, short-haul are those within Europe, long-haul are outside of Europe and international flights are those between non-UK destinations.									
+Why is the impact of flying in business class higher than economy?									
+Air travel factors are calculated on the basis of the area of the plane each passenger takes up. If a plane is comprised totally of business-class seats, as opposed to more closely packed economy class seats, fewer passengers can fly. Therefore, each passenger takes a larger share of the emissions. 									
+Our organisation only has data on spend. How can I use this to calculate our air travel?									
+There are no confirmed industry benchmarks that provide accurate CO2e/£ spend data for air travel. We recommend that organisations improve their data collection processes so that they can report on distance (for which CO2e/km figures are available). Alternatively, organisations may, over a number of years, collect their own data and generate their own benchmarks.									
+My organisation has previously reported using factors for direct effects of CO2, CH4 and N2O emissions only, what should I do?										
+Users should generally use the ‘including indirect effects of non-CO2 emissions’ factors, which incorporate a 70% increase in CO2 emissions to approximate the indirect impact of non-CO2 emissions from aviation (such as water vapour, contrails and NOx). If the user’s historical data do not include these indirect effects, then they should rebaseline their historical dataset to include the effect going forward. However, users should be aware of the significant scientific uncertainty surrounding the quantification of these impacts. If organisations do not wish to include the indirect effects, then they should continue to select the ‘Direct effects from CO2, CH4 and N2O emissions only’ factors.									
+My organisation has previously reported using factors without the distance uplift, what should I do?									
+All the factors include the distance uplift of 8% to compensate for planes not flying using the most direct route (such as flying around international airspace and stacking).  Historical factors have also included a distance uplift, though it was 9% for 2012 and before. If users did not previously include the distance uplift, then they should rebaseline their historical dataset. However, if users wish to continue to not include the distance uplift, then it should be manually removed from the current factors.									
+Tell me more about the indirect effect of aviation emissions									
+Indirect effects refer to the contribution that non-CO2 emissions (e.g. water vapour, contrails, NOx) have towards climate change. Scientific evidence is still emerging, however the effect of releasing these emissions at high altitude is likely to be greater than releases at ground level. The studies used in calculation of these factors provide a multiplier to account for indirect effects but do not distinguish the effects at different altitudes or during different phases of the flight. The multiplier is therefore recommended to be applied equally to all flights irrespective of distance, altitude or phase of the flight, albeit accepting the approximations involved in this approach. Similarly, due to lower flight altitudes, the non-CO2 effects are likely to be less pronounced for turboprops than for commercial jet aircraft, but again the scientific evidence does not provide a mechanism to treat them differently, so the recommendation remains to apply the multiplier equally to all flights.									
+Tell me more about the international factors that were introduced in 2015									
+In the 2015 update, a brand new set of aviation factors were introduced where aviation factors are now being presented for international flights between non-UK destinations. This is a relatively high-level analysis and allows users to choose a different factor for air travel if flying between countries outside of the UK. All factors presented are for direct (non-stop) flights only. This analysis was only possible for passenger air travel. However, in the interests of consistency with the air freight travel, international freight factors have been included. International freight factors have been set equal to the current UK, long-haul freight factors.  
+For these factors, see sheets:									
+	Freighting goods								
+	WTT- delivery vehs & freight								
+Please note - the international business travel factors are an average of short and long-haul flights to/from UK.									
+For information about how the conversion factors have been derived, please refer to the 'Methodology paper' that accompanies the conversion factors.									
+
+===== S 3 -Business travel- sea =====
+UK Government GHG Conversion Factors for Company Reporting									
+Business travel- sea									
+Index									
+Emissions source:	Business travel- sea	Next publication date: 	June 2026	Factor set:	Full set				
+Scope:	Scope 3	Version:	1	Year:	2025				
+Sea-based conversion factors should be used to report travel for business purposes on ferries.									
+Guidance									
+●  The business travel- sea conversion factors are for use for passenger travel, not for freighting goods. Full freight factors are available in the ‘freighting goods’ listing.									
+Example of calculating emissions from business travel- sea									
+Company M is based on the Isle of Wight and wishes to report the emissions of business travel on the ferry.									
+Company M uses the conversion factors appropriate for ferry journeys. It has two options – for a passenger travelling by car on a ferry or as a foot passenger. 									
+The total km travelled on the ferry is multiplied by the appropriate conversion factors to produce company M's Scope 3 emissions at sea.									
+Activity	Type	Unit	kg CO2e	kg CO2e of CO2 per unit	kg CO2e of CH4 per unit	kg CO2e of N2O per unit			
+Ferry	Foot passenger	passenger.km	0.01871	0.01848	1e-05	0.00022			
+	Car passenger	passenger.km	0.12933	0.12774	4e-05	0.00155			
+	Average (all passenger)	passenger.km	0.1127	0.11131	4e-05	0.00135			
+Are the radiative forcing effects of non-CO2 emissions considered?									
+Aviation is the only form of transport where the effects of radiative forcing are considered to be significant. They may even be negative for shipping due to the high sulphur content of fuels used.									
+For information about how the conversion factors have been derived, please refer to the 'Methodology paper' that accompanies the conversion factors.									
+
+===== S3-Business travel&empco - land =====
+UK Government GHG Conversion Factors for Company Reporting									
+Business travel- land									
+Index									
+Emissions source:	Business travel- land	Next publication date: 	June 2026	Factor set:	Full set				
+Scope:	Scope 3	Version:	1	Year:	2025				
+Land-based conversion factors should be used for travel for business purposes in assets not owned or directly operated by a business. This includes mileage for business purposes in cars owned by employees, public transport, hire cars, and so on.									
+Guidance									
+●  Users should be mindful of the difference between vehicle km conversion factors and passenger km conversion factors. Vehicle km conversion factors should be applied to a whole vehicle (such as a car or taxi) being used for business purposes. Passenger km factors should be used when single passengers are travelling by means of mass transport (such as by train) and the aim is to report emissions on a single-person basis, not account for the whole vehicle.									
+●  It should be noted that the conversion factors for cars and vans (excluding plug-in electric vehicles) are the same as those in the ‘passenger vehicles’ and ‘delivery vehicles’ listings. Where a car or van is not owned or controlled by the reporting organisation, the vehicles should be accounted for in Scope 3 as opposed to Scope 1, but the conversion factors and their categories remain the same.									
+●  The conversion factors for electric cars are the same as those in the ‘passenger vehicles’ listings PLUS the emissions from the electricity consumption and transmission & distribution (T&D) losses. Where a car is not owned or controlled by the reporting organisation, the vehicles should be accounted for in Scope 3 as opposed to Scope 1 (for petrol/diesel use) and Scope 2 (for electricity use), but the conversion factors and their categories remain the same.									
+● To avoid double-counting of emissions, do not include activity/emissions resulting from the use of plug-in electric vehicles that are charged predominantly on your organisation's premises if you are also already reporting the emissions resulting from your electricity consumed there.									
+● Please see the FAQs at the bottom of this page for further information on the conversion factors for electric vehicles. 									
+●  The market segment conversion factors related to the vehicle market segments are specifically defined by the UK Society of Motor Manufacturers and Traders (SMMT).									
+Example of calculating emissions from business travel - land									
+The members of company N's large sales team travel extensively on public transport. The company accounts for this in Scope 3 using appropriate conversion factors for bus, tube and rail transport.									
+In each case, the total km travelled for each mode of transport is multiplied by the appropriate conversion factor to produce company N's Scope 3 emissions for land-based modes of transport									
+			Diesel				Petrol		
+Activity	Type	Unit	kg CO2e	kg CO2e of CO2 per unit	kg CO2e of CH4 per unit	kg CO2e of N2O per unit	kg CO2e	kg CO2e of CO2 per unit	kg CO2e of CH4 per unit
+Cars (by market segment)	Mini	km	0.10996	0.10828	4.6368e-06	0.00167	0.13063	0.12995	0.00036
+		miles	0.17696	0.17425	1e-05	0.00269	0.21022	0.20913	0.00057
+	Supermini	km	0.13452	0.13284	4.6368e-06	0.00167	0.14276	0.14208	0.00036
+		miles	0.21649	0.21378	1e-05	0.00269	0.22974	0.22865	0.00057
+	Lower medium	km	0.14517	0.14349	4.6368e-06	0.00167	0.16123	0.16055	0.00036
+		miles	0.23363	0.23092	1e-05	0.00269	0.25948	0.25839	0.00057
+	Upper medium	km	0.16194	0.16026	4.6368e-06	0.00167	0.18535	0.18467	0.00036
+		miles	0.26063	0.25792	1e-05	0.00269	0.29828	0.29719	0.00057
+	Executive	km	0.17088	0.1692	4.6368e-06	0.00167	0.20073	0.20005	0.00036
+		miles	0.27501	0.2723	1e-05	0.00269	0.32304	0.32195	0.00057
+	Luxury	km	0.20632	0.20464	4.6368e-06	0.00167	0.30752	0.30684	0.00036
+		miles	0.33205	0.32934	1e-05	0.00269	0.4949	0.49381	0.00057
+	Sports	km	0.17323	0.17155	4.6368e-06	0.00167	0.23396	0.23328	0.00036
+		miles	0.27879	0.27608	1e-05	0.00269	0.37652	0.37543	0.00057
+	Dual purpose 4X4	km	0.19973	0.19805	4.6368e-06	0.00167	0.19219	0.19151	0.00036
+		miles	0.32145	0.31874	1e-05	0.00269	0.3093	0.30821	0.00057
+	MPV	km	0.18072	0.17904	4.6368e-06	0.00167	0.17903	0.17835	0.00036
+		miles	0.29085	0.28814	1e-05	0.00269	0.28812	0.28703	0.00057
+			Diesel				Petrol		
+Activity	Type	Unit	kg CO2e	kg CO2e of CO2 per unit	kg CO2e of CH4 per unit	kg CO2e of N2O per unit	kg CO2e	kg CO2e of CO2 per unit	kg CO2e of CH4 per unit
+Cars (by size)	Small car	km	0.1434	0.14172	4.6368e-06	0.00167	0.14308	0.1424	0.00036
+		miles	0.23078	0.22807	1e-05	0.00269	0.23027	0.22918	0.00057
+	Medium car	km	0.17174	0.17006	4.6368e-06	0.00167	0.17474	0.17406	0.00036
+		miles	0.27639	0.27368	1e-05	0.00269	0.28121	0.28012	0.00057
+	Large car	km	0.21007	0.20839	4.6368e-06	0.00167	0.26828	0.2676	0.00036
+		miles	0.33808	0.33537	1e-05	0.00269	0.43175	0.43066	0.00057
+	Average car	km	0.17304	0.17136	4.6368e-06	0.00167	0.16272	0.16204	0.00036
+		miles	0.27849	0.27578	1e-05	0.00269	0.26187	0.26078	0.00057
+Activity	Type	Unit	kg CO2e	kg CO2e of CO2 per unit	kg CO2e of CH4 per unit	kg CO2e of N2O per unit			
+Motorbike	Small	km	0.08319	0.08094	0.00175	0.0005			
+		miles	0.13389	0.13027	0.00282	0.0008			
+	Medium	km	0.10108	0.09826	0.00228	0.00053			
+		miles	0.16266	0.15813	0.00367	0.00085			
+	Large	km	0.13252	0.13072	0.00127	0.00053			
+		miles	0.21326	0.21037	0.00204	0.00085			
+	Average	km	0.11367	0.11138	0.00177	0.00052			
+		miles	0.18294	0.17925	0.00284	0.00084			
+Activity	Type	Unit	kg CO2e	kg CO2e of CO2 per unit	kg CO2e of CH4 per unit	kg CO2e of N2O per unit			
+Taxis	Regular taxi	passenger.km	0.14861	0.14742	3.3152e-06	0.00119			
+		km	0.20806	0.20638	4.6368e-06	0.00167			
+	Black cab	passenger.km	0.20402	0.20291	3.0912e-06	0.00111			
+		km	0.30604	0.30436	4.6368e-06	0.00167			
+Activity	Type	Unit	kg CO2e	kg CO2e of CO2 per unit	kg CO2e of CH4 per unit	kg CO2e of N2O per unit			
+Bus	Local bus (not London)	passenger.km	0.12525	0.12435	2e-05	0.00088			
+	Local London bus	passenger.km	0.06875	0.06827	1e-05	0.00047			
+	Average local bus	passenger.km	0.10385	0.10311	1e-05	0.00073			
+	Coach	passenger.km	0.02776	0.02727	1e-05	0.00048			
+Activity	Type	Unit	kg CO2e	kg CO2e of CO2 per unit	kg CO2e of CH4 per unit	kg CO2e of N2O per unit			
+Rail	National rail	passenger.km	0.03546	0.0351	8e-05	0.00028			
+	International rail	passenger.km	0.00446	0.00441	2e-05	3e-05			
+	Light rail and tram	passenger.km	0.0286	0.02832	0.00012	0.00016			
+	London Underground	passenger.km	0.0278	0.02753	0.00011	0.00016			
+FAQs									
+Which tables do I need to use to capture all the emissions resulting from the use of my plug-in electric vehicles (PHEVs)?									
+	Method 1: Energy consumption								
+	Emissions =  Total energy consumption (fuel, electricity)  x  Emission Factors (fuel, electricity)								
+		Scope	Car	Car	Van	Van	Includes		
+			Plug-in Hybrid Electric Vehicle	Battery Electric Vehicle	Plug-in Hybrid Electric Vehicle	Battery Electric Vehicle			
+	Fuels	Scope 1	YES	NO	YES	NO	Scope 1 emissions from use of petrol or diesel.		
+	WTT- fuels	Scope 3	YES	NO	YES	NO	WTT Scope 3 emissions from use of petrol and diesel.		
+	UK Electricity	Scope 2	YES	YES	YES	YES	Scope 2 emissions from use of electricity.		
+	Transmission and distribution	Scope 3	YES	YES	YES	YES	Scope 3 emissions from T&D losses from use of electricity.		
+	WTT- UK & overseas elec	Scope 3	YES	YES	YES	YES	Scope 3 emissions from WTT emissions from use of electricity.		
+	Method 2: Generic vehicle emission factors								
+	Emissions =  Total activity for vehicle category (in km, miles or tonne-km)  x  Emission Factor								
+	Note: the emission factors already account for the average share of driving using electricity or conventional fuel for plug-in hybrid electric vehicles, so the total number of km / miles / tonne-km should be used in calculations.								
+	Sum of elements:      A + C   OR  B + C								
+		Scope	Car	Car	Van	Van	Includes		
+			Plug-in Hybrid Electric Vehicle	Battery Electric Vehicle	Plug-in Hybrid Electric Vehicle	Battery Electric Vehicle			
+A	Passenger vehicles	Scope 1	YES	NO			Only Scope 1 emissions from petrol or diesel use.		
+A	Delivery vehicles	Scope 1			YES	NO	Only Scope 1 emissions from petrol or diesel use.		
+A	UK electricity for EVs	Scope 2	YES	YES	YES	YES	Only Scope 2 emissions from electricity use.		
+A	UK electricity T&D for EVs	Scope 3	YES	YES	YES	YES	Only Scope 3 emissions from electricity T&D losses.		
+	OR								
+B	Business travel- land	Scope 3	YES	YES			Sum of Scope 1 and Scope 2, plus Scope 3 electricity T&D losses.		
+B	Freighting goods	Scope 3			YES	YES	Sum of Scope 1 and Scope 2, plus Scope 3 electricity T&D losses.		
+B	Managed assets- vehicles	Scope 3	YES	YES	YES	YES	Sum of Scope 1 and Scope 2, plus Scope 3 electricity T&D losses.		
+	AND								
+C	WTT- pass vehs & travel- land	Scope 3	YES	YES			Only Scope 3 WTT emissions (all fuel types, electricity)		
+C	WTT- delivery vehs & freight	Scope 3			YES	YES	Only Scope 3 WTT emissions (all fuel types, electricity)		
+	Example: 
+Company B wants to report on its Scope 1 fuel emissions from a large PHEV car (if the car model is known, the market and size can be checked from the table in the Methodology Paper):								
+	Situation A) 
+Company B has data in fuel (in litres) and electricity (kWh) consumed, the ‘fuels’ and 'UK electricity' conversion factors should be applied, which provide more accurate emissions results. 
+"Method 1: Energy consumption" should be used.
+Emissions =  Total energy consumption (fuel, electricity)  x  Emission Factors (fuel, electricity)
+- Some PHEVs' onboard data can provide information on the electric and fuel consumption, try to consult the vehicle's user manual or contact the manufacturer for instructions on accessing this information. These can be used to estimate fuel (in litres) and electricity (kWh) consumed.								
+	Situation B) 
+If there is no data available to estimate fuel/electricity consumption, or how much of the mileage is driven by fuel compared to mileage driven by electricity. Only the total mileage is known.
+"Method 2: Generic vehicle emission factors" should be used.	
+Emissions =  Total activity for vehicle category (in km, miles or tonne-km)  x  Emission Factor									
+	A worked example of "Method 2: Generic vehicle emission factors":
+- The PHEV car has travelled 10,000 miles in a year.
+- In 2023, the conversion factors for PHEV Car (Large): 0.11397 kg CO2e / mile;
+Emissions =  Total activity for vehicle category (in km, miles or tonne-km)  x  Emission Factor
+= 10,000 miles x 0.11397 kg CO2e / mile = 1140 kg CO2e. 
+Note: the emission factors already account for the average share of driving using electricity or conventional fuel for plug-in hybrid electric vehicles, so the total number of km / miles / tonne-km should be used in calculations.
+Emissions from the electricity consumed by the PHEV can be calculated by applying conversion factors in Scope 2 "UK electricity for EVs", Scope 3 "UK electricity T&D for EVs" and "WTT- pass vehs & travel- land".
+
+Note: If the PHEVs are mostly charged in an organisation's sites, care should be taken to avoid double counting with an organisation's general electricity consumption.								
+	Note: The Plug-in Hybrid Electric Vehicle category also includes Range-Extended Electric Vehicles (also known as REEVs, ER-EVs or REX).								
+Why are emission factors for certain types of electric vehicle missing?									
+At the moment there are only a limited number of electric vehicle models on the market, and certain categories are not yet represented by battery electric vehicle or plug-in hybrid electric vehicles.  Emission factors  will be added in future updates for these vehicle types, when models in these categories become available in the UK market/fleet.									
+Why are emission factors for certain market segment or size of electric vehicle different from other segments or from what is expected?									
+The factors for battery electric vehicles or plug-in hybrid electric vehicles across various market segments and sizes are calculated through the weighted average of registered vehicle models in the UK. It is important to note that certain market segments or sizes of electric vehicles may exhibit limited availability of models or a lack of new vehicle registrations in recent years. Consequently, the calculated factors might be influenced by one or two specific vehicle models within these segments, potentially leading to skewed results.
+Additionally, these factors are derived from data collected 1 to 2 years prior to publication. Therefore, there exists a possibility that they may not accurately represent the latest vehicle models currently available in the market. As such, users are advised to exercise discretion and consider the potential limitations of these factors when interpreting and applying them in their analyses or decision-making processes.									
+Are the radiative forcing effects of non-CO2 emissions considered?									
+Aviation is the only form of transport where the effects of radiative forcing are considered to be significant.									
+For information about how the conversion factors have been derived, please refer to the 'Methodology paper' that accompanies the conversion factors.									
+
+===== S3-Up & down stream Act =====
+UK Government GHG Conversion Factors for Company Reporting									
+Freighting goods									
+Index									
+Emissions source:	Freighting goods	Next publication date: 	June 2026	Factor set:	Full set				
+Scope:	Scope 3	Version:	1	Year:	2025				
+Freighting goods factors should be used specifically for the shipment of goods over land, by sea or by air through a third-party company. Factors are available for a whole vehicle's worth of goods or per tonne of goods shipped via a specific transport mode.									
+Guidance									
+●  Where possible, users should report on litres of fuel and/or kWh of electricity used for freight rather than on a km basis as this is a more accurate calculation - these conversion factors may be found in the 'Fuels' and 'UK Electricity' tabs.									
+●  Users that are able to gather data on a vehicle km basis should use these data in preference to tonne km data for Vans and HGVs as they are more accurate. The tonne.km factors were derived from the km factors using national vehicle statistics and assumptions, tonne.km factors are more useful when comparing the emissions from moving one tonne of goods over one kilometer by different transport modes, e.g. trucks, rail, and shipping. 									
+●  For vehicles that run on electricity, care should be taken not to double-count emissions from electricity use that is already captured from reporting of an organisations on-site electricity consumption. 									
+●  Emissions from aviation have both direct (CO2, CH4 and N2O) and indirect (non-CO2 emissions e.g. water vapour, contrails, NOx) climate change effects. Two sets of emission factors are presented here; one that includes the indirect effects of non-CO2 emissions and one that represents direct effects only. The entirety of the indirect effects have been applied to the CO2 factor, causing an increase of 70%.
+Organisations should include the indirect effects of non-CO2 emissions when reporting air freight emissions to capture the full climate impact of their travel. However, it should be noted that there is significant scientific uncertainty around the magnitude of the indirect effect of non-CO2 aviation emissions and it is an active area of research. Further information can be found in the air transport section of the Methodology Paper.									
+● Please see the FAQs at the bottom of this page for further information on the conversion factors for freighting goods vehicles, including electric vehicles.									
+Example of calculating emissions from freighting goods									
+Company O is an online retailer and understands that one of its largest impacts is the goods it has freighted to its regional storage facilities for sorting and the goods that are subsequently couriered to its customers.									
+To account for this considerable Scope 3 impact, it quantifies its upstream and downstream freight emissions.									
+For its ‘goods in’, it knows the mass of items shipped to the UK by cargo ship, since this is on the delivery dockets. It knows which country the goods are being shipped from so it can work out the km travelled during import.  Company O takes the tonnage and multiplies it by the distance travelled to achieve a tonne.km value. It then multiplies by the appropriate cargo ship factor for its ship type (in this case, ‘general cargo, unknown’). This provides the emissions for the ‘goods in’.									
+For goods delivered by train from the docks to the company's regional distribution centre (RDC), it can again calculate the tonne.km travelled since it knows the location of the docks and that of its RDC. The company can then multiply this by the tonne.km conversion factor for freight-train emissions.									
+For the ‘goods out’ (that is, from its RDC to customers), company O delivers in small vans, using optimised route planning. For this, it uses the van freight factors on a whole-vehicle basis since it knows how many km its vans travel with a variety of goods delivered each day.									
+			Diesel				Petrol		
+Activity	Type	Unit	kg CO2e	kg CO2e of CO2 per unit	kg CO2e of CH4 per unit	kg CO2e of N2O per unit	kg CO2e	kg CO2e of CO2 per unit	kg CO2e of CH4 per unit
+Vans	Class I (up to 1.305 tonnes)	tonne.km	0.87423	0.86501	2e-05	0.00919	1.42906	1.42528	0.00143
+		km	0.15738	0.15572	4.86077670538599e-06	0.00165	0.20188	0.20118	0.00027
+		miles	0.25329	0.25061	1e-05	0.00267	0.3249	0.32377	0.00043
+	Class II (1.305 to 1.74 tonnes)	tonne.km	0.62562	0.61993	1e-05	0.00568	0.81534	0.81277	0.00097
+		km	0.1926	0.19094	4.86077670538599e-06	0.00165	0.20874	0.20804	0.00027
+		miles	0.30996	0.30728	1e-05	0.00267	0.33594	0.33481	0.00043
+	Class III (1.74 to 3.5 tonnes)	tonne.km	0.62849	0.62478	1e-05	0.0037	0.83593	0.83418	0.00066
+		km	0.27878	0.27712	4.86077670538599e-06	0.00165	0.33845	0.33775	0.00027
+		miles	0.44866	0.44598	1e-05	0.00267	0.54468	0.54355	0.00043
+	Average (up to 3.5 tonnes)	tonne.km	0.6313	0.62715	1e-05	0.00414	0.85537	0.85297	0.00091
+		km	0.25561	0.25395	4.86077670538599e-06	0.00165	0.21335	0.21265	0.00027
+		miles	0.41138	0.4087	1e-05	0.00267	0.34336	0.34223	0.00043
+			0% Laden				50% Laden		
+Activity	Type	Unit	kg CO2e	kg CO2e of CO2 per unit	kg CO2e of CH4 per unit	kg CO2e of N2O per unit	kg CO2e	kg CO2e of CO2 per unit	kg CO2e of CH4 per unit
+HGV (all diesel)	Rigid (>3.5 - 7.5 tonnes)	tonne.km					0.45916	0.45411	0.0001
+		km	0.46138	0.45595	0.00011	0.00532	0.50103	0.4956	0.00011
+		miles	0.74251	0.73378	0.00018	0.00855	0.80632	0.79759	0.00018
+	Rigid (>7.5 tonnes-17 tonnes)	tonne.km					0.26427	0.26166	6e-05
+		km	0.55061	0.54399	0.00013	0.00648	0.62832	0.6217	0.00013
+		miles	0.88612	0.87546	0.00022	0.01043	1.01119	1.00053	0.00022
+	Rigid (>17 tonnes)	tonne.km					0.21116	0.20879	4e-05
+		km	0.774	0.76318	0.00022	0.01059	0.94152	0.9307	0.00022
+		miles	1.24562	1.22821	0.00037	0.01704	1.51523	1.49782	0.00037
+	All rigids	tonne.km					0.2258	0.22325	6e-05
+		km	0.67912	0.67005	0.00019	0.00888	0.80803	0.79896	0.00019
+		miles	1.09292	1.07833	0.0003	0.01429	1.3004	1.28581	0.0003
+	Articulated (>3.5 - 33t)	tonne.km					0.12823	0.1263	2e-05
+		km	0.62775	0.61554	0.00012	0.01209	0.78163	0.76942	0.00012
+		miles	1.01024	0.99061	0.00019	0.01944	1.25789	1.23826	0.00019
+	Articulated (>33t)	tonne.km					0.09612	0.09453	1e-05
+		km	0.64734	0.63282	0.00015	0.01438	0.85827	0.84375	0.00015
+		miles	1.04178	1.01842	0.00022	0.02314	1.38125	1.35789	0.00022
+	All artics	tonne.km					0.09675	0.09515	1e-05
+		km	0.64659	0.63216	0.00015	0.01428	0.85536	0.84093	0.00015
+		miles	1.04057	1.01736	0.00022	0.02299	1.37656	1.35335	0.00022
+	All HGVs	tonne.km					0.12226	0.12046	2e-05
+		km	0.65975	0.64764	0.00016	0.01195	0.83589	0.82378	0.00016
+		miles	1.06176	1.04228	0.00026	0.01923	1.34523	1.32575	0.00026
+			0% Laden				50% Laden		
+Activity	Type	Unit	kg CO2e	kg CO2e of CO2 per unit	kg CO2e of CH4 per unit	kg CO2e of N2O per unit	kg CO2e	kg CO2e of CO2 per unit	kg CO2e of CH4 per unit
+HGV refrigerated (all diesel)	Rigid (>3.5 - 7.5 tonnes)	tonne.km					0.5468	0.54175	0.0001
+		km	0.54937	0.54394	0.00011	0.00532	0.59667	0.59124	0.00011
+		miles	0.88412	0.87539	0.00018	0.00855	0.96024	0.95151	0.00018
+	Rigid (>7.5 tonnes-17 tonnes)	tonne.km					0.31477	0.31216	6e-05
+		km	0.65559	0.64897	0.00013	0.00648	0.7483	0.74168	0.00013
+		miles	1.05508	1.04442	0.00022	0.01043	1.20428	1.19362	0.00022
+	Rigid (>17 tonnes)	tonne.km					0.25145	0.24908	4e-05
+		km	0.92128	0.91046	0.00022	0.01059	1.12114	1.11032	0.00022
+		miles	1.48266	1.46525	0.00037	0.01704	1.8043	1.78689	0.00037
+	All rigids	tonne.km					0.26888	0.26633	6e-05
+		km	0.80843	0.79936	0.00019	0.00888	0.96223	0.95316	0.00019
+		miles	1.30103	1.28644	0.0003	0.01429	1.54855	1.53396	0.0003
+	Articulated (>3.5 - 33t)	tonne.km					0.14833	0.1464	2e-05
+		km	0.72566	0.71345	0.00012	0.01209	0.90403	0.89182	0.00012
+		miles	1.16782	1.14819	0.00019	0.01944	1.45487	1.43524	0.00019
+	Articulated (>33t)	tonne.km					0.11115	0.10956	1e-05
+		km	0.748	0.73348	0.00015	0.01438	0.99249	0.97797	0.00015
+		miles	1.20378	1.18042	0.00022	0.02314	1.59725	1.57389	0.00022
+	All artics	tonne.km					0.11189	0.11029	1e-05
+		km	0.74715	0.73272	0.00015	0.01428	0.98913	0.9747	0.00015
+		miles	1.20241	1.1792	0.00022	0.02299	1.59184	1.56863	0.00022
+	All HGVs	tonne.km					0.14309	0.14129	2e-05
+		km	0.77175	0.75964	0.00016	0.01195	0.97835	0.96624	0.00016
+		miles	1.242	1.22252	0.00026	0.01923	1.5745	1.55502	0.00026
+			With RF				Without RF		
+Activity	Type	Unit	kg CO2e	kg CO2e of CO2 per unit	kg CO2e of CH4 per unit	kg CO2e of N2O per unit	kg CO2e	kg CO2e of CO2 per unit	kg CO2e of CH4 per unit
+Freight flights	Domestic, to/from UK	tonne.km	4.60397	4.57703	0.00393	0.02301	2.71931	2.69237	0.00393
+	Short-haul, to/from UK	tonne.km	1.27835	1.27005	8e-05	0.00822	0.75539	0.74709	8e-05
+	Long-haul, to/from UK	tonne.km	0.89939	0.89392	6e-05	0.00542	0.5313	0.52583	6e-05
+	International, to/from non-UK	tonne.km	0.89939	0.89392	6e-05	0.00542	0.5313	0.52583	6e-05
+Activity	Type	Unit	kg CO2e	kg CO2e of CO2 per unit	kg CO2e of CH4 per unit	kg CO2e of N2O per unit			
+Rail	Freight train	tonne.km	0.02779	0.02749	2e-05	0.00028			
+Activity	Type	Size	Unit	kg CO2e	kg CO2e of CO2 per unit	kg CO2e of CH4 per unit	kg CO2e of N2O per unit		
+Sea tanker	Crude tanker	200,000+ dwt	tonne.km	0.00294	0.0029	1.12e-06	3e-05		
+		120,000–199,999 dwt	tonne.km	0.00445	0.0044	1.12e-06	5e-05		
+		80,000–119,999 dwt	tonne.km	0.00597	0.0059	2.24e-06	7e-05		
+		60,000–79,999 dwt	tonne.km	0.00759	0.0075	2.24e-06	9e-05		
+		10,000–59,999 dwt	tonne.km	0.00921	0.0091	3.36e-06	0.00011		
+		0–9999 dwt	tonne.km	0.03371	0.0333	1e-05	0.0004		
+		Average	tonne.km	0.00457	0.00451	1.12e-06	5e-05		
+	Products tanker 	60,000+ dwt	tonne.km	0.00577	0.0057	2.24e-06	7e-05		
+		20,000–59,999 dwt	tonne.km	0.01043	0.0103	3.36e-06	0.00012		
+		10,000–19,999 dwt	tonne.km	0.01893	0.0187	1e-05	0.00023		
+		5000–9999 dwt	tonne.km	0.02956	0.0292	1e-05	0.00035		
+		0–4999 dwt	tonne.km	0.04556	0.045	1e-05	0.00055		
+		Average	tonne.km	0.00902	0.00891	3.36e-06	0.00011		
+	Chemical tanker 	20,000+ dwt	tonne.km	0.0085	0.0084	3.36e-06	0.0001		
+		10,000–19,999 dwt	tonne.km	0.01093	0.0108	3.36e-06	0.00013		
+		5000–9999 dwt	tonne.km	0.01529	0.0151	1e-05	0.00018		
+		0–4999 dwt	tonne.km	0.02248	0.0222	1e-05	0.00027		
+		Average	tonne.km	0.01031	0.01018	3.36e-06	0.00012		
+	LNG tanker	200,000+ m3	tonne.km	0.00942	0.0093	3.36e-06	0.00011		
+		0–199,999 m3	tonne.km	0.01468	0.0145	4.48e-06	0.00018		
+		Average	tonne.km	0.01153	0.01139	3.36e-06	0.00014		
+	LPG Tanker	50,000+ m3	tonne.km	0.00911	0.009	3.36e-06	0.00011		
+		0–49,999 m3	tonne.km	0.04404	0.0435	1e-05	0.00053		
+		Average	tonne.km	0.01037	0.01024	3.36e-06	0.00012		
+Activity	Type	Size	Unit	kg CO2e	kg CO2e of CO2 per unit	kg CO2e of CH4 per unit	kg CO2e of N2O per unit		
+Cargo ship	Bulk carrier	200,000+ dwt	tonne.km	0.00253	0.0025	1.12e-06	3e-05		
+		100,000–199,999 dwt	tonne.km	0.00304	0.003	1.12e-06	4e-05		
+		60,000–99,999 dwt	tonne.km	0.00415	0.0041	1.12e-06	5e-05		
+		35,000–59,999 dwt	tonne.km	0.00577	0.0057	2.24e-06	7e-05		
+		10,000–34,999 dwt	tonne.km	0.008	0.0079	2.24e-06	0.0001		
+		0–9999 dwt	tonne.km	0.02956	0.0292	1e-05	0.00035		
+		Average	tonne.km	0.00353	0.00349	1.12e-06	4e-05		
+	General cargo	10,000+ dwt	tonne.km	0.01205	0.0119	4.48e-06	0.00014		
+		5000–9999 dwt	tonne.km	0.016	0.0158	1e-05	0.00019		
+		0–4999 dwt	tonne.km	0.01407	0.0139	4.48e-06	0.00017		
+		10,000+ dwt 100+ TEU	tonne.km	0.01114	0.011	3.36e-06	0.00013		
+		5000–9999 dwt 100+ TEU	tonne.km	0.01772	0.0175	1e-05	0.00021		
+		0–4999 dwt 100+ TEU	tonne.km	0.02005	0.0198	1e-05	0.00024		
+		Average	tonne.km	0.01321	0.01305	4.48e-06	0.00016		
+	Container ship	8000+ TEU	tonne.km	0.01266	0.0125	4.48e-06	0.00015		
+		5000–7999 TEU	tonne.km	0.01681	0.0166	1e-05	0.0002		
+		3000–4999 TEU	tonne.km	0.01681	0.0166	1e-05	0.0002		
+		2000–2999 TEU	tonne.km	0.02025	0.02	1e-05	0.00024		
+		1000–1999 TEU	tonne.km	0.0325	0.0321	1e-05	0.00039		
+		0–999 TEU	tonne.km	0.03675	0.0363	1e-05	0.00044		
+		Average	tonne.km	0.01612	0.01592	1e-05	0.00019		
+	Vehicle transport	4000+ CEU	tonne.km	0.0324	0.032	1e-05	0.00039		
+		0–3999 CEU	tonne.km	0.05832	0.0576	2e-05	0.0007		
+		Average	tonne.km	0.03852	0.03805	1e-05	0.00046		
+	RoRo-Ferry	2000+ LM	tonne.km	0.05012	0.0495	2e-05	0.0006		
+		0–1999 LM	tonne.km	0.06105	0.0603	2e-05	0.00073		
+		Average	tonne.km	0.05158	0.05095	2e-05	0.00062		
+	Large RoPax ferry	Average	tonne.km	0.37612	0.3715	0.00012	0.0045		
+	Refrigerated cargo	 All dwt	tonne.km	0.01306	0.0129	4.48e-06	0.00016		
+FAQs									
+My organisation has previously reported using aviation factors without the distance uplift or indirect effects from non-CO2 emissions. What should I do?									
+All the factors include the distance uplift of 8% to compensate for planes not flying using the most direct route (such as flying around international airspace and stacking). Historical factors have also included a distance uplift, though it was 9% for 2012 and before. Users should include the distance uplift of 8%, or remove it manually in exceptional cases where they do not wish to include it. 
+Users should also generally use the ‘including indirect effects of non-CO2 emissions’ factors, which incorporate a 70% increase in CO2 emissions to approximate the indirect impact of non-CO2 emissions from aviation (such as water vapour, contrails and NOx). If the user’s historical data do not include these indirect effects, then they should rebaseline their historical dataset to include the effect going forward. However, users should be aware of the significant scientific uncertainty surrounding the quantification of these impacts. If organisations do not wish to include the indirect effects, then they should continue to select the ‘Direct effects from CO2, CH4 and N2O emissions only’ factors.									
+Tell me more about the indirect effect of aviation emissions									
+Indirect effects refer to the contribution that non-CO2 emissions (e.g. water vapour, contrails, NOx) have towards climate change. Scientific evidence is still emerging, however the effect of releasing these emissions at high altitude is likely to be greater than releases at ground level. The studies used in calculation of these factors provide a multiplier to account for indirect effects but do not distinguish the effects at different altitudes or during different phases of the flight. The multiplier is therefore recommended to be applied equally to all flights irrespective of distance, altitude or phase of the flight, albeit accepting the approximations involved in this approach. Similarly, due to lower flight altitudes, the non-CO2 effects are likely to be less pronounced for turboprops than for commercial jet aircraft, but again the scientific evidence does not provide a mechanism to treat them differently, so the recommendation remains to apply the multiplier equally to all flights. Aviation is the only form of transport where indirect effects of non-CO2 emissions are considered to be significant.									
+Tell me more about the international flight factors									
+Since 2015, aviation factors have been presented for international flights between non-UK destinations. This analysis was only possible for passenger air travel. However, in the interests of consistency with the air-freight travel, international freight factors have been included this year. These factors have been set equal to the current UK, long-haul freight factors.									
+Which tables do I need to use to capture all the emissions resulting from the use of my plug-in electric vehicles (PHEVs)?									
+	Method 1: Energy consumption								
+	Emissions =  Total energy consumption (fuel, electricity)  x  Emission Factors (fuel, electricity)								
+		Scope	Car	Car	Van	Van	Includes		
+			Plug-in Hybrid Electric Vehicle	Battery Electric Vehicle	Plug-in Hybrid Electric Vehicle	Battery Electric Vehicle			
+	Fuels	Scope 1	YES	NO	YES	NO	Scope 1 emissions from use of petrol or diesel.		
+	WTT- fuels	Scope 3	YES	NO	YES	NO	WTT Scope 3 emissions from use of petrol and diesel.		
+	UK Electricity	Scope 2	YES	YES	YES	YES	Scope 2 emissions from use of electricity.		
+	Transmission and distribution	Scope 3	YES	YES	YES	YES	Scope 3 emissions from T&D losses from use of electricity.		
+	WTT- UK & overseas elec	Scope 3	YES	YES	YES	YES	Scope 3 emissions from WTT emissions from use of electricity.		
+	Method 2: Generic vehicle emission factors								
+	Emissions =  Total activity for vehicle category (in km, miles or tonne-km)  x  Emission Factor								
+	Note: the emission factors already account for the average share of driving using electricity or conventional fuel for plug-in hybrid electric vehicles, so the total number of km / miles / tonne-km should be used in calculations.								
+	Sum of elements:      A + C   OR  B + C								
+		Scope	Car	Car	Van	Van	Includes		
+			Plug-in Hybrid Electric Vehicle	Battery Electric Vehicle	Plug-in Hybrid Electric Vehicle	Battery Electric Vehicle			
+A	Passenger vehicles	Scope 1	YES	NO			Only Scope 1 emissions from petrol or diesel use.		
+A	Delivery vehicles	Scope 1			YES	NO	Only Scope 1 emissions from petrol or diesel use.		
+A	UK electricity for EVs	Scope 2	YES	YES	YES	YES	Only Scope 2 emissions from electricity use.		
+A	UK electricity T&D for EVs	Scope 3	YES	YES	YES	YES	Only Scope 3 emissions from electricity T&D losses.		
+	OR								
+B	Business travel- land	Scope 3	YES	YES			Sum of Scope 1 and Scope 2, plus Scope 3 electricity T&D losses.		
+B	Freighting goods	Scope 3			YES	YES	Sum of Scope 1 and Scope 2, plus Scope 3 electricity T&D losses.		
+B	Managed assets- vehicles	Scope 3	YES	YES	YES	YES	Sum of Scope 1 and Scope 2, plus Scope 3 electricity T&D losses.		
+	AND								
+C	WTT- pass vehs & travel- land	Scope 3	YES	YES			Only Scope 3 WTT emissions (all fuel types, electricity)		
+C	WTT- delivery vehs & freight	Scope 3			YES	YES	Only Scope 3 WTT emissions (all fuel types, electricity)		
+	Example: 
+Company B wants to report on its Scope 1 fuel emissions from a large PHEV car (if the car model is known, the market and size can be checked from the table in the Methodology Paper):								
+	Situation A) 
+Company B has data in fuel (in litres) and electricity (kWh) consumed, the ‘fuels’ and 'UK electricity' conversion factors should be applied, which provide more accurate emissions results. 
+"Method 1: Energy consumption" should be used.
+Emissions =  Total energy consumption (fuel, electricity)  x  Emission Factors (fuel, electricity)
+- Some PHEVs' onboard data can provide information on the electric and fuel consumption, try to consult the vehicle's user manual or contact the manufacturer for instructions on accessing this information. These can be used to estimate fuel (in litres) and electricity (kWh) consumed.								
+	Situation B) 
+If there is no data available to estimate fuel/electricity consumption, or how much of the mileage is driven by fuel compared to mileage driven by electricity. Only the total mileage is known.
+"Method 2: Generic vehicle emission factors" should be used.	
+Emissions =  Total activity for vehicle category (in km, miles or tonne-km)  x  Emission Factor									
+	A worked example of "Method 2: Generic vehicle emission factors":
+- The PHEV car has travelled 10,000 miles in a year.
+- In 2023, the conversion factors for PHEV Car (Large): 0.11397 kg CO2e / mile;
+Emissions =  Total activity for vehicle category (in km, miles or tonne-km)  x  Emission Factor
+= 10,000 miles x 0.11397 kg CO2e / mile = 1140 kg CO2e. 
+Note: the emission factors already account for the average share of driving using electricity or conventional fuel for plug-in hybrid electric vehicles, so the total number of km / miles / tonne-km should be used in calculations.
+Emissions from the electricity consumed by the PHEV can be calculated by applying conversion factors in Scope 2 "UK electricity for EVs", Scope 3 "UK electricity T&D for EVs" and "WTT- pass vehs & travel- land".
+
+Note: If the PHEVs are mostly charged in an organisation's sites, care should be taken to avoid double counting with an organisation's general electricity consumption.								
+	Note: The Plug-in Hybrid Electric Vehicle category also includes Range-Extended Electric Vehicles (also known as REEVs, ER-EVs or REX).								
+Why are emission factors for certain types of electric vehicle missing?									
+At the moment there are only a limited number of electric vehicle models on the market, and certain categories are not yet represented by battery electric vehicle or plug-in hybrid electric vehicles.  Emission factors  will be added in future updates for these vehicle types, when models in these categories become available in the UK market/fleet.									
+Why are emission factors for certain market segment or size of electric vehicle different from other segments or from what is expected?									
+The factors for battery electric vehicles or plug-in hybrid electric vehicles across various market segments and sizes are calculated through the weighted average of registered vehicle models in the UK. It is important to note that certain market segments or sizes of electric vehicles may exhibit limited availability of models or a lack of new vehicle registrations in recent years. Consequently, the calculated factors might be influenced by one or two specific vehicle models within these segments, potentially leading to skewed results.
+Additionally, these factors are derived from data collected 1 to 2 years prior to publication. Therefore, there exists a possibility that they may not accurately represent the latest vehicle models currently available in the market. As such, users are advised to exercise discretion and consider the potential limitations of these factors when interpreting and applying them in their analyses or decision-making processes.									
+For information about how the conversion factors have been derived, please refer to the 'Methodology paper' that accompanies the conversion factors.									
+
+===== S3- Hotel stay =====
+UK Government GHG Conversion Factors for Company Reporting									
+Hotel stay									
+Index									
+Emissions source:	Hotel stay	Next publication date: 	June 2026	Factor set:	Full set				
+Scope:	Scope 3	Version:	1	Year:	2025				
+Hotel stay factors should be used to report emissions associated with overnight hotel stays. The emissions from hotel stays are reported as a Scope 3 emissions source.									
+Guidance									
+●  The conversion factors provided are for an average class of hotel and can be applied to a stay at any type of hotel.									
+●  Unless otherwise stated, conversion factors provided are an average for the specified country.									
+●  The conversion factors are provided on a 'room per night' basis and should be applied to each room that is occupied during the stay.  The conversion factor does not differentiate for number of travellers staying in the room.									
+Example of calculating emissions from hotel stays									
+Company R wants to report the emissions associated with its staff staying at hotels during business trips.									
+For each trip undertaken, Company R records information on the country visited and the number of nights each staff member stays in a hotel for.									
+For each hotel stay, the number of hotel rooms is multiplied by the length of stay (in number of nights) and by the conversion factor for the appropriate country to give the associated emissions. A room night is for the room and does not differentiate for number of travellers staying in the room. 									
+Activity	Country	Unit	kg CO2e						
+Hotel stay	UK	Room per night	10.4						
+	UK (London)	Room per night	11.5						
+Activity	Country	Unit	kg CO2e						
+Hotel stay	Argentina	Room per night							
+	Australia	Room per night	35						
+	Austria	Room per night							
+	Belgium	Room per night	12.2						
+	Brazil	Room per night	8.7						
+	Canada	Room per night	7.4						
+	Chile	Room per night	27.6						
+	China	Room per night	53.5						
+	Colombia	Room per night	14.7						
+	Costa Rica	Room per night	4.7						
+	Czech Republic	Room per night							
+	Egypt	Room per night	44.2						
+	Fiji	Room per night							
+	Finland	Room per night							
+	France	Room per night	6.7						
+	Germany	Room per night	13.2						
+	Greece	Room per night							
+	Hong Kong, China	Room per night	51.5						
+	India	Room per night	58.9						
+	Indonesia	Room per night	62.7			 			
+	Ireland	Room per night							
+	Israel	Room per night							
+	Italy	Room per night	14.3						
+	Japan	Room per night	39						
+	Jordan	Room per night	68.9						
+	Kazakhstan	Room per night							
+	Korea	Room per night	55.8						
+	Macau, China	Room per night							
+	Malaysia	Room per night	61.5						
+	Maldives	Room per night	152.2						
+	Mexico	Room per night	19.3						
+	Netherlands	Room per night	14.8						
+	New Zealand	Room per night							
+	Oman	Room per night	90.3						
+	Panama	Room per night							
+	Peru	Room per night							
+	Philippines	Room per night	54.3						
+	Poland	Room per night							
+	Portugal	Room per night	19						
+	Qatar	Room per night	86.2						
+	Romania	Room per night							
+	Russian Federation	Room per night	24.2						
+	Saudi Arabia	Room per night	106.4						
+	Singapore	Room per night	24.5						
+	South Africa	Room per night	51.4						
+	Spain	Room per night	7						
+	Switzerland	Room per night	6.6						
+	Taiwan, China	Room per night							
+	Thailand	Room per night	43.4						
+	Turkey	Room per night	32.1						
+	United Arab Emirates	Room per night	63.8						
+	United States	Room per night	16.1						
+	Vietnam	Room per night	38.5						
+FAQs									
+How are the hotel stay conversion factors derived?									
+The hotel stay conversion factors are taken from the Hotel Footprinting Tool, produced by the International Tourism Partnership and Greenview, which have been derived from the Cornell Hotel Sustainability Benchmarking Index that uses annual data from international hotel companies and a standardized industry methodology.									
+For more information about how they have been derived, please visit www.hotelfootprints.org where more granular data is available by city and segment.									
+Why can't I find a conversion factor for the country I'm interested in?									
+The provision of conversion factors is limited by the availability of data in different parts of the world. If the hotel stay conversion factor for a certain country is not available in the current set, users may continue to use factors from the last available set, or visit https://www.hotelfootprints.org where more granular data is available by city and segment.									
+For information about how the conversion factors have been derived, please refer to the 'Methodology paper' that accompanies the conversion factors.									

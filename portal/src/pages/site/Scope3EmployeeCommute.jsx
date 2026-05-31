@@ -66,10 +66,7 @@ export default function Scope3EmployeeCommute() {
             <Input label="Figure of Distance" value={figureOfDistance} onChange={setFigureOfDistance} type="number" required />
             <Input label="Number of Passengers" value={passengers} onChange={setPassengers} type="number" required />
           </div>
-          <div className="grid grid-cols-2 gap-4">
-            <Input label="Kilo meters Travelled" value={kmTravelled} onChange={setKmTravelled} type="number" required />
-            <Input label="Remarks" value={remarks} onChange={setRemarks} placeholder="Additional notes or comments" />
-          </div>
+          <Input label="Remarks" value={remarks} onChange={setRemarks} placeholder="Additional notes or comments" />
           {preview && <GHGPreview tco2e={preview.tco2e} />}
           <div className="flex gap-3">
             <button onClick={() => onSubmit()} className="bg-[#064E3B] hover:bg-[#065F46] text-white text-sm font-medium px-6 py-2.5 rounded-xl transition-colors">Submit</button>

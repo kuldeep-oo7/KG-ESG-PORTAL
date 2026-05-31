@@ -9,6 +9,7 @@ import PublicHome from './pages/PublicHome'
 import NewsletterPage from './pages/NewsletterPage'
 import Login from './pages/Login'
 import ResetPassword from './pages/ResetPassword'
+import SignUp from './pages/SignUp'
 import CSR from './pages/CSR'
 import Social from './pages/Social'
 import Governance from './pages/Governance'
@@ -90,6 +91,7 @@ export default function App() {
         <Route path="/newsletter/:slug" element={<NewsletterPage />} />
         <Route path="/login"           element={<Login />} />
         <Route path="/forgot-password" element={<ResetPassword />} />
+        <Route path="/signup"          element={<SignUp />} />
 
         {/* Main app */}
         <Route path="/dashboard" element={<Layout><Dashboard /></Layout>} />

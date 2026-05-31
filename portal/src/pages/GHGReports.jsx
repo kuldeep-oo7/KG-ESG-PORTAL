@@ -15,21 +15,23 @@ function ScopeCard({ label, primary, secondary, dark, teal }) {
     ? 'bg-[#0D9488] text-white'
     : 'bg-white text-slate-800 border border-slate-200'
 
-  const labelColor = dark || teal ? 'text-white/70' : 'text-slate-500'
+  const labelColor = dark || teal ? 'text-white/70' : 'text-slate-400'
   const valueColor = dark || teal ? 'text-white' : 'text-[#064E3B]'
-  const subColor   = dark || teal ? 'text-white/60' : 'text-slate-400'
+  const subColor   = dark || teal ? 'text-white/50' : 'text-slate-400'
+
+  const accent = !dark && !teal ? 'border-l-4 border-l-[#064E3B]' : ''
 
   return (
-    <div className={`rounded-2xl p-5 shadow-sm ${bg}`}>
-      <p className={`text-xs font-medium uppercase tracking-wide mb-3 ${labelColor}`}>{label}</p>
+    <div className={`rounded-2xl p-5 shadow-sm ${bg} ${accent}`}>
+      <p className={`text-[10px] font-semibold uppercase tracking-widest mb-4 ${labelColor}`}>{label}</p>
       {primary && (
-        <p className={`text-2xl font-bold leading-none mb-0.5 ${valueColor}`}
+        <p className={`text-3xl font-bold leading-none ${valueColor}`}
           style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}>
           {primary}
         </p>
       )}
       {secondary && (
-        <p className={`text-sm font-semibold mt-1 ${subColor}`}>{secondary}</p>
+        <p className={`text-xs mt-2 ${subColor}`}>{secondary}</p>
       )}
     </div>
   )
@@ -96,7 +98,7 @@ function TableSection({ title, entries }) {
   return (
     <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden mb-4 shadow-sm">
       {/* Section header */}
-      <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100">
+      <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 bg-[#ECEEF0] rounded-t-xl">
         <h3
           className="font-semibold text-slate-800"
           style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}
@@ -110,7 +112,7 @@ function TableSection({ title, entries }) {
               {sectionTotal.toFixed(6)} TCO2Eq
             </span>
           </span>
-          <div className="flex items-center gap-1.5 border border-slate-200 rounded-lg px-2.5 py-1.5">
+          <div className="flex items-center gap-1.5 border border-slate-200 rounded-lg px-2.5 py-1.5 bg-white">
             <Search className="w-3.5 h-3.5 text-slate-400" />
             <input
               value={search}
@@ -165,7 +167,7 @@ function TableSection({ title, entries }) {
 
 /* ── Main page ──────────────────────────────────────────────────────────────── */
 export default function GHGReports() {
-  const { allEntries, getScopeTotal } = useGHG()
+  const { allEntries, getScopeTotal, getAvoidedTotal } = useGHG()
 
   const [yearType, setYearType]   = useState('FY')
   const [fromMonth, setFromMonth] = useState('Apr')
@@ -177,12 +179,14 @@ export default function GHGReports() {
   const liveS1 = ALL_CODES.reduce((s, c) => s + getScopeTotal(c, 1), 0)
   const liveS2 = ALL_CODES.reduce((s, c) => s + getScopeTotal(c, 2), 0)
   const liveS3 = ALL_CODES.reduce((s, c) => s + getScopeTotal(c, 3), 0)
+  const liveAvoided = ALL_CODES.reduce((s, c) => s + getAvoidedTotal(c), 0)
   const liveTotal = liveS1 + liveS2 + liveS3
 
   const displayTotal  = liveTotal  > 0 ? liveTotal.toFixed(3)  : REPORT_TOTALS.total.toFixed(3)
   const displayS1     = liveS1     > 0 ? liveS1.toFixed(6)     : REPORT_TOTALS.scope1.toFixed(6)
   const displayS2     = liveS2     > 0 ? liveS2.toFixed(6)     : REPORT_TOTALS.scope2.toFixed(6)
   const displayS3     = liveS3     > 0 ? liveS3.toFixed(6)     : REPORT_TOTALS.scope3.toFixed(6)
+  const displayAvoided = liveAvoided > 0 ? liveAvoided.toFixed(3) : REPORT_TOTALS.avoided.toFixed(3)
 
   // Build flat entry lists per scope / module
   const scope1Stationary = ALL_CODES.flatMap(c =>
@@ -273,46 +277,58 @@ export default function GHGReports() {
 
   return (
     <div className="min-h-screen bg-[#F8FAFC]">
-      {/* Title section */}
-      <div className="px-8 pt-8 pb-4 text-center">
-        <h1
-          className="text-2xl font-bold text-[#111827]"
-          style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}
-        >
-          Report for All Sites - Financial Year 2026
-        </h1>
-        <p className="text-sm text-slate-500 mt-1">
-          Measurement period: Apr 2026 - Mar 2027
-        </p>
+      {/* Top bar */}
+      <div className="px-8 py-6 flex justify-between items-start">
+        <div>
+          <p className="text-xs text-gray-400 mb-1">Dashboard &gt; <span className="text-[#064E3B] font-semibold">Reports</span></p>
+          <h1
+            className="text-3xl font-bold text-[#111827]"
+            style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}
+          >
+            Report for All Sites
+          </h1>
+          <p className="text-sm text-slate-500 mt-1">
+            Financial Year 2026 &nbsp;·&nbsp; Measurement period: Apr 2026 – Mar 2027
+          </p>
+        </div>
+        <div className="flex items-center gap-3 mt-1">
+          <button
+            onClick={handleExport}
+            className="flex items-center gap-2 bg-[#064E3B] hover:bg-[#065F46] text-white text-sm font-medium px-5 py-2.5 rounded-xl transition-colors shadow-sm"
+          >
+            <Download className="w-4 h-4" /> Export Report
+          </button>
+        </div>
       </div>
 
       {/* Scope summary cards — 5 in a row */}
       <div className="px-8 pb-4">
-        <div className="grid grid-cols-5 gap-3">
+        <p className="text-[10px] uppercase tracking-widest text-slate-400 mb-3">Scope Emission</p>
+        <div className="grid grid-cols-5 gap-4">
           <ScopeCard
             label="Total GHG Emissions"
             primary={displayTotal}
-            secondary="226 TCO2e"
+            secondary="TCO2e Combined"
             dark
           />
           <ScopeCard
             label="Avoided Emissions"
-            primary={REPORT_TOTALS.avoided.toFixed(3)}
-            secondary="707 TCO2e"
+            primary={displayAvoided}
+            secondary="TCO2e Offset"
             teal
           />
           <ScopeCard
-            label="Scope 1"
+            label="Scope 1 — Direct"
             primary={displayS1}
             secondary="TCO2e"
           />
           <ScopeCard
-            label="Scope 2"
+            label="Scope 2 — Indirect"
             primary={displayS2}
             secondary="TCO2e"
           />
           <ScopeCard
-            label="Scope 3"
+            label="Scope 3 — Value Chain"
             primary={displayS3}
             secondary="TCO2e"
           />
@@ -321,7 +337,7 @@ export default function GHGReports() {
 
       {/* Filter row */}
       <div className="px-8 pb-6">
-        <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-4 flex gap-4 items-center flex-wrap">
+        <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-4 flex gap-3 items-center flex-wrap">
           {/* CY / FY toggle */}
           <div className="flex rounded-lg border border-slate-200 overflow-hidden">
             {['CY', 'FY'].map(t => (
@@ -376,26 +392,19 @@ export default function GHGReports() {
           </div>
 
           {/* Sites dropdown */}
-          <select className="border border-slate-200 rounded-lg px-3 py-2 text-sm outline-none bg-white text-slate-700">
+          <select className="border border-slate-200 rounded-lg px-3 py-2 text-sm outline-none bg-white text-slate-700 focus:border-[#064E3B] focus:ring-2 focus:ring-[#064E3B]/10 transition-all">
             <option>All Sites</option>
             {SITES.map(s => <option key={s.code}>{s.name}</option>)}
           </select>
 
-          {/* Export type */}
-          <select className="border border-slate-200 rounded-lg px-3 py-2 text-sm outline-none bg-white text-slate-500">
-            <option value="">Select Export Type</option>
+          {/* Export format */}
+          <select className="border border-slate-200 rounded-lg px-3 py-2 text-sm outline-none bg-white text-slate-500 focus:border-[#064E3B] focus:ring-2 focus:ring-[#064E3B]/10 transition-all">
+            <option value="">Export Format</option>
             <option>PDF</option>
             <option>Excel</option>
             <option>CSV</option>
           </select>
 
-          {/* Export button */}
-          <button
-            onClick={handleExport}
-            className="ml-auto flex items-center gap-2 bg-[#10B981] hover:bg-[#059669] text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors"
-          >
-            <Download className="w-4 h-4" /> Export
-          </button>
         </div>
       </div>
 
@@ -517,3 +526,4 @@ export default function GHGReports() {
     </div>
   )
 }
+

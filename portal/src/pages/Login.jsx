@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { Eye, EyeOff, Mail } from 'lucide-react'
-import logoImg from '../assets/logo.jfif'
+import logoImg from '../assets/logo-full.png'
 import authPanelImg from '../assets/auth-panel.png'
 
 // ─── Right panel — reused on all auth pages ─────────────────────────────────
@@ -13,13 +13,6 @@ function AuthRightPanel() {
         alt="One platform. Complete ESG. Trace. Report. Improve."
         className="h-full w-full object-cover"
       />
-      <div className="absolute left-10 top-10 flex items-center gap-3 rounded-2xl border border-white/15 bg-white/10 px-4 py-3 backdrop-blur-md">
-        <img src={logoImg} alt="K.GIRDHARLAL" className="h-10 w-auto rounded bg-white object-contain p-1" />
-        <div>
-          <p className="text-sm font-bold tracking-wide text-white">K.GIRDHARLAL</p>
-          <p className="text-[8px] uppercase tracking-[0.22em] text-white/55">ESG Portal</p>
-        </div>
-      </div>
     </div>
   )
 }
@@ -30,33 +23,39 @@ export default function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [showPass, setShowPass] = useState(false)
+  const [error, setError] = useState('')
 
   function handleSubmit(e) {
     e.preventDefault()
-    navigate('/dashboard')
+    setError('')
+    
+    fetch('http://localhost:5000/api/auth/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password })
+    })
+      .then(res => {
+        if (!res.ok) {
+          return res.json().then(data => { throw new Error(data.error || 'Login failed') })
+        }
+        return res.json()
+      })
+      .then(user => {
+        localStorage.setItem('kg_current_user_v1', JSON.stringify(user))
+        navigate('/dashboard')
+      })
+      .catch(err => {
+        setError(err.message)
+      })
   }
 
   return (
     <div className="flex h-screen w-full overflow-hidden font-sans">
       {/* ── Left panel ────────────────────────────────────────────────────── */}
       <div className="flex h-screen flex-col w-full md:w-[40%] bg-white px-10 py-8 justify-center overflow-y-auto">
-        {/* Logo block */}
-        <div className="mb-8">
-          <div className="flex items-center gap-3 mb-1">
-            <img src={logoImg} alt="K.GIRDHARLAL" className="h-10 w-auto object-contain rounded" />
-            <span
-              className="font-bold text-[#064E3B]"
-              style={{ fontFamily: '"Hanken Grotesk", Inter, sans-serif', fontSize: '1.1rem' }}
-            >
-              K.GIRDHARLAL
-            </span>
-          </div>
-          <p
-            className="text-[#064E3B]/60 uppercase"
-            style={{ fontSize: '8px', letterSpacing: '0.2em' }}
-          >
-            THERE&apos;S MORE TO MAKING DIAMONDS
-          </p>
+        {/* Logo block — centered */}
+        <div className="mb-8 flex justify-center">
+          <img src={logoImg} alt="K.GIRDHARLAL" className="w-56 h-auto object-contain" />
         </div>
 
         {/* Heading */}
@@ -80,7 +79,7 @@ export default function Login() {
             <div className="relative">
               <Mail
                 size={16}
-                className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400"
               />
               <input
                 id="email"
@@ -88,9 +87,9 @@ export default function Login() {
                 autoComplete="email"
                 placeholder="name@company.com"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => { setEmail(e.target.value); setError('') }}
                 required
-                className="w-full pl-9 pr-4 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#064E3B]/30 focus:border-[#064E3B] transition"
+                className="w-full pl-4 pr-9 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#064E3B]/30 focus:border-[#064E3B] transition"
               />
             </div>
           </div>
@@ -113,9 +112,9 @@ export default function Login() {
                 id="password"
                 type={showPass ? 'text' : 'password'}
                 autoComplete="current-password"
-                placeholder="••••••••"
+                placeholder="Enter your password"
                 value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={(e) => { setPassword(e.target.value); setError('') }}
                 required
                 className="w-full pl-4 pr-10 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#064E3B]/30 focus:border-[#064E3B] transition"
               />
@@ -130,6 +129,8 @@ export default function Login() {
             </div>
           </div>
 
+          {error && <p className="text-xs text-red-500 font-medium">{error}</p>}
+
           {/* Submit */}
           <button
             type="submit"
@@ -139,6 +140,13 @@ export default function Login() {
             Submit <span aria-hidden="true">→</span>
           </button>
         </form>
+
+        <p className="text-sm text-center text-slate-500 mt-6">
+          Don&apos;t have an account?{' '}
+          <Link to="/signup" className="text-[#10B981] font-medium hover:underline">
+            Sign Up
+          </Link>
+        </p>
       </div>
 
       {/* ── Right panel ───────────────────────────────────────────────────── */}

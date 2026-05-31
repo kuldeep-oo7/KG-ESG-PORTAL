@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>K. Girdharlal – CSR | Style A</title>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#064E3B;
+  --primary-mid:#065f46;
+  --secondary:#10B981;
+  --sec-pale:#d1fae5;
+  --tertiary:#647488;
+  --neutral:#FBFAFC;
+  --white:#fff;
+  --text-dark:#111827;
+  --text-mid:#374151;
+  --text-muted:#6b7280;
+  --border:#e5e7eb;
+  --shadow:0 2px 14px rgba(6,78,59,.09);
+  --radius:12px;
+  --font:'Hanken Grotesk',sans-serif
+}
+body{font-family:var(--font);background:var(--neutral);color:var(--text-dark);line-height:1.6}
+
+/* ── NAV ── */
+header{background:var(--primary);position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(0,0,0,.25)}
+.nav-inner{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:0 28px;height:66px}
+.logo{color:#fff;font-size:1.1rem;font-weight:700;letter-spacing:.02em;white-space:nowrap;line-height:1.2}
+.logo span{color:var(--secondary)}
+.logo small{display:block;font-size:.65rem;font-weight:400;color:rgba(255,255,255,.55);letter-spacing:.1em;text-transform:uppercase}
+nav{display:flex;gap:2px;align-items:center}
+nav button{background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--font);font-size:.84rem;font-weight:500;padding:8px 13px;border-radius:8px;cursor:pointer;transition:.2s;position:relative;white-space:nowrap}
+nav button:hover{color:#fff;background:rgba(255,255,255,.1)}
+nav button.active{color:#fff}
+nav button.active::after{content:'';position:absolute;bottom:-2px;left:13px;right:13px;height:2.5px;background:var(--secondary);border-radius:2px}
+.btn-login{background:var(--secondary)!important;color:var(--primary)!important;font-weight:700!important;border-radius:20px!important;padding:8px 18px!important}
+.btn-login:hover{background:#0ea572!important}
+.btn-login.active::after{display:none!important}
+
+/* ── PAGES ── */
+.page{display:none;min-height:calc(100vh - 66px);padding:52px 24px 80px}
+.page.active{display:block}
+.container{max-width:1100px;margin:auto}
+#login.page{padding:0}
+
+/* ── PAGE HEADER ── */
+.pg-header{margin-bottom:44px}
+.pg-header h1{font-size:2rem;font-weight:800;color:var(--primary);margin-bottom:8px}
+.pg-header p{color:var(--text-mid);font-size:.97rem;max-width:580px;line-height:1.65}
+.pg-rule{width:44px;height:3px;background:var(--secondary);border-radius:2px;margin-top:14px}
+
+/* ══════════════════════════════════════
+   UPCOMING EVENTS
+══════════════════════════════════════ */
+.events-list{display:flex;flex-direction:column;gap:28px}
+.ev-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;display:grid;grid-template-columns:300px 1fr;border-left:4px solid var(--secondary)}
+.ev-thumb{min-height:230px;background:linear-gradient(135deg,var(--primary) 0%,var(--primary-mid) 60%,var(--secondary) 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:24px}
+.ev-thumb svg{opacity:.35}
+.ev-thumb-label{color:rgba(255,255,255,.45);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600}
+.ev-body{padding:30px 34px;display:flex;flex-direction:column;gap:13px}
+.ev-cat{display:inline-flex;align-items:center;gap:6px;font-size:.73rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--secondary)}
+.ev-cat::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--secondary);flex-shrink:0}
+.ev-body h2{font-size:1.45rem;font-weight:800;color:var(--primary);line-height:1.25}
+.ev-meta{display:flex;flex-wrap:wrap;gap:16px}
+.meta-item{display:flex;align-items:center;gap:7px;font-size:.84rem;color:var(--text-mid);font-weight:500}
+.meta-item svg{color:var(--secondary);flex-shrink:0}
+.ev-desc{font-size:.92rem;color:var(--text-mid);line-height:1.72;flex:1}
+.ev-sdgs{display:flex;gap:7px;flex-wrap:wrap}
+.sdg-pill{background:var(--sec-pale);color:var(--primary-mid);font-size:.71rem;font-weight:700;padding:4px 11px;border-radius:20px;letter-spacing:.03em}
+.ev-actions{display:flex;gap:12px;margin-top:4px}
+.btn-reg{background:var(--secondary);color:var(--primary);border:none;padding:11px 24px;border-radius:9px;font-family:var(--font);font-size:.87rem;font-weight:700;cursor:pointer;transition:.2s}
+.btn-reg:hover{background:#0ea572;color:#fff}
+.btn-more{background:transparent;color:var(--primary);border:2px solid var(--primary);padding:11px 24px;border-radius:9px;font-family:var(--font);font-size:.87rem;font-weight:700;cursor:pointer;transition:.2s}
+.btn-more:hover{background:var(--primary);color:#fff}
+
+/* ══════════════════════════════════════
+   CSR CALENDAR
+══════════════════════════════════════ */
+.cal-legend{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:28px;padding:16px 22px;background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow)}
+.leg-item{display:flex;align-items:center;gap:7px;font-size:.81rem;color:var(--text-mid);font-weight:500}
+.leg-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+.d-env{background:#10B981}.d-health{background:#EF4444}.d-edu{background:#3B82F6}
+.d-community{background:#8B5CF6}.d-welfare{background:#F59E0B}
+.d-governance{background:#647488}.d-sustain{background:#059669}.d-festival{background:#F97316}
+
+.month-accordion{display:flex;flex-direction:column;gap:10px}
+.month-item{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.month-header{display:flex;align-items:center;gap:16px;padding:15px 20px;cursor:pointer;user-select:none;transition:background .15s}
+.month-header:hover{background:#f8fffe}
+.m-tag{min-width:50px;text-align:center;padding:4px 10px;border-radius:16px;font-size:.72rem;font-weight:800;letter-spacing:.05em;background:var(--primary);color:#fff}
+.m-tag.done{background:#e5e7eb;color:#9ca3af}
+.m-tag.cur{background:var(--secondary);color:var(--primary)}
+.m-name{font-size:.98rem;font-weight:600;color:var(--text-dark);flex:1}
+.m-status{font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:12px;letter-spacing:.04em;white-space:nowrap}
+.ms-done{background:#f3f4f6;color:#9ca3af}
+.ms-cur{background:var(--sec-pale);color:#065f46}
+.ms-upcoming{background:#eff6ff;color:#1d4ed8}
+.ms-planning{background:#fef9c3;color:#92400e}
+.m-chevron{color:var(--text-muted);transition:transform .3s;flex-shrink:0}
+.month-item.open .m-chevron{transform:rotate(180deg)}
+.month-body{max-height:0;overflow:hidden;transition:max-height .42s ease}
+.month-item.open .month-body{max-height:900px}
+.act-list{padding:0 20px 18px;border-top:1px solid var(--border)}
+.act-row{display:flex;align-items:flex-start;gap:11px;padding:13px 0;border-bottom:1px solid #f3f4f6}
+.act-row:last-child{border-bottom:none;padding-bottom:0}
+.act-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;margin-top:5px}
+.act-info{flex:1}
+.act-title{font-size:.88rem;font-weight:600;color:var(--text-dark);margin-bottom:3px;line-height:1.35}
+.act-sdg{font-size:.74rem;color:var(--text-muted);line-height:1.4}
+.act-badge{font-size:.68rem;font-weight:700;padding:2px 9px;border-radius:10px;text-transform:uppercase;letter-spacing:.04em;flex-shrink:0;align-self:flex-start;margin-top:2px;white-space:nowrap}
+.b-env{background:#d1fae5;color:#065f46}.b-health{background:#fee2e2;color:#991b1b}
+.b-edu{background:#dbeafe;color:#1e40af}.b-community{background:#ede9fe;color:#5b21b6}
+.b-welfare{background:#fef3c7;color:#92400e}.b-governance{background:#f3f4f6;color:#374151}
+.b-sustain{background:#d1fae5;color:#064E3B}.b-festival{background:#ffedd5;color:#9a3412}
+
+/* ══════════════════════════════════════
+   NEWSLETTER
+══════════════════════════════════════ */
+.nl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:24px}
+.nl-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.nl-cover{height:155px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:20px}
+.nl-cover.q1{background:linear-gradient(140deg,#064E3B 0%,#10B981 100%)}
+.nl-cover.q2{background:linear-gradient(140deg,#065f46 0%,#34d399 100%)}
+.nl-cover.q3{background:linear-gradient(140deg,#047857 0%,#6ee7b7 100%)}
+.nl-cover.q4{background:linear-gradient(140deg,#064E3B 0%,#059669 100%)}
+.nl-issue{color:rgba(255,255,255,.6);font-size:.7rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase}
+.nl-name{color:#fff;font-size:1.05rem;font-weight:700;text-align:center}
+.nl-body{padding:18px 20px}
+.nl-period{font-size:.76rem;color:var(--text-muted);margin-bottom:6px;font-weight:500}
+.nl-desc{font-size:.84rem;color:var(--text-mid);line-height:1.55;margin-bottom:16px}
+.nl-btns{display:flex;gap:10px}
+.btn-sm{padding:8px 17px;border-radius:8px;font-family:var(--font);font-size:.8rem;font-weight:700;cursor:pointer;transition:.2s;border:none}
+.btn-sm.p{background:var(--secondary);color:var(--primary)}
+.btn-sm.p:hover{background:#0ea572;color:#fff}
+.btn-sm.o{background:transparent;border:1.5px solid var(--primary);color:var(--primary)}
+.btn-sm.o:hover{background:var(--primary);color:#fff}
+
+/* ══════════════════════════════════════
+   GALLERY
+══════════════════════════════════════ */
+.g-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:30px}
+.g-tab{background:var(--white);border:1.5px solid var(--border);color:var(--text-mid);font-family:var(--font);font-size:.82rem;font-weight:600;padding:7px 16px;border-radius:20px;cursor:pointer;transition:.2s}
+.g-tab.active,.g-tab:hover{background:var(--primary);color:#fff;border-color:var(--primary)}
+.g-section{margin-bottom:40px}
+.g-section-title{font-size:.95rem;font-weight:700;color:var(--primary);margin-bottom:14px;display:flex;align-items:center;gap:12px}
+.g-section-title::after{content:'';flex:1;height:1px;background:var(--border)}
+.mosaic{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:200px 200px;gap:8px;border-radius:var(--radius);overflow:hidden}
+.mosaic .pi:first-child{grid-row:span 2}
+.pi{position:relative;overflow:hidden;cursor:pointer;background:#e5e7eb}
+.pi img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.pi:hover img{transform:scale(1.07)}
+.pi-cap{position:absolute;inset:0;background:rgba(6,78,59,.72);color:#fff;display:flex;align-items:flex-end;padding:12px;opacity:0;transition:.3s;font-size:.8rem;font-weight:500;line-height:1.3}
+.pi:hover .pi-cap{opacity:1}
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:999;display:none;align-items:center;justify-content:center}
+.lightbox.open{display:flex}
+.lightbox img{max-width:90vw;max-height:85vh;border-radius:8px;box-shadow:0 8px 48px rgba(0,0,0,.5)}
+.lb-close{position:fixed;top:18px;right:26px;color:#fff;font-size:2rem;cursor:pointer;background:none;border:none;font-family:var(--font);line-height:1}
+
+/* ══════════════════════════════════════
+   CONTACT
+══════════════════════════════════════ */
+.contact-wrap{display:grid;grid-template-columns:1fr 1.6fr;gap:44px;align-items:start}
+.c-info h2{font-size:1.25rem;font-weight:700;color:var(--primary);margin-bottom:14px}
+.c-info p{font-size:.9rem;color:var(--text-mid);line-height:1.7;margin-bottom:24px}
+.info-rows{display:flex;flex-direction:column;gap:16px}
+.i-row{display:flex;gap:13px;align-items:flex-start}
+.i-icon{width:38px;height:38px;background:var(--sec-pale);border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.i-icon svg{color:var(--primary)}
+.i-text strong{display:block;font-size:.84rem;font-weight:700;color:var(--text-dark);margin-bottom:1px}
+.i-text span{font-size:.82rem;color:var(--text-muted)}
+.c-form{background:var(--white);border-radius:var(--radius);padding:34px;box-shadow:var(--shadow)}
+.c-form h2{font-size:1.15rem;font-weight:700;color:var(--primary);margin-bottom:24px}
+.form-2col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fg{margin-bottom:16px}
+.fg label{display:block;font-size:.8rem;font-weight:700;color:var(--text-mid);margin-bottom:6px;letter-spacing:.02em}
+.fg input,.fg textarea,.fg select{width:100%;padding:10px 14px;border:1.5px solid var(--border);border-radius:8px;font-family:var(--font);font-size:.88rem;color:var(--text-dark);background:#fff;transition:.2s;outline:none}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--secondary);box-shadow:0 0 0 3px rgba(16,185,129,.1)}
+.fg textarea{resize:vertical;min-height:100px}
+.btn-send{background:var(--secondary);color:var(--primary);border:none;padding:13px;border-radius:9px;font-family:var(--font);font-size:.92rem;font-weight:800;cursor:pointer;transition:.2s;width:100%}
+.btn-send:hover{background:#0ea572;color:#fff}
+
+/* ══════════════════════════════════════
+   LOGIN
+══════════════════════════════════════ */
+.login-wrap{min-height:calc(100vh - 66px);display:flex;align-items:center;justify-content:center;background:var(--neutral);padding:40px 24px}
+.login-card{background:var(--white);border-radius:16px;padding:50px 42px;max-width:420px;width:100%;box-shadow:0 4px 40px rgba(6,78,59,.13);text-align:center}
+.login-brand{font-size:1.25rem;font-weight:800;color:var(--primary);margin-bottom:4px}
+.login-brand span{color:var(--secondary)}
+.login-sub{font-size:.8rem;color:var(--text-muted);margin-bottom:34px;line-height:1.5}
+.login-form{text-align:left}
+.lg{margin-bottom:18px}
+.lg label{display:block;font-size:.8rem;font-weight:700;color:var(--text-mid);margin-bottom:6px}
+.lg input{width:100%;padding:11px 14px;border:1.5px solid var(--border);border-radius:8px;font-family:var(--font);font-size:.9rem;color:var(--text-dark);outline:none;transition:.2s}
+.lg input:focus{border-color:var(--secondary);box-shadow:0 0 0 3px rgba(16,185,129,.12)}
+.btn-signin{background:var(--primary);color:#fff;border:none;padding:13px;border-radius:9px;font-family:var(--font);font-size:.92rem;font-weight:700;cursor:pointer;width:100%;transition:.2s;margin-top:8px}
+.btn-signin:hover{background:var(--primary-mid)}
+.login-note{font-size:.74rem;color:var(--text-muted);margin-top:22px;line-height:1.55}
+
+/* ── RESPONSIVE ── */
+@media(max-width:860px){
+  .ev-card{grid-template-columns:1fr}
+  .ev-thumb{min-height:180px}
+  .contact-wrap{grid-template-columns:1fr}
+  .form-2col{grid-template-columns:1fr}
+  .mosaic{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .mosaic .pi:first-child{grid-row:auto}
+}
+@media(max-width:680px){
+  nav button{font-size:.76rem;padding:6px 9px}
+  .pg-header h1{font-size:1.6rem}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <div class="logo">K. <span>Girdharlal</span><small>CSR &amp; Sustainability</small></div>
+    <nav>
+      <button onclick="show('events',this)" class="active">Upcoming Events</button>
+      <button onclick="show('calendar',this)">CSR Calendar</button>
+      <button onclick="show('newsletter',this)">Newsletter</button>
+      <button onclick="show('gallery',this)">Gallery</button>
+      <button onclick="show('contact',this)">Contact Us</button>
+      <button onclick="show('login',this)" class="btn-login">Login</button>
+    </nav>
+  </div>
+</header>
+
+<!-- ══ UPCOMING EVENTS ══ -->
+<div class="page active" id="events">
+  <div class="container">
+    <div class="pg-header">
+      <h1>Upcoming Events</h1>
+      <p>Confirmed CSR events — register your spot or learn more about each initiative.</p>
+      <div class="pg-rule"></div>
+    </div>
+    <div class="events-list">
+
+      <!-- Event 1: Environment Day -->
+      <div class="ev-card">
+        <div class="ev-thumb">
+          <svg width="52" height="52" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="1.2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3C8.5 3 5 6.5 5 10c0 3.5 3 7 7 11 4-4 7-7.5 7-11 0-3.5-3.5-7-7-7z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 10a2 2 0 100-4 2 2 0 000 4z"/>
+          </svg>
+          <span class="ev-thumb-label">Environment Day</span>
+        </div>
+        <div class="ev-body">
+          <div class="ev-cat">Environment</div>
+          <h2>Environment Day Celebration 2026</h2>
+          <div class="ev-meta">
+            <div class="meta-item">
+              <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+              Friday, 5 June 2026
+            </div>
+            <div class="meta-item">
+              <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              10:00 AM – 4:00 PM
+            </div>
+            <div class="meta-item">
+              <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
+              K. Girdharlal Office Premises &amp; Community Green Zone
+            </div>
+          </div>
+          <p class="ev-desc">Join us for a full day of environmental action on World Environment Day. Activities include a green desk decoration competition, a tree plantation drive in the surrounding community, and interactive awareness sessions. All employees and their families are warmly invited to participate and contribute to a greener future.</p>
+          <div class="ev-sdgs">
+            <span class="sdg-pill">SDG 13 – Climate Action</span>
+            <span class="sdg-pill">SDG 15 – Life on Land</span>
+          </div>
+          <div class="ev-actions">
+            <button class="btn-reg">Register Now</button>
+            <button class="btn-more">Know More</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event 2: Yoga Day -->
+      <div class="ev-card">
+        <div class="ev-thumb">
+          <svg width="52" height="52" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="1.2">
+            <circle cx="12" cy="5" r="1.5"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 12c2-1 4-1 5 1l1 3 3-2 3 2 1-3c1-2 3-2 5-1M9 16l-2 4M15 16l2 4"/>
+          </svg>
+          <span class="ev-thumb-label">International Yoga Day</span>
+        </div>
+        <div class="ev-body">
+          <div class="ev-cat">Health &amp; Wellness</div>
+          <h2>International Yoga Day 2026</h2>
+          <div class="ev-meta">
+            <div class="meta-item">
+              <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+              Sunday, 21 June 2026
+            </div>
+            <div class="meta-item">
+              <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              7:00 AM – 9:00 AM
+            </div>
+            <div class="meta-item">
+              <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
+              K. Girdharlal Premises – Open Garden
+            </div>
+          </div>
+          <p class="ev-desc">Celebrate International Yoga Day with a guided morning yoga session open to all employees and their families. Led by a certified instructor, the session will cover yoga postures, pranayama breathing exercises, and mindfulness meditation — supporting holistic health and well-being for all.</p>
+          <div class="ev-sdgs">
+            <span class="sdg-pill">SDG 3 – Good Health &amp; Well-Being</span>
+          </div>
+          <div class="ev-actions">
+            <button class="btn-reg">Register Now</button>
+            <button class="btn-more">Know More</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ══ CSR CALENDAR ══ -->
+<div class="page" id="calendar">
+  <div class="container">
+    <div class="pg-header">
+      <h1>CSR Calendar FY 2026–27</h1>
+      <p>Our planned activities month-by-month. Exact dates confirmed closer to each event.</p>
+      <div class="pg-rule"></div>
+    </div>
+
+    <div class="cal-legend">
+      <div class="leg-item"><div class="leg-dot d-env"></div>Environment</div>
+      <div class="leg-item"><div class="leg-dot d-health"></div>Health &amp; Wellness</div>
+      <div class="leg-item"><div class="leg-dot d-edu"></div>Education</div>
+      <div class="leg-item"><div class="leg-dot d-community"></div>Community</div>
+      <div class="leg-item"><div class="leg-dot d-welfare"></div>Welfare</div>
+      <div class="leg-item"><div class="leg-dot d-governance"></div>Governance</div>
+      <div class="leg-item"><div class="leg-dot d-sustain"></div>Sustainability</div>
+      <div class="leg-item"><div class="leg-dot d-festival"></div>Festival</div>
+    </div>
+
+    <div class="month-accordion">
+
+      <!-- MARCH 2026 – Completed -->
+      <div class="month-item" onclick="toggleMonth(this)">
+        <div class="month-header">
+          <div class="m-tag done">MAR</div>
+          <div class="m-name">March 2026</div>
+          <div class="m-status ms-done">Completed</div>
+          <svg class="m-chevron" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </div>
+        <div class="month-body">
+          <div class="act-list">
+            <div class="act-row">
+              <div class="act-dot d-community"></div>
+              <div class="act-info">
+                <div class="act-title">Women's Day – Inclusion &amp; Equality Program</div>
+                <div class="act-sdg">SDG 5 (Gender Equality) · SDG 10 (Reduced Inequalities)</div>
+              </div>
+              <div class="act-badge b-community">Community</div>
+            </div>
+            <div class="act-row">
+              <div class="act-dot d-festival"></div>
+              <div class="act-info">
+                <div class="act-title">🎨 Holi Celebration</div>
+                <div class="act-sdg">Company Festival Celebration</div>
+              </div>
+              <div class="act-badge b-festival">Festival</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- APRIL 2026 – Completed -->
+      <div class="month-item" onclick="toggleMonth(this)">
+        <div class="month-header">
+          <div class="m-tag done">APR</div>
+          <div class="m-name">April 2026</div>
+          <div class="m-status ms-done">Completed</div>
+          <svg class="m-chevron" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </div>
+        <div class="month-body">
+          <div class="act-list">
+            <div class="act-row">
+              <div class="act-dot d-health"></div>
+              <div class="act-info">
+                <div class="act-title">Health Check-up Camp / Eye Check-up Camp</div>
+                <div class="act-sdg">SDG 3 (Good Health and Well-Being)</div>
+              </div>
+              <div class="act-badge b-health">Health</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MAY 2026 – Completed -->
+      <div class="month-item" onclick="toggleMonth(this)">
+        <div class="month-header">
+          <div class="m-tag done">MAY</div>
+          <div class="m-name">May 2026</div>
+          <div class="m-status ms-done">Completed</div>
+          <svg class="m-chevron" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </div>
+        <div class="month-body">
+          <div class="act-list">
+            <div class="act-row">
+              <div class="act-dot d-health"></div>
+              <div class="act-info">
+                <div class="act-title">Labour's Day Celebration + No-Tobacco Awareness Session</div>
+                <div class="act-sdg">SDG 3 (Good Health) · SDG 8 (Decent Work &amp; Economic Growth)</div>
+              </div>
+              <div class="act-badge b-health">Health</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- JUNE 2026 – Current (open by default) -->
+      <div class="month-item open" onclick="toggleMonth(this)">
+        <div class="month-header">
+          <div class="m-tag cur">JUN</div>
+          <div class="m-name">June 2026</div>
+          <div class="m-status ms-cur">Current Month</div>
+          <svg class="m-chevron" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </div>
+        <div class="month-body">
+          <div class="act-list">
+            <div class="act-row">
+              <div class="act-dot d-env"></div>
+              <div class="act-info">
+                <div class="act-title">Environment Day Celebration – Green Desk Decoration &amp; Tree Plantation</div>
+                <div class="act-sdg">SDG 13 (Climate Action) · SDG 15 (Life on Land) · 5 June</div>
+              </div>
+              <div class="act-badge b-env">Environment</div>
+            </div>
+            <div class="act-row">
+              <div class="act-dot d-health"></div>
+              <div class="act-info">
+                <div class="act-title">Blood Donation Camp</div>
+                <div class="act-sdg">SDG 3 (Good Health and Well-Being)</div>
+              </div>
+              <div class="act-badge b-health">Health</div>
+            </div>
+            <div class="act-row">
+              <div class="act-dot d-health"></div>
+              <div class="act-info">
+                <div class="act-title">Yoga Day</div>
+                <div class="act-sdg">SDG 3 (Good Health and Well-Being) · 21 June</div>
+              </div>
+              <div class="act-badge b-health">Wellness</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- JULY 2026 – Upcoming -->
+      <div class="month-item" onclick="toggleMonth(this)">
+        <div class="month-header">
+          <div class="m-tag">JUL</div>
+          <div class="m-name">July 2026</div>
+          <div class="m-status ms-upcoming">Upcoming</div>
+          <svg class="m-chevron" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </div>
+        <div class="month-body">
+          <div class="act-list">
+            <div class="act-row">
+              <div class="act-dot d-edu"></div>
+              <div class="act-info">
+                <div class="act-title">Support to Local Schools / Anganwadi</div>
+                <div class="act-sdg">SDG 4 (Quality Education) · SDG 6 (Clean Water &amp; Sanitation) · SDG 10 (Reduced Inequalities)</div>
+              </div>
+              <div class="act-badge b-edu">Education</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AUGUST 2026 – Upcoming -->
+      <div class="month-item" onclick="toggleMonth(this)">
+        <div class="month-header">
+          <div class="m-tag">AUG</div>
+          <div class="m-name">August 2026</div>
+          <div class="m-status ms-upcoming">Upcoming</div>
+          <svg class="m-chevron" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </div>
+        <div class="month-body">
+          <div class="act-list">
+            <div class="act-row">
+              <div class="act-dot d-env"></div>
+              <div class="act-info">
+                <div class="act-title">Animal Welfare Support Program</div>
+                <div class="act-sdg">SDG 15 (Life on Land)</div>
+              </div>
+              <div class="act-badge b-env">Environment</div>
+            </div>
+            <div class="act-row">
+              <div class="act-dot d-festival"></div>
+              <div class="act-info">
+                <div class="act-title">🇮🇳 Independence Day Celebration</div>
+                <div class="act-sdg">National Festival — 15 August</div>
+              </div>
+              <div class="act-badge b-festival">Festival</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEPTEMBER 2026 – Planning -->
+      <div class="month-item" onclick="toggleMonth(this)">
+        <div class="month-header">
+          <div class="m-tag">SEP</div>
+          <div class="m-name">September 2026</div>
+          <div class="m-status ms-planning">Planning</div>
+          <svg class="m-chevron" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </div>
+        <div class="month-body">
+          <div class="act-list">
+            <div class="act-row">
+              <div class="act-dot d-governance"></div>
+              <div class="act-info">
+                <div class="act-title">Seminar – Code of Conduct, Ethics, POSH &amp; Whistleblower Awareness</div>
+                <div class="act-sdg">SDG 5 (Gender Equality) · SDG 16 (Peace, Justice &amp; Strong Institutions)</div>
+              </div>
+              <div class="act-badge b-governance">Governance</div>
+            </div>
+            <div class="act-row">
+              <div class="act-dot d-festival"></div>
+              <div class="act-info">
+                <div class="act-title">🪔 Janmashtami · Ganesh Chaturthi · Samvatsari</div>
+                <div class="act-sdg">Festival Celebrations</div>
+              </div>
+              <div class="act-badge b-festival">Festival</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- OCTOBER 2026 – Planning -->
+      <div class="month-item" onclick="toggleMonth(this)">
+        <div class="month-header">
+          <div class="m-tag">OCT</div>
+          <div class="m-name">October 2026</div>
+          <div class="m-status ms-planning">Planning</div>
+          <svg class="m-chevron" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </div>
+        <div class="month-body">
+          <div class="act-list">
+            <div class="act-row">
+              <div class="act-dot d-env"></div>
+              <div class="act-info">
+                <div class="act-title">Clean-up Drive</div>
+                <div class="act-sdg">SDG 11 (Sustainable Cities &amp; Communities) · SDG 12 (Responsible Consumption)</div>
+              </div>
+              <div class="act-badge b-env">Environment</div>
+            </div>
+            <div class="act-row">
+              <div class="act-dot d-festival"></div>
+              <div class="act-info">
+                <div class="act-title">🏹 Dussehra · 🎃 Halloween</div>
+                <div class="act-sdg">Festival Celebrations</div>
+              </div>
+              <div class="act-badge b-festival">Festival</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NOVEMBER 2026 – Planning -->
+      <div class="month-item" onclick="toggleMonth(this)">
+        <div class="month-header">
+          <div class="m-tag">NOV</div>
+          <div class="m-name">November 2026</div>
+          <div class="m-status ms-planning">Planning</div>
+          <svg class="m-chevron" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </div>
+        <div class="month-body">
+          <div class="act-list">
+            <div class="act-row">
+              <div class="act-dot d-community"></div>
+              <div class="act-info">
+                <div class="act-title">Men's Day Celebration</div>
+                <div class="act-sdg">SDG 5 (Gender Equality) · SDG 10 (Reduced Inequalities)</div>
+              </div>
+              <div class="act-badge b-community">Community</div>
+            </div>
+            <div class="act-row">
+              <div class="act-dot d-welfare"></div>
+              <div class="act-info">
+                <div class="act-title">Donation Drive</div>
+                <div class="act-sdg">SDG 1 (No Poverty) · SDG 10 (Reduced Inequalities)</div>
+              </div>
+              <div class="act-badge b-welfare">Welfare</div>
+            </div>
+            <div class="act-row">
+              <div class="act-dot d-festival"></div>
+              <div class="act-info">
+                <div class="act-title">🪔 Diwali Celebration</div>
+                <div class="act-sdg">Company Festival Celebration</div>
+              </div>
+              <div class="act-badge b-festival">Festival</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DECEMBER 2026 – Planning -->
+      <div class="month-item" onclick="toggleMonth(this)">
+        <div class="month-header">
+          <div class="m-tag">DEC</div>
+          <div class="m-name">December 2026</div>
+          <div class="m-status ms-planning">Planning</div>
+          <svg class="m-chevron" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </div>
+        <div class="month-body">
+          <div class="act-list">
+            <div class="act-row">
+              <div class="act-dot d-env"></div>
+              <div class="act-info">
+                <div class="act-title">Energy Conservation Awareness Program – Energy Audit &amp; No Lift Day</div>
+                <div class="act-sdg">SDG 7 (Affordable &amp; Clean Energy) · SDG 13 (Climate Action)</div>
+              </div>
+              <div class="act-badge b-env">Environment</div>
+            </div>
+            <div class="act-row">
+              <div class="act-dot d-festival"></div>
+              <div class="act-info">
+                <div class="act-title">🎄 Christmas Carnival</div>
+                <div class="act-sdg">Company Festival Celebration</div>
+              </div>
+              <div class="act-badge b-festival">Festival</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- JANUARY 2027 – Planning -->
+      <div class="month-item" onclick="toggleMonth(this)">
+        <div class="month-header">
+          <div class="m-tag">JAN</div>
+          <div class="m-name">January 2027</div>
+          <div class="m-status ms-planning">Planning</div>
+          <svg class="m-chevron" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </div>
+        <div class="month-body">
+          <div class="act-list">
+            <div class="act-row">
+              <div class="act-dot d-sustain"></div>
+              <div class="act-info">
+                <div class="act-title">Invite Sustainability Experts</div>
+                <div class="act-sdg">SDG 12 (Responsible Consumption &amp; Production) · SDG 13 (Climate Action)</div>
+              </div>
+              <div class="act-badge b-sustain">Sustainability</div>
+            </div>
+            <div class="act-row">
+              <div class="act-dot d-festival"></div>
+              <div class="act-info">
+                <div class="act-title">🪁 Uttrayan – Makar Sankranti</div>
+                <div class="act-sdg">Company Festival Celebration</div>
+              </div>
+              <div class="act-badge b-festival">Festival</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FEBRUARY 2027 – Planning -->
+      <div class="month-item" onclick="toggleMonth(this)">
+        <div class="month-header">
+          <div class="m-tag">FEB</div>
+          <div class="m-name">February 2027</div>
+          <div class="m-status ms-planning">Planning</div>
+          <svg class="m-chevron" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </div>
+        <div class="month-body">
+          <div class="act-list">
+            <div class="act-row">
+              <div class="act-dot d-edu"></div>
+              <div class="act-info">
+                <div class="act-title">Financial Literacy &amp; Tax Awareness Session</div>
+                <div class="act-sdg">SDG 4 (Quality Education) · SDG 8 (Decent Work &amp; Economic Growth)</div>
+              </div>
+              <div class="act-badge b-edu">Education</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /month-accordion -->
+  </div>
+</div>
+
+<!-- ══ NEWSLETTER ══ -->
+<div class="page" id="newsletter">
+  <div class="container">
+    <div class="pg-header">
+      <h1>Newsletter</h1>
+      <p>Quarterly CSR updates, sustainability progress, and community impact stories.</p>
+      <div class="pg-rule"></div>
+    </div>
+    <div class="nl-grid">
+      <div class="nl-card">
+        <div class="nl-cover q1">
+          <div class="nl-issue">Issue 01 · FY 2026–27</div>
+          <div class="nl-name">Seeds of Change</div>
+        </div>
+        <div class="nl-body">
+          <div class="nl-period">March – June 2026 · Quarter 1</div>
+          <div class="nl-desc">Women's Day inclusion program, health &amp; eye check-up camps, Labour's Day celebration, and our Environment Day tree plantation drive.</div>
+          <div class="nl-btns">
+            <button class="btn-sm p">View</button>
+            <button class="btn-sm o">Download</button>
+          </div>
+        </div>
+      </div>
+      <div class="nl-card">
+        <div class="nl-cover q2">
+          <div class="nl-issue">Issue 02 · FY 2026–27</div>
+          <div class="nl-name">Growing Together</div>
+        </div>
+        <div class="nl-body">
+          <div class="nl-period">July – September 2026 · Quarter 2</div>
+          <div class="nl-desc">Local school &amp; Anganwadi support, animal welfare program, Independence Day celebrations, and our governance &amp; POSH awareness seminar.</div>
+          <div class="nl-btns">
+            <button class="btn-sm p">View</button>
+            <button class="btn-sm o">Download</button>
+          </div>
+        </div>
+      </div>
+      <div class="nl-card">
+        <div class="nl-cover q3">
+          <div class="nl-issue">Issue 03 · FY 2026–27</div>
+          <div class="nl-name">Community in Action</div>
+        </div>
+        <div class="nl-body">
+          <div class="nl-period">October – December 2026 · Quarter 3</div>
+          <div class="nl-desc">Clean-up drive, Men's Day &amp; Donation Drive, energy conservation program, Diwali celebrations, and the Christmas Carnival.</div>
+          <div class="nl-btns">
+            <button class="btn-sm p">View</button>
+            <button class="btn-sm o">Download</button>
+          </div>
+        </div>
+      </div>
+      <div class="nl-card">
+        <div class="nl-cover q4">
+          <div class="nl-issue">Issue 04 · FY 2026–27</div>
+          <div class="nl-name">Sustaining Tomorrow</div>
+        </div>
+        <div class="nl-body">
+          <div class="nl-period">January – March 2027 · Quarter 4</div>
+          <div class="nl-desc">Sustainability expert sessions, financial literacy &amp; tax awareness workshop, Uttrayan celebrations, and annual FY 2026–27 impact highlights.</div>
+          <div class="nl-btns">
+            <button class="btn-sm p">View</button>
+            <button class="btn-sm o">Download</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ GALLERY ══ -->
+<div class="page" id="gallery">
+  <div class="container">
+    <div class="pg-header">
+      <h1>Gallery</h1>
+      <p>Moments from our CSR initiatives, employee drives, and community celebrations.</p>
+      <div class="pg-rule"></div>
+    </div>
+    <div class="g-tabs">
+      <button class="g-tab active" onclick="setTab(this)">All Events</button>
+      <button class="g-tab" onclick="setTab(this)">Environment</button>
+      <button class="g-tab" onclick="setTab(this)">Health</button>
+      <button class="g-tab" onclick="setTab(this)">Community</button>
+      <button class="g-tab" onclick="setTab(this)">Celebrations</button>
+    </div>
+
+    <div class="g-section">
+      <div class="g-section-title">Women's Day – Inclusion &amp; Equality Program</div>
+      <div class="mosaic">
+        <div class="pi" onclick="openLb('https://picsum.photos/seed/wday1/800/600')"><img src="https://picsum.photos/seed/wday1/800/600" alt="" loading="lazy"><div class="pi-cap">Group program activities</div></div>
+        <div class="pi" onclick="openLb('https://picsum.photos/seed/wday2/400/300')"><img src="https://picsum.photos/seed/wday2/400/300" alt="" loading="lazy"><div class="pi-cap">Team celebration</div></div>
+        <div class="pi" onclick="openLb('https://picsum.photos/seed/wday3/400/300')"><img src="https://picsum.photos/seed/wday3/400/300" alt="" loading="lazy"><div class="pi-cap">Guest speaker</div></div>
+        <div class="pi" onclick="openLb('https://picsum.photos/seed/wday4/400/300')"><img src="https://picsum.photos/seed/wday4/400/300" alt="" loading="lazy"><div class="pi-cap">Workshop session</div></div>
+        <div class="pi" onclick="openLb('https://picsum.photos/seed/wday5/400/300')"><img src="https://picsum.photos/seed/wday5/400/300" alt="" loading="lazy"><div class="pi-cap">Award ceremony</div></div>
+      </div>
+    </div>
+
+    <div class="g-section">
+      <div class="g-section-title">Health Check-up &amp; Eye Camp</div>
+      <div class="mosaic">
+        <div class="pi" onclick="openLb('https://picsum.photos/seed/hcamp1/800/600')"><img src="https://picsum.photos/seed/hcamp1/800/600" alt="" loading="lazy"><div class="pi-cap">Health check-up camp</div></div>
+        <div class="pi" onclick="openLb('https://picsum.photos/seed/hcamp2/400/300')"><img src="https://picsum.photos/seed/hcamp2/400/300" alt="" loading="lazy"><div class="pi-cap">Eye check-up station</div></div>
+        <div class="pi" onclick="openLb('https://picsum.photos/seed/hcamp3/400/300')"><img src="https://picsum.photos/seed/hcamp3/400/300" alt="" loading="lazy"><div class="pi-cap">Doctor consultations</div></div>
+        <div class="pi" onclick="openLb('https://picsum.photos/seed/hcamp4/400/300')"><img src="https://picsum.photos/seed/hcamp4/400/300" alt="" loading="lazy"><div class="pi-cap">Awareness materials</div></div>
+        <div class="pi" onclick="openLb('https://picsum.photos/seed/hcamp5/400/300')"><img src="https://picsum.photos/seed/hcamp5/400/300" alt="" loading="lazy"><div class="pi-cap">Volunteer team</div></div>
+      </div>
+    </div>
+
+    <div class="g-section">
+      <div class="g-section-title">Labour's Day &amp; No-Tobacco Awareness</div>
+      <div class="mosaic">
+        <div class="pi" onclick="openLb('https://picsum.photos/seed/lday1/800/600')"><img src="https://picsum.photos/seed/lday1/800/600" alt="" loading="lazy"><div class="pi-cap">Labour's Day celebration</div></div>
+        <div class="pi" onclick="openLb('https://picsum.photos/seed/lday2/400/300')"><img src="https://picsum.photos/seed/lday2/400/300" alt="" loading="lazy"><div class="pi-cap">No-Tobacco session</div></div>
+        <div class="pi" onclick="openLb('https://picsum.photos/seed/lday3/400/300')"><img src="https://picsum.photos/seed/lday3/400/300" alt="" loading="lazy"><div class="pi-cap">Employee appreciation</div></div>
+        <div class="pi" onclick="openLb('https://picsum.photos/seed/lday4/400/300')"><img src="https://picsum.photos/seed/lday4/400/300" alt="" loading="lazy"><div class="pi-cap">Pledge ceremony</div></div>
+        <div class="pi" onclick="openLb('https://picsum.photos/seed/lday5/400/300')"><img src="https://picsum.photos/seed/lday5/400/300" alt="" loading="lazy"><div class="pi-cap">Group photo</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox" onclick="closeLb()">
+  <button class="lb-close" onclick="closeLb()">✕</button>
+  <img id="lb-img" src="" alt="">
+</div>
+
+<!-- ══ CONTACT ══ -->
+<div class="page" id="contact">
+  <div class="container">
+    <div class="pg-header">
+      <h1>Contact Us</h1>
+      <p>Reach our CSR team for queries, partnerships, volunteer opportunities, or event collaborations.</p>
+      <div class="pg-rule"></div>
+    </div>
+    <div class="contact-wrap">
+      <div class="c-info">
+        <h2>Get in Touch</h2>
+        <p>We welcome community partnerships, NGO collaborations, volunteer opportunities, and media enquiries related to our CSR programs.</p>
+        <div class="info-rows">
+          <div class="i-row">
+            <div class="i-icon"><svg width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg></div>
+            <div class="i-text"><strong>Address</strong><span>K. Girdharlal, Mumbai, India</span></div>
+          </div>
+          <div class="i-row">
+            <div class="i-icon"><svg width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
+            <div class="i-text"><strong>Email</strong><span>csr@kgirdharlal.com</span></div>
+          </div>
+          <div class="i-row">
+            <div class="i-icon"><svg width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg></div>
+            <div class="i-text"><strong>Phone</strong><span>+91 00000 00000</span></div>
+          </div>
+          <div class="i-row">
+            <div class="i-icon"><svg width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+            <div class="i-text"><strong>CSR Desk Hours</strong><span>Monday – Friday · 9:00 AM – 6:00 PM</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="c-form">
+        <h2>Send Us a Message</h2>
+        <div class="form-2col">
+          <div class="fg"><label>First Name</label><input type="text" placeholder="First name"></div>
+          <div class="fg"><label>Last Name</label><input type="text" placeholder="Last name"></div>
+        </div>
+        <div class="fg"><label>Email Address</label><input type="email" placeholder="your@email.com"></div>
+        <div class="fg">
+          <label>Subject</label>
+          <select>
+            <option value="">Select a topic</option>
+            <option>Event Registration Query</option>
+            <option>Partnership / Collaboration</option>
+            <option>Volunteer Opportunity</option>
+            <option>Newsletter Subscription</option>
+            <option>General Enquiry</option>
+          </select>
+        </div>
+        <div class="fg"><label>Message</label><textarea placeholder="How can we help you?"></textarea></div>
+        <button class="btn-send">Send Message</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ LOGIN ══ -->
+<div class="page" id="login">
+  <div class="login-wrap">
+    <div class="login-card">
+      <div class="login-brand">K. <span>Girdharlal</span></div>
+      <div class="login-sub">ESG &amp; GHG Dashboard<br>Internal Employee Access</div>
+      <div class="login-form">
+        <div class="lg"><label>Employee ID / Email</label><input type="email" placeholder="employee@kgirdharlal.com"></div>
+        <div class="lg"><label>Password</label><input type="password" placeholder="••••••••"></div>
+        <button class="btn-signin">Sign In to Dashboard</button>
+      </div>
+      <div class="login-note">This portal is for authorised K. Girdharlal employees only. For access issues, contact your IT administrator.</div>
+    </div>
+  </div>
+</div>
+
+<script>
+function show(id,btn){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  if(btn)btn.classList.add('active');
+  window.scrollTo(0,0);
+}
+function toggleMonth(item){item.classList.toggle('open')}
+function setTab(btn){
+  document.querySelectorAll('.g-tab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
+function openLb(src){
+  document.getElementById('lb-img').src=src;
+  document.getElementById('lightbox').classList.add('open');
+}
+function closeLb(){document.getElementById('lightbox').classList.remove('open')}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb()});
+</script>
+</body>
+</html>

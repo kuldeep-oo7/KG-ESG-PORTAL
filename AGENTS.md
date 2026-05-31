@@ -38,8 +38,20 @@ For quick back-and-forth messages between agents, use `COORDINATION_CHAT.md`. Ke
 | Codex | Social Add Activity full-page audit | `portal/src/pages/Social.jsx`, `AGENTS.md` | COMPLETE | 2026-05-25 |
 | Codex | CSR Add Activity button/functionality audit | `portal/src/pages/CSR.jsx`, `AGENTS.md` | COMPLETE | 2026-05-26 |
 | Codex | Public pre-login page + newsletter section | `portal/src/App.jsx`, `portal/src/pages/PublicHome.jsx`, `portal/src/pages/Login.jsx`, `portal/src/components/Navbar.jsx`, `AGENTS.md` | COMPLETE | 2026-05-27 |
+| Antigravity | GHG Recalculation & Dropdowns Theme Unification | `portal/src/lib/calculations.js`, `portal/src/store/GHGContext.jsx`, `portal/src/pages/GHGReports.jsx`, `portal/src/pages/site/Scope2Renewable.jsx`, `database/calculation_engine.py`, `portal/src/pages/CSR.jsx`, `portal/src/pages/Social.jsx`, `portal/src/pages/Governance.jsx`, `portal/src/pages/WomenWellbeing.jsx`, `portal/src/pages/Sites.jsx`, `portal/src/pages/PublicHome.jsx`, `portal/src/pages/site/IntensityMetrics.jsx`, `portal/src/components/AssessmentForm.jsx`, `portal/src/components/SiteLayout.jsx` | VERIFIED | 2026-05-30 |
 
 ## Handoff Log
+
+### 2026-05-30 - Antigravity GHG Recalculation & Theme / Dropdowns Fix
+
+- Unified input field, textarea, and select dropdown focuses and hover borders across the portal to use the primary dark green `#064E3B` theme and transition animations, replacing all inconsistent `#10B981` (emerald green) styling on `CSR.jsx`, `Social.jsx`, `Governance.jsx`, `WomenWellbeing.jsx`, `Sites.jsx`, `PublicHome.jsx`, `IntensityMetrics.jsx`, `AssessmentForm.jsx`, and `SiteLayout.jsx`.
+- Resolved all compiler and pre-existing unused variable ESLint warnings/errors; `npm run build` and `npm run lint` now compile cleanly with **0 errors and 0 warnings**.
+- Corrected the missing emission factors for gaseous/liquid fuels (CNG, LNG, LPG, Natural Gas) across units (`litres`, `kWh`, `kWh (Net CV)`, `kWh (Gross CV)`, etc.).
+- Added vehicle and fugitive aliases (`Diesel - Average car/km`, `R601 = pentane`, etc.) to both JavaScript (`calculations.js`) and Python (`calculation_engine.py`) calculators.
+- Updated `calcStationary`, `calcMobile`, and `calcFugitive` to be case-insensitive, space-trimmed, and map generic `"kWh"` unit to standard Net CV.
+- Implemented `recalculateAllEntries` helper in `GHGContext.jsx` to automatically correct any stored logs (or seeds) with `ef = 0` on startup while preserving historical seed values.
+- Excluded renewable energy generation from gross Scope 2 total inside `getScopeTotal` to match original report definitions.
+- Wired live offset calculations in the Avoided Emissions card on the reports page (`GHGReports.jsx`) and dynamically updated `Scope2Renewable.jsx` to store offset EFs and tCO2e values for new entries.
 
 ### 2026-05-27 - Codex public newsletter section
 

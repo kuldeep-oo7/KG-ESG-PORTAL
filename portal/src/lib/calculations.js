@@ -5,88 +5,172 @@
 // ── Scope 1: Stationary Combustion ────────────────────────────────────────────
 // Key: `${fuel}/${unit}` → kg CO2e per unit
 export const EF_STATIONARY = {
-  // Gaseous fuels
-  'Butane/litres': 1.74533, 'Butane/tonnes': 3033.38067,
-  'Butane/kWh (Net CV)': 0.24107, 'Butane/kWh (Gross CV)': 0.22241,
-  'CNG/tonnes': 2575.46441,
-  'LNG/tonnes': 2603.30441,
-  'LPG/tonnes': 2939.36095,
-  'Natural gas/tonnes': 2575.46441,
-  'Natural gas (100% mineral blend)/tonnes': 2603.30441,
-  'Other petroleum gas/tonnes': 2578.24647,
-  'Propane/litres': 1.54358, 'Propane/tonnes': 2997.63233,
-  'Propane/kWh (Net CV)': 0.23258, 'Propane/kWh (Gross CV)': 0.2141,
-  // Liquid fuels
-  'Aviation spirit/tonnes': 3193.6948,
-  'Aviation turbine fuel/tonnes': 3178.3652,
-  'Burning oil/tonnes': 3165.04181,
-  'Diesel (average biofuel blend)/tonnes': 3087.94462,
-  'Diesel (100% mineral diesel)/tonnes': 3203.91143,
-  'Fuel oil/tonnes': 3228.89019,
-  'Gas oil/tonnes': 3226.57859,
-  'Lubricants/litres': 2.74934, 'Lubricants/tonnes': 3180.99992,
-  'Lubricants/kWh (Net CV)': 0.281, 'Lubricants/kWh (Gross CV)': 0.26414,
-  'Marine fuel oil/tonnes': 3154.75334,
-  'Marine gas oil/tonnes': 3245.30441,
-  'Naphtha/litres': 2.11894, 'Naphtha/tonnes': 3142.3789,
-  'Naphtha/kWh (Net CV)': 0.24891, 'Naphtha/kWh (Gross CV)': 0.23647,
-  'Petrol (average biofuel blend)/tonnes': 2772.97935,
-  'Petrol (100% mineral petrol)/tonnes': 3154.08213,
-  'Processed fuel oils - distillate oil/tonnes': 3226.57859,
-  'Processed fuel oils - residual oil/tonnes': 3228.89019,
-  'Refinery miscellaneous/tonnes': 2944.32093,
-  'Waste oils/litres': 2.74924, 'Waste oils/tonnes': 3219.37916,
-  'Waste oils/kWh (Net CV)': 0.27459, 'Waste oils/kWh (Gross CV)': 0.25641,
-  // Solid fuels
-  'Coal (domestic)/tonnes': 2904.95234,
-  'Coal (electricity generation)/tonnes': 2225.22448,
-  'Coal (electricity generation - home produced coal only)/tonnes': 2221.7467,
-  'Coal (industrial)/tonnes': 2395.28994,
-  'Coking coal/tonnes': 3164.65002,
-  'Petroleum coke/tonnes': 3386.57168,
-  // Bioenergy (litres)
-  'Bioethanol/litres': 0.00901,
-  'Biodiesel ME/litres': 0.16751,
-  'Biodiesel ME (from used cooking oil)/litres': 0.16751,
-  'Biodiesel ME (from tallow)/litres': 0.16751,
-  'Biodiesel HVO/litres': 0.03558,
-  'Biopropane/litres': 0.00213,
-  'Development diesel/litres': 0.03705,
-  'Development petrol/litres': 0.01402,
-  'Off road biodiesel/litres': 0.16751,
-  'Methanol (bio)/litres': 0.00669,
-  'Avtur (renewable)/litres': 0.02531,
-  // Biomass (tonnes)
-  'Wood logs/tonnes': 46.98508,
-  'Wood chips/tonnes': 43.43964,
-  'Wood pellets/tonnes': 55.19389,
-  'Grass/straw/tonnes': 47.35709,
-  // Biogas (tonnes)
-  'Biogas/tonnes': 1.24314,
-  'Landfill gas/tonnes': 0.69696,
-  // Per-litre EFs (Defra 2025) — needed when user selects "litres" as unit
-  'Diesel (average biofuel blend)/litres': 2.57082,
-  'Diesel (100% mineral diesel)/litres': 2.67137,
-  'Petrol (average biofuel blend)/litres': 2.27412,
-  'Petrol (100% mineral petrol)/litres': 2.34232,
-  'LPG/litres': 1.54835,
-  'Gas oil/litres': 2.54697,
-  'Fuel oil/litres': 2.60396,
-  'Marine fuel oil/litres': 2.54428,
-  'Marine gas oil/litres': 2.54697,
-  'Burning oil/litres': 2.54054,
-  'Aviation spirit/litres': 2.26404,
-  'Aviation turbine fuel/litres': 2.52981,
-  'Refinery miscellaneous/litres': 2.37093,
-  'Processed fuel oils - distillate oil/litres': 2.54697,
-  'Processed fuel oils - residual oil/litres': 2.60396,
-  // Per-cubic-metre EFs (Defra 2025) — for gaseous fuels
-  'Natural gas/cubic metres': 2.06672,
-  'Natural gas (100% mineral blend)/cubic metres': 2.09016,
-  'Butane/cubic metres': 2.82553,
-  'Propane/cubic metres': 2.99601,
-  'LPG/cubic metres': 2.94476,
-  'Other petroleum gas/cubic metres': 2.08745,
+  "Aviation spirit/kWh (Gross CV)": 0.24382,
+  "Aviation spirit/kWh (Net CV)": 0.25666,
+  "Aviation spirit/litres": 2.33116,
+  "Aviation spirit/tonnes": 3193.6948,
+  "Aviation turbine fuel/kWh (Gross CV)": 0.24758,
+  "Aviation turbine fuel/kWh (Net CV)": 0.26061,
+  "Aviation turbine fuel/litres": 2.54269,
+  "Aviation turbine fuel/tonnes": 3178.3652,
+  "Avtur (renewable)/GJ": 0.7234,
+  "Avtur (renewable)/kg": 0.03179,
+  "Avtur (renewable)/litres": 0.02531,
+  "Biodiesel HVO/GJ": 1.03677,
+  "Biodiesel HVO/kg": 0.04562,
+  "Biodiesel HVO/litres": 0.03558,
+  "Biodiesel ME (from tallow)/GJ": 5.05961,
+  "Biodiesel ME (from tallow)/kg": 0.18822,
+  "Biodiesel ME (from tallow)/litres": 0.16751,
+  "Biodiesel ME (from used cooking oil)/GJ": 5.05961,
+  "Biodiesel ME (from used cooking oil)/kg": 0.18822,
+  "Biodiesel ME (from used cooking oil)/litres": 0.16751,
+  "Biodiesel ME/GJ": 5.05961,
+  "Biodiesel ME/kg": 0.18822,
+  "Biodiesel ME/litres": 0.16751,
+  "Bioethanol/GJ": 0.42339,
+  "Bioethanol/kg": 0.01135,
+  "Bioethanol/litres": 0.00901,
+  "Biogas/kWh": 0.00022,
+  "Biogas/tonnes": 1.24314,
+  "Biomethane (compressed)/GJ": 0.10625,
+  "Biomethane (compressed)/kg": 0.00521,
+  "Biomethane (liquified)/GJ": 0.10625,
+  "Biomethane (liquified)/kg": 0.00521,
+  "Biopropane/GJ": 0.08952,
+  "Biopropane/kg": 0.00415,
+  "Biopropane/litres": 0.00213,
+  "Burning oil/kWh (Gross CV)": 0.24677,
+  "Burning oil/kWh (Net CV)": 0.25975,
+  "Burning oil/litres": 2.54016,
+  "Burning oil/tonnes": 3165.04181,
+  "Butane/kWh (Gross CV)": 0.22241,
+  "Butane/kWh (Net CV)": 0.24107,
+  "Butane/litres": 1.74533,
+  "Butane/tonnes": 3033.38067,
+  "CNG/kWh (Gross CV)": 0.18296,
+  "CNG/kWh (Net CV)": 0.2027,
+  "CNG/litres": 0.4507,
+  "CNG/tonnes": 2575.46441,
+  "Coal (domestic)/kWh (Gross CV)": 0.34721,
+  "Coal (domestic)/kWh (Net CV)": 0.36549,
+  "Coal (domestic)/tonnes": 2904.95234,
+  "Coal (electricity generation - home produced coal only)/kWh (Gross CV)": 0.31939,
+  "Coal (electricity generation - home produced coal only)/kWh (Net CV)": 0.33621,
+  "Coal (electricity generation - home produced coal only)/tonnes": 2221.7467,
+  "Coal (electricity generation)/kWh (Gross CV)": 0.31939,
+  "Coal (electricity generation)/kWh (Net CV)": 0.33621,
+  "Coal (electricity generation)/tonnes": 2225.22448,
+  "Coal (industrial)/kWh (Gross CV)": 0.32246,
+  "Coal (industrial)/kWh (Net CV)": 0.33944,
+  "Coal (industrial)/tonnes": 2395.28994,
+  "Coking coal/kWh (Gross CV)": 0.3579,
+  "Coking coal/kWh (Net CV)": 0.37675,
+  "Coking coal/tonnes": 3164.65002,
+  "Development diesel/GJ": 1.03677,
+  "Development diesel/kg": 0.04461,
+  "Development diesel/litres": 0.03705,
+  "Development petrol/GJ": 0.42339,
+  "Development petrol/kg": 0.0189,
+  "Development petrol/litres": 0.01402,
+  "Diesel (100% mineral diesel)/kWh (Gross CV)": 0.25199,
+  "Diesel (100% mineral diesel)/kWh (Net CV)": 0.26808,
+  "Diesel (100% mineral diesel)/litres": 2.66155,
+  "Diesel (100% mineral diesel)/tonnes": 3203.91143,
+  "Diesel (average biofuel blend)/kWh (Gross CV)": 0.24411,
+  "Diesel (average biofuel blend)/kWh (Net CV)": 0.25953,
+  "Diesel (average biofuel blend)/litres": 2.57082,
+  "Diesel (average biofuel blend)/tonnes": 3087.94462,
+  "Fuel oil/kWh (Gross CV)": 0.26813,
+  "Fuel oil/kWh (Net CV)": 0.28523,
+  "Fuel oil/litres": 3.17492,
+  "Fuel oil/tonnes": 3228.89019,
+  "Gas oil/kWh (Gross CV)": 0.2565,
+  "Gas oil/kWh (Net CV)": 0.27288,
+  "Gas oil/litres": 2.75541,
+  "Gas oil/tonnes": 3226.57859,
+  "Grass/straw/kWh": 0.01273,
+  "Grass/straw/tonnes": 47.35709,
+  "LNG/kWh (Gross CV)": 0.18494,
+  "LNG/kWh (Net CV)": 0.20489,
+  "LNG/litres": 1.17797,
+  "LNG/tonnes": 2603.30441,
+  "LPG/kWh (Gross CV)": 0.2145,
+  "LPG/kWh (Net CV)": 0.23032,
+  "LPG/litres": 1.55713,
+  "LPG/tonnes": 2939.36095,
+  "Landfill gas/kWh": 0.0002,
+  "Landfill gas/tonnes": 0.69696,
+  "Lubricants/kWh (Gross CV)": 0.26414,
+  "Lubricants/kWh (Net CV)": 0.281,
+  "Lubricants/litres": 2.74934,
+  "Lubricants/tonnes": 3180.99992,
+  "Marine fuel oil/kWh (Gross CV)": 0.26197,
+  "Marine fuel oil/kWh (Net CV)": 0.27869,
+  "Marine fuel oil/litres": 3.10202,
+  "Marine fuel oil/tonnes": 3154.75334,
+  "Marine gas oil/kWh (Gross CV)": 0.25798,
+  "Marine gas oil/kWh (Net CV)": 0.27445,
+  "Marine gas oil/litres": 2.77139,
+  "Marine gas oil/tonnes": 3245.30441,
+  "Methanol (bio)/GJ": 0.42339,
+  "Methanol (bio)/kg": 0.00844,
+  "Methanol (bio)/litres": 0.00669,
+  "Naphtha/kWh (Gross CV)": 0.23647,
+  "Naphtha/kWh (Net CV)": 0.24891,
+  "Naphtha/litres": 2.11894,
+  "Naphtha/tonnes": 3142.3789,
+  "Natural gas (100% mineral blend)/cubic metres": 2.08906,
+  "Natural gas (100% mineral blend)/kWh (Gross CV)": 0.18494,
+  "Natural gas (100% mineral blend)/kWh (Net CV)": 0.20489,
+  "Natural gas (100% mineral blend)/tonnes": 2603.30441,
+  "Natural gas/cubic metres": 2.06672,
+  "Natural gas/kWh (Gross CV)": 0.18296,
+  "Natural gas/kWh (Net CV)": 0.2027,
+  "Natural gas/tonnes": 2575.46441,
+  "Off road biodiesel/GJ": 5.05961,
+  "Off road biodiesel/kg": 0.18822,
+  "Off road biodiesel/litres": 0.16751,
+  "Other petroleum gas/kWh (Gross CV)": 0.18323,
+  "Other petroleum gas/kWh (Net CV)": 0.19917,
+  "Other petroleum gas/litres": 0.94442,
+  "Other petroleum gas/tonnes": 2578.24647,
+  "Petrol (100% mineral petrol)/kWh (Gross CV)": 0.24159,
+  "Petrol (100% mineral petrol)/kWh (Net CV)": 0.25431,
+  "Petrol (100% mineral petrol)/litres": 2.33984,
+  "Petrol (100% mineral petrol)/tonnes": 3154.08213,
+  "Petrol (average biofuel blend)/kWh (Gross CV)": 0.21956,
+  "Petrol (average biofuel blend)/kWh (Net CV)": 0.23181,
+  "Petrol (average biofuel blend)/litres": 2.06916,
+  "Petrol (average biofuel blend)/tonnes": 2772.97935,
+  "Petroleum coke/kWh (Gross CV)": 0.34092,
+  "Petroleum coke/kWh (Net CV)": 0.35887,
+  "Petroleum coke/tonnes": 3386.57168,
+  "Processed fuel oils - distillate oil/kWh (Gross CV)": 0.2565,
+  "Processed fuel oils - distillate oil/kWh (Net CV)": 0.27288,
+  "Processed fuel oils - distillate oil/litres": 2.75541,
+  "Processed fuel oils - distillate oil/tonnes": 3226.57859,
+  "Processed fuel oils - residual oil/kWh (Gross CV)": 0.26813,
+  "Processed fuel oils - residual oil/kWh (Net CV)": 0.28523,
+  "Processed fuel oils - residual oil/litres": 3.17492,
+  "Processed fuel oils - residual oil/tonnes": 3228.89019,
+  "Propane/kWh (Gross CV)": 0.2141,
+  "Propane/kWh (Net CV)": 0.23258,
+  "Propane/litres": 1.54358,
+  "Propane/tonnes": 2997.63233,
+  "Refinery miscellaneous/kWh (Gross CV)": 0.24663,
+  "Refinery miscellaneous/kWh (Net CV)": 0.25961,
+  "Refinery miscellaneous/tonnes": 2944.32093,
+  "Waste oils/kWh (Gross CV)": 0.25641,
+  "Waste oils/kWh (Net CV)": 0.27459,
+  "Waste oils/litres": 2.74924,
+  "Waste oils/tonnes": 3219.37916,
+  "Wood chips/kWh": 0.0115,
+  "Wood chips/tonnes": 43.43964,
+  "Wood logs/kWh": 0.0115,
+  "Wood logs/tonnes": 46.98508,
+  "Wood pellets/kWh": 0.0115,
+  "Wood pellets/tonnes": 55.19389,
 }
 
 // ── Scope 1: Mobile Combustion ─────────────────────────────────────────────────
@@ -126,6 +210,18 @@ export const EF_MOBILE = {
   'HGV - Articulated (>33t)/km': 0.748,
   'HGV - All artics/km': 0.74715,
   'HGV - All HGVs/km': 0.77175,
+
+  // Aliases for user/seed data compatibility
+  'Diesel - Average car/km': 0.17304,
+  'Diesel - Average car/miles': 0.27854,
+  'Hybrid - Small car/km': 0.11413,
+  'Hybrid - Small car/miles': 0.18367,
+  'Petrol - Average car/km': 0.16272,
+  'Petrol - Average car/miles': 0.26187,
+  'Petrol - Large car/km': 0.27156,
+  'Petrol - Large car/miles': 0.43702,
+  'Petrol - Small car/km': 0.14308,
+  'Petrol - Small car/miles': 0.23027,
 }
 
 // ── Scope 1: Fugitive Emissions ────────────────────────────────────────────────
@@ -159,8 +255,8 @@ export const EF_FUGITIVE = {
   'HFE-43-10pccc124 (H-Galden1040x)': 2820, 'HFE-236ca12 (HG-10)': 5350,
   'HFE-338pcc13 (HG-01)': 2910, 'Trifluoromethyl sulphur pentafluoride': 17400,
   'R290 = propane': 0.06, 'R600 = butane': 0.006, 'R600A = isobutane': 3,
-  'R601 = n-pentane': 5, 'R601A = isopentane': 5,
-  'R170 = ethane': 0.437, 'R1270 = propylene': 2,
+  'R601 = n-pentane': 5, 'R601 = pentane': 5, 'R601A = isopentane': 5,
+  'R170 = ethane': 0.437, 'R1270 = propylene': 2, 'R1270 = propene': 2,
   'R1234yf*': 1, 'R1234ze*': 1,
   'R401A': 1130, 'R401B': 1236, 'R401C': 876,
   'R402A': 2571, 'R402B': 2261,
@@ -272,26 +368,46 @@ export const EF_HOTEL = {
 // ── Scope 3: Purchased Goods ──────────────────────────────────────────────────
 // kg CO2e per tonne (primary production / open-loop)
 export const EF_GOODS = {
-  'Aggregates': 7.7931, 'Average construction': 75.0067, 'Asbestos': 27.0,
-  'Asphalt': 39.2125, 'Bricks': 241.7931, 'Concrete': 118.7931,
-  'Insulation': 1861.7931, 'Plasterboard': 120.05,
-  'Metals': 3824.0934, 'Metal: aluminium cans and foil': 7498.5931,
-  'Metal: mixed cans': 4382.7931, 'Metal: scrap metal': 3824.0934,
-  'Metal: steel cans': 2953.5931,
-  'Plastics: average plastics': 3116.0934, 'Plastics: average plastic film': 2666.5931,
-  'Plastics: average plastic rigid': 3357.5931, 'Plastics: HDPE': 2890.5931,
-  'Plastics: LDPE and LLDPE': 2666.5931, 'Plastics: PET': 4002.5931,
-  'Plastics: PP': 2977.5931, 'Plastics: PS': 4140.5931, 'Plastics: PVC': 3276.5931,
-  'Paper and board: paper': 1286.5934, 'Paper and board: board': 1032.5931,
-  'Paper and board: mixed': 1207.5931, 'Books': 1286.5934,
-  'Electrical items - IT': 30640.5931, 'Electrical items - large': 26588.5931,
-  'Electrical items - small': 52760.5931, 'Electrical items - fridges and freezers': 11750.5931,
-  'Food and drink': 3817.7931, 'Compost derived from food and garden waste': 606.5931,
-  'Compost derived from garden waste': 526.5931,
-  'Clothing': 28384.5931, 'Glass': 1385.5931, 'Mineral oil': 1401.0,
-  'Soils': 0, 'Tyres': 3832.5931, 'Wood': 1503.5931,
-  'Batteries - Alkaline': 8765.5931, 'Batteries - Li ion': 12000,
-  'Batteries - NiMh': 9500,
+  "Aggregates": 7.79306,
+  "Asbestos": 27.0,
+  "Asphalt": 39.21249,
+  "Average construction": 75.00675,
+  "Batteries - Alkaline": 4633.47826,
+  "Batteries - Li ion": 6308.0,
+  "Batteries - NiMh": 28380.0,
+  "Bricks": 241.79306,
+  "Clothing": 22310.0,
+  "Compost derived from food and garden waste": 114.90473,
+  "Compost derived from garden waste": 112.08811,
+  "Concrete": 118.79306,
+  "Electrical items - IT": 24865.47556,
+  "Electrical items - fridges and freezers": 4363.33333,
+  "Electrical items - large": 3267.0,
+  "Electrical items - small": 5647.94563,
+  "Food and drink": 3701.40359,
+  "Glass": 1402.76667,
+  "Insulation": 1861.79306,
+  "Metal: aluminium cans and foil (excl. forming)": 9115.90131,
+  "Metal: mixed cans": 5114.62131,
+  "Metal: scrap metal": 3473.11953,
+  "Metal: steel cans": 2863.90131,
+  "Metals": 3824.09335,
+  "Mineral oil": 1401.0,
+  "Paper and board: board": 1199.72542,
+  "Paper and board: mixed": 1288.50358,
+  "Paper and board: paper": 1345.0779,
+  "Plasterboard": 120.05,
+  "Plastics: HDPE (incl. forming)": 3095.15524,
+  "Plastics: LDPE and LLDPE (incl. forming)": 2965.0779,
+  "Plastics: PET (incl. forming)": 3863.90131,
+  "Plastics: PP (incl. forming)": 2577.57172,
+  "Plastics: PS (incl. forming)": 4376.80391,
+  "Plastics: PVC (incl. forming)": 2944.75615,
+  "Plastics: average plastic film": 2916.50513,
+  "Plastics: average plastic rigid": 3354.28062,
+  "Plastics: average plastics": 3172.49932,
+  "Tyres": 3335.5719,
+  "Wood": 269.50416,
 }
 
 // ── Scope 3: Waste Disposal ───────────────────────────────────────────────────
@@ -317,19 +433,60 @@ export const EF_TD_LOSS = 0.01853  // kg CO2e per kWh (UK grid T&D 2025)
 // ── Core calculators ──────────────────────────────────────────────────────────
 
 export function calcStationary(type, unit, consumption) {
-  const key = `${type}/${unit}`
-  const ef = EF_STATIONARY[key] ?? 0
+  const cleanType = (type || '').trim()
+  const cleanUnit = (unit || '').trim()
+  const key = `${cleanType}/${cleanUnit}`
+  
+  let ef = EF_STATIONARY[key]
+  
+  if (ef === undefined) {
+    if (cleanUnit.toLowerCase() === 'kwh') {
+      ef = EF_STATIONARY[`${cleanType}/kWh (Net CV)`] ?? EF_STATIONARY[`${cleanType}/kWh (Gross CV)`]
+    } else {
+      const lowerKey = key.toLowerCase()
+      const match = Object.keys(EF_STATIONARY).find(k => k.toLowerCase() === lowerKey)
+      if (match) {
+        ef = EF_STATIONARY[match]
+      }
+    }
+  }
+  
+  if (ef === undefined) ef = 0
   return { ef, tco2e: +(consumption * ef / 1000).toFixed(6) }
 }
 
 export function calcMobile(type, unit, consumption) {
-  const key = `${type}/${unit}`
-  const ef = EF_MOBILE[key] ?? 0
+  const cleanType = (type || '').trim()
+  const cleanUnit = (unit || '').trim()
+  const key = `${cleanType}/${cleanUnit}`
+  
+  let ef = EF_MOBILE[key]
+  
+  if (ef === undefined) {
+    const lowerKey = key.toLowerCase()
+    const match = Object.keys(EF_MOBILE).find(k => k.toLowerCase() === lowerKey)
+    if (match) {
+      ef = EF_MOBILE[match]
+    }
+  }
+  
+  if (ef === undefined) ef = 0
   return { ef, tco2e: +(consumption * ef / 1000).toFixed(6) }
 }
 
 export function calcFugitive(refrigerant, kgLeaked) {
-  const gwp = EF_FUGITIVE[refrigerant] ?? 0
+  const cleanRef = (refrigerant || '').trim()
+  let gwp = EF_FUGITIVE[cleanRef]
+  
+  if (gwp === undefined) {
+    const lowerRef = cleanRef.toLowerCase()
+    const match = Object.keys(EF_FUGITIVE).find(k => k.toLowerCase() === lowerRef)
+    if (match) {
+      gwp = EF_FUGITIVE[match]
+    }
+  }
+  
+  if (gwp === undefined) gwp = 0
   return { ef: gwp, tco2e: +(kgLeaked * gwp / 1000).toFixed(6) }
 }
 
@@ -397,21 +554,22 @@ export function calcWaste(method, weightKg) {
 }
 
 export function calcFood(foodType, count) {
+  // Factors from Food_Consumption_Scope3_Table.xlsx (kg CO2e per unit)
   const EF_FOOD = {
-    '1 standard breakfast': 2.5,
-    '1 gourmet breakfast': 3.5,
-    '1 cold or hot snack': 1.0,
-    '1 average meal': 3.7,
-    'Non-alcoholic beverage': 0.3,
-    'Alcoholic beverage': 0.8,
-    '1 hot snack (burger + frites)': 4.2,
-    '1 sandwich': 1.5,
-    'Meal, vegan': 1.8,
-    'Meal, vegetarian': 2.7,
-    'Meal, with beef': 6.0,
-    'Meal, with chicken': 3.5,
+    '1 standard breakfast':         0.84,
+    '1 gourmet breakfast':          2.33,
+    '1 cold or hot snack':          2.02,
+    '1 average meal':               4.7,
+    'Non-alcoholic beverage':       0.2,
+    'Alcoholic beverage':           1.87,
+    '1 hot snack (burger + fries)': 2.77,
+    '1 sandwich':                   1.27,
+    'Meal, vegan':                  1.69,
+    'Meal, vegetarian':             2.85,
+    'Meal, with beef':              6.93,
+    'Meal, with chicken':           3.39,
   }
-  const ef = EF_FOOD[foodType] ?? 3.5
+  const ef = EF_FOOD[foodType] ?? 4.7
   return { ef, tco2e: +(count * ef / 1000).toFixed(6) }
 }
 

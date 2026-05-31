@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+﻿import { useState, useRef } from 'react'
 import { Upload, Mail, Phone, Clock } from 'lucide-react'
 
 export default function Help() {
@@ -28,21 +28,21 @@ export default function Help() {
   }
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] px-6 py-8">
+    <div className="min-h-screen bg-[#F8FAFC] px-8 py-6">
       {/* Breadcrumb */}
-      <p className="text-xs text-slate-400 mb-4">Dashboard &gt; Help</p>
+      <p className="text-xs text-slate-400 mb-3">Dashboard &gt; <span className="text-[#064E3B] font-semibold">Help</span></p>
 
       {/* Heading */}
       <h1
-        className="text-3xl font-bold text-slate-900 mb-8"
+        className="text-4xl font-bold text-slate-900 mb-8"
         style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}
       >
         How can we help?
       </h1>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full">
         {/* Left column — help form */}
-        <div className="lg:col-span-2 bg-white rounded-2xl border border-slate-200 p-8 shadow-sm">
+        <div className="lg:col-span-2 bg-white rounded-2xl border border-slate-200 p-8 shadow-sm border-l-4 border-l-[#064E3B]">
           {submitted ? (
             <div className="flex flex-col items-center justify-center py-16 text-center">
               <div className="w-16 h-16 rounded-full bg-[#E6F4F1] flex items-center justify-center mb-4">
@@ -129,7 +129,7 @@ export default function Help() {
         </div>
 
         {/* Right column — contact card */}
-        <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm h-fit">
+        <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm h-fit border-l-4 border-l-[#064E3B]">
           <h2
             className="text-xl font-bold text-slate-900 mb-6"
             style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}
@@ -178,3 +178,4 @@ export default function Help() {
     </div>
   )
 }
+

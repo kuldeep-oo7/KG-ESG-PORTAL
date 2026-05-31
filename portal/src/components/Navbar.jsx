@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { Settings, Search, Bell, LogOut, User, HelpCircle } from 'lucide-react'
-import logoImg from '../assets/logo.jfif'
+import logoImg from '../assets/logo-full.png'
 
 const NAV_ITEMS = [
   { label: 'Dashboard',   to: '/dashboard',  end: true },
@@ -45,12 +45,12 @@ function SettingsDropdown({ onClose }) {
   )
 }
 
-function ProfileDropdown({ onClose, navigate }) {
+function ProfileDropdown({ user, onClose, navigate }) {
   return (
     <div className="absolute right-0 top-10 w-56 bg-white border border-slate-200 rounded-xl shadow-lg z-50 py-1">
       <div className="px-4 py-3 border-b border-slate-100">
-        <p className="text-sm font-semibold text-slate-800">K. Girdharlal</p>
-        <p className="text-xs text-slate-500 mt-0.5">ketanbheda@kgirdharlal.com</p>
+        <p className="text-sm font-semibold text-slate-800 truncate">{user?.name || 'K. Girdharlal'}</p>
+        <p className="text-xs text-slate-500 mt-0.5 truncate">{user?.email || 'ketanbheda@kgirdharlal.com'}</p>
       </div>
       <button
         onClick={onClose}
@@ -68,7 +68,7 @@ function ProfileDropdown({ onClose, navigate }) {
       </button>
       <div className="border-t border-slate-100 mt-1" />
       <button
-        onClick={() => { onClose(); navigate('/') }}
+        onClick={() => { localStorage.removeItem('kg_current_user_v1'); onClose(); navigate('/') }}
         className="w-full flex items-center gap-3 px-4 py-2.5 text-sm text-red-500 hover:bg-red-50 transition-colors text-left"
       >
         <LogOut className="w-4 h-4" />
@@ -84,30 +84,37 @@ export default function Navbar() {
   const [showProfile, setShowProfile] = useState(false)
   const settingsRef = useRef(null)
   const profileRef  = useRef(null)
+  const [user] = useState(() => {
+    const raw = localStorage.getItem('kg_current_user_v1')
+    if (raw) {
+      try {
+        return JSON.parse(raw)
+      } catch {
+        // ignore
+      }
+    }
+    return { name: 'K. Girdharlal', email: 'ketanbheda@kgirdharlal.com' }
+  })
 
   useOutsideClick(settingsRef, () => setShowSettings(false))
   useOutsideClick(profileRef,  () => setShowProfile(false))
+
+  const initials = user?.name
+    ? user.name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase()
+    : 'K'
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
       <div className="flex items-center gap-6 px-6 h-16 max-w-[1440px] mx-auto w-full">
 
         {/* Logo + brand name */}
-        <NavLink to="/dashboard" className="flex items-center gap-2.5 shrink-0 no-underline">
+        <NavLink to="/dashboard" className="flex items-center shrink-0 no-underline">
           <img
             src={logoImg}
             alt="K.GIRDHARLAL"
             className="w-auto object-contain"
             style={{ height: 44 }}
           />
-          <div className="flex flex-col leading-none">
-            <span className="font-bold text-[#064E3B] text-sm tracking-wide" style={{ fontFamily: "'Hanken Grotesk', sans-serif" }}>
-              K.GIRDHARLAL
-            </span>
-            <span className="text-[9px] uppercase tracking-widest text-slate-400 mt-0.5">
-              ESG Portal
-            </span>
-          </div>
         </NavLink>
 
         {/* Nav links */}
@@ -165,11 +172,11 @@ export default function Navbar() {
               title="Profile"
             >
               <div className="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold bg-[#064E3B] ring-2 ring-[#064E3B]/20 group-hover:ring-[#064E3B]/40 transition-all">
-                K
+                {initials}
               </div>
             </button>
             {showProfile && (
-              <ProfileDropdown onClose={() => setShowProfile(false)} navigate={navigate} />
+              <ProfileDropdown user={user} onClose={() => setShowProfile(false)} navigate={navigate} />
             )}
           </div>
         </div>

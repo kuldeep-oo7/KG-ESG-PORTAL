@@ -1,0 +1,22 @@
+- generic [ref=e3] [box=0,0,1905,1304]:
+  - banner [ref=e4] [box=0,0,1905,64]:
+    - generic [ref=e5] [box=313,0,1280,64]:
+      - button "K.GIRDHARLAL K. Girdharlal CSR & Sustainability" [ref=e6] [cursor=pointer] [box=337,12,172,40]:
+        - img "K.GIRDHARLAL" [ref=e7] [box=337,12,40,40]
+        - generic [ref=e8] [box=389,15,120,34]
+      - navigation [ref=e11] [box=727,14,545,36]:
+        - button "Upcoming Events" [ref=e12] [cursor=pointer] [box=727,14,143,36]
+        - button "CSR Calendar" [ref=e13] [cursor=pointer] [box=874,14,117,36]
+        - button "Newsletter" [ref=e14] [cursor=pointer] [box=995,14,98,36]
+        - button "Gallery" [ref=e15] [cursor=pointer] [box=1097,14,72,36]
+        - button "Contact Us" [ref=e16] [cursor=pointer] [box=1173,14,99,36]
+      - button "Login" [ref=e17] [cursor=pointer] [box=1491,14,78,36]
+  - main [ref=e18] [box=0,64,1905,1240]:
+    - generic [ref=e19] [box=313,64,1280,1240]:
+      - generic [ref=e20] [box=337,120,1232,112]:
+        - heading "Upcoming Events" [level=2] [ref=e21] [box=337,120,1232,36]
+        - paragraph [ref=e22] [box=337,164,672,48]: Confirmed CSR events. Register your spot or learn more about each initiative before accessing the internal dashboard.
+      - generic [ref=e24] [box=337,264,1232,984]:
+        - article [ref=e25] [box=337,264,1232,312]
+        - article [ref=e55] [box=337,600,1232,312]
+        - article [ref=e84] [box=337,936,1232,312]

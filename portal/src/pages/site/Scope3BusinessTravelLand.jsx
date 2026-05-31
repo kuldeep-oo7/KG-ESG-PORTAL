@@ -57,10 +57,9 @@ export default function Scope3BusinessTravelLand() {
             <Select label="Vehicle Type" value={vehicleType} onChange={setVehicleType} options={LAND_VEHICLE_TYPES} required />
             <Select label="Unit of Measurement" value={unit} onChange={setUnit} options={DISTANCE_UNITS} required />
           </div>
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 gap-4">
             <Input label="Consumption" value={consumption} onChange={setConsumption} type="number" placeholder="Fuel consumed" />
             <Input label="Number of Passengers" value={passengers} onChange={setPassengers} type="number" required />
-            <Input label="Kilo meters Travelled" value={km} onChange={setKm} type="number" required />
           </div>
           <Input label="Remarks" value={remarks} onChange={setRemarks} placeholder="Route or additional notes" />
           {preview && <GHGPreview tco2e={preview.tco2e} />}

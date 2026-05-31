@@ -10,7 +10,7 @@ function NumInput({ label, value, onChange, hint }) {
       <label className="text-xs font-medium text-slate-600">{label}</label>
       <input type="number" value={value} onChange={e => onChange(e.target.value)}
         placeholder={hint || `Enter ${label}`}
-        className="border border-slate-200 rounded-xl px-3 py-2.5 text-sm outline-none focus:border-[#10B981]" />
+        className="border border-slate-200 rounded-xl px-3 py-2.5 text-sm outline-none focus:border-[#064E3B] focus:ring-2 focus:ring-[#064E3B]/10 transition-colors" />
     </div>
   )
 }
@@ -82,7 +82,7 @@ export default function IntensityMetrics() {
               <div className="flex flex-col gap-1">
                 <label className="text-xs font-medium text-slate-600">Currency (in Mn.)</label>
                 <select value={currency} onChange={e => setCurrency(e.target.value)}
-                  className="border border-slate-200 rounded-xl px-3 py-2.5 text-sm outline-none focus:border-[#10B981] bg-white">
+                  className="border border-slate-200 rounded-xl px-3 py-2.5 text-sm outline-none focus:border-[#064E3B] focus:ring-2 focus:ring-[#064E3B]/10 bg-white transition-colors">
                   {CURRENCIES.map(c => <option key={c} value={c}>{c}</option>)}
                 </select>
               </div>
