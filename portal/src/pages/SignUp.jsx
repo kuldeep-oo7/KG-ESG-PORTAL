@@ -63,7 +63,26 @@ export default function SignUp() {
         navigate('/dashboard')
       })
       .catch(err => {
-        setError(err.message)
+        // Local fallback if offline/unreachable
+        const isNetworkError = err.message.includes('Failed to fetch') || err.message.includes('fetch') || err.message.includes('network');
+        if (isNetworkError) {
+          const stored = localStorage.getItem('kg_users_v1')
+          let users;
+          try { users = stored ? JSON.parse(stored) : [] } catch { users = [] }
+          
+          if (users.some(u => u.email.toLowerCase() === email.toLowerCase()) || email.toLowerCase() === 'ketanbheda@kgirdharlal.com') {
+            setError('This email is already registered (local fallback).')
+            return
+          }
+          
+          const newUser = { name, email, password }
+          users.push(newUser)
+          localStorage.setItem('kg_users_v1', JSON.stringify(users))
+          localStorage.setItem('kg_current_user_v1', JSON.stringify(newUser))
+          navigate('/dashboard')
+        } else {
+          setError(err.message)
+        }
       })
   }
 

@@ -985,7 +985,10 @@ export default function CSR() {
       setLoading(true)
     })
     fetch(`http://localhost:5000/api/csr-activities?email=${encodeURIComponent(currentUserEmail)}`)
-      .then(res => res.json())
+      .then(res => {
+        if (!res.ok) throw new Error('API Error')
+        return res.json()
+      })
       .then(data => {
         if (data.length === 0 && currentUserEmail === 'ketanbheda@kgirdharlal.com') {
           fetch('http://localhost:5000/api/csr-activities/sync', {
@@ -1012,6 +1015,16 @@ export default function CSR() {
       })
       .catch(err => {
         console.error(err)
+        const stored = localStorage.getItem(`kg_csr_activities_v1_${currentUserEmail}`)
+        if (stored) {
+          try {
+            setActivities(JSON.parse(stored))
+          } catch {
+            setActivities(currentUserEmail === 'ketanbheda@kgirdharlal.com' ? ANNUAL_CHARTER : [])
+          }
+        } else {
+          setActivities(currentUserEmail === 'ketanbheda@kgirdharlal.com' ? ANNUAL_CHARTER : [])
+        }
         setLoading(false)
         setHasLoaded(true)
       })
@@ -1102,6 +1115,9 @@ export default function CSR() {
   useEffect(() => {
     if (!hasLoaded || !currentUserEmail) return
     
+    // Save to local storage as fallback
+    localStorage.setItem(`kg_csr_activities_v1_${currentUserEmail}`, JSON.stringify(activities))
+
     // Sync activities to backend on change
     fetch('http://localhost:5000/api/csr-activities/sync', {
       method: 'POST',

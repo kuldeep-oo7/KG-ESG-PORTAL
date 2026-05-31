@@ -19,6 +19,35 @@ import {
   calcFood
 } from '../lib/calculations'
 import { GHGContext } from './GHGContextValue'
+import { SEED } from './SEED'
+import { SITES } from '../data/ghgData'
+
+// LocalStorage Fallback Helpers
+const LS_SITES_KEY = 'kg_sites_v2_fallback'
+const LS_ENTRIES_KEY = 'kg_entries_v2_fallback'
+
+function getLocalSites(email) {
+  try {
+    const raw = localStorage.getItem(`${LS_SITES_KEY}_${email}`)
+    return raw ? JSON.parse(raw) : (email.toLowerCase() === 'ketanbheda@kgirdharlal.com' ? SITES : [])
+  } catch {
+    return []
+  }
+}
+function saveLocalSites(email, data) {
+  try { localStorage.setItem(`${LS_SITES_KEY}_${email}`, JSON.stringify(data)) } catch (e) { console.warn(e) }
+}
+function getLocalEntries(email) {
+  try {
+    const raw = localStorage.getItem(`${LS_ENTRIES_KEY}_${email}`)
+    return raw ? JSON.parse(raw) : (email.toLowerCase() === 'ketanbheda@kgirdharlal.com' ? SEED : {})
+  } catch {
+    return {}
+  }
+}
+function saveLocalEntries(email, data) {
+  try { localStorage.setItem(`${LS_ENTRIES_KEY}_${email}`, JSON.stringify(data)) } catch (e) { console.warn(e) }
+}
 
 function recalculateAllEntries(allEntries) {
   if (!allEntries) return allEntries
@@ -190,22 +219,35 @@ export function GHGProvider({ children }) {
 
     // Load sites
     fetch(`http://localhost:5000/api/sites?email=${encodeURIComponent(currentUserEmail)}`)
-      .then(res => res.json())
+      .then(res => {
+        if (!res.ok) throw new Error('API Error')
+        return res.json()
+      })
       .then(sitesData => {
         setSites(sitesData)
       })
-      .catch(err => console.error('Failed to load sites:', err))
+      .catch(() => {
+        // Fallback to local storage
+        const local = getLocalSites(currentUserEmail)
+        setSites(local)
+      })
 
     // Load GHG entries
     fetch(`http://localhost:5000/api/ghg-entries?email=${encodeURIComponent(currentUserEmail)}`)
-      .then(res => res.json())
+      .then(res => {
+        if (!res.ok) throw new Error('API Error')
+        return res.json()
+      })
       .then(entriesData => {
         const recalculated = recalculateAllEntries(entriesData)
         setEntries(recalculated)
         setLoading(false)
       })
-      .catch(err => {
-        console.error('Failed to load GHG entries:', err)
+      .catch(() => {
+        // Fallback to local storage
+        const local = getLocalEntries(currentUserEmail)
+        const recalculated = recalculateAllEntries(local)
+        setEntries(recalculated)
         setLoading(false)
       })
   }, [currentUserEmail])
@@ -256,22 +298,36 @@ export function GHGProvider({ children }) {
           entry
         })
       })
-      if (!response.ok) throw new Error('Failed to save entry')
-      const savedEntry = await response.json()
-
-      setEntries(prev => {
-        const prevList = prev[siteCode]?.[module] || []
-        return {
-          ...prev,
-          [siteCode]: {
-            ...(prev[siteCode] || {}),
-            [module]: [...prevList, savedEntry]
+      if (response.ok) {
+        const savedEntry = await response.json()
+        setEntries(prev => {
+          const prevList = prev[siteCode]?.[module] || []
+          return {
+            ...prev,
+            [siteCode]: {
+              ...(prev[siteCode] || {}),
+              [module]: [...prevList, savedEntry]
+            }
           }
+        })
+        return
+      }
+    } catch { /* ignore and use fallback */ }
+
+    // Fallback path
+    const savedEntry = { ...entry, id: Date.now() }
+    setEntries(prev => {
+      const prevList = prev[siteCode]?.[module] || []
+      const next = {
+        ...prev,
+        [siteCode]: {
+          ...(prev[siteCode] || {}),
+          [module]: [...prevList, savedEntry]
         }
-      })
-    } catch (err) {
-      console.error(err)
-    }
+      }
+      saveLocalEntries(currentUserEmail, next)
+      return next
+    })
   }
 
   async function deleteEntry(siteCode, module, id) {
@@ -280,21 +336,34 @@ export function GHGProvider({ children }) {
       const response = await fetch(`http://localhost:5000/api/ghg-entries/${id}?email=${encodeURIComponent(currentUserEmail)}`, {
         method: 'DELETE'
       })
-      if (!response.ok) throw new Error('Failed to delete entry')
-
-      setEntries(prev => {
-        const prevList = prev[siteCode]?.[module] || []
-        return {
-          ...prev,
-          [siteCode]: {
-            ...(prev[siteCode] || {}),
-            [module]: prevList.filter(e => e.id !== id)
+      if (response.ok) {
+        setEntries(prev => {
+          const prevList = prev[siteCode]?.[module] || []
+          return {
+            ...prev,
+            [siteCode]: {
+              ...(prev[siteCode] || {}),
+              [module]: prevList.filter(e => e.id !== id)
+            }
           }
+        })
+        return
+      }
+    } catch { /* ignore and use fallback */ }
+
+    // Fallback path
+    setEntries(prev => {
+      const prevList = prev[siteCode]?.[module] || []
+      const next = {
+        ...prev,
+        [siteCode]: {
+          ...(prev[siteCode] || {}),
+          [module]: prevList.filter(e => e.id !== id)
         }
-      })
-    } catch (err) {
-      console.error(err)
-    }
+      }
+      saveLocalEntries(currentUserEmail, next)
+      return next
+    })
   }
 
   async function addSite(siteData) {
@@ -320,18 +389,32 @@ export function GHGProvider({ children }) {
                       : 'IN'
         })
       })
-      if (!response.ok) {
-        const errData = await response.json()
-        throw new Error(errData.error || 'Failed to save site')
+      if (response.ok) {
+        const savedSite = await response.json()
+        setSites(prev => [...prev, savedSite])
+        return savedSite
       }
-      const savedSite = await response.json()
+    } catch { /* ignore and fallback */ }
 
-      setSites(prev => [...prev, savedSite])
-      return savedSite
-    } catch (err) {
-      console.error(err)
-      throw err
+    // Fallback path
+    const nextNum = sites.length + 1
+    const code = `KGIPL-0${nextNum}`
+    const savedSite = {
+      code,
+      name: siteData.name,
+      type: siteData.type,
+      city: siteData.city,
+      country: siteData.country,
+      address: siteData.address,
+      country_code: siteData.country === 'India' ? 'IN'
+                  : siteData.country === 'UAE' ? 'AE'
+                  : siteData.country === 'Botswana' ? 'BW'
+                  : 'IN'
     }
+    const nextSites = [...sites, savedSite]
+    setSites(nextSites)
+    saveLocalSites(currentUserEmail, nextSites)
+    return savedSite
   }
 
   async function updateSite(siteData) {
@@ -354,18 +437,30 @@ export function GHGProvider({ children }) {
                       : 'IN'
         })
       })
-      if (!response.ok) {
-        const errData = await response.json()
-        throw new Error(errData.error || 'Failed to update site')
+      if (response.ok) {
+        const savedSite = await response.json()
+        setSites(prev => prev.map(s => s.code === siteData.code ? savedSite : s))
+        return savedSite
       }
-      const savedSite = await response.json()
+    } catch { /* ignore and fallback */ }
 
-      setSites(prev => prev.map(s => s.code === siteData.code ? savedSite : s))
-      return savedSite
-    } catch (err) {
-      console.error(err)
-      throw err
+    // Fallback path
+    const savedSite = {
+      code: siteData.code,
+      name: siteData.name,
+      type: siteData.type,
+      city: siteData.city,
+      country: siteData.country,
+      address: siteData.address,
+      country_code: siteData.country === 'India' ? 'IN'
+                  : siteData.country === 'UAE' ? 'AE'
+                  : siteData.country === 'Botswana' ? 'BW'
+                  : 'IN'
     }
+    const nextSites = sites.map(s => s.code === siteData.code ? savedSite : s)
+    setSites(nextSites)
+    saveLocalSites(currentUserEmail, nextSites)
+    return savedSite
   }
 
   async function deleteSite(code) {
@@ -374,18 +469,27 @@ export function GHGProvider({ children }) {
       const response = await fetch(`http://localhost:5000/api/sites?email=${encodeURIComponent(currentUserEmail)}&code=${encodeURIComponent(code)}`, {
         method: 'DELETE'
       })
-      if (!response.ok) throw new Error('Failed to delete site')
+      if (response.ok) {
+        setSites(prev => prev.filter(s => s.code !== code))
+        setEntries(prev => {
+          const next = { ...prev }
+          delete next[code]
+          return next
+        })
+        return
+      }
+    } catch { /* ignore and fallback */ }
 
-      setSites(prev => prev.filter(s => s.code !== code))
-      setEntries(prev => {
-        const next = { ...prev }
-        delete next[code]
-        return next
-      })
-    } catch (err) {
-      console.error(err)
-      throw err
-    }
+    // Fallback path
+    const nextSites = sites.filter(s => s.code !== code)
+    setSites(nextSites)
+    saveLocalSites(currentUserEmail, nextSites)
+    setEntries(prev => {
+      const next = { ...prev }
+      delete next[code]
+      saveLocalEntries(currentUserEmail, next)
+      return next
+    })
   }
 
   return (

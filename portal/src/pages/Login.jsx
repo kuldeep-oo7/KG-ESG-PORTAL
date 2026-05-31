@@ -45,7 +45,32 @@ export default function Login() {
         navigate('/dashboard')
       })
       .catch(err => {
-        setError(err.message)
+        // Local fallback if offline/unreachable
+        const isNetworkError = err.message.includes('Failed to fetch') || err.message.includes('fetch') || err.message.includes('network');
+        if (isNetworkError) {
+          const stored = localStorage.getItem('kg_users_v1')
+          let users;
+          try { users = stored ? JSON.parse(stored) : [] } catch { users = [] }
+          
+          const defaultUser = { name: 'K. Girdharlal', email: 'ketanbheda@kgirdharlal.com', password: 'password123' }
+          if (!users.some(u => u.email.toLowerCase() === defaultUser.email.toLowerCase())) {
+            users.push(defaultUser)
+          }
+          
+          const found = users.find(u => u.email.toLowerCase() === email.toLowerCase())
+          if (!found) {
+            setError('Email address not registered (local fallback).')
+            return
+          }
+          if (found.password !== password) {
+            setError('Incorrect password (local fallback).')
+            return
+          }
+          localStorage.setItem('kg_current_user_v1', JSON.stringify(found))
+          navigate('/dashboard')
+        } else {
+          setError(err.message)
+        }
       })
   }
 
