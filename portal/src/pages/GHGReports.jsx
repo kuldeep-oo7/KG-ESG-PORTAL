@@ -392,18 +392,24 @@ export default function GHGReports() {
           </div>
 
           {/* Sites dropdown */}
-          <select className="border border-slate-200 rounded-lg px-3 py-2 text-sm outline-none bg-white text-slate-700 focus:border-[#064E3B] focus:ring-2 focus:ring-[#064E3B]/10 transition-all">
-            <option>All Sites</option>
-            {SITES.map(s => <option key={s.code}>{s.name}</option>)}
-          </select>
+          <div className="relative">
+            <select className="border border-slate-200 rounded-lg pl-3 pr-8 py-2 text-sm outline-none bg-white text-slate-700 focus:border-[#064E3B] focus:ring-2 focus:ring-[#064E3B]/10 transition-all appearance-none">
+              <option>All Sites</option>
+              {SITES.map(s => <option key={s.code}>{s.name}</option>)}
+            </select>
+            <ChevronDown className="absolute right-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
+          </div>
 
           {/* Export format */}
-          <select className="border border-slate-200 rounded-lg px-3 py-2 text-sm outline-none bg-white text-slate-500 focus:border-[#064E3B] focus:ring-2 focus:ring-[#064E3B]/10 transition-all">
-            <option value="">Export Format</option>
-            <option>PDF</option>
-            <option>Excel</option>
-            <option>CSV</option>
-          </select>
+          <div className="relative">
+            <select className="border border-slate-200 rounded-lg pl-3 pr-8 py-2 text-sm outline-none bg-white text-slate-500 focus:border-[#064E3B] focus:ring-2 focus:ring-[#064E3B]/10 transition-all appearance-none">
+              <option value="">Export Format</option>
+              <option>PDF</option>
+              <option>Excel</option>
+              <option>CSV</option>
+            </select>
+            <ChevronDown className="absolute right-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
+          </div>
 
         </div>
       </div>
