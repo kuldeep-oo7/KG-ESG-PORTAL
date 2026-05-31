@@ -3,6 +3,8 @@ import { useGHG } from '../../store/useGHG'
 import { SITES } from '../../data/ghgData'
 import { SCOPE3_MODULES } from '../../lib/constants'
 import { ChevronDown } from 'lucide-react'
+import jsPDF from 'jspdf'
+import autoTable from 'jspdf-autotable'
 
 const SCOPE1_MODULES = [
   { key: 'stationary', label: 'Stationary Combustion' },
@@ -65,16 +67,53 @@ export default function SiteReports() {
     rows.push(['', 'TOTAL', total])
 
     if (format === 'PDF') {
-      window.print()
+      const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' })
+
+      doc.setFillColor(6, 78, 59)
+      doc.rect(0, 0, 210, 18, 'F')
+      doc.setTextColor(255, 255, 255)
+      doc.setFontSize(13)
+      doc.setFont('helvetica', 'bold')
+      doc.text(`Site GHG Report — ${site?.name || siteId}`, 14, 12)
+
+      doc.setTextColor(30, 30, 30)
+      doc.setFontSize(9)
+      doc.setFont('helvetica', 'normal')
+      doc.text(`Assessment Year 2025–26  |  Total: ${total.toFixed(4)} tCO₂Eq`, 14, 26)
+
+      autoTable(doc, {
+        startY: 32,
+        head: [['Scope', 'Module', 'tCO₂Eq']],
+        body: rows.slice(1),
+        styles: { fontSize: 9, cellPadding: 3 },
+        headStyles: { fillColor: [6, 78, 59], textColor: 255, fontStyle: 'bold' },
+        alternateRowStyles: { fillColor: [248, 250, 252] },
+      })
+
+      doc.save(`${siteId}_ghg_report.pdf`)
       return
     }
 
-    const csv = rows.map(r => r.join(',')).join('\n')
-    const blob = new Blob(['\uFEFF' + csv], { type: 'text/csv;charset=utf-8;' })
+    // Excel export
+    const headers = rows[0]
+    let html = `<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40">
+<head><meta charset="utf-8">
+<style>
+  table{border-collapse:collapse}
+  th{background-color:#064E3B;color:white;font-weight:bold}
+  th,td{border:0.5pt solid #CBD5E1;padding:8px 12px;font-family:Arial,sans-serif;font-size:10pt}
+  .total-row{font-weight:bold;background-color:#F1F5F9}
+</style></head><body><table><thead><tr>${headers.map(h => `<th>${h}</th>`).join('')}</tr></thead><tbody>`
+    rows.slice(1).forEach((row, idx) => {
+      const isTotal = idx === rows.length - 2
+      html += `<tr${isTotal ? ' class="total-row"' : ''}>${row.map(cell => `<td>${cell}</td>`).join('')}</tr>\n`
+    })
+    html += `</tbody></table></body></html>`
+    const blob = new Blob([html], { type: 'application/vnd.ms-excel;charset=utf-8;' })
     const url = URL.createObjectURL(blob)
     const a = document.createElement('a')
     a.href = url
-    a.download = `${siteId}_ghg_report.csv`
+    a.download = `${siteId}_ghg_report.xls`
     a.click()
     URL.revokeObjectURL(url)
   }
@@ -100,7 +139,7 @@ export default function SiteReports() {
             className="border border-slate-200 rounded-lg pl-3 pr-8 py-2 text-sm outline-none bg-white text-slate-500 focus:border-[#064E3B] focus:ring-2 focus:ring-[#064E3B]/10 transition-all appearance-none cursor-pointer"
           >
             <option value="">Export Format</option>
-            <option value="CSV">CSV</option>
+            <option value="Excel">Excel</option>
             <option value="PDF">PDF</option>
           </select>
           <ChevronDown className="absolute right-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />

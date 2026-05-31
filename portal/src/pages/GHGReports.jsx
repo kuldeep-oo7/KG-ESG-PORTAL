@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { Download, ChevronUp, ChevronDown, Search, Calendar } from 'lucide-react'
 import { REPORT_TOTALS, SITES } from '../data/ghgData'
 import { useGHG } from '../store/useGHG'
+import jsPDF from 'jspdf'
+import autoTable from 'jspdf-autotable'
 
 const ALL_CODES = SITES.map(s => s.code)
 
@@ -268,8 +270,51 @@ export default function GHGReports() {
     ]
 
     if (format === 'PDF') {
-      window.print();
-      return;
+      const doc = new jsPDF({ orientation: 'landscape', unit: 'mm', format: 'a4' })
+
+      // Header bar
+      doc.setFillColor(6, 78, 59) // #064E3B
+      doc.rect(0, 0, 297, 18, 'F')
+      doc.setTextColor(255, 255, 255)
+      doc.setFontSize(13)
+      doc.setFont('helvetica', 'bold')
+      doc.text('K. GIRDHARLAL — GHG Emissions Report', 14, 12)
+      doc.setFontSize(8)
+      doc.setFont('helvetica', 'normal')
+      doc.text(`Period: ${fromMonth} ${fromYear} – ${toMonth} ${toYear}`, 220, 12)
+
+      // Summary row
+      doc.setTextColor(30, 30, 30)
+      doc.setFontSize(9)
+      doc.text(`Total Emissions: ${(liveTotal > 0 ? liveTotal : displayTotal)} tCO₂Eq`, 14, 26)
+
+      autoTable(doc, {
+        startY: 30,
+        head: [allRows[0]],
+        body: allRows.slice(1),
+        styles: { fontSize: 7.5, cellPadding: 2.5, overflow: 'linebreak' },
+        headStyles: { fillColor: [6, 78, 59], textColor: 255, fontStyle: 'bold' },
+        alternateRowStyles: { fillColor: [248, 250, 252] },
+        columnStyles: {
+          0: { cellWidth: 18 },
+          1: { cellWidth: 38 },
+          2: { cellWidth: 20 },
+          3: { cellWidth: 20 },
+          4: { cellWidth: 30 },
+          5: { cellWidth: 20 },
+          6: { cellWidth: 22 },
+          7: { cellWidth: 26 },
+        },
+        didDrawPage: (data) => {
+          const pageCount = doc.internal.getNumberOfPages()
+          doc.setFontSize(7)
+          doc.setTextColor(150)
+          doc.text(`Page ${data.pageNumber} of ${pageCount}`, 280, 205)
+        },
+      })
+
+      doc.save(`KG_GHG_Report_${fromMonth}${fromYear}-${toMonth}${toYear}.pdf`)
+      return
     }
 
     if (format === 'Excel') {
@@ -468,7 +513,7 @@ export default function GHGReports() {
               className="border border-slate-200 rounded-lg pl-3 pr-8 py-2 text-sm outline-none bg-white text-slate-700 focus:border-[#064E3B] focus:ring-2 focus:ring-[#064E3B]/10 transition-all appearance-none cursor-pointer"
             >
               <option value="Excel">Excel</option>
-              <option value="CSV">CSV</option>
+
               <option value="PDF">PDF</option>
             </select>
             <ChevronDown className="absolute right-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
