@@ -30,3 +30,43 @@
   .scrollbar-hide::-webkit-scrollbar { display: none; }
   .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
 }
+
+@media print {
+  header,
+  .no-print,
+  button,
+  .flex.rounded-lg.border, /* Year toggles */
+  .relative svg, /* Select dropdown icons */
+  .border.border-slate-100 { /* Filter container */
+    display: none !important;
+  }
+  
+  body, .min-h-screen, #root, main {
+    background: white !important;
+    color: black !important;
+    min-height: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .px-8 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .grid-cols-5 {
+    display: grid !important;
+    grid-template-cols: repeat(5, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+  }
+
+  /* Make sure tables break cleanly */
+  tr {
+    page-break-inside: avoid !important;
+  }
+  
+  thead {
+    display: table-header-group !important;
+  }
+}
+

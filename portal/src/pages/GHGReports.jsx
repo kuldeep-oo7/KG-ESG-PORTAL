@@ -174,6 +174,7 @@ export default function GHGReports() {
   const [fromYear, setFromYear]   = useState('2026')
   const [toMonth, setToMonth]     = useState('Mar')
   const [toYear, setToYear]       = useState('2027')
+  const [exportFormat, setExportFormat] = useState('Excel')
 
   // Live totals
   const liveS1 = ALL_CODES.reduce((s, c) => s + getScopeTotal(c, 1), 0)
@@ -265,14 +266,81 @@ export default function GHGReports() {
           ...scope3Food, ...scope3Upstream, ...scope3Downstream, ...scope3TdLoss].map(e => ['Scope 3', e.category || e.module || '', e.date || '', e.siteCode || '', '', '', '', e.tco2e?.toFixed(6) || '']),
       ['', '', '', '', '', 'TOTAL', '', liveTotal > 0 ? liveTotal.toFixed(6) : displayTotal],
     ]
-    const csv = allRows.map(r => r.join(',')).join('\n')
-    const blob = new Blob([csv], { type: 'text/csv' })
-    const url = URL.createObjectURL(blob)
-    const a = document.createElement('a')
-    a.href = url
-    a.download = `KG_GHG_Report_${fromMonth}${fromYear}-${toMonth}${toYear}.csv`
-    a.click()
-    URL.revokeObjectURL(url)
+
+    if (exportFormat === 'PDF') {
+      window.print();
+      return;
+    }
+
+    if (exportFormat === 'Excel') {
+      const headers = allRows[0];
+      let html = `<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+  <meta charset="utf-8">
+  <!--[if gte mso 9]>
+  <xml>
+    <x:ExcelWorkbook>
+      <x:ExcelWorksheets>
+        <x:ExcelWorksheet>
+          <x:Name>GHG Report</x:Name>
+          <x:WorksheetOptions>
+            <x:DisplayGridlines/>
+          </x:WorksheetOptions>
+        </x:ExcelWorksheet>
+      </x:ExcelWorksheets>
+    </x:ExcelWorkbook>
+  </xml>
+  <![endif]-->
+  <style>
+    table { border-collapse: collapse; }
+    th { background-color: #064E3B; color: white; font-weight: bold; }
+    th, td { border: 0.5pt solid #CBD5E1; padding: 8px 12px; font-family: Arial, sans-serif; font-size: 10pt; }
+    .total-row { font-weight: bold; background-color: #F1F5F9; }
+  </style>
+</head>
+<body>
+  <table>
+    <thead>
+      <tr>${headers.map(h => `<th>${h}</th>`).join('')}</tr>
+    </thead>
+    <tbody>
+`;
+      allRows.slice(1).forEach((row, idx) => {
+        const isTotal = idx === allRows.length - 2;
+        const rowClass = isTotal ? ' class="total-row"' : '';
+        html += `      <tr${rowClass}>${row.map(cell => `<td>${cell}</td>`).join('')}</tr>\n`;
+      });
+      html += `    </tbody>
+  </table>
+</body>
+</html>`;
+
+      const blob = new Blob([html], { type: 'application/vnd.ms-excel;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `KG_GHG_Report_${fromMonth}${fromYear}-${toMonth}${toYear}.xls`;
+      a.click();
+      URL.revokeObjectURL(url);
+      return;
+    }
+
+    // Default CSV export with double-quotes wrapping to support commas
+    const csv = allRows.map(r => r.map(cell => {
+      const val = String(cell);
+      if (val.includes(',') || val.includes('"') || val.includes('\n')) {
+        return `"${val.replace(/"/g, '""')}"`;
+      }
+      return val;
+    }).join(',')).join('\n');
+
+    const blob = new Blob(['\uFEFF' + csv], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `KG_GHG_Report_${fromMonth}${fromYear}-${toMonth}${toYear}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
   }
 
   return (
@@ -294,7 +362,7 @@ export default function GHGReports() {
         <div className="flex items-center gap-3 mt-1">
           <button
             onClick={handleExport}
-            className="flex items-center gap-2 bg-[#064E3B] hover:bg-[#065F46] text-white text-sm font-medium px-5 py-2.5 rounded-xl transition-colors shadow-sm"
+            className="flex items-center gap-2 bg-[#064E3B] hover:bg-[#065F46] text-white text-sm font-medium px-5 py-2.5 rounded-xl transition-colors shadow-sm no-print"
           >
             <Download className="w-4 h-4" /> Export Report
           </button>
@@ -402,14 +470,24 @@ export default function GHGReports() {
 
           {/* Export format */}
           <div className="relative">
-            <select className="border border-slate-200 rounded-lg pl-3 pr-8 py-2 text-sm outline-none bg-white text-slate-500 focus:border-[#064E3B] focus:ring-2 focus:ring-[#064E3B]/10 transition-all appearance-none">
-              <option value="">Export Format</option>
-              <option>PDF</option>
-              <option>Excel</option>
-              <option>CSV</option>
+            <select
+              value={exportFormat}
+              onChange={e => setExportFormat(e.target.value)}
+              className="border border-slate-200 rounded-lg pl-3 pr-8 py-2 text-sm outline-none bg-white text-slate-700 focus:border-[#064E3B] focus:ring-2 focus:ring-[#064E3B]/10 transition-all appearance-none"
+            >
+              <option value="Excel">Excel</option>
+              <option value="CSV">CSV</option>
+              <option value="PDF">PDF</option>
             </select>
             <ChevronDown className="absolute right-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
           </div>
+
+          <button
+            onClick={handleExport}
+            className="flex items-center gap-2 bg-[#064E3B] hover:bg-[#065F46] text-white text-sm font-medium px-5 py-2.5 rounded-xl transition-colors shadow-sm no-print"
+          >
+            <Download className="w-4 h-4" /> Export Report
+          </button>
 
         </div>
       </div>
