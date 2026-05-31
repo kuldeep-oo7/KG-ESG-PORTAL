@@ -2,7 +2,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { useGHG } from '../../store/useGHG'
 import { SITES } from '../../data/ghgData'
 import { SCOPE3_MODULES } from '../../lib/constants'
-import { Download } from 'lucide-react'
+import { ChevronDown } from 'lucide-react'
 
 const SCOPE1_MODULES = [
   { key: 'stationary', label: 'Stationary Combustion' },
@@ -57,16 +57,25 @@ export default function SiteReports() {
   const s3 = getScopeTotal(siteId, 3)
   const total = getSiteTotal(siteId)
 
-  function handleExport() {
+  function handleExport(format) {
     const rows = [['Scope', 'Module', 'tCO2Eq']]
     SCOPE1_MODULES.forEach(m => rows.push(['Scope 1', m.label, getModuleTotal(siteId, m.key)]))
     SCOPE2_MODULES.forEach(m => rows.push(['Scope 2', m.label, getModuleTotal(siteId, m.key)]))
     SCOPE3_MODULES.forEach(m => rows.push(['Scope 3', m.label, getModuleTotal(siteId, m.key)]))
     rows.push(['', 'TOTAL', total])
+
+    if (format === 'PDF') {
+      window.print()
+      return
+    }
+
     const csv = rows.map(r => r.join(',')).join('\n')
-    const blob = new Blob([csv], { type: 'text/csv' })
+    const blob = new Blob(['\uFEFF' + csv], { type: 'text/csv;charset=utf-8;' })
     const url = URL.createObjectURL(blob)
-    const a = document.createElement('a'); a.href = url; a.download = `${siteId}_ghg_report.csv`; a.click()
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `${siteId}_ghg_report.csv`
+    a.click()
     URL.revokeObjectURL(url)
   }
 
@@ -81,10 +90,21 @@ export default function SiteReports() {
           <h2 className="text-lg font-semibold text-slate-800">Site GHG Report</h2>
           <p className="text-sm text-slate-500">{site?.name || siteId} — Assessment Year 2025–26</p>
         </div>
-        <button onClick={handleExport}
-          className="flex items-center gap-2 bg-[#064E3B] hover:bg-[#065F46] text-white text-sm font-medium px-4 py-2.5 rounded-xl transition-colors">
-          <Download className="w-4 h-4" /> Export CSV
-        </button>
+        <div className="relative">
+          <select
+            value=""
+            onChange={e => {
+              const fmt = e.target.value
+              if (fmt) handleExport(fmt)
+            }}
+            className="border border-slate-200 rounded-lg pl-3 pr-8 py-2 text-sm outline-none bg-white text-slate-500 focus:border-[#064E3B] focus:ring-2 focus:ring-[#064E3B]/10 transition-all appearance-none cursor-pointer"
+          >
+            <option value="">Export Format</option>
+            <option value="CSV">CSV</option>
+            <option value="PDF">PDF</option>
+          </select>
+          <ChevronDown className="absolute right-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
+        </div>
       </div>
 
       {/* Summary KPIs */}
