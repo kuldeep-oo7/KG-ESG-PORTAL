@@ -59,16 +59,124 @@ function ScopeRingBadge({ pct, color = '#10B981' }) {
 }
 
 export default function Dashboard() {
-  const { getScopeTotal, sites, allEntries } = useGHG()
+  const { getScopeTotal, sites, allEntries, loading } = useGHG()
   const userRaw = localStorage.getItem('kg_current_user_v1')
   const user = userRaw ? JSON.parse(userRaw) : null
   const isAdmin = user?.email === 'ketanbheda@kgirdharlal.com'
 
-  const ALL_CODES = (sites || []).map(s => s.code)
+  const [currentYear, setCurrentYear] = useState('CY 2026')
+  const [baselineYear, setBaselineYear] = useState('CY 2024')
 
-  const liveS1 = +ALL_CODES.reduce((s, c) => s + getScopeTotal(c, 1), 0).toFixed(2)
-  const liveS2 = +ALL_CODES.reduce((s, c) => s + getScopeTotal(c, 2), 0).toFixed(2)
-  const liveS3 = +ALL_CODES.reduce((s, c) => s + getScopeTotal(c, 3), 0).toFixed(2)
+  const getEntryMonthAndYear = (e) => {
+    const periodStr = e['Entry Period'] || e.period
+    if (periodStr) {
+      const parts = periodStr.split('-')
+      if (parts.length > 1) {
+        return { 
+          month: parts[0].trim().toLowerCase(), 
+          year: parts[1].trim() 
+        }
+      }
+    }
+    if (e.date) {
+      const parts = e.date.split('-')
+      if (parts.length >= 2) {
+        const months = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december']
+        const mIdx = parseInt(parts[1], 10) - 1
+        return { 
+          month: months[mIdx] || '', 
+          year: parts[0] 
+        }
+      }
+    }
+    return null
+  }
+
+  const isEntryInSelectedYear = (e, selectedYear) => {
+    const info = getEntryMonthAndYear(e)
+    if (!info) return false
+    const { month, year } = info
+    
+    if (selectedYear.startsWith('CY')) {
+      const targetYear = selectedYear.replace('CY', '').trim()
+      return year === targetYear
+    } else if (selectedYear.startsWith('FY')) {
+      const targetYear = parseInt(selectedYear.replace('FY', '').trim(), 10)
+      const yearNum = parseInt(year, 10)
+      const isFYMonths = ['april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'].includes(month)
+      if (isFYMonths) {
+        return yearNum === targetYear - 1
+      } else {
+        return yearNum === targetYear
+      }
+    }
+    return false
+  }
+
+  const filteredEntries = {}
+  if (allEntries) {
+    Object.entries(allEntries).forEach(([siteCode, siteData]) => {
+      filteredEntries[siteCode] = {}
+      Object.entries(siteData).forEach(([modName, entriesList]) => {
+        if (Array.isArray(entriesList)) {
+          filteredEntries[siteCode][modName] = entriesList.filter(e => isEntryInSelectedYear(e, currentYear))
+        } else {
+          filteredEntries[siteCode][modName] = entriesList
+        }
+      })
+    })
+  }
+
+  let liveS1 = 0
+  let liveS2 = 0
+  let liveS3 = 0
+
+  Object.values(filteredEntries).forEach(siteData => {
+    if (siteData.stationary) {
+      siteData.stationary.forEach(e => {
+        liveS1 += parseFloat(e.tco2e || e.ghg || 0)
+      })
+    }
+    if (siteData.mobile) {
+      siteData.mobile.forEach(e => {
+        liveS1 += parseFloat(e.tco2e || e.ghg || 0)
+      })
+    }
+    if (siteData.fugitive) {
+      siteData.fugitive.forEach(e => {
+        liveS1 += parseFloat(e.tco2e || e.ghg || 0)
+      })
+    }
+    if (siteData.electricity) {
+      siteData.electricity.forEach(e => {
+        const isRenewable = e.isRenewable || e.accounting === 'market' || (e.category === 'Renewable Electricity Generation')
+        if (!isRenewable) {
+          liveS2 += parseFloat(e.tco2e || e.ghg || 0)
+        }
+      })
+    }
+    if (siteData.heatSteam) {
+      siteData.heatSteam.forEach(e => {
+        liveS2 += parseFloat(e.tco2e || e.ghg || 0)
+      })
+    }
+    const s3Modules = [
+      'employeeCommute', 'foodConsumption', 'purchasedGoods', 'tdLoss',
+      'upstream', 'downstream', 'wasteDisposal', 'waterSupply', 'waterTreatment',
+      'businessTravelAir', 'businessTravelSea', 'businessTravelLand', 'hotelStay'
+    ]
+    s3Modules.forEach(mod => {
+      if (siteData[mod]) {
+        siteData[mod].forEach(e => {
+          liveS3 += parseFloat(e.tco2e || e.ghg || 0)
+        })
+      }
+    })
+  })
+
+  liveS1 = +liveS1.toFixed(2)
+  liveS2 = +liveS2.toFixed(2)
+  liveS3 = +liveS3.toFixed(2)
   const liveTotal = +(liveS1 + liveS2 + liveS3).toFixed(2)
 
   const liveS1pct = liveTotal > 0 ? +((liveS1 / liveTotal) * 100).toFixed(2) : 0
@@ -76,13 +184,13 @@ export default function Dashboard() {
   const liveS3pct = liveTotal > 0 ? +((liveS3 / liveTotal) * 100).toFixed(2) : 0
 
   const kpi = {
-    total:      liveTotal > 0 ? liveTotal : (isAdmin ? DASHBOARD_TOTALS.total : 0),
-    scope1:     liveTotal > 0 ? liveS1    : (isAdmin ? DASHBOARD_TOTALS.scope1 : 0),
-    scope2:     liveTotal > 0 ? liveS2    : (isAdmin ? DASHBOARD_TOTALS.scope2 : 0),
-    scope3:     liveTotal > 0 ? liveS3    : (isAdmin ? DASHBOARD_TOTALS.scope3 : 0),
-    scope1_pct: liveTotal > 0 ? liveS1pct : (isAdmin ? DASHBOARD_TOTALS.scope1_pct : 0),
-    scope2_pct: liveTotal > 0 ? liveS2pct : (isAdmin ? DASHBOARD_TOTALS.scope2_pct : 0),
-    scope3_pct: liveTotal > 0 ? liveS3pct : (isAdmin ? DASHBOARD_TOTALS.scope3_pct : 0),
+    total:      loading ? (isAdmin ? DASHBOARD_TOTALS.total : 0) : liveTotal,
+    scope1:     loading ? (isAdmin ? DASHBOARD_TOTALS.scope1 : 0) : liveS1,
+    scope2:     loading ? (isAdmin ? DASHBOARD_TOTALS.scope2 : 0) : liveS2,
+    scope3:     loading ? (isAdmin ? DASHBOARD_TOTALS.scope3 : 0) : liveS3,
+    scope1_pct: loading ? (isAdmin ? DASHBOARD_TOTALS.scope1_pct : 0) : liveS1pct,
+    scope2_pct: loading ? (isAdmin ? DASHBOARD_TOTALS.scope2_pct : 0) : liveS2pct,
+    scope3_pct: loading ? (isAdmin ? DASHBOARD_TOTALS.scope3_pct : 0) : liveS3pct,
   }
 
   // Calculate dynamic monthly scope arrays from allEntries
@@ -115,8 +223,8 @@ export default function Dashboard() {
     'Fugitive Emissions': 0
   }))
 
-  if (allEntries) {
-    Object.values(allEntries).forEach(siteData => {
+  if (filteredEntries) {
+    Object.values(filteredEntries).forEach(siteData => {
       if (siteData.stationary) {
         siteData.stationary.forEach(e => {
           const m = getShortMonth(e['Entry Period'] || e.period)
@@ -151,8 +259,8 @@ export default function Dashboard() {
     imported: 0
   }))
 
-  if (allEntries) {
-    Object.values(allEntries).forEach(siteData => {
+  if (filteredEntries) {
+    Object.values(filteredEntries).forEach(siteData => {
       if (siteData.electricity) {
         siteData.electricity.forEach(e => {
           const m = getShortMonth(e['Entry Period'] || e.period)
@@ -200,8 +308,8 @@ export default function Dashboard() {
     { name: "Water Supply", module: "waterSupply", color: "#A7F3D0", value: 0 }
   ]
 
-  if (allEntries) {
-    Object.values(allEntries).forEach(siteData => {
+  if (filteredEntries) {
+    Object.values(filteredEntries).forEach(siteData => {
       scope3Groups.forEach(grp => {
         if (grp.module === "businessTravelAir") {
           const air = siteData.businessTravelAir || []
@@ -276,18 +384,26 @@ export default function Dashboard() {
           <div className="flex items-center gap-2">
             <div className="bg-white border border-slate-200 rounded-lg px-3 py-1.5 shadow-sm flex flex-col gap-0.5">
               <span className="text-[10px] text-slate-400 uppercase tracking-wide whitespace-nowrap">Current Year</span>
-              <select className="bg-transparent text-slate-700 font-semibold text-xs outline-none cursor-pointer">
-                <option>CY 2026</option>
-                <option>FY 2026</option>
-                <option>CY 2025</option>
+              <select 
+                value={currentYear}
+                onChange={(e) => setCurrentYear(e.target.value)}
+                className="bg-transparent text-slate-700 font-semibold text-xs outline-none cursor-pointer"
+              >
+                <option value="CY 2026">CY 2026</option>
+                <option value="FY 2026">FY 2026</option>
+                <option value="CY 2025">CY 2025</option>
               </select>
             </div>
             <div className="bg-white border border-slate-200 rounded-lg px-3 py-1.5 shadow-sm flex flex-col gap-0.5">
               <span className="text-[10px] text-slate-400 uppercase tracking-wide whitespace-nowrap">Baseline Year (Optional)</span>
-              <select className="bg-transparent text-slate-700 font-semibold text-xs outline-none cursor-pointer">
-                <option>CY 2026 (Default)</option>
-                <option>CY 2025</option>
-                <option>CY 2024</option>
+              <select 
+                value={baselineYear}
+                onChange={(e) => setBaselineYear(e.target.value)}
+                className="bg-transparent text-slate-700 font-semibold text-xs outline-none cursor-pointer"
+              >
+                <option value="CY 2026">CY 2026</option>
+                <option value="CY 2025">CY 2025</option>
+                <option value="CY 2024">CY 2024</option>
               </select>
             </div>
           </div>
