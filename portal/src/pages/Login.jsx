@@ -3,6 +3,7 @@ import { useNavigate, Link } from 'react-router-dom'
 import { Eye, EyeOff, Mail } from 'lucide-react'
 import logoImg from '../assets/logo-full.png'
 import authPanelImg from '../assets/auth-panel.png'
+import { apiUrl, isNetworkError, LOCAL_FALLBACK_ENABLED } from '../lib/api'
 
 // ─── Right panel — reused on all auth pages ─────────────────────────────────
 function AuthRightPanel() {
@@ -29,11 +30,25 @@ export default function Login() {
     e.preventDefault()
     setError('')
     
-    fetch('http://localhost:5000/api/auth/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password })
-    })
+    let url
+    try {
+      url = apiUrl('/api/auth/login')
+    } catch (err) {
+      if (!LOCAL_FALLBACK_ENABLED) {
+        setError(err.message)
+        return
+      }
+    }
+
+    const loginRequest = url
+      ? fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password })
+        })
+      : Promise.reject(new Error('Failed to fetch local fallback'))
+
+    loginRequest
       .then(res => {
         if (!res.ok) {
           return res.json().then(data => { throw new Error(data.error || 'Login failed') })
@@ -46,17 +61,11 @@ export default function Login() {
       })
       .catch(err => {
         // Local fallback if offline/unreachable
-        const isNetworkError = err.message.includes('Failed to fetch') || err.message.includes('fetch') || err.message.includes('network');
-        if (isNetworkError) {
+        if (LOCAL_FALLBACK_ENABLED && isNetworkError(err)) {
           const stored = localStorage.getItem('kg_users_v1')
           let users;
           try { users = stored ? JSON.parse(stored) : [] } catch { users = [] }
-          
-          const defaultUser = { name: 'K. Girdharlal', email: 'ketanbheda@kgirdharlal.com', password: 'password123' }
-          if (!users.some(u => u.email.toLowerCase() === defaultUser.email.toLowerCase())) {
-            users.push(defaultUser)
-          }
-          
+
           const found = users.find(u => u.email.toLowerCase() === email.toLowerCase())
           if (!found) {
             setError('Email address not registered (local fallback).')

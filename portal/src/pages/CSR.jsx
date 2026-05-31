@@ -5,6 +5,7 @@ import {
   ResponsiveContainer, PieChart, Pie, Cell,
 } from 'recharts'
 import { Plus, ChevronDown, Building2, ClipboardList, IndianRupee, Users, UserRound, Pencil, Trash2 } from 'lucide-react'
+import { apiUrl, API_ENABLED } from '../lib/api'
 // CSR Activities connected to SQLite database API
 
 // ── Data ───────────────────────────────────────────────────────────────────────
@@ -984,14 +985,35 @@ export default function CSR() {
     Promise.resolve().then(() => {
       setLoading(true)
     })
-    fetch(`http://localhost:5000/api/csr-activities?email=${encodeURIComponent(currentUserEmail)}`)
+
+    if (!API_ENABLED) {
+      const stored = localStorage.getItem(`kg_csr_activities_v1_${currentUserEmail}`)
+      let nextActivities
+      if (stored) {
+        try {
+          nextActivities = JSON.parse(stored)
+        } catch {
+          nextActivities = currentUserEmail === 'ketanbheda@kgirdharlal.com' ? ANNUAL_CHARTER : []
+        }
+      } else {
+        nextActivities = currentUserEmail === 'ketanbheda@kgirdharlal.com' ? ANNUAL_CHARTER : []
+      }
+      Promise.resolve().then(() => {
+        setActivities(nextActivities)
+        setLoading(false)
+        setHasLoaded(true)
+      })
+      return
+    }
+
+    fetch(apiUrl(`/api/csr-activities?email=${encodeURIComponent(currentUserEmail)}`))
       .then(res => {
         if (!res.ok) throw new Error('API Error')
         return res.json()
       })
       .then(data => {
         if (data.length === 0 && currentUserEmail === 'ketanbheda@kgirdharlal.com') {
-          fetch('http://localhost:5000/api/csr-activities/sync', {
+          fetch(apiUrl('/api/csr-activities/sync'), {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email: currentUserEmail, activities: ANNUAL_CHARTER })
@@ -1119,7 +1141,9 @@ export default function CSR() {
     localStorage.setItem(`kg_csr_activities_v1_${currentUserEmail}`, JSON.stringify(activities))
 
     // Sync activities to backend on change
-    fetch('http://localhost:5000/api/csr-activities/sync', {
+    if (!API_ENABLED) return
+
+    fetch(apiUrl('/api/csr-activities/sync'), {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email: currentUserEmail, activities })

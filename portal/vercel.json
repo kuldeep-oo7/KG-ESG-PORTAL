@@ -1,3 +1,6 @@
 {
-  "alias": ["kg-esg-portal.vercel.app"]
+  "alias": ["kg-esg-portal.vercel.app"],
+  "rewrites": [
+    { "source": "/((?!assets/|newsletter/|gallery/|posh/|sdg/|favicon.ico|icon.png|.*\\..*).*)", "destination": "/index.html" }
+  ]
 }

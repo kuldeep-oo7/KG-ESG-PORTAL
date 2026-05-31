@@ -3,6 +3,7 @@ import { useNavigate, Link } from 'react-router-dom'
 import { Eye, EyeOff, Mail, User } from 'lucide-react'
 import logoImg from '../assets/logo-full.png'
 import authPanelImg from '../assets/auth-panel.png'
+import { apiUrl, isNetworkError, LOCAL_FALLBACK_ENABLED } from '../lib/api'
 
 function AuthRightPanel() {
   return (
@@ -47,11 +48,25 @@ export default function SignUp() {
       return
     }
 
-    fetch('http://localhost:5000/api/auth/signup', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, email, password })
-    })
+    let url
+    try {
+      url = apiUrl('/api/auth/signup')
+    } catch (err) {
+      if (!LOCAL_FALLBACK_ENABLED) {
+        setError(err.message)
+        return
+      }
+    }
+
+    const signupRequest = url
+      ? fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, password })
+        })
+      : Promise.reject(new Error('Failed to fetch local fallback'))
+
+    signupRequest
       .then(res => {
         if (!res.ok) {
           return res.json().then(data => { throw new Error(data.error || 'Signup failed') })
@@ -64,8 +79,7 @@ export default function SignUp() {
       })
       .catch(err => {
         // Local fallback if offline/unreachable
-        const isNetworkError = err.message.includes('Failed to fetch') || err.message.includes('fetch') || err.message.includes('network');
-        if (isNetworkError) {
+        if (LOCAL_FALLBACK_ENABLED && isNetworkError(err)) {
           const stored = localStorage.getItem('kg_users_v1')
           let users;
           try { users = stored ? JSON.parse(stored) : [] } catch { users = [] }

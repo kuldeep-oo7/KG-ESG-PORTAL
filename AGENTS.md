@@ -42,6 +42,16 @@ For quick back-and-forth messages between agents, use `COORDINATION_CHAT.md`. Ke
 
 ## Handoff Log
 
+### 2026-05-31 - Codex Vercel production hardening
+
+- Added `portal/src/lib/api.js` so production API calls use `VITE_API_BASE_URL` instead of hardcoded localhost URLs.
+- Updated auth, GHG context, and CSR activity fetch/sync calls to avoid `http://localhost:5000` in deployed builds; localStorage fallback remains available when no API is configured.
+- Added `portal/.env.example` documenting `VITE_API_BASE_URL` and `VITE_ENABLE_LOCAL_FALLBACK`.
+- Updated `portal/vercel.json` with SPA rewrites so direct React routes can refresh on Vercel.
+- Compressed oversized gallery/newsletter cover images and attempted safe PDF cleanup for newsletter PDFs.
+- Verified `npm run lint` passes.
+- Verified `npm run build` passes. Vite chunk-size warning remains due to large app/PDF tooling bundle.
+
 ### 2026-05-30 - Antigravity GHG Recalculation & Theme / Dropdowns Fix
 
 - Unified input field, textarea, and select dropdown focuses and hover borders across the portal to use the primary dark green `#064E3B` theme and transition animations, replacing all inconsistent `#10B981` (emerald green) styling on `CSR.jsx`, `Social.jsx`, `Governance.jsx`, `WomenWellbeing.jsx`, `Sites.jsx`, `PublicHome.jsx`, `IntensityMetrics.jsx`, `AssessmentForm.jsx`, and `SiteLayout.jsx`.

@@ -21,6 +21,7 @@ import {
 import { GHGContext } from './GHGContextValue'
 import { SEED } from './SEED'
 import { SITES } from '../data/ghgData'
+import { apiUrl, API_ENABLED } from '../lib/api'
 
 // LocalStorage Fallback Helpers
 const LS_SITES_KEY = 'kg_sites_v2_fallback'
@@ -217,8 +218,19 @@ export function GHGProvider({ children }) {
       setLoading(true)
     })
 
+    if (!API_ENABLED) {
+      const localSites = getLocalSites(currentUserEmail)
+      const localEntries = getLocalEntries(currentUserEmail)
+      Promise.resolve().then(() => {
+        setSites(localSites)
+        setEntries(recalculateAllEntries(localEntries))
+        setLoading(false)
+      })
+      return
+    }
+
     // Load sites
-    fetch(`http://localhost:5000/api/sites?email=${encodeURIComponent(currentUserEmail)}`)
+    fetch(apiUrl(`/api/sites?email=${encodeURIComponent(currentUserEmail)}`))
       .then(res => {
         if (!res.ok) throw new Error('API Error')
         return res.json()
@@ -233,7 +245,7 @@ export function GHGProvider({ children }) {
       })
 
     // Load GHG entries
-    fetch(`http://localhost:5000/api/ghg-entries?email=${encodeURIComponent(currentUserEmail)}`)
+    fetch(apiUrl(`/api/ghg-entries?email=${encodeURIComponent(currentUserEmail)}`))
       .then(res => {
         if (!res.ok) throw new Error('API Error')
         return res.json()
@@ -288,7 +300,7 @@ export function GHGProvider({ children }) {
   async function addEntry(siteCode, module, entry) {
     if (!currentUserEmail) return
     try {
-      const response = await fetch('http://localhost:5000/api/ghg-entries', {
+      const response = await fetch(apiUrl('/api/ghg-entries'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -333,7 +345,7 @@ export function GHGProvider({ children }) {
   async function deleteEntry(siteCode, module, id) {
     if (!currentUserEmail) return
     try {
-      const response = await fetch(`http://localhost:5000/api/ghg-entries/${id}?email=${encodeURIComponent(currentUserEmail)}`, {
+      const response = await fetch(apiUrl(`/api/ghg-entries/${id}?email=${encodeURIComponent(currentUserEmail)}`), {
         method: 'DELETE'
       })
       if (response.ok) {
@@ -372,7 +384,7 @@ export function GHGProvider({ children }) {
       const nextNum = sites.length + 1
       const code = `KGIPL-0${nextNum}`
 
-      const response = await fetch('http://localhost:5000/api/sites', {
+      const response = await fetch(apiUrl('/api/sites'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -420,7 +432,7 @@ export function GHGProvider({ children }) {
   async function updateSite(siteData) {
     if (!currentUserEmail) return
     try {
-      const response = await fetch('http://localhost:5000/api/sites', {
+      const response = await fetch(apiUrl('/api/sites'), {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -466,7 +478,7 @@ export function GHGProvider({ children }) {
   async function deleteSite(code) {
     if (!currentUserEmail) return
     try {
-      const response = await fetch(`http://localhost:5000/api/sites?email=${encodeURIComponent(currentUserEmail)}&code=${encodeURIComponent(code)}`, {
+      const response = await fetch(apiUrl(`/api/sites?email=${encodeURIComponent(currentUserEmail)}&code=${encodeURIComponent(code)}`), {
         method: 'DELETE'
       })
       if (response.ok) {
