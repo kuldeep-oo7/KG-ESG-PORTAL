@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ChevronUp, ChevronDown, Search, Calendar } from 'lucide-react'
+import { Download, ChevronUp, ChevronDown, Search, Calendar } from 'lucide-react'
 import { REPORT_TOTALS, SITES } from '../data/ghgData'
 import { useGHG } from '../store/useGHG'
 
@@ -174,6 +174,7 @@ export default function GHGReports() {
   const [fromYear, setFromYear]   = useState('2026')
   const [toMonth, setToMonth]     = useState('Mar')
   const [toYear, setToYear]       = useState('2027')
+  const [exportFormat, setExportFormat] = useState('Excel')
 
   // Live totals
   const liveS1 = ALL_CODES.reduce((s, c) => s + getScopeTotal(c, 1), 0)
@@ -462,22 +463,24 @@ export default function GHGReports() {
           {/* Export format */}
           <div className="relative">
             <select
-              value=""
-              onChange={e => {
-                const fmt = e.target.value;
-                if (fmt) {
-                  handleExport(fmt);
-                }
-              }}
-              className="border border-slate-200 rounded-lg pl-3 pr-8 py-2 text-sm outline-none bg-white text-slate-500 focus:border-[#064E3B] focus:ring-2 focus:ring-[#064E3B]/10 transition-all appearance-none cursor-pointer"
+              value={exportFormat}
+              onChange={e => setExportFormat(e.target.value)}
+              className="border border-slate-200 rounded-lg pl-3 pr-8 py-2 text-sm outline-none bg-white text-slate-700 focus:border-[#064E3B] focus:ring-2 focus:ring-[#064E3B]/10 transition-all appearance-none cursor-pointer"
             >
-              <option value="">Export Format</option>
               <option value="Excel">Excel</option>
               <option value="CSV">CSV</option>
               <option value="PDF">PDF</option>
             </select>
             <ChevronDown className="absolute right-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
           </div>
+
+          {/* Export button */}
+          <button
+            onClick={() => handleExport(exportFormat)}
+            className="flex items-center gap-2 bg-[#064E3B] hover:bg-[#065F46] text-white text-sm font-medium px-5 py-2.5 rounded-xl transition-colors shadow-sm"
+          >
+            <Download className="w-4 h-4" /> Export Report
+          </button>
 
         </div>
       </div>
