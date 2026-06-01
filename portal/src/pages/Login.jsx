@@ -62,25 +62,38 @@ export default function Login() {
       .catch(err => {
         // Local fallback if offline/unreachable
         if (LOCAL_FALLBACK_ENABLED && isNetworkError(err)) {
+          // Built-in default admin — always works
+          const DEFAULT_ADMIN = {
+            name: 'K. Girdharlal',
+            email: 'csr@kgirdharlal.com',
+            password: 'password123',
+            role: 'admin',
+          }
+
           const stored = localStorage.getItem('kg_users_v1')
-          let users;
+          let users
           try { users = stored ? JSON.parse(stored) : [] } catch { users = [] }
 
-          const found = users.find(u => u.email.toLowerCase() === email.toLowerCase())
+          // Merge default admin with stored users so it always exists
+          const allUsers = [DEFAULT_ADMIN, ...users.filter(u => u.email.toLowerCase() !== DEFAULT_ADMIN.email)]
+
+          const found = allUsers.find(u => u.email.toLowerCase() === email.toLowerCase())
           if (!found) {
-            setError('Email address not registered (local fallback).')
+            setError('Email address not registered.')
             return
           }
           if (found.password !== password) {
-            setError('Incorrect password (local fallback).')
+            setError('Incorrect password.')
             return
           }
-          localStorage.setItem('kg_current_user_v1', JSON.stringify(found))
+          const { password: _pw, ...safeUser } = found
+          localStorage.setItem('kg_current_user_v1', JSON.stringify(safeUser))
           navigate('/dashboard')
         } else {
           setError(err.message)
         }
       })
+
   }
 
   return (
