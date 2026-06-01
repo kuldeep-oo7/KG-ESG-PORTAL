@@ -24,7 +24,7 @@ function useOutsideClick(ref, handler) {
 /* ── Profile Modal ─────────────────────────────────────────────── */
 function ProfileModal({ user, onClose, onSave }) {
   const [name, setName]   = useState(user?.name  || 'K. Girdharlal')
-  const [email]           = useState(user?.email || 'ketanbheda@kgirdharlal.com')
+  const [email]           = useState(user?.email || 'csr@kgirdharlal.com')
   const [saved, setSaved] = useState(false)
 
   const initials = name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase()
@@ -161,7 +161,7 @@ function ProfileDropdown({ user, onClose, navigate, onOpenProfile }) {
     <div className="absolute right-0 top-10 w-56 bg-white border border-slate-200 rounded-xl shadow-lg z-50 py-1">
       <div className="px-4 py-3 border-b border-slate-100">
         <p className="text-sm font-semibold text-slate-800 truncate">{user?.name || 'K. Girdharlal'}</p>
-        <p className="text-xs text-slate-500 mt-0.5 truncate">{user?.email || 'ketanbheda@kgirdharlal.com'}</p>
+        <p className="text-xs text-slate-500 mt-0.5 truncate">{user?.email || 'csr@kgirdharlal.com'}</p>
       </div>
       <button
         onClick={() => { onClose(); onOpenProfile() }}
@@ -201,7 +201,7 @@ export default function Navbar() {
   const [user, setUser] = useState(() => {
     const raw = localStorage.getItem('kg_current_user_v1')
     if (raw) { try { return JSON.parse(raw) } catch { /* ignore */ } }
-    return { name: 'K. Girdharlal', email: 'ketanbheda@kgirdharlal.com' }
+    return { name: 'K. Girdharlal', email: 'csr@kgirdharlal.com' }
   })
 
   useOutsideClick(settingsRef, () => setShowSettings(false))

@@ -993,10 +993,10 @@ export default function CSR() {
         try {
           nextActivities = JSON.parse(stored)
         } catch {
-          nextActivities = currentUserEmail === 'ketanbheda@kgirdharlal.com' ? ANNUAL_CHARTER : []
+          nextActivities = currentUserEmail === 'csr@kgirdharlal.com' ? ANNUAL_CHARTER : []
         }
       } else {
-        nextActivities = currentUserEmail === 'ketanbheda@kgirdharlal.com' ? ANNUAL_CHARTER : []
+        nextActivities = currentUserEmail === 'csr@kgirdharlal.com' ? ANNUAL_CHARTER : []
       }
       Promise.resolve().then(() => {
         setActivities(nextActivities)
@@ -1012,7 +1012,7 @@ export default function CSR() {
         return res.json()
       })
       .then(data => {
-        if (data.length === 0 && currentUserEmail === 'ketanbheda@kgirdharlal.com') {
+        if (data.length === 0 && currentUserEmail === 'csr@kgirdharlal.com') {
           fetch(apiUrl('/api/csr-activities/sync'), {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -1042,10 +1042,10 @@ export default function CSR() {
           try {
             setActivities(JSON.parse(stored))
           } catch {
-            setActivities(currentUserEmail === 'ketanbheda@kgirdharlal.com' ? ANNUAL_CHARTER : [])
+            setActivities(currentUserEmail === 'csr@kgirdharlal.com' ? ANNUAL_CHARTER : [])
           }
         } else {
-          setActivities(currentUserEmail === 'ketanbheda@kgirdharlal.com' ? ANNUAL_CHARTER : [])
+          setActivities(currentUserEmail === 'csr@kgirdharlal.com' ? ANNUAL_CHARTER : [])
         }
         setLoading(false)
         setHasLoaded(true)

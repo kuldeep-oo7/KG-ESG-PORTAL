@@ -30,7 +30,7 @@ const LS_ENTRIES_KEY = 'kg_entries_v2_fallback'
 function getLocalSites(email) {
   try {
     const raw = localStorage.getItem(`${LS_SITES_KEY}_${email}`)
-    return raw ? JSON.parse(raw) : (email.toLowerCase() === 'ketanbheda@kgirdharlal.com' ? SITES : [])
+    return raw ? JSON.parse(raw) : (email.toLowerCase() === 'csr@kgirdharlal.com' ? SITES : [])
   } catch {
     return []
   }
@@ -41,7 +41,7 @@ function saveLocalSites(email, data) {
 function getLocalEntries(email) {
   try {
     const raw = localStorage.getItem(`${LS_ENTRIES_KEY}_${email}`)
-    return raw ? JSON.parse(raw) : (email.toLowerCase() === 'ketanbheda@kgirdharlal.com' ? SEED : {})
+    return raw ? JSON.parse(raw) : (email.toLowerCase() === 'csr@kgirdharlal.com' ? SEED : {})
   } catch {
     return {}
   }

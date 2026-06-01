@@ -62,7 +62,7 @@ export default function Dashboard() {
   const { getScopeTotal, sites, allEntries, loading } = useGHG()
   const userRaw = localStorage.getItem('kg_current_user_v1')
   const user = userRaw ? JSON.parse(userRaw) : null
-  const isAdmin = user?.email === 'ketanbheda@kgirdharlal.com'
+  const isAdmin = user?.email === 'csr@kgirdharlal.com'
 
   const [currentYear, setCurrentYear] = useState('CY 2026')
   const [baselineYear, setBaselineYear] = useState('CY 2024')

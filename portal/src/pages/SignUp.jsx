@@ -84,7 +84,7 @@ export default function SignUp() {
           let users;
           try { users = stored ? JSON.parse(stored) : [] } catch { users = [] }
           
-          if (users.some(u => u.email.toLowerCase() === email.toLowerCase()) || email.toLowerCase() === 'ketanbheda@kgirdharlal.com') {
+          if (users.some(u => u.email.toLowerCase() === email.toLowerCase()) || email.toLowerCase() === 'csr@kgirdharlal.com') {
             setError('This email is already registered (local fallback).')
             return
           }
