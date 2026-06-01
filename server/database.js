@@ -65,7 +65,7 @@ export async function initDb() {
   `)
 
   // ── Seeding default user & records ───────────────────────────────────────
-  const defaultEmail = 'ketanbheda@kgirdharlal.com'
+  const defaultEmail = 'csr@kgirdharlal.com'
   const defaultPass = 'password123'
   
   const user = await db.get('SELECT * FROM users WHERE email = ?', [defaultEmail])
