@@ -64,7 +64,7 @@ export function FileUpload({ label = 'Supporting Document', file, onChange }) {
   }
   return (
     <div className="flex flex-col gap-1 col-span-full">
-      <label className="text-xs font-medium text-slate-600">{label}</label>
+      {label && <label className="text-xs font-medium text-slate-600">{label}</label>}
       <label className="border-2 border-dashed border-slate-200 rounded-xl p-4 text-center cursor-pointer hover:border-[#064E3B]/40 hover:bg-[#E6F4F1]/20 transition-all">
         <p className="text-sm text-slate-500">{file ? file.name : 'Drag file here or click to select'}</p>
         <p className="text-xs text-slate-400 mt-0.5">
@@ -181,22 +181,38 @@ function EditEntryModal({ row, onClose, onSave }) {
   const [cons, setCons]     = useState(String(row.Consumption ?? row.consumption ?? ''))
   const [ef, setEf]         = useState(String(row.ef ?? row['Emission Factor'] ?? ''))
   const [remarks, setRemarks] = useState(row.remarks || '')
+  const [docFile, setDocFile] = useState(null)
+  const currentDocName = row['Supporting Document'] || row.fileName || row.documentName
   const tco2e = (parseFloat(cons) || 0) * (parseFloat(ef) || 0) / 1000
   const typeLabel = row.Type || row.type || row.Country || row['Name of Country'] || row['Type of Goods'] || ''
 
-  function save() {
+  async function save() {
     const period = `${month} - ${year}`
     const c = parseFloat(cons) || 0
     const e = parseFloat(ef) || 0
     const t = +(c * e / 1000).toFixed(6)
-    onSave({
+    const patch = {
       date,
       'Entry Period': period, period,
       Consumption: c, consumption: c, Volume: c,
       'Emission Factor': e, ef: e,
       tco2e: t, ghg: t,
       remarks,
-    })
+    }
+    if (docFile?.name) {
+      patch['Supporting Document'] = docFile.name
+      if (docFile.dataUrl) {
+        const id = newDocId()
+        try {
+          await putDoc(id, { name: docFile.name, type: docFile.type, dataUrl: docFile.dataUrl })
+          patch.documentId = id
+          patch.documentData = null
+        } catch {
+          patch.documentData = docFile.dataUrl
+        }
+      }
+    }
+    onSave(patch)
   }
 
   return (
@@ -244,6 +260,13 @@ function EditEntryModal({ row, onClose, onSave }) {
             <label className="text-xs font-medium text-slate-600">Remarks</label>
             <input value={remarks} onChange={e => setRemarks(e.target.value)} placeholder="Additional notes"
               className="border border-slate-200 rounded-xl px-3 py-2 text-sm outline-none focus:border-[#064E3B] focus:ring-2 focus:ring-[#064E3B]/10" />
+          </div>
+          <div className="flex flex-col gap-1">
+            <label className="text-xs font-medium text-slate-600">Supporting Document</label>
+            {currentDocName && !docFile && (
+              <p className="text-[11px] text-slate-500 mb-1">Current: <span className="font-medium text-slate-700">{currentDocName}</span> — choose a file below to replace it.</p>
+            )}
+            <FileUpload label="" file={docFile} onChange={setDocFile} />
           </div>
           <div className="bg-[#ECFDF5] border border-[#10B981]/30 rounded-xl px-4 py-2.5 flex items-center justify-between">
             <span className="text-xs font-medium text-[#065F46]">Recalculated tCO2Eq</span>
