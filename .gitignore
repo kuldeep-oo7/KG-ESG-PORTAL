@@ -31,3 +31,5 @@ server/database.db
 server/database.db-journal
 
 .vercel
+
+.env*.local

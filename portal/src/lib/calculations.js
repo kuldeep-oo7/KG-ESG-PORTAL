@@ -307,10 +307,10 @@ export const EF_GRID = {
 
 // ── Scope 2: Heat & Steam ──────────────────────────────────────────────────────
 export const EF_HEAT = {
-  'Onsite': 0.17529,
-  'District': 0.17529,
-  'Onsite heat and steam': 0.17529,
-  'District heat and steam': 0.17529,
+  'Onsite': 0.179647,
+  'District': 0.179647,
+  'Onsite heat and steam': 0.179647,
+  'District heat and steam': 0.179647,
 }
 
 // ── Scope 3: Water ────────────────────────────────────────────────────────────
