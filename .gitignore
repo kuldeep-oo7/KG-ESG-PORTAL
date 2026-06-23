@@ -29,3 +29,5 @@ Thumbs.db
 server/node_modules/
 server/database.db
 server/database.db-journal
+
+.vercel

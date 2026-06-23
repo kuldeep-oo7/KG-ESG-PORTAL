@@ -24,15 +24,20 @@ import { SITES } from '../data/ghgData'
 import { apiUrl, API_ENABLED } from '../lib/api'
 
 // LocalStorage Fallback Helpers
-const LS_SITES_KEY = 'kg_sites_v2_fallback'
-const LS_ENTRIES_KEY = 'kg_entries_v2_fallback'
+const LS_SITES_KEY = 'kg_sites_v3_fallback'
+const LS_ENTRIES_KEY = 'kg_entries_v3_fallback'
 
 function getLocalSites(email) {
   try {
     const raw = localStorage.getItem(`${LS_SITES_KEY}_${email}`)
-    return raw ? JSON.parse(raw) : (email.toLowerCase() === 'csr@kgirdharlal.com' ? SITES : [])
+    if (raw) {
+      const parsed = JSON.parse(raw)
+      if (Array.isArray(parsed) && parsed.length > 0) return parsed
+    }
+    // No (meaningful) saved data — fall back to the bundled demo sites for any user
+    return SITES
   } catch {
-    return []
+    return SITES
   }
 }
 function saveLocalSites(email, data) {
@@ -41,9 +46,14 @@ function saveLocalSites(email, data) {
 function getLocalEntries(email) {
   try {
     const raw = localStorage.getItem(`${LS_ENTRIES_KEY}_${email}`)
-    return raw ? JSON.parse(raw) : (email.toLowerCase() === 'csr@kgirdharlal.com' ? SEED : {})
+    if (raw) {
+      const parsed = JSON.parse(raw)
+      if (parsed && Object.keys(parsed).length > 0) return parsed
+    }
+    // No (meaningful) saved data — fall back to the bundled seed data for any user
+    return SEED
   } catch {
-    return {}
+    return SEED
   }
 }
 function saveLocalEntries(email, data) {

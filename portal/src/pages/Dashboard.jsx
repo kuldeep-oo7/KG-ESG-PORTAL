@@ -64,7 +64,7 @@ export default function Dashboard() {
   const user = userRaw ? JSON.parse(userRaw) : null
   const isAdmin = user?.email === 'csr@kgirdharlal.com'
 
-  const [currentYear, setCurrentYear] = useState('CY 2026')
+  const [currentYear, setCurrentYear] = useState('CY 2025')
   const [baselineYear, setBaselineYear] = useState('CY 2024')
 
   const getEntryMonthAndYear = (e) => {
