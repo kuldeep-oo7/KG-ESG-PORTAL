@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import AssessmentForm, { Select, Input, GHGPreview, FileUpload } from '../../components/AssessmentForm'
+import AssessmentForm, { Select, Input, GHGPreview } from '../../components/AssessmentForm'
 import { calcElectricity } from '../../lib/calculations'
 import { COUNTRIES, ELEC_UNITS } from '../../lib/constants'
 
@@ -11,7 +11,6 @@ export default function Scope2Electricity() {
   const [unit, setUnit]               = useState('')
   const [consumption, setConsumption] = useState('')
   const [remarks, setRemarks]         = useState('')
-  const [file, setFile]               = useState(null)
 
   const preview = country && unit && consumption
     ? calcElectricity(country, unit, parseFloat(consumption) || 0)
@@ -30,9 +29,8 @@ export default function Scope2Electricity() {
       remarks,
       ef,
       tco2e,
-      fileName: file ? file.name : null
     }
-    setCountry(''); setUnit(''); setConsumption(''); setRemarks(''); setFile(null)
+    setCountry(''); setUnit(''); setConsumption(''); setRemarks('')
     return e
   }
 
@@ -53,7 +51,6 @@ export default function Scope2Electricity() {
             <Input label="Consumption" value={consumption} onChange={setConsumption} type="number" required />
           </div>
           <Input label="Remarks" value={remarks} onChange={setRemarks} placeholder="Additional notes" />
-          <FileUpload file={file} onChange={setFile} />
           {preview && <GHGPreview tco2e={preview.tco2e} />}
           <div className="flex gap-3">
             <button onClick={() => onSubmit()} className="bg-[#064E3B] hover:bg-[#065F46] text-white text-sm font-medium px-6 py-2.5 rounded-xl transition-colors">Submit</button>

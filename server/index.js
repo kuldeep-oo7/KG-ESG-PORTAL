@@ -186,6 +186,30 @@ app.post('/api/ghg-entries', async (req, res) => {
   }
 })
 
+app.put('/api/ghg-entries/:id', async (req, res) => {
+  const { email, patch } = req.body
+  const id = req.params.id
+  if (!email || !id || !patch) {
+    return res.status(400).json({ error: 'Email, id, and patch are required.' })
+  }
+
+  try {
+    const row = await db.get('SELECT * FROM ghg_entries WHERE id = ? AND user_email = ?', [id, email.toLowerCase()])
+    if (!row) {
+      return res.status(404).json({ error: 'Entry not found.' })
+    }
+    const merged = { ...JSON.parse(row.data_json), ...patch }
+    const tco2e = parseFloat(merged.tco2e || merged.ghg || 0)
+    await db.run(
+      'UPDATE ghg_entries SET tco2e = ?, data_json = ? WHERE id = ? AND user_email = ?',
+      [tco2e, JSON.stringify(merged), id, email.toLowerCase()]
+    )
+    res.json({ ...merged, id: row.id })
+  } catch (err) {
+    res.status(500).json({ error: 'Database error updating GHG entry.' })
+  }
+})
+
 app.delete('/api/ghg-entries/:id', async (req, res) => {
   const email = req.query.email
   const id = req.params.id

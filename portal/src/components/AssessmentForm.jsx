@@ -1,6 +1,10 @@
 import { useState } from 'react'
-import { History, SkipForward, Trash2, Search, ChevronDown, X, CheckCircle2, FileText } from 'lucide-react'
+import { History, SkipForward, Trash2, Pencil, Search, ChevronDown, X, CheckCircle2, FileText, Download } from 'lucide-react'
 import { useGHG } from '../store/useGHG'
+
+const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December']
+const YEARS  = ['2023','2024','2025','2026','2027']
+const MAX_EMBED = 2 * 1024 * 1024 // 2 MB — embed smaller files as data URL so they persist & download
 
 // ─── Reusable form fields ─────────────────────────────────────────────────────
 
@@ -42,14 +46,32 @@ export function Input({ label, value, onChange, placeholder, required, type = 't
   )
 }
 
+// Reads the chosen file and (for files <= 2MB) embeds it as a data URL so it is
+// saved with the entry and can be downloaded later. Larger files keep name only.
 export function FileUpload({ label = 'Supporting Document', file, onChange }) {
+  function handleFile(f) {
+    if (!f) { onChange(null); return }
+    const meta = { name: f.name, size: f.size, type: f.type }
+    if (f.size <= MAX_EMBED) {
+      const reader = new FileReader()
+      reader.onload = () => onChange({ ...meta, dataUrl: reader.result })
+      reader.onerror = () => onChange({ ...meta, dataUrl: null })
+      reader.readAsDataURL(f)
+    } else {
+      onChange({ ...meta, dataUrl: null })
+    }
+  }
   return (
     <div className="flex flex-col gap-1 col-span-full">
       <label className="text-xs font-medium text-slate-600">{label}</label>
       <label className="border-2 border-dashed border-slate-200 rounded-xl p-4 text-center cursor-pointer hover:border-[#064E3B]/40 hover:bg-[#E6F4F1]/20 transition-all">
         <p className="text-sm text-slate-500">{file ? file.name : 'Drag file here or click to select'}</p>
-        <p className="text-xs text-slate-400 mt-0.5">PDF, Excel, Word, Image – max 5 MB</p>
-        <input type="file" className="hidden" onChange={e => onChange(e.target.files?.[0])} />
+        <p className="text-xs text-slate-400 mt-0.5">
+          {file
+            ? (file.dataUrl ? 'Attached — will be saved with the entry' : 'Attached (over 2 MB: name saved, file not embedded)')
+            : 'PDF, Excel, Word, Image – max 5 MB'}
+        </p>
+        <input type="file" className="hidden" onChange={e => handleFile(e.target.files?.[0])} />
       </label>
     </div>
   )
@@ -75,9 +97,115 @@ export function GHGPreview({ tco2e }) {
   )
 }
 
+// ─── Document cell (download link if embedded) ────────────────────────────────
+
+function DocCell({ row }) {
+  const name = row['Supporting Document'] || row.fileName || row.documentName
+  const url = row.documentData || row.dataUrl
+  if (!name) return <span className="text-slate-300">—</span>
+  if (url) {
+    return (
+      <a href={url} download={name} title={name}
+        className="inline-flex items-center gap-1 text-[#064E3B] hover:underline max-w-[120px]">
+        <Download className="w-3 h-3 shrink-0" />
+        <span className="truncate">{name}</span>
+      </a>
+    )
+  }
+  return <span className="text-slate-500 truncate inline-block max-w-[120px]" title={name}>{name}</span>
+}
+
+// ─── Edit entry modal (recomputes tCO2e = consumption × EF ÷ 1000) ────────────
+
+function EditEntryModal({ row, onClose, onSave }) {
+  const [pm, py] = (row['Entry Period'] || row.period || ' - ').split(' - ')
+  const [month, setMonth]   = useState(MONTHS.includes((pm || '').trim()) ? pm.trim() : MONTHS[0])
+  const [year, setYear]     = useState((py || '').trim() || '2025')
+  const [date, setDate]     = useState(row.date || new Date().toISOString().slice(0, 10))
+  const [cons, setCons]     = useState(String(row.Consumption ?? row.consumption ?? ''))
+  const [ef, setEf]         = useState(String(row.ef ?? row['Emission Factor'] ?? ''))
+  const [remarks, setRemarks] = useState(row.remarks || '')
+  const tco2e = (parseFloat(cons) || 0) * (parseFloat(ef) || 0) / 1000
+  const typeLabel = row.Type || row.type || row.Country || row['Name of Country'] || row['Type of Goods'] || ''
+
+  function save() {
+    const period = `${month} - ${year}`
+    const c = parseFloat(cons) || 0
+    const e = parseFloat(ef) || 0
+    const t = +(c * e / 1000).toFixed(6)
+    onSave({
+      date,
+      'Entry Period': period, period,
+      Consumption: c, consumption: c, Volume: c,
+      'Emission Factor': e, ef: e,
+      tco2e: t, ghg: t,
+      remarks,
+    })
+  }
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4" onClick={onClose}>
+      <div className="bg-white rounded-2xl shadow-xl w-full max-w-md p-6" onClick={e => e.stopPropagation()}>
+        <div className="flex items-center justify-between mb-4">
+          <h3 className="text-base font-bold text-slate-800" style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}>Edit Entry</h3>
+          <button onClick={onClose} className="text-slate-400 hover:text-slate-600"><X className="w-5 h-5" /></button>
+        </div>
+        {typeLabel && <p className="text-xs text-slate-500 mb-4">Editing: <span className="font-medium text-slate-700">{typeLabel}</span></p>}
+        <div className="space-y-3">
+          <div className="grid grid-cols-2 gap-3">
+            <div className="flex flex-col gap-1">
+              <label className="text-xs font-medium text-slate-600">Date</label>
+              <input type="date" value={date} onChange={e => setDate(e.target.value)}
+                className="border border-slate-200 rounded-xl px-3 py-2 text-sm outline-none focus:border-[#064E3B] focus:ring-2 focus:ring-[#064E3B]/10" />
+            </div>
+            <div className="flex flex-col gap-1">
+              <label className="text-xs font-medium text-slate-600">Entry Period</label>
+              <div className="flex gap-2">
+                <select value={month} onChange={e => setMonth(e.target.value)}
+                  className="flex-1 border border-slate-200 rounded-xl px-2 py-2 text-sm bg-white outline-none focus:border-[#064E3B]">
+                  {MONTHS.map(m => <option key={m}>{m}</option>)}
+                </select>
+                <select value={year} onChange={e => setYear(e.target.value)}
+                  className="w-20 border border-slate-200 rounded-xl px-2 py-2 text-sm bg-white outline-none focus:border-[#064E3B]">
+                  {YEARS.map(y => <option key={y}>{y}</option>)}
+                </select>
+              </div>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-3">
+            <div className="flex flex-col gap-1">
+              <label className="text-xs font-medium text-slate-600">Consumption</label>
+              <input type="number" value={cons} onChange={e => setCons(e.target.value)}
+                className="border border-slate-200 rounded-xl px-3 py-2 text-sm outline-none focus:border-[#064E3B] focus:ring-2 focus:ring-[#064E3B]/10" />
+            </div>
+            <div className="flex flex-col gap-1">
+              <label className="text-xs font-medium text-slate-600">Emission Factor</label>
+              <input type="number" value={ef} onChange={e => setEf(e.target.value)}
+                className="border border-slate-200 rounded-xl px-3 py-2 text-sm outline-none focus:border-[#064E3B] focus:ring-2 focus:ring-[#064E3B]/10" />
+            </div>
+          </div>
+          <div className="flex flex-col gap-1">
+            <label className="text-xs font-medium text-slate-600">Remarks</label>
+            <input value={remarks} onChange={e => setRemarks(e.target.value)} placeholder="Additional notes"
+              className="border border-slate-200 rounded-xl px-3 py-2 text-sm outline-none focus:border-[#064E3B] focus:ring-2 focus:ring-[#064E3B]/10" />
+          </div>
+          <div className="bg-[#ECFDF5] border border-[#10B981]/30 rounded-xl px-4 py-2.5 flex items-center justify-between">
+            <span className="text-xs font-medium text-[#065F46]">Recalculated tCO2Eq</span>
+            <span className="text-sm font-bold text-[#064E3B] tabular-nums">{tco2e.toFixed(6)}</span>
+          </div>
+        </div>
+        <div className="flex gap-3 mt-5">
+          <button onClick={save} className="flex-1 bg-[#064E3B] hover:bg-[#065F46] text-white text-sm font-medium py-2.5 rounded-xl transition-colors">Save Changes</button>
+          <button onClick={onClose} className="border border-slate-200 text-sm text-slate-600 px-4 py-2.5 rounded-xl hover:border-slate-300 transition-colors">Cancel</button>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 // ─── Records table ────────────────────────────────────────────────────────────
 
-export function RecordsTable({ columns, entries, onDelete }) {
+export function RecordsTable({ columns, entries, onDelete, onEdit }) {
   const [search, setSearch] = useState('')
   const filtered = entries.filter(e =>
     Object.values(e).some(v => String(v).toLowerCase().includes(search.toLowerCase()))
@@ -122,10 +250,9 @@ export function RecordsTable({ columns, entries, onDelete }) {
                   {c}
                 </th>
               ))}
-              <th className="px-3 py-2.5 font-semibold text-slate-400 uppercase tracking-wide text-[9px] text-right whitespace-nowrap">
-                tCO2Eq
-              </th>
-              <th className="px-2 py-2.5 w-8" />
+              <th className="px-3 py-2.5 font-semibold text-slate-400 uppercase tracking-wide text-[9px] text-right whitespace-nowrap">tCO2Eq</th>
+              <th className="text-left px-3 py-2.5 font-semibold text-slate-400 uppercase tracking-wide text-[9px] whitespace-nowrap">Document</th>
+              <th className="px-2 py-2.5 w-16" />
             </tr>
           </thead>
           <tbody>
@@ -139,13 +266,26 @@ export function RecordsTable({ columns, entries, onDelete }) {
                 <td className="px-3 py-2.5 font-bold text-[#064E3B] text-right whitespace-nowrap tabular-nums">
                   {(row.tco2e || 0).toFixed(6)}
                 </td>
+                <td className="px-3 py-2.5 whitespace-nowrap"><DocCell row={row} /></td>
                 <td className="px-2 py-2.5">
-                  <button
-                    onClick={() => onDelete(row.id)}
-                    className="w-6 h-6 flex items-center justify-center rounded-lg text-slate-300 hover:text-red-400 hover:bg-red-50 transition-colors"
-                  >
-                    <Trash2 className="w-3.5 h-3.5" />
-                  </button>
+                  <div className="flex items-center gap-1 justify-end">
+                    {onEdit && (
+                      <button
+                        onClick={() => onEdit(row)}
+                        title="Edit entry"
+                        className="w-6 h-6 flex items-center justify-center rounded-lg text-slate-300 hover:text-[#064E3B] hover:bg-[#E6F4F1] transition-colors"
+                      >
+                        <Pencil className="w-3.5 h-3.5" />
+                      </button>
+                    )}
+                    <button
+                      onClick={() => onDelete(row.id)}
+                      title="Delete entry"
+                      className="w-6 h-6 flex items-center justify-center rounded-lg text-slate-300 hover:text-red-400 hover:bg-red-50 transition-colors"
+                    >
+                      <Trash2 className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
                 </td>
               </tr>
             ))}
@@ -188,14 +328,14 @@ export default function AssessmentForm({
   fields, columns, onBuildEntry,
   onNext, onPrev,
 }) {
-  const { getEntries, getModuleTotal, addEntry, deleteEntry } = useGHG()
+  const { getEntries, getModuleTotal, addEntry, deleteEntry, updateEntry } = useGHG()
   const [showHistory, setShowHistory] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const [entryDate, setEntryDate] = useState(new Date().toISOString().slice(0, 10))
-  const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December']
-  const YEARS  = ['2023','2024','2025','2026','2027']
   const [periodMonth, setPeriodMonth] = useState(MONTHS[new Date().getMonth()])
   const [periodYear,  setPeriodYear]  = useState(String(new Date().getFullYear()))
+  const [doc, setDoc] = useState(null)
+  const [editRow, setEditRow] = useState(null)
   const entryPeriod = `${periodMonth} - ${periodYear}`
   const entries = getEntries(siteCode, module)
   const total = getModuleTotal(siteCode, module)
@@ -204,10 +344,26 @@ export default function AssessmentForm({
   function handleSubmit(formData) {
     const entry = onBuildEntry(formData)
     if (!entry) return
-    addEntry(siteCode, module, { ...entry, date: entryDate, 'Entry Period': entryPeriod })
+    addEntry(siteCode, module, {
+      ...entry,
+      date: entryDate,
+      'Entry Period': entryPeriod,
+      'Supporting Document': doc?.name || entry['Supporting Document'] || entry.fileName || null,
+      documentData: doc?.dataUrl || null,
+    })
+    setDoc(null)
     setSubmitted(true)
     setTimeout(() => setSubmitted(false), 2500)
   }
+
+  const recordsTable = (
+    <RecordsTable
+      columns={allColumns}
+      entries={entries}
+      onDelete={id => deleteEntry(siteCode, module, id)}
+      onEdit={row => setEditRow(row)}
+    />
+  )
 
   return (
     <div className="flex-1 overflow-y-auto bg-[#F8FAFC]">
@@ -260,11 +416,7 @@ export default function AssessmentForm({
             <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3">
               Recorded Entries
             </p>
-            <RecordsTable
-              columns={allColumns}
-              entries={entries}
-              onDelete={id => deleteEntry(siteCode, module, id)}
-            />
+            {recordsTable}
             {entries.length > 0 && (
               <EmissionFooter label={emissionLabel || title} total={total} />
             )}
@@ -312,6 +464,11 @@ export default function AssessmentForm({
             </div>
           </div>
 
+          {/* Centralized supporting-document upload (persists with the entry) */}
+          <div className="mb-5 grid grid-cols-1">
+            <FileUpload file={doc} onChange={setDoc} />
+          </div>
+
           {fields({ onSubmit: handleSubmit, entries })}
         </div>
 
@@ -321,11 +478,7 @@ export default function AssessmentForm({
             <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3">
               Recorded Entries ({entries.length})
             </p>
-            <RecordsTable
-              columns={allColumns}
-              entries={entries}
-              onDelete={id => deleteEntry(siteCode, module, id)}
-            />
+            {recordsTable}
             <EmissionFooter label={emissionLabel || title} total={total} />
           </div>
         )}
@@ -355,7 +508,14 @@ export default function AssessmentForm({
         </div>
 
       </div>
+
+      {editRow && (
+        <EditEntryModal
+          row={editRow}
+          onClose={() => setEditRow(null)}
+          onSave={patch => { updateEntry(siteCode, module, editRow.id, patch); setEditRow(null) }}
+        />
+      )}
     </div>
   )
 }
-

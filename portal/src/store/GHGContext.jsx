@@ -16,7 +16,8 @@ import {
   calcHotel,
   calcGoods,
   calcWaste,
-  calcFood
+  calcFood,
+  calcFreight
 } from '../lib/calculations'
 import { GHGContext } from './GHGContextValue'
 import { SEED } from './SEED'
@@ -401,6 +402,39 @@ export function GHGProvider({ children }) {
     })
   }
 
+  async function updateEntry(siteCode, module, id, patch) {
+    if (!currentUserEmail) return
+    const applyPatch = (prev) => {
+      const prevList = prev[siteCode]?.[module] || []
+      return {
+        ...prev,
+        [siteCode]: {
+          ...(prev[siteCode] || {}),
+          [module]: prevList.map(e => (e.id === id ? { ...e, ...patch } : e))
+        }
+      }
+    }
+
+    try {
+      const response = await fetch(apiUrl(`/api/ghg-entries/${id}`), {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: currentUserEmail, siteCode, module, patch })
+      })
+      if (response.ok) {
+        setEntries(prev => applyPatch(prev))
+        return
+      }
+    } catch { /* ignore and use fallback */ }
+
+    // Fallback path
+    setEntries(prev => {
+      const next = applyPatch(prev)
+      saveLocalEntries(currentUserEmail, next)
+      return next
+    })
+  }
+
   async function addSite(siteData) {
     if (!currentUserEmail) return
     try {
@@ -539,6 +573,7 @@ export function GHGProvider({ children }) {
       getAllSiteCodes,
       addEntry,
       deleteEntry,
+      updateEntry,
       addSite,
       updateSite,
       deleteSite,
