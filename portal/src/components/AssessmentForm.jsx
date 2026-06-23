@@ -102,37 +102,51 @@ export function GHGPreview({ tco2e }) {
 
 function DocCell({ row, onOpen }) {
   const name = row['Supporting Document'] || row.fileName || row.documentName
-  const hasDoc = row.documentData || row.dataUrl || row.documentId
   if (!name) return <span className="text-slate-300">—</span>
-  if (hasDoc) {
-    return (
-      <button onClick={() => onOpen(row)} title={`Preview ${name}`}
-        className="inline-flex items-center gap-1 text-[#064E3B] hover:underline font-medium max-w-[160px]">
-        <Eye className="w-3.5 h-3.5 shrink-0" />
-        <span className="truncate">{name}</span>
-      </button>
-    )
-  }
-  return <span className="text-slate-400 truncate inline-block max-w-[160px]" title={`${name} (not previewable — file was not embedded; re-upload to view)`}>{name}</span>
+  const hasDoc = row.documentData || row.dataUrl || row.documentId
+  return (
+    <button onClick={() => onOpen(row)}
+      title={hasDoc ? `Preview ${name}` : `${name} — file not stored yet, click to attach & view`}
+      className={`inline-flex items-center gap-1 font-medium max-w-[160px] ${hasDoc ? 'text-[#064E3B] hover:underline' : 'text-slate-400 hover:text-[#064E3B]'}`}>
+      <Eye className="w-3.5 h-3.5 shrink-0" />
+      <span className="truncate">{name}</span>
+    </button>
+  )
 }
 
 // ─── Document preview modal (inline PDF / image viewer) ───────────────────────
 
-function DocPreviewModal({ doc, onClose }) {
-  const mime = (((doc.url || '').match(/^data:([^;]+)/)) || [])[1] || ''
+function DocPreviewModal({ doc, onClose, onAttach }) {
+  const [localUrl, setLocalUrl] = useState(null)
+  const [localName, setLocalName] = useState(null)
+  const url = doc.url || localUrl
+  const name = localName || doc.name
+  const mime = (((url || '').match(/^data:([^;]+)/)) || [])[1] || ''
   const isImage = mime.startsWith('image/')
-  const isPdf = mime === 'application/pdf' || /\.pdf$/i.test(doc.name)
+  const isPdf = mime === 'application/pdf' || /\.pdf$/i.test(name || '')
+
+  function handleAttach(f) {
+    if (!f) return
+    const reader = new FileReader()
+    reader.onload = () => {
+      setLocalUrl(reader.result)
+      setLocalName(f.name)
+      if (onAttach && doc.row) onAttach(doc.row, { name: f.name, type: f.type, dataUrl: reader.result })
+    }
+    reader.readAsDataURL(f)
+  }
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4" onClick={onClose}>
       <div className="bg-white rounded-2xl shadow-xl w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden" onClick={e => e.stopPropagation()}>
         <div className="flex items-center justify-between px-5 py-3 border-b border-slate-100">
           <div className="flex items-center gap-2 min-w-0">
             <FileText className="w-4 h-4 text-[#064E3B] shrink-0" />
-            <span className="text-sm font-semibold text-slate-700 truncate" title={doc.name}>{doc.name}</span>
+            <span className="text-sm font-semibold text-slate-700 truncate" title={name}>{name}</span>
           </div>
           <div className="flex items-center gap-2 shrink-0">
-            {doc.url && (
-              <a href={doc.url} download={doc.name} title="Download"
+            {url && (
+              <a href={url} download={name} title="Download"
                 className="w-8 h-8 flex items-center justify-center rounded-lg text-slate-500 hover:text-[#064E3B] hover:bg-[#E6F4F1] transition-colors">
                 <Download className="w-4 h-4" />
               </a>
@@ -146,22 +160,27 @@ function DocPreviewModal({ doc, onClose }) {
         <div className="flex-1 overflow-auto bg-slate-50 flex items-center justify-center p-2">
           {doc.loading ? (
             <div className="text-center py-16 px-6"><p className="text-sm text-slate-500">Loading document…</p></div>
-          ) : !doc.url ? (
+          ) : !url ? (
             <div className="text-center py-16 px-6">
               <FileText className="w-10 h-10 text-slate-300 mx-auto mb-3" />
-              <p className="text-sm text-slate-500">This document’s file wasn’t stored (it was uploaded before file-saving was enabled). Please re-upload it on this entry to preview it.</p>
+              <p className="text-sm text-slate-500 mb-1">The file for <span className="font-medium text-slate-700">{name}</span> isn’t stored yet.</p>
+              <p className="text-xs text-slate-400 mb-4">(It was added before file-saving worked.) Attach it now to view it — it’ll be saved to this entry.</p>
+              <label className="inline-flex items-center gap-2 bg-[#064E3B] hover:bg-[#065F46] text-white text-sm font-medium px-4 py-2 rounded-xl transition-colors cursor-pointer">
+                <Download className="w-4 h-4 rotate-180" /> Attach file to view
+                <input type="file" className="hidden" onChange={e => handleAttach(e.target.files?.[0])} />
+              </label>
             </div>
           ) : isImage ? (
-            <img src={doc.url} alt={doc.name} className="max-w-full max-h-[75vh] object-contain mx-auto" />
+            <img src={url} alt={name} className="max-w-full max-h-[75vh] object-contain mx-auto" />
           ) : isPdf ? (
-            <iframe src={doc.url} title={doc.name} className="w-full h-[75vh] bg-white rounded-lg border border-slate-200" />
+            <iframe src={url} title={name} className="w-full h-[75vh] bg-white rounded-lg border border-slate-200" />
           ) : (
             <div className="text-center py-16 px-6">
               <FileText className="w-10 h-10 text-slate-300 mx-auto mb-3" />
               <p className="text-sm text-slate-500 mb-4">Inline preview isn’t supported for this file type.</p>
-              <a href={doc.url} download={doc.name}
+              <a href={url} download={name}
                 className="inline-flex items-center gap-2 bg-[#064E3B] hover:bg-[#065F46] text-white text-sm font-medium px-4 py-2 rounded-xl transition-colors">
-                <Download className="w-4 h-4" /> Download {doc.name}
+                <Download className="w-4 h-4" /> Download {name}
               </a>
             </div>
           )}
@@ -284,7 +303,7 @@ function EditEntryModal({ row, onClose, onSave }) {
 
 // ─── Records table ────────────────────────────────────────────────────────────
 
-export function RecordsTable({ columns, entries, onDelete, onEdit }) {
+export function RecordsTable({ columns, entries, onDelete, onEdit, onAttachDoc }) {
   const [search, setSearch] = useState('')
   const [preview, setPreview] = useState(null)
 
@@ -292,18 +311,21 @@ export function RecordsTable({ columns, entries, onDelete, onEdit }) {
     const name = row['Supporting Document'] || row.fileName || row.documentName || 'document'
     // Legacy: data URL embedded directly on the entry
     if (row.documentData || row.dataUrl) {
-      setPreview({ name, url: row.documentData || row.dataUrl })
+      setPreview({ name, url: row.documentData || row.dataUrl, row })
       return
     }
     // Current: blob stored in IndexedDB, referenced by documentId
     if (row.documentId) {
-      setPreview({ name, url: '', loading: true })
+      setPreview({ name, url: '', loading: true, row })
       try {
         const d = await getDoc(row.documentId)
-        if (d && d.dataUrl) { setPreview({ name, url: d.dataUrl }); return }
+        if (d && d.dataUrl) { setPreview({ name, url: d.dataUrl, row }); return }
       } catch { /* fall through to missing */ }
-      setPreview({ name, url: '', missing: true })
+      setPreview({ name, url: '', missing: true, row })
+      return
     }
+    // No file stored at all — open modal so the user can attach one
+    setPreview({ name, url: '', missing: true, row })
   }
   const filtered = entries.filter(e =>
     Object.values(e).some(v => String(v).toLowerCase().includes(search.toLowerCase()))
@@ -390,7 +412,7 @@ export function RecordsTable({ columns, entries, onDelete, onEdit }) {
           </tbody>
         </table>
       </div>
-      {preview && <DocPreviewModal doc={preview} onClose={() => setPreview(null)} />}
+      {preview && <DocPreviewModal doc={preview} onClose={() => setPreview(null)} onAttach={onAttachDoc} />}
     </div>
   )
 }
@@ -471,12 +493,24 @@ export default function AssessmentForm({
     setTimeout(() => setSubmitted(false), 2500)
   }
 
+  async function attachDoc(row, file) {
+    if (!row?.id || !file?.dataUrl) return
+    try {
+      const id = newDocId()
+      await putDoc(id, { name: file.name, type: file.type, dataUrl: file.dataUrl })
+      updateEntry(siteCode, module, row.id, { 'Supporting Document': file.name, documentId: id, documentData: null })
+    } catch {
+      updateEntry(siteCode, module, row.id, { 'Supporting Document': file.name, documentData: file.dataUrl })
+    }
+  }
+
   const recordsTable = (
     <RecordsTable
       columns={allColumns}
       entries={entries}
       onDelete={id => deleteEntry(siteCode, module, id)}
       onEdit={row => setEditRow(row)}
+      onAttachDoc={attachDoc}
     />
   )
 
