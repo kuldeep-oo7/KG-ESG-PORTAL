@@ -323,34 +323,36 @@ export function GHGProvider({ children }) {
 
   async function addEntry(siteCode, module, entry) {
     if (!currentUserEmail) return
-    try {
-      const response = await fetch(apiUrl('/api/ghg-entries'), {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          email: currentUserEmail,
-          siteCode,
-          module,
-          entry
+    if (API_ENABLED) {
+      try {
+        const response = await fetch(apiUrl('/api/ghg-entries'), {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email: currentUserEmail,
+            siteCode,
+            module,
+            entry
+          })
         })
-      })
-      if (response.ok) {
-        const savedEntry = await response.json()
-        setEntries(prev => {
-          const prevList = prev[siteCode]?.[module] || []
-          return {
-            ...prev,
-            [siteCode]: {
-              ...(prev[siteCode] || {}),
-              [module]: [...prevList, savedEntry]
+        if (response.ok) {
+          const savedEntry = await response.json()
+          setEntries(prev => {
+            const prevList = prev[siteCode]?.[module] || []
+            return {
+              ...prev,
+              [siteCode]: {
+                ...(prev[siteCode] || {}),
+                [module]: [...prevList, savedEntry]
+              }
             }
-          }
-        })
-        return
-      }
-    } catch { /* ignore and use fallback */ }
+          })
+          return
+        }
+      } catch { /* ignore and use fallback */ }
+    }
 
-    // Fallback path
+    // Fallback path (also used when no backend API is configured)
     const savedEntry = { ...entry, id: Date.now() }
     setEntries(prev => {
       const prevList = prev[siteCode]?.[module] || []
@@ -368,26 +370,28 @@ export function GHGProvider({ children }) {
 
   async function deleteEntry(siteCode, module, id) {
     if (!currentUserEmail) return
-    try {
-      const response = await fetch(apiUrl(`/api/ghg-entries/${id}?email=${encodeURIComponent(currentUserEmail)}`), {
-        method: 'DELETE'
-      })
-      if (response.ok) {
-        setEntries(prev => {
-          const prevList = prev[siteCode]?.[module] || []
-          return {
-            ...prev,
-            [siteCode]: {
-              ...(prev[siteCode] || {}),
-              [module]: prevList.filter(e => e.id !== id)
-            }
-          }
+    if (API_ENABLED) {
+      try {
+        const response = await fetch(apiUrl(`/api/ghg-entries/${id}?email=${encodeURIComponent(currentUserEmail)}`), {
+          method: 'DELETE'
         })
-        return
-      }
-    } catch { /* ignore and use fallback */ }
+        if (response.ok) {
+          setEntries(prev => {
+            const prevList = prev[siteCode]?.[module] || []
+            return {
+              ...prev,
+              [siteCode]: {
+                ...(prev[siteCode] || {}),
+                [module]: prevList.filter(e => e.id !== id)
+              }
+            }
+          })
+          return
+        }
+      } catch { /* ignore and use fallback */ }
+    }
 
-    // Fallback path
+    // Fallback path (also used when no backend API is configured)
     setEntries(prev => {
       const prevList = prev[siteCode]?.[module] || []
       const next = {
@@ -415,19 +419,21 @@ export function GHGProvider({ children }) {
       }
     }
 
-    try {
-      const response = await fetch(apiUrl(`/api/ghg-entries/${id}`), {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: currentUserEmail, siteCode, module, patch })
-      })
-      if (response.ok) {
-        setEntries(prev => applyPatch(prev))
-        return
-      }
-    } catch { /* ignore and use fallback */ }
+    if (API_ENABLED) {
+      try {
+        const response = await fetch(apiUrl(`/api/ghg-entries/${id}`), {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: currentUserEmail, siteCode, module, patch })
+        })
+        if (response.ok) {
+          setEntries(prev => applyPatch(prev))
+          return
+        }
+      } catch { /* ignore and use fallback */ }
+    }
 
-    // Fallback path
+    // Fallback path (also used when no backend API is configured)
     setEntries(prev => {
       const next = applyPatch(prev)
       saveLocalEntries(currentUserEmail, next)
