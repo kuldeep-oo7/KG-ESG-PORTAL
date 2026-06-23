@@ -38,9 +38,20 @@ For quick back-and-forth messages between agents, use `COORDINATION_CHAT.md`. Ke
 | Codex | Social Add Activity full-page audit | `portal/src/pages/Social.jsx`, `AGENTS.md` | COMPLETE | 2026-05-25 |
 | Codex | CSR Add Activity button/functionality audit | `portal/src/pages/CSR.jsx`, `AGENTS.md` | COMPLETE | 2026-05-26 |
 | Codex | Public pre-login page + newsletter section | `portal/src/App.jsx`, `portal/src/pages/PublicHome.jsx`, `portal/src/pages/Login.jsx`, `portal/src/components/Navbar.jsx`, `AGENTS.md` | COMPLETE | 2026-05-27 |
+| Claude | Replace all GHG site emission data with `new data/` workbooks | `portal/src/store/SEED.js`, `gen_seed.py`, `new data/*`, `data/*` | COMPLETE | 2026-06-23 |
 | Antigravity | GHG Recalculation & Dropdowns Theme Unification | `portal/src/lib/calculations.js`, `portal/src/store/GHGContext.jsx`, `portal/src/pages/GHGReports.jsx`, `portal/src/pages/site/Scope2Renewable.jsx`, `database/calculation_engine.py`, `portal/src/pages/CSR.jsx`, `portal/src/pages/Social.jsx`, `portal/src/pages/Governance.jsx`, `portal/src/pages/WomenWellbeing.jsx`, `portal/src/pages/Sites.jsx`, `portal/src/pages/PublicHome.jsx`, `portal/src/pages/site/IntensityMetrics.jsx`, `portal/src/components/AssessmentForm.jsx`, `portal/src/components/SiteLayout.jsx` | VERIFIED | 2026-05-30 |
 
 ## Handoff Log
+
+### 2026-06-23 - Claude: full GHG emission data replacement from `new data/`
+
+- Backed up prior working state before any changes: commit + git tag `emission-data-backup-2026-06-23` (still holds the OLD `SEED.js`). To restore old data: `git checkout emission-data-backup-2026-06-23 -- portal/src/store/SEED.js`.
+- Replaced ALL site emission data in `portal/src/store/SEED.js`, regenerated from the four workbooks in `new data/` (Facets=KGIPL-03, KG Intl=KGIPL-02, Botswana=KGIPL-05, Mumbai=KGIPL-01) via the new `gen_seed.py`.
+- New SEED has 2052 records (was 1493). Every one of the 35 (site, category) groups validates EXACTLY against the workbook's own "Total Emissions" lines (0 mismatches).
+- All entries carry the real Defra/CaDI/UNFCCC Emission Factor from the sheets, so `recalculateAllEntries` in `GHGContext.jsx` leaves them untouched (no `ef===0` triggers, so the un-imported `calcFreight` path is never hit).
+- Record schema is identical to the old SEED (same 48 keys), so all scope/dashboard/report pages render without code changes.
+- Verified `npm run build` passes. Chunk-size advisory is pre-existing (bundle larger now due to the 4 MB seed).
+- NOTE: `git push` could not complete in this environment (no credentials / GCM non-interactive). The backup commit, tag, and new-data commit are all LOCAL and need a manual `git push origin master --tags` once authenticated.
 
 ### 2026-05-31 - Codex Vercel production hardening
 
