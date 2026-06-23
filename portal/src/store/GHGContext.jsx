@@ -112,16 +112,15 @@ function recalculateAllEntries(allEntries) {
             res = calcHeatSteam(type, unit, consumption)
             break
           case 'employeeCommute': {
-            const passengers = parseInt(entry['No. of Passengers'] || entry['number_of_passengers'] || entry.numPassengers || 1)
             const km = parseFloat(entry['km Travelled'] || entry['km_per_day'] || entry.kmPerDay || 0)
-            const days = parseInt(entry['working_days'] || entry.workingDays || 1)
             const mode = type.replace(/^Cars \(by size\) - /i, '').replace(/^Bus - /i, '').replace(/^Rail - /i, '').replace(/^Taxis - /i, '').trim()
-            res = calcCommute(mode, passengers, km, days, true)
+            res = calcCommute(mode, 1, km, 1, false)
             break
           }
           case 'businessTravelAir': {
             const flightClass = entry.Class || entry.class || ''
-            res = calcTravelAir(type, flightClass, consumption)
+            const rf = entry['RF Type'] || entry.rfType || 'With RF'
+            res = calcTravelAir(type, flightClass, consumption, rf)
             break
           }
           case 'businessTravelLand':
@@ -143,20 +142,34 @@ function recalculateAllEntries(allEntries) {
             res = calcWaterSupply(consumption)
             break
           case 'waterTreatment':
-            res = calcWaterTreatment(consumption)
+            res = calcWaterTreatment(consumption, unit)
             break
-          case 'tdLoss':
-            res = calcTDLoss(consumption)
+          case 'tdLoss': {
+            let country = entry.Country || entry.country || entry['Name of Country'] || ''
+            res = calcTDLoss(country, unit, consumption)
             break
-          case 'purchasedGoods':
-            res = calcGoods(type, consumption)
+          }
+          case 'purchasedGoods': {
+            const loop = entry.Loop || entry.loop || 'Primary material production'
+            res = calcGoods(type, loop, consumption)
             break
+          }
           case 'hotelStay':
             res = calcHotel(type, consumption)
             break
           case 'foodConsumption':
             res = calcFood(type, consumption)
             break
+          case 'upstream':
+          case 'downstream': {
+            const vType = entry['Type of Vehicle'] || entry.vehicleType || ''
+            const fType = entry['Type of Fuel'] || entry.fuelType || ''
+            const cls = entry.Class || entry.class || ''
+            const tonnes = parseFloat(entry.Tonnes || 0)
+            const dist = parseFloat(entry['Distance Travelled'] || 0)
+            res = calcFreight(vType, fType, cls, type, unit, tonnes, dist)
+            break
+          }
           default:
             break
         }

@@ -909,7 +909,7 @@ export const GOODS_TYPES = [
 ]
 export const GOODS_UNITS = ['tonnes', 'kg']
 export const UPSTREAM_VEHICLE_TYPES = ['Vans', 'HGV - All Diesel', 'HGV refrigerated (all diesel)', 'Freight flights', 'Rail', 'Sea tanker', 'Cargo ship']
-export const LOOP_TYPES = ['Open-loop', 'Closed-loop']
+export const LOOP_TYPES = ['Primary material production', 'Re-used', 'Open-loop', 'Closed-loop']
 
 // ── Scope 3: Waste Disposal ───────────────────────────────────────────────────
 export const WASTE_TYPES = [
