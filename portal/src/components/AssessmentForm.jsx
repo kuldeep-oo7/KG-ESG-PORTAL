@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { History, SkipForward, Trash2, Pencil, Search, ChevronDown, X, CheckCircle2, FileText, Download, Eye } from 'lucide-react'
 import { useGHG } from '../store/useGHG'
+import { putDoc, getDoc, newDocId } from '../lib/docStore'
 
 const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December']
 const YEARS  = ['2023','2024','2025','2026','2027']
@@ -101,11 +102,11 @@ export function GHGPreview({ tco2e }) {
 
 function DocCell({ row, onOpen }) {
   const name = row['Supporting Document'] || row.fileName || row.documentName
-  const url = row.documentData || row.dataUrl
+  const hasDoc = row.documentData || row.dataUrl || row.documentId
   if (!name) return <span className="text-slate-300">—</span>
-  if (url) {
+  if (hasDoc) {
     return (
-      <button onClick={() => onOpen({ name, url })} title={`Preview ${name}`}
+      <button onClick={() => onOpen(row)} title={`Preview ${name}`}
         className="inline-flex items-center gap-1 text-[#064E3B] hover:underline font-medium max-w-[160px]">
         <Eye className="w-3.5 h-3.5 shrink-0" />
         <span className="truncate">{name}</span>
@@ -118,7 +119,7 @@ function DocCell({ row, onOpen }) {
 // ─── Document preview modal (inline PDF / image viewer) ───────────────────────
 
 function DocPreviewModal({ doc, onClose }) {
-  const mime = (doc.url.match(/^data:([^;]+)/) || [])[1] || ''
+  const mime = (((doc.url || '').match(/^data:([^;]+)/)) || [])[1] || ''
   const isImage = mime.startsWith('image/')
   const isPdf = mime === 'application/pdf' || /\.pdf$/i.test(doc.name)
   return (
@@ -130,10 +131,12 @@ function DocPreviewModal({ doc, onClose }) {
             <span className="text-sm font-semibold text-slate-700 truncate" title={doc.name}>{doc.name}</span>
           </div>
           <div className="flex items-center gap-2 shrink-0">
-            <a href={doc.url} download={doc.name} title="Download"
-              className="w-8 h-8 flex items-center justify-center rounded-lg text-slate-500 hover:text-[#064E3B] hover:bg-[#E6F4F1] transition-colors">
-              <Download className="w-4 h-4" />
-            </a>
+            {doc.url && (
+              <a href={doc.url} download={doc.name} title="Download"
+                className="w-8 h-8 flex items-center justify-center rounded-lg text-slate-500 hover:text-[#064E3B] hover:bg-[#E6F4F1] transition-colors">
+                <Download className="w-4 h-4" />
+              </a>
+            )}
             <button onClick={onClose} title="Close"
               className="w-8 h-8 flex items-center justify-center rounded-lg text-slate-500 hover:text-slate-700 hover:bg-slate-100 transition-colors">
               <X className="w-4 h-4" />
@@ -141,7 +144,14 @@ function DocPreviewModal({ doc, onClose }) {
           </div>
         </div>
         <div className="flex-1 overflow-auto bg-slate-50 flex items-center justify-center p-2">
-          {isImage ? (
+          {doc.loading ? (
+            <div className="text-center py-16 px-6"><p className="text-sm text-slate-500">Loading document…</p></div>
+          ) : !doc.url ? (
+            <div className="text-center py-16 px-6">
+              <FileText className="w-10 h-10 text-slate-300 mx-auto mb-3" />
+              <p className="text-sm text-slate-500">This document’s file wasn’t stored (it was uploaded before file-saving was enabled). Please re-upload it on this entry to preview it.</p>
+            </div>
+          ) : isImage ? (
             <img src={doc.url} alt={doc.name} className="max-w-full max-h-[75vh] object-contain mx-auto" />
           ) : isPdf ? (
             <iframe src={doc.url} title={doc.name} className="w-full h-[75vh] bg-white rounded-lg border border-slate-200" />
@@ -254,6 +264,24 @@ function EditEntryModal({ row, onClose, onSave }) {
 export function RecordsTable({ columns, entries, onDelete, onEdit }) {
   const [search, setSearch] = useState('')
   const [preview, setPreview] = useState(null)
+
+  async function openDoc(row) {
+    const name = row['Supporting Document'] || row.fileName || row.documentName || 'document'
+    // Legacy: data URL embedded directly on the entry
+    if (row.documentData || row.dataUrl) {
+      setPreview({ name, url: row.documentData || row.dataUrl })
+      return
+    }
+    // Current: blob stored in IndexedDB, referenced by documentId
+    if (row.documentId) {
+      setPreview({ name, url: '', loading: true })
+      try {
+        const d = await getDoc(row.documentId)
+        if (d && d.dataUrl) { setPreview({ name, url: d.dataUrl }); return }
+      } catch { /* fall through to missing */ }
+      setPreview({ name, url: '', missing: true })
+    }
+  }
   const filtered = entries.filter(e =>
     Object.values(e).some(v => String(v).toLowerCase().includes(search.toLowerCase()))
   )
@@ -313,7 +341,7 @@ export function RecordsTable({ columns, entries, onDelete, onEdit }) {
                 <td className="px-3 py-2.5 font-bold text-[#064E3B] text-right whitespace-nowrap tabular-nums">
                   {(row.tco2e || 0).toFixed(6)}
                 </td>
-                <td className="px-3 py-2.5 whitespace-nowrap"><DocCell row={row} onOpen={setPreview} /></td>
+                <td className="px-3 py-2.5 whitespace-nowrap"><DocCell row={row} onOpen={openDoc} /></td>
                 <td className="px-3 py-2.5 sticky right-0 bg-white border-l border-slate-100">
                   <div className="flex items-center gap-1.5 justify-end">
                     {onEdit && (
@@ -389,15 +417,31 @@ export default function AssessmentForm({
   const total = getModuleTotal(siteCode, module)
   const allColumns = ['date', 'Entry Period', ...columns.filter(c => c !== 'date')]
 
-  function handleSubmit(formData) {
+  async function handleSubmit(formData) {
     const entry = onBuildEntry(formData)
     if (!entry) return
+    const docFields = {}
+    if (doc?.name) {
+      docFields['Supporting Document'] = doc.name
+      if (doc.dataUrl) {
+        // Store the file blob in IndexedDB; keep only a reference on the entry
+        // so the (localStorage-backed) entries object stays small.
+        const docId = newDocId()
+        try {
+          await putDoc(docId, { name: doc.name, type: doc.type, dataUrl: doc.dataUrl })
+          docFields.documentId = docId
+        } catch {
+          docFields.documentData = doc.dataUrl // fallback if IndexedDB unavailable
+        }
+      }
+    } else if (entry['Supporting Document'] || entry.fileName) {
+      docFields['Supporting Document'] = entry['Supporting Document'] || entry.fileName
+    }
     addEntry(siteCode, module, {
       ...entry,
       date: entryDate,
       'Entry Period': entryPeriod,
-      'Supporting Document': doc?.name || entry['Supporting Document'] || entry.fileName || null,
-      documentData: doc?.dataUrl || null,
+      ...docFields,
     })
     setDoc(null)
     setSubmitted(true)
