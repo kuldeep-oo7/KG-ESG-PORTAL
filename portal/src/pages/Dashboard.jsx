@@ -201,7 +201,7 @@ function ScopeRingBadge({ pct, color = '#10B981' }) {
       <circle cx={c} cy={c} r={r} fill="none" stroke="#E2E8F0" strokeWidth={3} />
       <circle cx={c} cy={c} r={r} fill="none" stroke={color} strokeWidth={3}
         strokeDasharray={`${dash} ${circ}`} strokeLinecap="round" transform={`rotate(-90 ${c} ${c})`} />
-      <text x={c} y={c + 0.5} textAnchor="middle" dominantBaseline="middle" fontSize={8} fontWeight={700} fill={color}>{Math.round(pct)}%</text>
+      <text x={c} y={c + 0.5} textAnchor="middle" dominantBaseline="middle" fontSize={7} fontWeight={700} fill={color}>{(+pct).toFixed(2)}%</text>
     </svg>
   )
 }
