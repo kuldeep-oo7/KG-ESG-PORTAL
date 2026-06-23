@@ -43,6 +43,15 @@ For quick back-and-forth messages between agents, use `COORDINATION_CHAT.md`. Ke
 
 ## Handoff Log
 
+### 2026-06-23 - Claude: dashboard baseline comparison, Vercel deploy pipeline, DEFRA 2026 factors
+
+- Dashboard (`portal/src/pages/Dashboard.jsx`): added side-by-side baseline-year comparison (current vs baseline KPI panels + paired Scope 1/2/3 charts) matching the ESGtech.ai layout; refactored per-year aggregation into `computeYear()`; default Current Year = CY 2025; scope-ring shows 2-decimal %. NOTE: original platform compares CY2026 vs CY2025 — selecting FY 2025 gives a different (fiscal) total; this is correct behaviour, not a bug.
+- Seed loads for any login + localStorage keys bumped v2->v3 (`GHGContext.jsx`) so stale empty cache no longer masks the seed.
+- DEFRA 2026 factors wired into `portal/src/lib/calculations.js` via `extract_2026.py` from `new data/ghg-conversion-factors-2026-full-set.xlsx`, update-in-place (keys preserved, SEED.js untouched): EF_STATIONARY (52), EF_HEAT (0.17529), EF_FUGITIVE (28 GWPs), EF_TRAVEL_LAND (23), EF_MOBILE (13), EF_GOODS (14). Air/sea/hotel/water identical in 2026. Vehicles vans/HGV, freight, waste, T&D, overseas electricity left on existing values (DEFRA 2026 dropped overseas grid factors; India/Botswana use CaDI).
+- Vercel: project `kg-esg-portal` had NO git connection and was 22 days stale. Connected GitHub (prod branch master, rootDirectory=portal), added root `.vercelignore` so CLI deploys from repo root upload only `portal/`. Deploys now auto-trigger on push to master; manual `vercel deploy --prod` also works from repo root.
+- Pre-existing lint errors remain in `calcGoods`/`calcFreight` (no-useless-assignment) from earlier uncommitted work; build is unaffected.
+- All pushed to GitHub master and deployed to https://kg-esg-portal.vercel.app.
+
 ### 2026-06-23 - Claude: full GHG emission data replacement from `new data/`
 
 - Backed up prior working state before any changes: commit + git tag `emission-data-backup-2026-06-23` (still holds the OLD `SEED.js`). To restore old data: `git checkout emission-data-backup-2026-06-23 -- portal/src/store/SEED.js`.
