@@ -83,7 +83,7 @@ function TableSection({ title, entries }) {
   function toRow(e) {
     return {
       date:       e.date || '—',
-      period:     e.date ? e.date.slice(0, 7) : '—',
+      period:     e['Entry Period'] || e.period || (e.date ? e.date.slice(0, 7) : '—'),
       site:       e.siteCode || e.site || '—',
       type:       e.Type || e['Vehicle Type'] || e['Food Type'] || e.Source || e.category || '—',
       unit:       e.Unit || e.unit || '—',
