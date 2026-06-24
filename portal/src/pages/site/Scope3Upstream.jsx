@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import AssessmentForm, { Select, Input, GHGPreview } from '../../components/AssessmentForm'
 import { calcGeneric } from '../../lib/calculations'
+import { lookupFreightEF } from '../../lib/freightFactors'
 
 const VEHICLE_TYPES = ['Truck', 'Van', 'Rail', 'Ship', 'Aircraft', 'Other']
 const FUEL_TYPES    = ['Diesel', 'Petrol', 'CNG', 'Electric', 'HFO', 'N/A']
@@ -11,8 +12,8 @@ const UNITS         = ['tonne-km', 'km', 'kg']
 
 const EF_UPSTREAM = { 'Road': 0.107, 'Rail': 0.028, 'Sea': 0.016, 'Air': 0.600, 'Inland Waterway': 0.031 }
 
+// Columns match the official DEFRA Q13 bulk template
 const BULK_COLUMNS = [
-  { key: 'Entry Period', label: 'Entry Period' },
   { key: 'Type of Vehicle', label: 'Type of Vehicle' },
   { key: 'Type of Fuel', label: 'Type of Fuel' },
   { key: 'Class', label: 'Class' },
@@ -22,27 +23,31 @@ const BULK_COLUMNS = [
   { key: 'Distance Travelled', label: 'Distance Travelled' },
   { key: 'Remarks', label: 'Remarks' },
 ]
-const bulkValid = r => !!((r['Type'] || '').trim()) && parseFloat(r['Tonnes']) > 0 && parseFloat(r['Distance Travelled']) > 0
+const bulkValid = r => !!((r['Type of Vehicle'] || '').trim()) && parseFloat(r['Distance Travelled']) > 0
 function bulkBuildRow(r) {
-  const t = (r['Type'] || '').trim()
-  const efv = EF_UPSTREAM[t] ?? 0
+  const vehicle = (r['Type of Vehicle'] || '').trim()
+  const fuel = (r['Type of Fuel'] || '').trim()
+  const cls = (r['Class'] || '').trim()
+  const type = (r['Type'] || '').trim()
+  const unit = (r['Unit of Measurement'] || 'tonne.km').trim()
   const tn = parseFloat(r['Tonnes']) || 0
   const di = parseFloat(r['Distance Travelled']) || 0
-  const tc = +(efv * tn * di / 1000).toFixed(6)
+  const efv = lookupFreightEF({ vehicle, fuel, cls, type, unit })
+  const qty = /tonne/i.test(unit) ? tn * di : di
+  const tc = +(efv * qty / 1000).toFixed(6)
   return {
     date: new Date().toISOString().slice(0, 10),
-    'Entry Period': (r['Entry Period'] || '').trim(),
-    'Type of Vehicle': r['Type of Vehicle'] || '',
-    'Type of Fuel': r['Type of Fuel'] || '',
-    Class: r['Class'] || '',
-    Type: t,
-    'Unit of Measurement': r['Unit of Measurement'] || 'tonne-km',
-    Unit: r['Unit of Measurement'] || 'tonne-km',
+    'Type of Vehicle': vehicle,
+    'Type of Fuel': fuel || '-',
+    Class: cls,
+    Type: type || [vehicle, fuel, cls].filter(Boolean).join(' - '),
+    'Unit of Measurement': unit,
+    Unit: unit,
     Tonnes: tn,
     'Distance Travelled': di,
-    Consumption: tn * di,
-    consumption: tn * di,
-    Source: 'Defra v1.0',
+    Consumption: qty,
+    consumption: qty,
+    Source: 'Defra v 1.0',
     'Emission Factor': efv,
     ef: efv,
     tco2e: tc,
@@ -100,7 +105,7 @@ export default function Scope3Upstream() {
       onPrev={() => navigate(`/sites/${siteId}/scope3/td-loss`)}
       onNext={() => navigate(`/sites/${siteId}/scope3/downstream`)}
       onBuildEntry={buildEntry}
-      bulkImport={{ columns: BULK_COLUMNS, isValid: bulkValid, buildRow: bulkBuildRow, templateName: 'upstream_template' }}
+      bulkImport={{ columns: BULK_COLUMNS, isValid: bulkValid, buildRow: bulkBuildRow, templateName: 'upstream_template', templateUrl: '/templates/freight_transport_template.xlsx' }}
       fields={({ onSubmit }) => (
         <div className="space-y-4">
           <div className="grid grid-cols-3 gap-4">

@@ -681,6 +681,7 @@ export default function AssessmentForm({
           title={title}
           columns={bulkImport.columns}
           templateName={bulkImport.templateName || module}
+          templateUrl={bulkImport.templateUrl}
           isValid={bulkImport.isValid}
           onClose={() => setShowBulk(false)}
           onSubmit={validRows => {

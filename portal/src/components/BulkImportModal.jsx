@@ -11,7 +11,7 @@ import * as XLSX from 'xlsx'
 //   isValid(row)- returns true if a row should be imported
 //   onSubmit(validRows) - called with the valid rows on Submit
 //   onClose()
-export default function BulkImportModal({ title, columns, templateName = 'template', isValid, onSubmit, onClose }) {
+export default function BulkImportModal({ title, columns, templateName = 'template', templateUrl, isValid, onSubmit, onClose }) {
   const emptyRow = () => Object.fromEntries(columns.map(c => [c.key, '']))
   const [rows, setRows] = useState([emptyRow()])
 
@@ -25,6 +25,16 @@ export default function BulkImportModal({ title, columns, templateName = 'templa
   function clearAll() { setRows([emptyRow()]) }
 
   function downloadTemplate() {
+    // Prefer the official template file (keeps cascading dropdowns intact)
+    if (templateUrl) {
+      const a = document.createElement('a')
+      a.href = templateUrl
+      a.download = `${templateName}.xlsx`
+      document.body.appendChild(a)
+      a.click()
+      a.remove()
+      return
+    }
     const ws = XLSX.utils.aoa_to_sheet([columns.map(c => c.label)])
     ws['!cols'] = columns.map(() => ({ wch: 22 }))
     const wb = XLSX.utils.book_new()
@@ -40,14 +50,18 @@ export default function BulkImportModal({ title, columns, templateName = 'templa
         const wb = XLSX.read(e.target.result, { type: 'array' })
         const ws = wb.Sheets[wb.SheetNames[0]]
         const json = XLSX.utils.sheet_to_json(ws, { defval: '' })
+        const norm = s => String(s).replace(/\*/g, '').replace(/\s+/g, ' ').trim().toLowerCase()
         const mapped = json.map(r => {
+          // normalized lookup of this row's headers (handles "Type of Vehicle *" etc.)
+          const byNorm = {}
+          Object.keys(r).forEach(k => { byNorm[norm(k)] = r[k] })
           const o = emptyRow()
           columns.forEach(c => {
-            if (r[c.label] !== undefined && r[c.label] !== '') o[c.key] = String(r[c.label]).trim()
-            else if (r[c.key] !== undefined && r[c.key] !== '') o[c.key] = String(r[c.key]).trim()
+            const v = byNorm[norm(c.label)] ?? byNorm[norm(c.key)]
+            if (v !== undefined && v !== '') o[c.key] = String(v).trim()
           })
           return o
-        })
+        }).filter(o => Object.values(o).some(v => v !== ''))
         setRows(mapped.length ? mapped : [emptyRow()])
       } catch {
         alert('Could not read that file. Please use the downloaded template (.xlsx).')
