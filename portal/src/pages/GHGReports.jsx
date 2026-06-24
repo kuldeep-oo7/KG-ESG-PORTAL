@@ -283,7 +283,7 @@ export default function GHGReports() {
       doc.setTextColor(255, 255, 255)
       doc.setFontSize(13)
       doc.setFont('helvetica', 'bold')
-      doc.text('K. GIRDHARLAL — GHG Emissions Report', 14, 12)
+      doc.text('KG SYNERGY — GHG Emissions Report', 14, 12)
       doc.setFontSize(8)
       doc.setFont('helvetica', 'normal')
       doc.text(`Period: ${fromMonth} ${fromYear} – ${toMonth} ${toYear}`, 220, 12)

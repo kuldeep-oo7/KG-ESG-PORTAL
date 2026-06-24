@@ -9,26 +9,15 @@ import { apiUrl, API_ENABLED } from '../lib/api'
 // CSR Activities connected to SQLite database API
 
 // ── Data ───────────────────────────────────────────────────────────────────────
-const SPEND_DATA = [
-  { month: 'Apr', budget: 40, spend: 28, impact: 32 },
-  { month: 'May', budget: 42, spend: 35, impact: 38 },
-  { month: 'Jun', budget: 45, spend: 30, impact: 34 },
-  { month: 'Jul', budget: 43, spend: 38, impact: 40 },
-  { month: 'Aug', budget: 48, spend: 42, impact: 45 },
-  { month: 'Sep', budget: 50, spend: 45, impact: 48 },
-  { month: 'Oct', budget: 52, spend: 40, impact: 44 },
-  { month: 'Nov', budget: 55, spend: 50, impact: 52 },
-  { month: 'Dec', budget: 58, spend: 55, impact: 58 },
-  { month: 'Jan', budget: 60, spend: 48, impact: 50 },
-  { month: 'Feb', budget: 62, spend: 52, impact: 55 },
-  { month: 'Mar', budget: 65, spend: 60, impact: 62 },
-]
-
-const GENDER_DATA = [
-  { name: 'Female', value: 1346, pct: 47.2, color: '#10B981' },
-  { name: 'Male',   value: 1464, pct: 51.4, color: '#064E3B' },
-  { name: 'Other',  value: 84,   pct: 1.2,  color: '#6EE7B7' },
-]
+const MONTHS_FY = ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar']
+// Build the monthly spend trajectory from the user's actual activities
+function buildSpendData(activities) {
+  return MONTHS_FY.map(m => {
+    const monthActs = activities.filter(a => (a.tag || a.month || '').slice(0, 3).toLowerCase() === m.toLowerCase())
+    const spend = monthActs.reduce((s, a) => s + (parseFloat(a.budget) || 0), 0)
+    return { month: m, budget: spend, spend, impact: spend }
+  })
+}
 
 const SDG_INFO = {
   1:  { color: '#E5243B', name: 'No Poverty',                line1: 'NO',         line2: 'POVERTY'        },
@@ -1133,11 +1122,13 @@ export default function CSR() {
 
   const progressPct = Math.round((currentStep / (CSR_STEPS.length - 1)) * 100)
 
+  const totalSpend = activities.reduce((s, a) => s + (parseFloat(a.budget) || 0), 0)
+  const genderData = []
   const kpis = [
-    { Icon: ClipboardList,   value: '84',      label: 'Total Activities',      sub: '+24% vs last FY'        },
-    { Icon: IndianRupee,  value: '₹4.82Cr', label: 'Total Spend',          sub: '+8.4% of allocation'    },
-    { Icon: Users,        value: '38,420',  label: 'Beneficiaries',         sub: '+24% vs last FY'        },
-    { Icon: UserRound,    value: '205',     label: 'Female Beneficiaries', sub: '+34% vs last FY'        },
+    { Icon: ClipboardList, value: String(activities.length),                              label: 'Total Activities',     sub: 'This financial year' },
+    { Icon: IndianRupee,   value: totalSpend ? `₹${totalSpend.toLocaleString('en-IN')}` : '₹0', label: 'Total Spend',     sub: 'Allocated budget'    },
+    { Icon: Users,         value: '0',                                                    label: 'Beneficiaries',        sub: '—'                   },
+    { Icon: UserRound,     value: '0',                                                    label: 'Female Beneficiaries', sub: '—'                   },
   ]
 
   const STEP_COMPONENTS = [
@@ -1240,12 +1231,12 @@ export default function CSR() {
         <div className="mb-6 rounded-2xl border border-slate-200 bg-white shadow-sm">
           <div className="grid grid-cols-6 divide-x divide-slate-100 px-0">
             {[
-              { icon: '🌱', value: '12,500',    label: 'Trees Planted'    },
-              { icon: '♻️',  value: '8,200 kg',  label: 'Waste Collected'  },
-              { icon: '💧', value: '5.2M L',    label: 'Water Saved'      },
-              { icon: '🩸', value: '1,200',     label: 'Blood Units'      },
-              { icon: '🌿', value: '2,150',     label: 'Volunteers'       },
-              { icon: '⏱️', value: '4,800 hrs', label: 'Volunteer Hours'  },
+              { icon: '🌱', value: '0',     label: 'Trees Planted'    },
+              { icon: '♻️',  value: '0 kg',  label: 'Waste Collected'  },
+              { icon: '💧', value: '0 L',   label: 'Water Saved'      },
+              { icon: '🩸', value: '0',     label: 'Blood Units'      },
+              { icon: '🌿', value: '0',     label: 'Volunteers'       },
+              { icon: '⏱️', value: '0 hrs', label: 'Volunteer Hours'  },
             ].map(({ icon, value, label }) => (
               <div key={label} className="flex flex-col items-start gap-1 px-5 py-4">
                 <span className="text-xl leading-none mb-1">{icon}</span>
@@ -1284,7 +1275,7 @@ export default function CSR() {
             </div>
             <div className="mt-4">
               <ResponsiveContainer width="100%" height={220}>
-                <AreaChart data={SPEND_DATA} margin={{ top: 4, right: 8, bottom: 0, left: -20 }}>
+                <AreaChart data={buildSpendData(activities)} margin={{ top: 4, right: 8, bottom: 0, left: -20 }}>
                   <defs>
                     <linearGradient id="csrGradBudget" x1="0" y1="0" x2="0" y2="1">
                       <stop offset="5%" stopColor="#CBD5E1" stopOpacity={0.3} />
@@ -1334,27 +1325,27 @@ export default function CSR() {
               <h2 className="font-semibold text-slate-800 text-[15px]" style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}>
                 Gender & Reach
               </h2>
-              <span className="text-[11px] bg-[#E6F4F1] text-[#064E3B] font-semibold px-2.5 py-0.5 rounded-full">38K</span>
+              <span className="text-[11px] bg-[#E6F4F1] text-[#064E3B] font-semibold px-2.5 py-0.5 rounded-full">0</span>
             </div>
-            <p className="text-[10px] text-slate-400 mb-4">38,420 beneficiaries</p>
+            <p className="text-[10px] text-slate-400 mb-4">0 beneficiaries</p>
             <div className="relative mx-auto" style={{ width: 160, height: 160 }}>
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
-                  <Pie data={GENDER_DATA} cx="50%" cy="50%" innerRadius={54} outerRadius={72}
+                  <Pie data={genderData} cx="50%" cy="50%" innerRadius={54} outerRadius={72}
                     dataKey="value" strokeWidth={2} stroke="#fff" paddingAngle={2} startAngle={90} endAngle={-270}>
-                    {GENDER_DATA.map((d, i) => <Cell key={i} fill={d.color} />)}
+                    {genderData.map((d, i) => <Cell key={i} fill={d.color} />)}
                   </Pie>
                   <Tooltip formatter={(v, n) => [v.toLocaleString(), n]}
                     contentStyle={{ fontSize: 11, borderRadius: 10, border: '1px solid #E2E8F0' }} />
                 </PieChart>
               </ResponsiveContainer>
               <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-                <span className="text-2xl font-bold text-[#064E3B] leading-none" style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}>38.4K</span>
+                <span className="text-2xl font-bold text-[#064E3B] leading-none" style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}>0</span>
                 <span className="text-[9px] text-slate-400 tracking-wide mt-0.5">Total</span>
               </div>
             </div>
             <div className="mt-4 space-y-2">
-              {GENDER_DATA.map(d => (
+              {genderData.map(d => (
                 <div key={d.name} className="flex items-center gap-2">
                   <span className="w-2.5 h-2.5 rounded-full shrink-0" style={{ background: d.color }} />
                   <span className="text-xs text-slate-600 flex-1">{d.name}</span>

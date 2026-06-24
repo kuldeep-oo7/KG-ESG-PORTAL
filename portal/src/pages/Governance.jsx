@@ -554,10 +554,11 @@ export default function Governance() {
     ])
   }
 
+  const activeCount = policies.filter(p => p.reviewStatus === 'Active').length
   const kpiCards = [
-    { value: '2,826', label: 'Total Policies',      change: '+16.3% vs last year',     up: true },
-    { value: '2,840', label: 'Active',               change: '+16.3% vs last yr',       up: true },
-    { value: '03',    label: 'Expired Docs',         change: '-1.48 | -1.48% vs last yr', up: false },
+    { value: String(policies.length), label: 'Total Policies', change: 'All records',  up: true },
+    { value: String(activeCount),     label: 'Active',         change: 'Currently active', up: true },
+    { value: String(expiredCount),    label: 'Expired Docs',   change: 'Need renewal', up: false },
   ]
 
   return (

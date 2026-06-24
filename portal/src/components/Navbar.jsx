@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { Settings, Search, Bell, LogOut, User, HelpCircle, X, Camera, Mail, Building2, ShieldCheck, Save } from 'lucide-react'
-import logoImg from '../assets/logo-full.png'
+import logoImg from '../assets/kg-synergy-logo.svg'
 
 const NAV_ITEMS = [
   { label: 'Dashboard',   to: '/dashboard',  end: true },
@@ -223,7 +223,7 @@ export default function Navbar() {
 
           {/* Logo */}
           <NavLink to="/dashboard" className="flex items-center shrink-0 no-underline">
-            <img src={logoImg} alt="K.GIRDHARLAL" className="w-auto object-contain" style={{ height: 44 }} />
+            <img src={logoImg} alt="KG SYNERGY" className="w-auto object-contain" style={{ height: 44 }} />
           </NavLink>
 
           {/* Nav links */}

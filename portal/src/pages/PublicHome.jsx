@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useNavigate, useSearchParams } from 'react-router-dom'
-import logoImg from '../assets/company-logo.png'
+import logoImg from '../assets/kg-synergy-logo.svg'
 import {
   CalendarDays, Clock, Download, Leaf, Mail, MapPin, Phone,
   Send, Users, X, CheckCircle2, Shield, Heart,
@@ -253,7 +253,7 @@ export default function PublicHome() {
       <header className="sticky top-0 z-50 bg-[#064E3B] shadow-lg shadow-emerald-950/20">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
           <button onClick={() => setActive('home')} className="flex items-center">
-            <img src={logoImg} alt="K.GIRDHARLAL" className="h-16 w-auto object-contain" />
+            <img src={logoImg} alt="KG SYNERGY" className="h-16 w-auto object-contain" />
           </button>
           <nav className="hidden items-center gap-1 lg:flex">
             {NAV_ITEMS.map(([id, label]) => (

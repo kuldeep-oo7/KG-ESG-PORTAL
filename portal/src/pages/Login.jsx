@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { Eye, EyeOff, Mail } from 'lucide-react'
-import logoImg from '../assets/logo-full.png'
+import logoImg from '../assets/kg-synergy-logo.svg'
 import authPanelImg from '../assets/auth-panel.png'
 import { apiUrl, isNetworkError, LOCAL_FALLBACK_ENABLED } from '../lib/api'
 
@@ -104,7 +104,7 @@ export default function Login() {
       <div className="flex h-screen flex-col w-full md:w-[40%] bg-white px-10 py-8 justify-center overflow-y-auto">
         {/* Logo block — centered */}
         <div className="mb-8 flex justify-center">
-          <img src={logoImg} alt="K.GIRDHARLAL" className="w-56 h-auto object-contain" />
+          <img src={logoImg} alt="KG SYNERGY" className="w-56 h-auto object-contain" />
         </div>
 
         {/* Heading */}

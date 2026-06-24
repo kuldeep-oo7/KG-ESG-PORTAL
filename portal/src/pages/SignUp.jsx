@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { Eye, EyeOff, Mail, User } from 'lucide-react'
-import logoImg from '../assets/logo-full.png'
+import logoImg from '../assets/kg-synergy-logo.svg'
 import authPanelImg from '../assets/auth-panel.png'
 import { apiUrl, isNetworkError, LOCAL_FALLBACK_ENABLED } from '../lib/api'
 
@@ -14,9 +14,9 @@ function AuthRightPanel() {
         className="h-full w-full object-cover"
       />
       <div className="absolute left-10 top-10 flex items-center gap-3 rounded-2xl border border-white/15 bg-white/10 px-4 py-3 backdrop-blur-md">
-        <img src={logoImg} alt="K.GIRDHARLAL" className="h-10 w-auto rounded bg-white object-contain p-1" />
+        <img src={logoImg} alt="KG SYNERGY" className="h-10 w-auto rounded bg-white object-contain p-1" />
         <div>
-          <p className="text-sm font-bold tracking-wide text-white">K.GIRDHARLAL</p>
+          <p className="text-sm font-bold tracking-wide text-white">KG SYNERGY</p>
           <p className="text-[8px] uppercase tracking-[0.22em] text-white/55">ESG Portal</p>
         </div>
       </div>
@@ -105,7 +105,7 @@ export default function SignUp() {
       {/* Left panel */}
       <div className="flex h-screen flex-col w-full md:w-[40%] bg-white px-10 py-8 justify-center overflow-y-auto">
         <div className="mb-8 flex justify-center">
-          <img src={logoImg} alt="K.GIRDHARLAL" className="w-56 h-auto object-contain" />
+          <img src={logoImg} alt="KG SYNERGY" className="w-56 h-auto object-contain" />
         </div>
 
         <h1 className="font-bold text-2xl text-slate-900 mb-1" style={{ fontFamily: '"Hanken Grotesk", Inter, sans-serif' }}>

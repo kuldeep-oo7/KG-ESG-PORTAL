@@ -175,12 +175,30 @@ export default function Social() {
     setShowAddActivity(false)
   }
 
+  // Aggregates derived from the user's saved activities
+  const empTrained   = savedRows.reduce((s, r) => s + (parseInt(r.total) || 0), 0)
+  const femaleAgg    = savedRows.reduce((s, r) => s + (parseInt(r.female) || 0), 0)
+  const maleAgg      = savedRows.reduce((s, r) => s + (parseInt(r.male) || 0), 0)
+  const otherAgg     = Math.max(0, empTrained - femaleAgg - maleAgg)
+  const trainingHrs  = savedRows.reduce((s, r) => s + (parseFloat(r.duration) || 0), 0)
+  const femalePctAgg = empTrained ? Math.round((femaleAgg / empTrained) * 100) : 0
+  const pct = v => (empTrained ? +((v / empTrained) * 100).toFixed(1) : 0)
+  const genderAgg = [
+    { name: 'Female', value: femaleAgg, pct: pct(femaleAgg), color: '#10B981' },
+    { name: 'Male',   value: maleAgg,   pct: pct(maleAgg),   color: '#064E3B' },
+    { name: 'Other',  value: otherAgg,  pct: pct(otherAgg),  color: '#6EE7B7' },
+  ]
+  const trendData = MONTHS_SHORT.map(m => {
+    const rows = savedRows.filter(r => (r.date || '').toLowerCase().includes(m.toLowerCase()))
+    return { month: m, sessions: rows.length, trained: rows.reduce((s, r) => s + (parseInt(r.total) || 0), 0) }
+  })
+
   const kpis = [
-    { Icon: ClipboardList,  value: '84',     label: 'Total Activities',     sub: '↑ 12% vs last year'   },
-    { Icon: Users,          value: '2,840',  label: 'Employees Trained',    sub: '↑ 8% vs last year'    },
-    { Icon: Percent,        value: '47.2%',  label: 'Female Participation', sub: '↑ 3% vs last year'    },
-    { Icon: Clock,          value: '9,420',  label: 'Training Hours',       sub: 'Avg 3.3 hrs/employee' },
-    { Icon: IndianRupee,    value: '₹38.2L', label: 'Total Spend',          sub: '₹50L budget'          },
+    { Icon: ClipboardList,  value: String(savedRows.length),  label: 'Total Activities',     sub: 'This year'         },
+    { Icon: Users,          value: empTrained.toLocaleString(), label: 'Employees Trained',  sub: 'Across activities' },
+    { Icon: Percent,        value: `${femalePctAgg}%`,        label: 'Female Participation', sub: 'Of total trained'  },
+    { Icon: Clock,          value: String(trainingHrs),       label: 'Training Hours',       sub: 'Total'             },
+    { Icon: IndianRupee,    value: '₹0',                      label: 'Total Spend',          sub: '—'                 },
   ]
 
   const totalParticipants = (parseInt(form.male) || 0) + (parseInt(form.female) || 0) + (parseInt(form.other) || 0)
@@ -274,7 +292,7 @@ export default function Social() {
             </div>
             <div className="mt-4">
               <ResponsiveContainer width="100%" height={220}>
-                <ComposedChart data={ACTIVITY_TREND} margin={{ top: 4, right: 8, bottom: 0, left: -20 }}>
+                <ComposedChart data={trendData} margin={{ top: 4, right: 8, bottom: 0, left: -20 }}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#F1F5F9" vertical={false} />
                   <XAxis dataKey="month" tick={{ fontSize: 10, fill: '#94A3B8' }} axisLine={false} tickLine={false} />
                   <YAxis yAxisId="left"  tick={{ fontSize: 10, fill: '#94A3B8' }} axisLine={false} tickLine={false} />
@@ -303,26 +321,26 @@ export default function Social() {
               <h2 className="font-semibold text-slate-800 text-[15px]" style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}>
                 Gender Participation
               </h2>
-              <span className="text-[11px] bg-[#E6F4F1] text-[#064E3B] font-semibold px-2.5 py-0.5 rounded-full">2.8K</span>
+              <span className="text-[11px] bg-[#E6F4F1] text-[#064E3B] font-semibold px-2.5 py-0.5 rounded-full">{empTrained.toLocaleString()}</span>
             </div>
-            <p className="text-[10px] text-slate-400 mb-4">2,840 total sessions</p>
+            <p className="text-[10px] text-slate-400 mb-4">{empTrained.toLocaleString()} total trained</p>
             <div className="relative mx-auto" style={{ width: 160, height: 160 }}>
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
-                  <Pie data={GENDER_DATA} cx="50%" cy="50%" innerRadius={54} outerRadius={72}
+                  <Pie data={genderAgg} cx="50%" cy="50%" innerRadius={54} outerRadius={72}
                     dataKey="value" strokeWidth={2} stroke="#fff" paddingAngle={2} startAngle={90} endAngle={-270}>
-                    {GENDER_DATA.map((d, i) => <Cell key={i} fill={d.color} />)}
+                    {genderAgg.map((d, i) => <Cell key={i} fill={d.color} />)}
                   </Pie>
                   <Tooltip formatter={(v, n) => [v.toLocaleString(), n]} contentStyle={{ fontSize: 11, borderRadius: 10, border: '1px solid #E2E8F0' }} />
                 </PieChart>
               </ResponsiveContainer>
               <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-                <span className="text-2xl font-bold text-[#064E3B] leading-none" style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}>2,840</span>
+                <span className="text-2xl font-bold text-[#064E3B] leading-none" style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}>{empTrained.toLocaleString()}</span>
                 <span className="text-[9px] text-slate-400 tracking-wide mt-0.5">total trained</span>
               </div>
             </div>
             <div className="mt-4 space-y-2">
-              {GENDER_DATA.map(d => (
+              {genderAgg.map(d => (
                 <div key={d.name} className="flex items-center gap-2">
                   <span className="w-2.5 h-2.5 rounded-full shrink-0" style={{ background: d.color }} />
                   <span className="text-xs text-slate-600 flex-1">{d.name}</span>
