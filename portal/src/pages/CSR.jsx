@@ -956,7 +956,7 @@ export default function CSR() {
   const [notice, setNotice] = useState('')
   const [draftSaved, setDraftSaved] = useState(false)
   const [charterFilter, setCharterFilter] = useState('All')
-  const [files, setFiles] = useState(SAMPLE_FILES)
+  const [files, setFiles] = useState([])
   const [chartPeriod, setChartPeriod] = useState('Monthly')
   const [cyYear,   setCyYear]   = useState('CY 2026')
   const [baseYear, setBaseYear] = useState('CY 2024 (Default)')
@@ -993,10 +993,10 @@ export default function CSR() {
         try {
           nextActivities = JSON.parse(stored)
         } catch {
-          nextActivities = currentUserEmail === 'csr@kgirdharlal.com' ? ANNUAL_CHARTER : []
+          nextActivities = []
         }
       } else {
-        nextActivities = currentUserEmail === 'csr@kgirdharlal.com' ? ANNUAL_CHARTER : []
+        nextActivities = []
       }
       Promise.resolve().then(() => {
         setActivities(nextActivities)
@@ -1012,28 +1012,9 @@ export default function CSR() {
         return res.json()
       })
       .then(data => {
-        if (data.length === 0 && currentUserEmail === 'csr@kgirdharlal.com') {
-          fetch(apiUrl('/api/csr-activities/sync'), {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email: currentUserEmail, activities: ANNUAL_CHARTER })
-          })
-            .then(() => {
-              setActivities(ANNUAL_CHARTER)
-              setLoading(false)
-              setHasLoaded(true)
-            })
-            .catch(err => {
-              console.error(err)
-              setActivities(ANNUAL_CHARTER)
-              setLoading(false)
-              setHasLoaded(true)
-            })
-        } else {
-          setActivities(data)
-          setLoading(false)
-          setHasLoaded(true)
-        }
+        setActivities(data)
+        setLoading(false)
+        setHasLoaded(true)
       })
       .catch(err => {
         console.error(err)
@@ -1042,10 +1023,10 @@ export default function CSR() {
           try {
             setActivities(JSON.parse(stored))
           } catch {
-            setActivities(currentUserEmail === 'csr@kgirdharlal.com' ? ANNUAL_CHARTER : [])
+            setActivities([])
           }
         } else {
-          setActivities(currentUserEmail === 'csr@kgirdharlal.com' ? ANNUAL_CHARTER : [])
+          setActivities([])
         }
         setLoading(false)
         setHasLoaded(true)

@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Search, Plus, FileText, Award, Star, Upload, X, ChevronLeft, ChevronRight, Pencil, Trash2, AlertTriangle } from 'lucide-react'
 
 const CATEGORY_COLORS = {
@@ -510,7 +510,15 @@ function WizardModal({ onClose, onSubmit }) {
 
 export default function Governance() {
   const [activeTab, setActiveTab] = useState('governance')
-  const [policies, setPolicies] = useState(INITIAL_POLICIES)
+  const [policies, setPolicies] = useState(() => {
+    try {
+      const raw = localStorage.getItem('kg_governance_policies_v1')
+      return raw ? JSON.parse(raw) : []
+    } catch { return [] }
+  })
+  useEffect(() => {
+    try { localStorage.setItem('kg_governance_policies_v1', JSON.stringify(policies)) } catch { /* ignore */ }
+  }, [policies])
   const [searchQuery, setSearchQuery] = useState('')
   const [categoryFilter, setCategoryFilter] = useState('All Categories')
   const [statusFilter, setStatusFilter] = useState('All Status')

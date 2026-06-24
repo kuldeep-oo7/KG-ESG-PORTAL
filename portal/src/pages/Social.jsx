@@ -139,9 +139,17 @@ export default function Social() {
   const [currentStep, setCurrentStep]   = useState(0)
   const [docs, setDocs] = useState({ supporting: null, photos: null, certificates: null, evidence: null })
 
-  // Saved activity rows
-  const [savedRows, setSavedRows] = useState([])
-  const [recentActivities, setRecentActivities] = useState(RECENT_ACTIVITIES)
+  // Saved activity rows (persisted to localStorage)
+  const [savedRows, setSavedRows] = useState(() => {
+    try {
+      const raw = localStorage.getItem('kg_social_activities_v1')
+      return raw ? JSON.parse(raw) : []
+    } catch { return [] }
+  })
+  useEffect(() => {
+    try { localStorage.setItem('kg_social_activities_v1', JSON.stringify(savedRows)) } catch { /* ignore */ }
+  }, [savedRows])
+  const [recentActivities, setRecentActivities] = useState([])
 
   function deleteRow(id) { setSavedRows(r => r.filter(x => x.id !== id)) }
   function deleteRecent(i) { setRecentActivities(r => r.filter((_, idx) => idx !== i)) }
