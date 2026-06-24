@@ -58,7 +58,7 @@ export default function Scope3EmployeeCommute() {
   return (
     <AssessmentForm
       title="Inventory of GHG Emissions due to Employee Commute (home ↔ office)"
-      siteCode={siteId} module="employeeCommute"
+      siteCode={siteId} module="employeeCommute" hideDocument
       emissionLabel="Emission From Employee Commute"
       columns={['date', 'Commute Type', 'Fuel Type', 'Vehicle Type', 'Unit of Measurement', 'Consumption', 'Source', 'Emission Factor']}
       onPrev={() => navigate(`/sites/${siteId}/scope2/summary`)}

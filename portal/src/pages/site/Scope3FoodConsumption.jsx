@@ -36,7 +36,7 @@ export default function Scope3FoodConsumption() {
   return (
     <AssessmentForm
       title="GHG Inventory – Food Consumption"
-      siteCode={siteId} module="foodConsumption"
+      siteCode={siteId} module="foodConsumption" hideDocument
       emissionLabel="Emission From Food Consumption"
       columns={['date', 'Food Type', 'Unit of Measurement', 'Consumption', 'Emission Factor']}
       onPrev={() => navigate(`/sites/${siteId}/scope3/employee-commute`)}

@@ -39,7 +39,7 @@ export default function Scope3PurchasedGoods() {
   return (
     <AssessmentForm
       title="GHG Inventory – Purchased Goods & Services"
-      siteCode={siteId} module="purchasedGoods"
+      siteCode={siteId} module="purchasedGoods" hideDocument
       emissionLabel="Emission From Purchased Goods"
       columns={['date', 'Goods Type', 'Loop', 'Unit', 'Consumption', 'Emission Factor']}
       onPrev={() => navigate(`/sites/${siteId}/scope3/food-consumption`)}

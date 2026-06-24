@@ -46,7 +46,7 @@ export default function Scope3BusinessTravelAir() {
   return (
     <AssessmentForm
       title="GHG Inventory – Business Travel (Air)"
-      siteCode={siteId} module="businessTravelAir"
+      siteCode={siteId} module="businessTravelAir" hideDocument
       emissionLabel="Emission From Air Travel"
       columns={['date', 'Mode of Travel', 'Class', 'No. of Passengers', 'Origin Airport', 'Destination Airport', 'Distance (km)']}
       onPrev={() => navigate(`/sites/${siteId}/scope3/water-treatment`)}

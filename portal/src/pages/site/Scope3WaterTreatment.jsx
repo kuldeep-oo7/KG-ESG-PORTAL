@@ -39,7 +39,7 @@ export default function Scope3WaterTreatment() {
   return (
     <AssessmentForm
       title="GHG Inventory – Water Treatment"
-      siteCode={siteId} module="waterTreatment"
+      siteCode={siteId} module="waterTreatment" hideDocument
       emissionLabel="Emission From Water Treatment"
       columns={['date', 'Method', 'Unit', 'Volume', 'Source', 'Emission Factor']}
       onPrev={() => navigate(`/sites/${siteId}/scope3/water-supply`)}

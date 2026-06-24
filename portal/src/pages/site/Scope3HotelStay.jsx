@@ -40,7 +40,7 @@ export default function Scope3HotelStay() {
   return (
     <AssessmentForm
       title="GHG Inventory – Hotel Stay"
-      siteCode={siteId} module="hotelStay"
+      siteCode={siteId} module="hotelStay" hideDocument
       emissionLabel="Emission From Hotel Stay"
       columns={['date', 'Standard', 'Nights', 'Rooms', 'Source', 'Emission Factor']}
       onPrev={() => navigate(`/sites/${siteId}/scope3/business-travel-land`)}

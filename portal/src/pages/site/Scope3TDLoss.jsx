@@ -37,7 +37,7 @@ export default function Scope3TDLoss() {
   return (
     <AssessmentForm
       title="Inventory of Transmission & Distribution Loss due to Imported Electricity"
-      siteCode={siteId} module="tdLoss"
+      siteCode={siteId} module="tdLoss" hideDocument
       emissionLabel="Emission From Transmission & Distribution Loss"
       columns={['date', 'Name of Country', 'Unit of Measurement', 'Consumption', 'Source', 'Emission Factor']}
       onPrev={() => navigate(`/sites/${siteId}/scope3/purchased-goods`)}

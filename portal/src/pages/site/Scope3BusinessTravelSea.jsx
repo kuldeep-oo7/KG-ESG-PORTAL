@@ -33,7 +33,7 @@ export default function Scope3BusinessTravelSea() {
   return (
     <AssessmentForm
       title="GHG Inventory – Business Travel (Sea)"
-      siteCode={siteId} module="businessTravelSea"
+      siteCode={siteId} module="businessTravelSea" hideDocument
       emissionLabel="Emission From Sea Travel"
       columns={['date', 'Travel Mode', 'Distance (km)', 'Source', 'Emission Factor']}
       onPrev={() => navigate(`/sites/${siteId}/scope3/business-travel-air`)}

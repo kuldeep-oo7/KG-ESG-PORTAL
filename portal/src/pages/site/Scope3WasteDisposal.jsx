@@ -39,7 +39,7 @@ export default function Scope3WasteDisposal() {
   return (
     <AssessmentForm
       title="Inventory of GHG Emissions from waste generated in Operations"
-      siteCode={siteId} module="wasteDisposal"
+      siteCode={siteId} module="wasteDisposal" hideDocument
       emissionLabel="Emission From Waste Disposal"
       columns={['date', 'Type of Goods', 'Loop', 'Unit of Measurement', 'Generation', 'Emission Factor']}
       onPrev={() => navigate(`/sites/${siteId}/scope3/downstream`)}
