@@ -4,41 +4,53 @@ import AssessmentForm, { Select, Input, GHGPreview } from '../../components/Asse
 import { calcTravelAir } from '../../lib/calculations'
 import { FLIGHT_HAULS, FLIGHT_CLASSES } from '../../lib/constants'
 
+const RF_OPTIONS = ['With RF', 'Without RF']
+
 export default function Scope3BusinessTravelAir() {
   const { siteId } = useParams()
   const navigate = useNavigate()
-  const [haul, setHaul]           = useState('')
-  const [flightClass, setClass]   = useState('')
+  const [haul, setHaul]             = useState('')
+  const [flightClass, setClass]     = useState('')
+  const [rf, setRf]                 = useState('With RF')
   const [passengers, setPassengers] = useState('')
-  const [origin, setOrigin]       = useState('')
-  const [destination, setDest]    = useState('')
-  const [km, setKm]               = useState('')
-  const [remarks, setRemarks]     = useState('')
+  const [origin, setOrigin]         = useState('')
+  const [destination, setDest]      = useState('')
+  const [km, setKm]                 = useState('')
+  const [remarks, setRemarks]       = useState('')
 
   const passengerKm = (parseFloat(passengers) || 1) * (parseFloat(km) || 0)
   const preview = haul && flightClass && km
-    ? calcTravelAir(haul, flightClass, passengerKm)
+    ? calcTravelAir(haul, flightClass, passengerKm, rf)
     : null
 
   function buildEntry() {
     if (!haul || !flightClass || !km || !passengers) return null
     const pkm = parseFloat(passengers) * parseFloat(km)
-    const { ef, tco2e } = calcTravelAir(haul, flightClass, pkm)
+    const { ef, tco2e } = calcTravelAir(haul, flightClass, pkm, rf)
     const e = {
       date: new Date().toISOString().slice(0, 10),
       'Mode of Travel': haul,
       Class: flightClass,
+      'RF Type': rf,
+      Type: `${haul} - ${flightClass} - ${rf}`,
       'No. of Passengers': passengers,
+      'Number of Passenger': passengers,
       'Origin Airport': origin,
       'Destination Airport': destination,
       'Distance (km)': km,
-      Source: 'Defra 2025',
+      'Kilometers Travelled': km,
+      Consumption: pkm,
+      consumption: pkm,
+      Unit: 'passenger.km',
+      'Unit of Measurement': 'passenger.km',
+      Source: 'Defra v 1.0',
       'Emission Factor': ef,
-      remarks,
       ef,
       tco2e,
+      ghg: tco2e,
+      remarks,
     }
-    setHaul(''); setClass(''); setPassengers(''); setOrigin('')
+    setHaul(''); setClass(''); setRf('With RF'); setPassengers(''); setOrigin('')
     setDest(''); setKm(''); setRemarks('')
     return e
   }
@@ -48,18 +60,23 @@ export default function Scope3BusinessTravelAir() {
       title="GHG Inventory – Business Travel (Air)"
       siteCode={siteId} module="businessTravelAir" hideDocument
       emissionLabel="Emission From Air Travel"
-      columns={['date', 'Mode of Travel', 'Class', 'No. of Passengers', 'Origin Airport', 'Destination Airport', 'Distance (km)']}
+      columns={['date', 'Mode of Travel', 'Class', 'RF Type', 'No. of Passengers', 'Distance (km)', 'Source', 'Emission Factor']}
       onPrev={() => navigate(`/sites/${siteId}/scope3/water-treatment`)}
       onNext={() => navigate(`/sites/${siteId}/scope3/business-travel-sea`)}
       onBuildEntry={buildEntry}
       fields={({ onSubmit }) => (
         <div className="space-y-4">
-          <div className="grid grid-cols-2 gap-4">
-            <Select label="Mode of Travel" value={haul} onChange={setHaul} options={FLIGHT_HAULS} required />
+          <div className="grid grid-cols-3 gap-4">
+            <Select label="Haul (Mode of Travel)" value={haul} onChange={setHaul} options={FLIGHT_HAULS} required />
             <Select label="Class" value={flightClass} onChange={setClass} options={FLIGHT_CLASSES} required />
+            <Select label="Type (Radiative Forcing)" value={rf} onChange={setRf} options={RF_OPTIONS} required />
           </div>
           <div className="grid grid-cols-3 gap-4">
             <Input label="Number of Passenger" value={passengers} onChange={setPassengers} type="number" required />
+            <Input label="Kilometers Travelled" value={km} onChange={setKm} type="number" required />
+            <div />
+          </div>
+          <div className="grid grid-cols-2 gap-4">
             <Input label="Origin Airport" value={origin} onChange={setOrigin} placeholder="e.g. BOM" />
             <Input label="Destination Airport" value={destination} onChange={setDest} placeholder="e.g. LHR" />
           </div>
