@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useNavigate, useSearchParams } from 'react-router-dom'
-import logoImg from '../assets/kg-synergy-logo.svg'
+import logoImg from '../assets/kg-synergy-logo.jpg'
 import {
   CalendarDays, Clock, Download, Leaf, Mail, MapPin, Phone,
   Send, Users, X, CheckCircle2, Shield, Heart,

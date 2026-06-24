@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { Mail } from 'lucide-react'
-import logoImg from '../assets/kg-synergy-logo.svg'
+import logoImg from '../assets/kg-synergy-logo.jpg'
 import authPanelImg from '../assets/auth-panel.png'
 
 // ─── Right panel ───────────────────────────────────────────────────────────────

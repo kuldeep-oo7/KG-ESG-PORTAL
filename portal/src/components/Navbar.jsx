@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { Settings, Search, Bell, LogOut, User, HelpCircle, X, Camera, Mail, Building2, ShieldCheck, Save } from 'lucide-react'
-import logoImg from '../assets/kg-synergy-logo.svg'
+import logoImg from '../assets/kg-synergy-logo.jpg'
 
 const NAV_ITEMS = [
   { label: 'Dashboard',   to: '/dashboard',  end: true },
