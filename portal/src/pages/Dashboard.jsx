@@ -81,7 +81,7 @@ function computeYear(allEntries, selectedYear) {
 
   let s1 = 0, s2 = 0, s3 = 0
   const s1Data = MONTHS_SHORT.map(m => ({ month: m, 'Stationary Combustion': 0, 'Mobile Combustion': 0, 'Fugitive Emissions': 0 }))
-  const s2Months = MONTHS_SHORT.map(m => ({ month: m, renewable: 0, imported: 0 }))
+  const s2Months = MONTHS_SHORT.map(m => ({ month: m, renewable: 0, imported: 0, heat: 0 }))
   const scope3Groups = [
     { name: 'Employee Commute', module: 'employeeCommute', color: '#1D4ED8', value: 0 },
     { name: 'Transmission & Distribution Loss', module: 'tdLoss', color: '#F59E0B', value: 0 },
@@ -105,20 +105,24 @@ function computeYear(allEntries, selectedYear) {
       })
     })
 
-    // Scope 2
+    // Scope 2 — chart plots GHG emissions (tCO2e), matching the axis label
     ;(siteData.electricity || []).forEach(e => {
       const isRenewable = e.isRenewable || e.accounting === 'market' || e.category === 'Renewable Electricity Generation'
       const val = parseFloat(e.tco2e || e.ghg || 0)
       if (!isRenewable) s2 += val
-      const consumption = parseFloat(e.Consumption ?? e.consumption ?? e.Volume ?? 0)
       const monthObj = s2Months.find(x => x.month === getShortMonth(e['Entry Period'] || e.period))
-      if (monthObj) { if (isRenewable) monthObj.renewable += consumption; else monthObj.imported += consumption }
+      if (monthObj) { if (isRenewable) monthObj.renewable += val; else monthObj.imported += val }
     })
-    ;(siteData.heatSteam || []).forEach(e => { s2 += parseFloat(e.tco2e || e.ghg || 0) })
-    ;(siteData.renewable || []).forEach(e => {
-      const consumption = parseFloat(e.Consumption ?? e.consumption ?? e.Volume ?? e.Generation ?? 0)
+    ;(siteData.heatSteam || []).forEach(e => {
+      const val = parseFloat(e.tco2e || e.ghg || 0)
+      s2 += val
       const monthObj = s2Months.find(x => x.month === getShortMonth(e['Entry Period'] || e.period))
-      if (monthObj) monthObj.renewable += consumption
+      if (monthObj) monthObj.heat += val
+    })
+    ;(siteData.renewable || []).forEach(e => {
+      const val = parseFloat(e.tco2e || e.ghg || 0)
+      const monthObj = s2Months.find(x => x.month === getShortMonth(e['Entry Period'] || e.period))
+      if (monthObj) monthObj.renewable += val
     })
 
     // Scope 3 total
@@ -149,9 +153,9 @@ function computeYear(allEntries, selectedYear) {
 
   const s2Data = s2Months.map(d => ({
     month: d.month,
-    'Renewable Electricity Generation': +(d.renewable / 1000).toFixed(2),
-    'Imported Energy': 0,
-    'Imported Electricity': +(d.imported / 1000).toFixed(2),
+    'Renewable Electricity Generation': +d.renewable.toFixed(2),
+    'Imported Energy': +d.heat.toFixed(2),
+    'Imported Electricity': +d.imported.toFixed(2),
   }))
 
   const totalS3 = scope3Groups.reduce((s, g) => s + g.value, 0)

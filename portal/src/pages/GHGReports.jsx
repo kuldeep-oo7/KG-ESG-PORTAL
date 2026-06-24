@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Download, ChevronUp, ChevronDown, Search, Calendar } from 'lucide-react'
-import { REPORT_TOTALS, SITES } from '../data/ghgData'
+import { SITES } from '../data/ghgData'
 import { useGHG } from '../store/useGHG'
 import jsPDF from 'jspdf'
 import autoTable from 'jspdf-autotable'
@@ -169,90 +169,95 @@ function TableSection({ title, entries }) {
 
 /* ── Main page ──────────────────────────────────────────────────────────────── */
 export default function GHGReports() {
-  const { allEntries, getScopeTotal, getAvoidedTotal } = useGHG()
+  const { allEntries } = useGHG()
 
   const [yearType, setYearType]   = useState('FY')
   const [fromMonth, setFromMonth] = useState('Apr')
-  const [fromYear, setFromYear]   = useState('2026')
+  const [fromYear, setFromYear]   = useState('2025')
   const [toMonth, setToMonth]     = useState('Mar')
-  const [toYear, setToYear]       = useState('2027')
+  const [toYear, setToYear]       = useState('2026')
   const [exportFormat, setExportFormat] = useState('Excel')
-
-  // Live totals
-  const liveS1 = ALL_CODES.reduce((s, c) => s + getScopeTotal(c, 1), 0)
-  const liveS2 = ALL_CODES.reduce((s, c) => s + getScopeTotal(c, 2), 0)
-  const liveS3 = ALL_CODES.reduce((s, c) => s + getScopeTotal(c, 3), 0)
-  const liveAvoided = ALL_CODES.reduce((s, c) => s + getAvoidedTotal(c), 0)
-  const liveTotal = liveS1 + liveS2 + liveS3
-
-  const displayTotal  = liveTotal  > 0 ? liveTotal.toFixed(3)  : REPORT_TOTALS.total.toFixed(3)
-  const displayS1     = liveS1     > 0 ? liveS1.toFixed(6)     : REPORT_TOTALS.scope1.toFixed(6)
-  const displayS2     = liveS2     > 0 ? liveS2.toFixed(6)     : REPORT_TOTALS.scope2.toFixed(6)
-  const displayS3     = liveS3     > 0 ? liveS3.toFixed(6)     : REPORT_TOTALS.scope3.toFixed(6)
-  const displayAvoided = liveAvoided > 0 ? liveAvoided.toFixed(3) : REPORT_TOTALS.avoided.toFixed(3)
-
-  // Build flat entry lists per scope / module
-  const scope1Stationary = ALL_CODES.flatMap(c =>
-    (allEntries[c]?.stationary || []).map(e => ({ ...e, siteCode: c }))
-  )
-  const scope1Mobile = ALL_CODES.flatMap(c =>
-    (allEntries[c]?.mobile || []).map(e => ({ ...e, siteCode: c }))
-  )
-  const scope1Fugitive = ALL_CODES.flatMap(c =>
-    (allEntries[c]?.fugitive || []).map(e => ({ ...e, siteCode: c }))
-  )
-
-  const scope2Electricity = ALL_CODES.flatMap(c =>
-    (allEntries[c]?.electricity || []).map(e => ({ ...e, siteCode: c }))
-  )
-  const scope2Renewable = ALL_CODES.flatMap(c =>
-    (allEntries[c]?.renewable || []).map(e => ({ ...e, siteCode: c }))
-  )
-  const scope2HeatSteam = ALL_CODES.flatMap(c =>
-    (allEntries[c]?.heatSteam || []).map(e => ({ ...e, siteCode: c }))
-  )
-
-  const scope3EmployeeCommute = ALL_CODES.flatMap(c =>
-    (allEntries[c]?.employeeCommute || []).map(e => ({ ...e, siteCode: c }))
-  )
-  const scope3BusinessAir = ALL_CODES.flatMap(c =>
-    (allEntries[c]?.businessTravelAir || []).map(e => ({ ...e, siteCode: c }))
-  )
-  const scope3BusinessLand = ALL_CODES.flatMap(c =>
-    (allEntries[c]?.businessTravelLand || []).map(e => ({ ...e, siteCode: c }))
-  )
-  const scope3BusinessSea = ALL_CODES.flatMap(c =>
-    (allEntries[c]?.businessTravelSea || []).map(e => ({ ...e, siteCode: c }))
-  )
-  const scope3WasteDisposal = ALL_CODES.flatMap(c =>
-    (allEntries[c]?.wasteDisposal || []).map(e => ({ ...e, siteCode: c }))
-  )
-  const scope3WaterSupply = ALL_CODES.flatMap(c =>
-    (allEntries[c]?.waterSupply || []).map(e => ({ ...e, siteCode: c }))
-  )
-  const scope3WaterTreatment = ALL_CODES.flatMap(c =>
-    (allEntries[c]?.waterTreatment || []).map(e => ({ ...e, siteCode: c }))
-  )
-  const scope3PurchasedGoods = ALL_CODES.flatMap(c =>
-    (allEntries[c]?.purchasedGoods || []).map(e => ({ ...e, siteCode: c }))
-  )
-  const scope3TdLoss = ALL_CODES.flatMap(c =>
-    (allEntries[c]?.tdLoss || []).map(e => ({ ...e, siteCode: c }))
-  )
-  const scope3HotelStay = ALL_CODES.flatMap(c =>
-    (allEntries[c]?.hotelStay || []).map(e => ({ ...e, siteCode: c }))
-  )
-  const scope3Food = ALL_CODES.flatMap(c =>
-    (allEntries[c]?.foodConsumption || []).map(e => ({ ...e, siteCode: c }))
-  )
-  const scope3Upstream = ALL_CODES.flatMap(c =>
-    (allEntries[c]?.upstream || []).map(e => ({ ...e, siteCode: c }))
-  )
-  const scope3Downstream = ALL_CODES.flatMap(c =>
-    (allEntries[c]?.downstream || []).map(e => ({ ...e, siteCode: c }))
-  )
+  const [siteSel, setSiteSel]     = useState('All Sites')
 
   const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+  const FULL_MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December']
+
+  function monthIdx(name) {
+    const n = String(name || '').trim().toLowerCase()
+    let i = FULL_MONTHS.findIndex(m => m.toLowerCase() === n)
+    if (i < 0) i = MONTHS.findIndex(m => m.toLowerCase() === n)
+    return i
+  }
+  // Convert an entry to a comparable year*12+month value (or null if unknown)
+  function entryYM(e) {
+    const p = e['Entry Period'] || e.period
+    if (p && p.includes('-')) {
+      const [mo, yr] = p.split('-').map(s => s.trim())
+      const mi = monthIdx(mo)
+      if (mi >= 0 && yr) return parseInt(yr, 10) * 12 + mi
+    }
+    if (e.date && e.date.includes('-')) {
+      const [y, m] = e.date.split('-')
+      return parseInt(y, 10) * 12 + (parseInt(m, 10) - 1)
+    }
+    return null
+  }
+  const fromVal = parseInt(fromYear, 10) * 12 + monthIdx(fromMonth)
+  const toVal   = parseInt(toYear, 10) * 12 + monthIdx(toMonth)
+  const lo = Math.min(fromVal, toVal)
+  const hi = Math.max(fromVal, toVal)
+  function inRange(e) {
+    const v = entryYM(e)
+    if (v == null) return false
+    return v >= lo && v <= hi
+  }
+
+  // Site filter → list of site codes to include
+  const selectedCodes = siteSel === 'All Sites'
+    ? ALL_CODES
+    : ALL_CODES.filter(c => (SITES.find(s => s.code === c)?.name) === siteSel)
+
+  // Build flat entry lists per module, applying site + date-range filters
+  const get = (mod) => selectedCodes.flatMap(c =>
+    (allEntries[c]?.[mod] || []).filter(inRange).map(e => ({ ...e, siteCode: c }))
+  )
+
+  const scope1Stationary    = get('stationary')
+  const scope1Mobile        = get('mobile')
+  const scope1Fugitive      = get('fugitive')
+  const scope2Electricity   = get('electricity')
+  const scope2Renewable     = get('renewable')
+  const scope2HeatSteam     = get('heatSteam')
+  const scope3EmployeeCommute = get('employeeCommute')
+  const scope3BusinessAir   = get('businessTravelAir')
+  const scope3BusinessLand  = get('businessTravelLand')
+  const scope3BusinessSea   = get('businessTravelSea')
+  const scope3WasteDisposal = get('wasteDisposal')
+  const scope3WaterSupply   = get('waterSupply')
+  const scope3WaterTreatment = get('waterTreatment')
+  const scope3PurchasedGoods = get('purchasedGoods')
+  const scope3TdLoss        = get('tdLoss')
+  const scope3HotelStay     = get('hotelStay')
+  const scope3Food          = get('foodConsumption')
+  const scope3Upstream      = get('upstream')
+  const scope3Downstream    = get('downstream')
+
+  // Totals derived from the filtered lists (so summary cards react to filters)
+  const sum = arr => arr.reduce((s, e) => s + (e.tco2e || 0), 0)
+  const liveS1 = sum(scope1Stationary) + sum(scope1Mobile) + sum(scope1Fugitive)
+  const liveS2 = sum(scope2Electricity) + sum(scope2HeatSteam)
+  const liveS3 = sum(scope3EmployeeCommute) + sum(scope3BusinessAir) + sum(scope3BusinessLand) +
+    sum(scope3BusinessSea) + sum(scope3WasteDisposal) + sum(scope3WaterSupply) + sum(scope3WaterTreatment) +
+    sum(scope3PurchasedGoods) + sum(scope3TdLoss) + sum(scope3HotelStay) + sum(scope3Food) +
+    sum(scope3Upstream) + sum(scope3Downstream)
+  const liveAvoided = sum(scope2Renewable)
+  const liveTotal = liveS1 + liveS2 + liveS3
+
+  const displayTotal   = liveTotal.toFixed(3)
+  const displayS1      = liveS1.toFixed(6)
+  const displayS2      = liveS2.toFixed(6)
+  const displayS3      = liveS3.toFixed(6)
+  const displayAvoided = liveAvoided.toFixed(3)
 
   function handleExport(format) {
     const allRows = [
@@ -398,10 +403,10 @@ export default function GHGReports() {
             className="text-3xl font-bold text-[#111827]"
             style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}
           >
-            Report for All Sites
+            Report for {siteSel}
           </h1>
           <p className="text-sm text-slate-500 mt-1">
-            Financial Year 2026 &nbsp;·&nbsp; Measurement period: Apr 2026 – Mar 2027
+            {yearType === 'FY' ? 'Financial Year' : 'Calendar Year'} &nbsp;·&nbsp; Measurement period: {fromMonth} {fromYear} – {toMonth} {toYear}
           </p>
         </div>
       </div>
@@ -448,7 +453,14 @@ export default function GHGReports() {
             {['CY', 'FY'].map(t => (
               <button
                 key={t}
-                onClick={() => setYearType(t)}
+                onClick={() => {
+                  setYearType(t)
+                  if (t === 'CY') {
+                    setFromMonth('Jan'); setToMonth('Dec'); setToYear(fromYear)
+                  } else {
+                    setFromMonth('Apr'); setToMonth('Mar'); setToYear(String(parseInt(fromYear, 10) + 1))
+                  }
+                }}
                 className={`px-4 py-1.5 text-sm font-medium transition-colors ${
                   yearType === t
                     ? 'bg-[#064E3B] text-white'
@@ -498,7 +510,10 @@ export default function GHGReports() {
 
           {/* Sites dropdown */}
           <div className="relative">
-            <select className="border border-slate-200 rounded-lg pl-3 pr-8 py-2 text-sm outline-none bg-white text-slate-700 focus:border-[#064E3B] focus:ring-2 focus:ring-[#064E3B]/10 transition-all appearance-none">
+            <select
+              value={siteSel}
+              onChange={e => setSiteSel(e.target.value)}
+              className="border border-slate-200 rounded-lg pl-3 pr-8 py-2 text-sm outline-none bg-white text-slate-700 focus:border-[#064E3B] focus:ring-2 focus:ring-[#064E3B]/10 transition-all appearance-none cursor-pointer">
               <option>All Sites</option>
               {SITES.map(s => <option key={s.code}>{s.name}</option>)}
             </select>
