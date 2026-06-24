@@ -219,11 +219,11 @@ export default function Navbar() {
   return (
     <>
       <header className="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
-        <div className="flex items-center gap-6 px-6 h-16 max-w-[1440px] mx-auto w-full">
+        <div className="flex items-center gap-6 px-6 h-20 max-w-[1440px] mx-auto w-full">
 
           {/* Logo */}
           <NavLink to="/dashboard" className="flex items-center shrink-0 no-underline">
-            <img src={logoImg} alt="KG SYNERGY" className="w-auto object-contain" style={{ height: 44 }} />
+            <img src={logoImg} alt="KG SYNERGY" className="w-auto object-contain" style={{ height: 68 }} />
           </NavLink>
 
           {/* Nav links */}
