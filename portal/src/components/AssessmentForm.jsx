@@ -448,7 +448,7 @@ export function EmissionFooter({ label, total }) {
 export default function AssessmentForm({
   title, description, siteCode, module, emissionLabel,
   fields, columns, onBuildEntry,
-  onNext, onPrev, bulkImport,
+  onNext, onPrev, bulkImport, hideDocument,
 }) {
   const { getEntries, getModuleTotal, addEntry, deleteEntry, updateEntry } = useGHG()
   const [showHistory, setShowHistory] = useState(false)
@@ -624,9 +624,11 @@ export default function AssessmentForm({
           </div>
 
           {/* Centralized supporting-document upload (persists with the entry) */}
-          <div className="mb-5 grid grid-cols-1">
-            <FileUpload file={doc} onChange={setDoc} />
-          </div>
+          {!hideDocument && (
+            <div className="mb-5 grid grid-cols-1">
+              <FileUpload file={doc} onChange={setDoc} />
+            </div>
+          )}
 
           {fields({ onSubmit: handleSubmit, entries })}
         </div>

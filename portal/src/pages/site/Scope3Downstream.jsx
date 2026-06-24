@@ -105,6 +105,7 @@ export default function Scope3Downstream() {
       onPrev={() => navigate(`/sites/${siteId}/scope3/upstream`)}
       onNext={() => navigate(`/sites/${siteId}/scope3/waste-disposal`)}
       onBuildEntry={buildEntry}
+      hideDocument
       bulkImport={{ columns: BULK_COLUMNS, isValid: bulkValid, buildRow: bulkBuildRow, templateName: 'downstream_template', templateUrl: '/templates/freight_transport_template.xlsx' }}
       fields={({ onSubmit }) => (
         <div className="space-y-4">
