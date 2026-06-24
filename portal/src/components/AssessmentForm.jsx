@@ -1,7 +1,8 @@
 import { useState } from 'react'
-import { History, SkipForward, Trash2, Pencil, Search, ChevronDown, X, CheckCircle2, FileText, Download, Eye } from 'lucide-react'
+import { History, SkipForward, Trash2, Pencil, Search, ChevronDown, X, CheckCircle2, FileText, Download, Eye, Upload } from 'lucide-react'
 import { useGHG } from '../store/useGHG'
 import { putDoc, getDoc, newDocId } from '../lib/docStore'
+import BulkImportModal from './BulkImportModal'
 
 const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December']
 const YEARS  = ['2023','2024','2025','2026','2027']
@@ -447,10 +448,11 @@ export function EmissionFooter({ label, total }) {
 export default function AssessmentForm({
   title, description, siteCode, module, emissionLabel,
   fields, columns, onBuildEntry,
-  onNext, onPrev,
+  onNext, onPrev, bulkImport,
 }) {
   const { getEntries, getModuleTotal, addEntry, deleteEntry, updateEntry } = useGHG()
   const [showHistory, setShowHistory] = useState(false)
+  const [showBulk, setShowBulk] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const [entryDate, setEntryDate] = useState(new Date().toISOString().slice(0, 10))
   const [periodMonth, setPeriodMonth] = useState(MONTHS[new Date().getMonth()])
@@ -555,6 +557,14 @@ export default function AssessmentForm({
               className="flex items-center gap-2 border border-slate-200 rounded-xl px-4 py-2 text-sm text-slate-600 hover:border-[#064E3B] hover:text-[#064E3B] transition-colors"
             >
               <SkipForward className="w-4 h-4" /> Skip &amp; Next
+            </button>
+          )}
+          {bulkImport && (
+            <button
+              onClick={() => setShowBulk(true)}
+              className="flex items-center gap-2 border border-slate-200 rounded-xl px-4 py-2 text-sm text-slate-600 hover:border-[#064E3B] hover:text-[#064E3B] transition-colors"
+            >
+              <Upload className="w-4 h-4" /> Bulk Import
             </button>
           )}
         </div>
@@ -663,6 +673,32 @@ export default function AssessmentForm({
           row={editRow}
           onClose={() => setEditRow(null)}
           onSave={patch => { updateEntry(siteCode, module, editRow.id, patch); setEditRow(null) }}
+        />
+      )}
+
+      {showBulk && bulkImport && (
+        <BulkImportModal
+          title={title}
+          columns={bulkImport.columns}
+          templateName={bulkImport.templateName || module}
+          isValid={bulkImport.isValid}
+          onClose={() => setShowBulk(false)}
+          onSubmit={validRows => {
+            let n = 0
+            validRows.forEach(r => {
+              const entry = bulkImport.buildRow(r)
+              if (entry) {
+                addEntry(siteCode, module, {
+                  ...entry,
+                  date: entry.date || entryDate,
+                  'Entry Period': entry['Entry Period'] || entryPeriod,
+                })
+                n++
+              }
+            })
+            setShowBulk(false)
+            if (n > 0) { setSubmitted(true); setTimeout(() => setSubmitted(false), 2500) }
+          }}
         />
       )}
     </div>

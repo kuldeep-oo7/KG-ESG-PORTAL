@@ -11,6 +11,46 @@ const UNITS         = ['tonne-km', 'km', 'kg']
 
 const EF_UPSTREAM = { 'Road': 0.107, 'Rail': 0.028, 'Sea': 0.016, 'Air': 0.600, 'Inland Waterway': 0.031 }
 
+const BULK_COLUMNS = [
+  { key: 'Entry Period', label: 'Entry Period' },
+  { key: 'Type of Vehicle', label: 'Type of Vehicle' },
+  { key: 'Type of Fuel', label: 'Type of Fuel' },
+  { key: 'Class', label: 'Class' },
+  { key: 'Type', label: 'Type' },
+  { key: 'Unit of Measurement', label: 'Unit of Measurement' },
+  { key: 'Tonnes', label: 'Tonnes' },
+  { key: 'Distance Travelled', label: 'Distance Travelled' },
+  { key: 'Remarks', label: 'Remarks' },
+]
+const bulkValid = r => !!((r['Type'] || '').trim()) && parseFloat(r['Tonnes']) > 0 && parseFloat(r['Distance Travelled']) > 0
+function bulkBuildRow(r) {
+  const t = (r['Type'] || '').trim()
+  const efv = EF_UPSTREAM[t] ?? 0
+  const tn = parseFloat(r['Tonnes']) || 0
+  const di = parseFloat(r['Distance Travelled']) || 0
+  const tc = +(efv * tn * di / 1000).toFixed(6)
+  return {
+    date: new Date().toISOString().slice(0, 10),
+    'Entry Period': (r['Entry Period'] || '').trim(),
+    'Type of Vehicle': r['Type of Vehicle'] || '',
+    'Type of Fuel': r['Type of Fuel'] || '',
+    Class: r['Class'] || '',
+    Type: t,
+    'Unit of Measurement': r['Unit of Measurement'] || 'tonne-km',
+    Unit: r['Unit of Measurement'] || 'tonne-km',
+    Tonnes: tn,
+    'Distance Travelled': di,
+    Consumption: tn * di,
+    consumption: tn * di,
+    Source: 'Defra v1.0',
+    'Emission Factor': efv,
+    ef: efv,
+    tco2e: tc,
+    ghg: tc,
+    remarks: r['Remarks'] || '',
+  }
+}
+
 export default function Scope3Upstream() {
   const { siteId } = useParams()
   const navigate = useNavigate()
@@ -60,6 +100,7 @@ export default function Scope3Upstream() {
       onPrev={() => navigate(`/sites/${siteId}/scope3/td-loss`)}
       onNext={() => navigate(`/sites/${siteId}/scope3/downstream`)}
       onBuildEntry={buildEntry}
+      bulkImport={{ columns: BULK_COLUMNS, isValid: bulkValid, buildRow: bulkBuildRow, templateName: 'upstream_template' }}
       fields={({ onSubmit }) => (
         <div className="space-y-4">
           <div className="grid grid-cols-3 gap-4">
