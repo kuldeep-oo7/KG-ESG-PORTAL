@@ -8,6 +8,11 @@ import autoTable from 'jspdf-autotable'
 const ALL_CODES = SITES.map(s => s.code)
 
 const TABLE_COLUMNS = ['DATE', 'ENTRY PERIOD', 'SITE NAME', 'TYPE', 'UNIT', 'CONSUMPTION', 'SOURCE', 'EMISSION FACTOR', 'GHG (TCO2EQ)', 'REMARKS']
+const COL_KEY = {
+  'DATE': 'date', 'ENTRY PERIOD': 'period', 'SITE NAME': 'site', 'TYPE': 'type',
+  'UNIT': 'unit', 'CONSUMPTION': 'consumption', 'SOURCE': 'source',
+  'EMISSION FACTOR': 'ef', 'GHG (TCO2EQ)': 'ghg', 'REMARKS': 'remarks',
+}
 
 /* ── Scope card ─────────────────────────────────────────────────────────────── */
 function ScopeCard({ label, primary, secondary, dark, teal }) {
@@ -95,7 +100,22 @@ function TableSection({ title, entries }) {
     }
   }
 
-  const rows = filtered.map(toRow)
+  let rows = filtered.map(toRow)
+  if (sortCol) {
+    const key = COL_KEY[sortCol]
+    const numeric = ['consumption', 'ef', 'ghg'].includes(key)
+    rows = [...rows].sort((a, b) => {
+      if (numeric) {
+        const av = parseFloat(a[key]) || 0, bv = parseFloat(b[key]) || 0
+        return sortDir === 'asc' ? av - bv : bv - av
+      }
+      const av = String(a[key]), bv = String(b[key])
+      return sortDir === 'asc' ? av.localeCompare(bv) : bv.localeCompare(av)
+    })
+  } else {
+    // No explicit sort → show the most recently entered records first (top)
+    rows = [...rows].reverse()
+  }
 
   return (
     <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden mb-4 shadow-sm">
