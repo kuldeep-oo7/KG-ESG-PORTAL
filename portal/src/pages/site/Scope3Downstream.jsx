@@ -24,7 +24,11 @@ function bulkBuildRow(r) {
   const unit = (r['Unit of Measurement'] || 'tonne.km').trim()
   const tn = parseFloat(r['Tonnes']) || 0
   const di = parseFloat(r['Distance Travelled']) || 0
-  const efv = lookupFreightEF({ vehicle, fuel, cls, type, unit })
+  // Prefer the DEFRA-category label lookup (matches the interactive form); fall back
+  // to the raw component lookup for older templates.
+  const vehicleLabel = type || [vehicle, cls].filter(Boolean).join(' - ') || vehicle
+  let efv = lookupFreightByLabel(vehicleLabel, fuel, unit).ef
+  if (!efv) efv = lookupFreightEF({ vehicle, fuel, cls, type, unit })
   const qty = /tonne/i.test(unit) ? tn * di : di
   const tc = +(efv * qty / 1000).toFixed(6)
   return {
@@ -39,7 +43,7 @@ function bulkBuildRow(r) {
     'Distance Travelled': di,
     Consumption: qty,
     consumption: qty,
-    Source: 'Defra v 1.0',
+    Source: 'DEFRA 2026',
     'Emission Factor': efv,
     ef: efv,
     tco2e: tc,
