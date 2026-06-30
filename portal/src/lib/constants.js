@@ -515,6 +515,15 @@ export const FOOD_TYPES = [
   '1 hot snack (burger + fries)', '1 sandwich',
   'Meal, vegan', 'Meal, vegetarian', 'Meal, with beef', 'Meal, with chicken',
 ]
+// Each food type has its own serving unit (per the Food Consumption template).
+export const FOOD_UNIT_BY_TYPE = {
+  '1 standard breakfast': 'breakfast', '1 gourmet breakfast': 'breakfast',
+  '1 cold or hot snack': 'hot snack', '1 average meal': 'meal',
+  'Non-alcoholic beverage': 'litre', 'Alcoholic beverage': 'litre',
+  '1 hot snack (burger + fries)': 'hot snack', '1 sandwich': 'sandwich',
+  'Meal, vegan': 'meal', 'Meal, vegetarian': 'meal',
+  'Meal, with beef': 'meal', 'Meal, with chicken': 'meal',
+}
 export const FOOD_UNITS = ['number of meals', 'count']
 
 // ── Scope 3: Purchased Goods ──────────────────────────────────────────────────

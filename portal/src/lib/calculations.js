@@ -1390,7 +1390,7 @@ export function recomputeEntry(module, entry) {
       res = calcGoods(type, entry.Loop || entry.loop || 'Primary material production', consumption)
       break
     case 'hotelStay': res = calcHotel(type, consumption); break
-    case 'foodConsumption': res = calcFood(type, consumption); break
+    case 'foodConsumption': res = calcFood(type, consumption); source = 'UNFCCC'; break
     case 'employeeCommute': {
       const km = parseFloat(entry['km Travelled'] || entry['km_per_day'] || entry.kmPerDay || 0)
       const mode = type.replace(/^Cars \(by size\) - /i, '').replace(/^Bus - /i, '').replace(/^Rail - /i, '').replace(/^Taxis - /i, '').trim()

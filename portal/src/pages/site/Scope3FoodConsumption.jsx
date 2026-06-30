@@ -2,7 +2,9 @@ import { useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import AssessmentForm, { Select, Input, GHGPreview } from '../../components/AssessmentForm'
 import { calcFood } from '../../lib/calculations'
-import { FOOD_TYPES } from '../../lib/constants'
+import { FOOD_TYPES, FOOD_UNIT_BY_TYPE } from '../../lib/constants'
+
+const FOOD_SOURCE = 'UNFCCC'
 
 export default function Scope3FoodConsumption() {
   const { siteId } = useParams()
@@ -21,9 +23,9 @@ export default function Scope3FoodConsumption() {
     const e = {
       date: new Date().toISOString().slice(0, 10),
       'Food Type': foodType,
-      'Unit of Measurement': 'number of meals',
+      'Unit of Measurement': FOOD_UNIT_BY_TYPE[foodType] || 'serving',
       Consumption: consumption,
-      Source: 'Defra v1.0',
+      Source: FOOD_SOURCE,
       'Emission Factor': ef,
       remarks,
       ef,
@@ -38,7 +40,7 @@ export default function Scope3FoodConsumption() {
       title="GHG Inventory – Food Consumption"
       siteCode={siteId} module="foodConsumption" hideDocument
       emissionLabel="Emission From Food Consumption"
-      columns={['date', 'Food Type', 'Unit of Measurement', 'Consumption', 'Emission Factor']}
+      columns={['date', 'Food Type', 'Unit of Measurement', 'Consumption', 'Source', 'Emission Factor']}
       onPrev={() => navigate(`/sites/${siteId}/scope3/employee-commute`)}
       onNext={() => navigate(`/sites/${siteId}/scope3/purchased-goods`)}
       onBuildEntry={buildEntry}
@@ -46,7 +48,7 @@ export default function Scope3FoodConsumption() {
         <div className="space-y-4">
           <div className="grid grid-cols-3 gap-4">
             <Select label="Food Type" value={foodType} onChange={setFoodType} options={FOOD_TYPES} required />
-            <Input label="Consumption" value={consumption} onChange={setConsumption} type="number" placeholder="Number of meals / servings" required />
+            <Input label={`Consumption${foodType ? ` (${FOOD_UNIT_BY_TYPE[foodType] || 'serving'})` : ''}`} value={consumption} onChange={setConsumption} type="number" placeholder="Number of servings" required />
             <Input label="Remarks" value={remarks} onChange={setRemarks} placeholder="Additional notes" />
           </div>
           {preview && <GHGPreview tco2e={preview.tco2e} />}
