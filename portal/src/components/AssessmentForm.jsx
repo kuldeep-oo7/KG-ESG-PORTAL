@@ -446,7 +446,7 @@ export function RecordsTable({ columns, entries, onDelete, onEdit, onAttachDoc, 
 
 // ─── Emission footer ──────────────────────────────────────────────────────────
 
-export function EmissionFooter({ label, total }) {
+export function EmissionFooter({ label, total, period }) {
   return (
     <div className="mt-4 bg-[#064E3B] rounded-2xl px-5 py-4 flex items-center gap-4 border-l-4 border-l-[#6EE7B7]">
       <div className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center shrink-0">
@@ -454,7 +454,7 @@ export function EmissionFooter({ label, total }) {
       </div>
       <div className="flex-1 min-w-0">
         <p className="text-[10px] uppercase tracking-widest text-[#A7F3D0] mb-0.5">{label}</p>
-        <p className="text-xs text-[#6EE7B7]">Combined total for this module</p>
+        <p className="text-xs text-[#6EE7B7]">{period ? `Total for ${period}` : 'Total for this module'}</p>
       </div>
       <div className="text-right shrink-0">
         <p
@@ -487,7 +487,12 @@ export default function AssessmentForm({
   const [editRow, setEditRow] = useState(null)
   const entryPeriod = `${periodMonth} - ${periodYear}`
   const entries = getEntries(siteCode, module)
-  const total = getModuleTotal(siteCode, module)
+  // Module footer shows ONLY the selected month/year's total (not every month combined),
+  // so it matches the period being entered. Updates live as the period dropdowns change.
+  const total = +entries
+    .filter(e => (e['Entry Period'] || e.period || '') === entryPeriod)
+    .reduce((s, e) => s + (parseFloat(e.tco2e ?? e.ghg) || 0), 0)
+    .toFixed(4)
   const allColumns = ['date', 'Entry Period', ...columns.filter(c => c !== 'date')]
 
   async function handleSubmit(formData) {
@@ -604,7 +609,7 @@ export default function AssessmentForm({
             </p>
             {recordsTable}
             {entries.length > 0 && (
-              <EmissionFooter label={emissionLabel || title} total={total} />
+              <EmissionFooter label={emissionLabel || title} total={total} period={entryPeriod} />
             )}
           </div>
         )}
@@ -667,7 +672,7 @@ export default function AssessmentForm({
               Recorded Entries ({entries.length})
             </p>
             {recordsTable}
-            <EmissionFooter label={emissionLabel || title} total={total} />
+            <EmissionFooter label={emissionLabel || title} total={total} period={entryPeriod} />
           </div>
         )}
 
