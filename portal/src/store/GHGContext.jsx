@@ -22,6 +22,7 @@ import {
 import { GHGContext } from './GHGContextValue'
 import { SEED } from './SEED'
 import { SITES } from '../data/ghgData'
+import { FOOD_UNIT_BY_TYPE } from '../lib/constants'
 import { apiUrl, API_ENABLED } from '../lib/api'
 
 // LocalStorage Fallback Helpers
@@ -78,10 +79,11 @@ function recalculateAllEntries(allEntries) {
         const isRenewable = entry.isRenewable || entry.accounting === 'market' || (entry.category === 'Renewable Electricity Generation')
         const consumption = parseFloat(entry.Consumption ?? entry.consumption ?? entry.Volume ?? entry['Volume (m³)'] ?? entry['Weight (kg)'] ?? entry['Weight (tonnes)'] ?? entry.Generation ?? entry.Nights ?? entry.Rooms ?? entry.Tonnes ?? entry['Distance (km)'] ?? entry['Distance Travelled'] ?? entry['km Travelled'] ?? 0)
 
-        // T&D loss factor was corrected to DEFRA 2026 (0.01299) — always refresh T&D
-        // rows on load so old saved 0.0188 / 0.95182 values display the new factor.
-        // This is recompute-on-read only; stored consumption is never overwritten.
-        const forceRecalc = module === 'tdLoss'
+        // Some factor tables/labels were corrected after entries were saved (T&D ->
+        // DEFRA 2026 0.01299; Food -> UNFCCC source + per-serving units). Refresh those
+        // modules on load so old rows show the corrected factor/source/unit.
+        // Recompute-on-read only — stored consumption is never overwritten.
+        const forceRecalc = module === 'tdLoss' || module === 'foodConsumption'
         if (!forceRecalc && currentEf !== 0 && currentEf !== '0.00000' && currentEf !== null && currentEf !== undefined) {
           return entry
         }
@@ -199,6 +201,10 @@ function recalculateAllEntries(allEntries) {
             'Emission Factor': res.ef,
             ghg: res.tco2e,
             ...(module === 'tdLoss' ? { Source: 'DEFRA 2026' } : {}),
+            ...(module === 'foodConsumption' ? {
+              Source: 'UNFCCC',
+              'Unit of Measurement': FOOD_UNIT_BY_TYPE[type] || entry['Unit of Measurement'] || 'serving',
+            } : {}),
           }
         }
         return entry
