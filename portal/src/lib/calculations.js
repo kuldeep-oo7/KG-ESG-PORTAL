@@ -1,6 +1,7 @@
 // GHG Calculation Engine — DEFRA 2026 Conversion Factors (full set, v1)
 // Formula: tCO2e = consumption × emissionFactor / 1000
 // All EFs in kg CO2e per unit unless noted
+import { lookupFreightByLabel } from './freightFactors'
 
 // ── Scope 1: Stationary Combustion ────────────────────────────────────────────
 // Key: `${fuel}/${unit}` → kg CO2e per unit
@@ -458,13 +459,13 @@ export const EF_GOODS_LOOPS = {
     "Closed-loop": 3.22398
   },
   "Average construction": {
-    "Primary material production": 75.00675,
+    "Primary material production": 74.9958,
     "Re-used": null,
     "Open-loop": null,
     "Closed-loop": null
   },
   "Asbestos": {
-    "Primary material production": 27.0,
+    "Primary material production": 27,
     "Re-used": null,
     "Open-loop": null,
     "Closed-loop": null
@@ -473,43 +474,43 @@ export const EF_GOODS_LOOPS = {
     "Primary material production": 39.21249,
     "Re-used": 1.73826,
     "Open-loop": null,
-    "Closed-loop": 28.67835
+    "Closed-loop": 28.68398
   },
   "Bricks": {
-    "Primary material production": 241.79306,
+    "Primary material production": 241.80307,
     "Re-used": null,
     "Open-loop": null,
     "Closed-loop": null
   },
   "Concrete": {
-    "Primary material production": 118.79306,
+    "Primary material production": 118.80307,
     "Re-used": null,
     "Open-loop": null,
-    "Closed-loop": 3.21835
+    "Closed-loop": 3.22398
   },
   "Insulation": {
-    "Primary material production": 1861.79306,
+    "Primary material production": 1861.80307,
     "Re-used": null,
     "Open-loop": null,
-    "Closed-loop": 1852.12293
+    "Closed-loop": 1852.13294
   },
   "Metals": {
-    "Primary material production": 3824.09335,
+    "Primary material production": 3821.94858,
     "Re-used": null,
     "Open-loop": null,
-    "Closed-loop": 1638.74406
+    "Closed-loop": 1636.68994
   },
   "Soils": {
     "Primary material production": null,
     "Re-used": null,
     "Open-loop": null,
-    "Closed-loop": 1.00835
+    "Closed-loop": 1.01398
   },
   "Mineral oil": {
-    "Primary material production": 1401.0,
+    "Primary material production": 1401,
     "Re-used": null,
     "Open-loop": null,
-    "Closed-loop": 676.0
+    "Closed-loop": 676
   },
   "Plasterboard": {
     "Primary material production": 120.05,
@@ -527,7 +528,7 @@ export const EF_GOODS_LOOPS = {
     "Primary material production": 269.50416,
     "Re-used": 38.54288,
     "Open-loop": null,
-    "Closed-loop": null
+    "Closed-loop": 0
   },
   "Books": {
     "Primary material production": null,
@@ -542,7 +543,7 @@ export const EF_GOODS_LOOPS = {
     "Closed-loop": 823.18954
   },
   "Clothing": {
-    "Primary material production": 22310.0,
+    "Primary material production": 22310,
     "Re-used": 152.25,
     "Open-loop": null,
     "Closed-loop": null
@@ -554,13 +555,13 @@ export const EF_GOODS_LOOPS = {
     "Closed-loop": null
   },
   "Compost derived from garden waste": {
-    "Primary material production": 112.08811,
+    "Primary material production": 112.11187,
     "Re-used": null,
     "Open-loop": null,
     "Closed-loop": null
   },
   "Compost derived from food and garden waste": {
-    "Primary material production": 114.90473,
+    "Primary material production": 114.9285,
     "Re-used": null,
     "Open-loop": null,
     "Closed-loop": null
@@ -572,7 +573,7 @@ export const EF_GOODS_LOOPS = {
     "Closed-loop": null
   },
   "Electrical items - large": {
-    "Primary material production": 3267.0,
+    "Primary material production": 3267,
     "Re-used": null,
     "Open-loop": null,
     "Closed-loop": null
@@ -596,113 +597,119 @@ export const EF_GOODS_LOOPS = {
     "Closed-loop": null
   },
   "Batteries - Li ion": {
-    "Primary material production": 6308.0,
+    "Primary material production": 6308,
     "Re-used": null,
     "Open-loop": null,
     "Closed-loop": null
   },
   "Batteries - NiMh": {
-    "Primary material production": 28380.0,
+    "Primary material production": 28380,
+    "Re-used": null,
+    "Open-loop": null,
+    "Closed-loop": null
+  },
+  "": {
+    "Primary material production": null,
     "Re-used": null,
     "Open-loop": null,
     "Closed-loop": null
   },
   "Metal: aluminium cans and foil (excl. forming)": {
-    "Primary material production": 9115.90131,
+    "Primary material production": 9113.58251,
     "Re-used": null,
     "Open-loop": null,
-    "Closed-loop": 995.0779
+    "Closed-loop": 993.59114
   },
   "Metal: mixed cans": {
-    "Primary material production": 5114.62131,
+    "Primary material production": 5112.30251,
     "Re-used": null,
     "Open-loop": null,
-    "Closed-loop": 1525.52488
+    "Closed-loop": 1523.50562
   },
   "Metal: scrap metal": {
-    "Primary material production": 3473.11953,
+    "Primary material production": 3470.91114,
     "Re-used": null,
     "Open-loop": null,
-    "Closed-loop": 1706.42359
+    "Closed-loop": 1704.27272
   },
   "Metal: steel cans": {
-    "Primary material production": 2863.90131,
+    "Primary material production": 2861.58251,
     "Re-used": null,
     "Open-loop": null,
-    "Closed-loop": 1823.90131
+    "Closed-loop": 1821.58251
   },
   "Plastics: average plastics": {
-    "Primary material production": 3172.49932,
+    "Primary material production": 3170.5068,
     "Re-used": null,
     "Open-loop": null,
-    "Closed-loop": 1575.39106
+    "Closed-loop": 1573.06661
   },
   "Plastics: average plastic film": {
-    "Primary material production": 2916.50513,
+    "Primary material production": 2914.94602,
     "Re-used": null,
     "Open-loop": null,
-    "Closed-loop": 1103.56537
+    "Closed-loop": 1101.24657
   },
   "Plastics: average plastic rigid": {
-    "Primary material production": 3354.28062,
+    "Primary material production": 3351.96455,
     "Re-used": null,
     "Open-loop": null,
-    "Closed-loop": 1915.72549
+    "Closed-loop": 1913.39666
   },
   "Plastics: HDPE (incl. forming)": {
-    "Primary material production": 3095.15524,
+    "Primary material production": 3092.8927,
     "Re-used": null,
     "Open-loop": null,
-    "Closed-loop": 1770.79099
+    "Closed-loop": 1768.47219
   },
   "Plastics: LDPE and LLDPE (incl. forming)": {
-    "Primary material production": 2965.0779,
+    "Primary material production": 2963.59114,
     "Re-used": null,
     "Open-loop": null,
-    "Closed-loop": 1097.90131
+    "Closed-loop": 1095.58251
   },
   "Plastics: PET (incl. forming)": {
-    "Primary material production": 3863.90131,
+    "Primary material production": 3861.58251,
     "Re-used": null,
     "Open-loop": null,
-    "Closed-loop": 2213.90131
+    "Closed-loop": 2211.58251
   },
   "Plastics: PP (incl. forming)": {
-    "Primary material production": 2577.57172,
+    "Primary material production": 2575.25292,
     "Re-used": null,
     "Open-loop": null,
-    "Closed-loop": 1312.57172
+    "Closed-loop": 1310.25292
   },
   "Plastics: PS (incl. forming)": {
-    "Primary material production": 4376.80391,
+    "Primary material production": 4374.38685,
     "Re-used": null,
     "Open-loop": null,
-    "Closed-loop": 2669.76255
+    "Closed-loop": 2667.34549
   },
   "Plastics: PVC (incl. forming)": {
-    "Primary material production": 2944.75615,
+    "Primary material production": 2942.43735,
     "Re-used": null,
     "Open-loop": null,
-    "Closed-loop": 1847.82267
+    "Closed-loop": 1845.50387
   },
   "Paper and board: board": {
-    "Primary material production": 1199.72542,
+    "Primary material production": 1198.23866,
     "Re-used": null,
     "Open-loop": null,
-    "Closed-loop": 1098.11442
+    "Closed-loop": 1096.62766
   },
   "Paper and board: mixed": {
-    "Primary material production": 1288.50358,
+    "Primary material production": 1287.01682,
     "Re-used": null,
     "Open-loop": null,
-    "Closed-loop": 1068.77475
+    "Closed-loop": 1067.28799
   },
   "Paper and board: paper": {
-    "Primary material production": 1345.0779,
+    "Primary material production": 1343.59114,
     "Re-used": null,
     "Open-loop": null,
-    "Closed-loop": 1050.0779
-  }
+    "Closed-loop": 1048.59114
+  },
 };
 
 export const EF_MOBILE_CASCADED = {
@@ -1168,19 +1175,50 @@ export const EF_FREIGHT = {
 
 // ── Scope 3: Waste Disposal ───────────────────────────────────────────────────
 // EF[wasteType][disposalMethod] → kg CO2e per tonne
-export const EF_WASTE = {
-  'Landfill': 0.467, 'Open-loop': 0.300, 'Closed-loop': 0.100,
-  'Incineration with energy recovery': 0.021, 'Composting': 0.010,
-  'Anaerobic digestion': 0.200,
-}
-// Per-waste-type landfill EFs (sample of common ones)
-export const EF_WASTE_LANDFILL = {
-  'Organic: food and drink waste': 0.686, 'Organic: garden waste': 0.536,
-  'Organic: mixed food and garden waste': 0.611,
-  'Paper and board: paper': 0.742, 'Paper and board: board': 0.509,
-  'Plastics: average plastics': 0.013, 'Metals': 0.013,
-  'Glass': 0.013, 'Wood': 0.544, 'Tyres': 0.013,
-  'Household residual waste': 0.343, 'Commercial and industrial waste': 0.231,
+// DEFRA 2026 "Waste disposal" — kg CO2e per TONNE, by waste type x disposal method.
+export const EF_WASTE_MATRIX = {
+  "Aggregates": { "Open-loop": 1.01398, "Closed-loop": 1.01398, "Landfill": 1.27043 },
+  "Average construction": { "Open-loop": 1.01398, "Closed-loop": 1.01398, "Combustion": 4.65358 },
+  "Asbestos": { "Landfill": 5.94839 },
+  "Asphalt": { "Open-loop": 1.01398, "Closed-loop": 1.01398, "Landfill": 1.27043 },
+  "Bricks": { "Open-loop": 1.01398, "Landfill": 1.27043 },
+  "Concrete": { "Open-loop": 1.01398, "Closed-loop": 1.01398, "Landfill": 1.27043 },
+  "Insulation": { "Closed-loop": 1.01398, "Landfill": 1.27043 },
+  "Metals": { "Closed-loop": 1.01398, "Landfill": 1.26435 },
+  "Soils": { "Closed-loop": 1.01398, "Landfill": 19.55376 },
+  "Mineral oil": { "Closed-loop": 4.65358, "Combustion": 4.65358 },
+  "Plasterboard": { "Closed-loop": 4.65358, "Landfill": 71.95 },
+  "Tyres": { "Closed-loop": 4.65358 },
+  "Wood": { "Closed-loop": 4.65358, "Combustion": 4.65358, "Composting": 9.00687, "Landfill": 925.36725 },
+  "Books": { "Closed-loop": 4.65358, "Combustion": 4.65358, "Composting": 9.00687, "Landfill": 1164.51317 },
+  "Glass": { "Open-loop": 4.65358, "Closed-loop": 4.65358, "Combustion": 4.65358, "Landfill": 9.00687 },
+  "Clothing": { "Closed-loop": 4.65358, "Combustion": 4.65358, "Landfill": 496.80605 },
+  "Household residual waste": { "Open-loop": 4.65358, "Closed-loop": 4.65358, "Combustion": 4.65358, "Landfill": 497.28993, "Anaerobic digestion": 9.00687 },
+  "Organic: food and drink waste": { "Combustion": 4.65358, "Composting": 9.00687, "Landfill": 700.33263, "Anaerobic digestion": 9.00687 },
+  "Organic: garden waste": { "Combustion": 4.65358, "Composting": 9.00687, "Landfill": 646.72934, "Anaerobic digestion": 9.00687 },
+  "Organic: mixed food and garden waste": { "Combustion": 4.65358, "Composting": 9.00687, "Landfill": 656.10991, "Anaerobic digestion": 9.00687 },
+  "Commercial and industrial waste": { "Closed-loop": 4.65358, "Combustion": 4.65358, "Landfill": 520.58023, "Anaerobic digestion": 9.00687 },
+  "WEEE - fridges and freezers": { "Open-loop": 4.65358, "Landfill": 9.00687 },
+  "WEEE - large": { "Open-loop": 4.65358, "Combustion": 4.65358, "Landfill": 9.00687 },
+  "WEEE - mixed": { "Open-loop": 4.65358, "Combustion": 4.65358, "Landfill": 9.00687 },
+  "WEEE - small": { "Open-loop": 4.65358, "Combustion": 4.65358, "Landfill": 9.00687 },
+  "Batteries": { "Open-loop": 4.65358, "Landfill": 9.00687 },
+  "Metal: aluminium cans and foil (excl. forming)": { "Open-loop": 4.65358, "Closed-loop": 4.65358, "Combustion": 4.65358, "Landfill": 9.00687 },
+  "Metal: mixed cans": { "Open-loop": 4.65358, "Closed-loop": 4.65358, "Combustion": 4.65358, "Landfill": 9.00687 },
+  "Metal: scrap metal": { "Open-loop": 4.65358, "Closed-loop": 4.65358, "Combustion": 4.65358, "Landfill": 9.00687 },
+  "Metal: steel cans": { "Open-loop": 4.65358, "Closed-loop": 4.65358, "Combustion": 4.65358, "Landfill": 9.00687 },
+  "Plastics: average plastics": { "Open-loop": 4.65358, "Closed-loop": 4.65358, "Combustion": 4.65358, "Landfill": 9.00687 },
+  "Plastics: average plastic film": { "Open-loop": 4.65358, "Closed-loop": 4.65358, "Combustion": 4.65358, "Landfill": 9.00687 },
+  "Plastics: average plastic rigid": { "Open-loop": 4.65358, "Closed-loop": 4.65358, "Combustion": 4.65358, "Landfill": 9.00687 },
+  "Plastics: HDPE (incl. forming)": { "Open-loop": 4.65358, "Closed-loop": 4.65358, "Combustion": 4.65358, "Landfill": 9.00687 },
+  "Plastics: LDPE and LLDPE (incl. forming)": { "Open-loop": 4.65358, "Closed-loop": 4.65358, "Combustion": 4.65358, "Landfill": 9.00687 },
+  "Plastics: PET (incl. forming)": { "Open-loop": 4.65358, "Closed-loop": 4.65358, "Combustion": 4.65358, "Landfill": 9.00687 },
+  "Plastics: PP (incl. forming)": { "Open-loop": 4.65358, "Closed-loop": 4.65358, "Combustion": 4.65358, "Landfill": 9.00687 },
+  "Plastics: PS (incl. forming)": { "Open-loop": 4.65358, "Closed-loop": 4.65358, "Combustion": 4.65358, "Landfill": 9.00687 },
+  "Plastics: PVC (incl. forming)": { "Open-loop": 4.65358, "Closed-loop": 4.65358, "Combustion": 4.65358, "Landfill": 9.00687 },
+  "Paper and board: board": { "Closed-loop": 4.65358, "Combustion": 4.65358, "Composting": 9.00687, "Landfill": 1164.51317 },
+  "Paper and board: mixed": { "Closed-loop": 4.65358, "Combustion": 4.65358, "Composting": 9.00687, "Landfill": 1164.51317 },
+  "Paper and board: paper": { "Closed-loop": 4.65358, "Combustion": 4.65358, "Composting": 9.00687, "Landfill": 1164.51317 },
 }
 
 // ── Scope 3: T&D Loss ────────────────────────────────────────────────────────
@@ -1296,6 +1334,86 @@ export function calcTDLoss(country, unit, consumption) {
   }
   const kwh = unit === 'MWh' ? consumption * 1000 : consumption
   return { ef, tco2e: +(kwh * ef / 1000).toFixed(6) }
+}
+
+// Single source of truth: recompute an entry's emission factor + tCO2e from the
+// CURRENT factor tables, based on its stored activity attributes.
+// Used by both the load-time refresh (GHGContext) and the Edit modal, so the EF
+// can never be hand-typed or left stale. Returns { ef, tco2e, source } or null.
+export function recomputeEntry(module, entry) {
+  const type = entry.Type || entry.type || ''
+  const unit = entry.Unit || entry.unit || entry['Unit of Measurement'] || ''
+  const consumption = parseFloat(
+    entry.Consumption ?? entry.consumption ?? entry.Volume ?? entry['Volume (m³)'] ??
+    entry['Weight (kg)'] ?? entry['Weight (tonnes)'] ?? entry.Generation ?? entry.Nights ??
+    entry.Rooms ?? entry.Tonnes ?? entry['Distance (km)'] ?? entry['Distance Travelled'] ??
+    entry['km Travelled'] ?? 0
+  )
+  const cleanType = type.replace(/^(Gaseous|Liquid|Solid) fuels - /i, '').replace(/^Bioenergy - /i, '').trim()
+  let res = null
+  let source
+  switch (module) {
+    case 'stationary': res = calcStationary(cleanType, unit, consumption); break
+    case 'mobile': res = calcMobile(type, unit, consumption); break
+    case 'fugitive':
+      res = calcFugitive(type.replace(/^Refrigerants - /i, '').trim(), consumption)
+      source = 'DEFRA 2026'
+      break
+    case 'electricity': {
+      const country = entry.Country || entry.country || entry['Name of Country'] || ''
+      res = calcElectricity(country, unit, consumption, false)
+      source = gridSourceLabel(country)
+      break
+    }
+    case 'heatSteam': res = calcHeatSteam(type, unit, consumption); break
+    case 'businessTravelAir':
+      res = calcTravelAir(type, entry.Class || entry.class || '', consumption, entry['RF Type'] || entry.rfType || 'With RF')
+      break
+    case 'businessTravelLand': res = calcTravelLand(type, consumption); break
+    case 'businessTravelSea': res = calcTravelSea(type, consumption); break
+    case 'wasteDisposal': {
+      const wasteType = entry['Type of Goods'] || entry.Type || entry.type || ''
+      const method = entry.Loop || entry.loop || entry.Method || entry.method || ''
+      const weightKg = (unit || '').toLowerCase() === 'tonnes' ? consumption * 1000 : consumption
+      res = calcWaste(wasteType, method, weightKg)
+      break
+    }
+    case 'waterSupply': res = calcWaterSupply(consumption); break
+    case 'waterTreatment': res = calcWaterTreatment(consumption, unit); break
+    case 'tdLoss': {
+      const country = entry.Country || entry.country || entry['Name of Country'] || ''
+      res = calcTDLoss(country, unit, consumption)
+      source = 'DEFRA 2026'
+      break
+    }
+    case 'purchasedGoods':
+      res = calcGoods(type, entry.Loop || entry.loop || 'Primary material production', consumption)
+      break
+    case 'hotelStay': res = calcHotel(type, consumption); break
+    case 'foodConsumption': res = calcFood(type, consumption); break
+    case 'employeeCommute': {
+      const km = parseFloat(entry['km Travelled'] || entry['km_per_day'] || entry.kmPerDay || 0)
+      const mode = type.replace(/^Cars \(by size\) - /i, '').replace(/^Bus - /i, '').replace(/^Rail - /i, '').replace(/^Taxis - /i, '').trim()
+      res = calcCommute(mode, 1, km, 1, false)
+      break
+    }
+    case 'upstream':
+    case 'downstream': {
+      const vType = entry['Type of Vehicle'] || entry.vehicleType || ''
+      const fType = entry['Type of Fuel'] || entry.fuelType || ''
+      const u = unit || 'tonne.km'
+      const tonnes = parseFloat(entry.Tonnes || 0)
+      const dist = parseFloat(entry['Distance Travelled'] || 0)
+      const qty = /tonne/i.test(u) ? tonnes * dist : dist
+      const { ef } = lookupFreightByLabel(vType, fType, u)
+      res = { ef, tco2e: +(qty * ef / 1000).toFixed(6) }
+      source = 'DEFRA 2026'
+      break
+    }
+    default: break
+  }
+  if (!res) return null
+  return { ef: res.ef, tco2e: res.tco2e, source }
 }
 
 export function calcCommute(vehicleType, numPassengers, kmPerDay, workingDays, twoWay = true) {
@@ -1463,9 +1581,15 @@ export function calcFreight(vehicleType, fuelType, cls, type, unit, tonnes, dist
   return { ef, tco2e: +(tkm * ef / 1000).toFixed(6) }
 }
 
-export function calcWaste(method, weightKg) {
-  const ef = EF_WASTE[method] ?? 0.300
-  return { ef, tco2e: +(weightKg * ef / 1000).toFixed(6) }
+// DEFRA 2026 waste: factor depends on BOTH the waste type and the disposal method,
+// expressed per TONNE. weightKg is the waste mass in kg.
+//   tonnes_waste = weightKg/1000;  emissions(kgCO2e) = tonnes_waste * ef_per_tonne;
+//   tco2e = emissions/1000  =>  tco2e = weightKg * ef_per_tonne / 1e6
+export function calcWaste(wasteType, method, weightKg) {
+  const t = (wasteType || '').trim()
+  const m = (method || '').trim()
+  const ef = EF_WASTE_MATRIX[t]?.[m] ?? 0
+  return { ef, tco2e: +((parseFloat(weightKg) || 0) * ef / 1_000_000).toFixed(6) }
 }
 
 export function calcFood(foodType, count) {

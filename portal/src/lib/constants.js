@@ -642,8 +642,9 @@ export const WASTE_TYPES = [
     "Paper and board: paper",
   ] },
 ]
+// Must match DEFRA 2026 "Waste disposal" method column names (EF_WASTE_MATRIX keys).
 export const WASTE_METHODS = [
-  'Open-loop', 'Closed-loop', 'Incineration with energy recovery',
+  'Re-use', 'Open-loop', 'Closed-loop', 'Combustion',
   'Composting', 'Landfill', 'Anaerobic digestion',
 ]
 export const WASTE_UNITS = ['tonnes', 'kg']

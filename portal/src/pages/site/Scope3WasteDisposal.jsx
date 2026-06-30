@@ -14,19 +14,19 @@ export default function Scope3WasteDisposal() {
   const [remarks, setRemarks]       = useState('')
 
   const weightKg = unit === 'tonnes' ? (parseFloat(generation) || 0) * 1000 : (parseFloat(generation) || 0)
-  const preview = loop && generation ? calcWaste(loop, weightKg) : null
+  const preview = goodsType && loop && generation ? calcWaste(goodsType, loop, weightKg) : null
 
   function buildEntry() {
-    if (!goodsType || !unit || !generation) return null
+    if (!goodsType || !loop || !unit || !generation) return null
     const kg = unit === 'tonnes' ? parseFloat(generation) * 1000 : parseFloat(generation)
-    const { ef, tco2e } = calcWaste(loop || 'Landfill', kg)
+    const { ef, tco2e } = calcWaste(goodsType, loop, kg)
     const e = {
       date: new Date().toISOString().slice(0, 10),
       'Type of Goods': goodsType,
       Loop: loop,
       'Unit of Measurement': unit,
       Generation: generation,
-      Source: 'Defra v1.0',
+      Source: 'DEFRA 2026',
       'Emission Factor': ef,
       remarks,
       ef,

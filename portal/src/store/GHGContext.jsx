@@ -145,12 +145,13 @@ function recalculateAllEntries(allEntries) {
             res = calcTravelSea(type, consumption)
             break
           case 'wasteDisposal': {
+            const wasteType = entry['Type of Goods'] || entry.Type || entry.type || ''
             const method = entry.Loop || entry.loop || entry.Method || entry.method || ''
             let weightKg = consumption
             if (unit.toLowerCase() === 'tonnes') {
               weightKg = consumption * 1000
             }
-            res = calcWaste(method, weightKg)
+            res = calcWaste(wasteType, method, weightKg)
             break
           }
           case 'waterSupply':

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { History, SkipForward, Trash2, Pencil, Search, ChevronDown, X, CheckCircle2, FileText, Download, Eye, Upload } from 'lucide-react'
 import { useGHG } from '../store/useGHG'
 import { putDoc, getDoc, newDocId } from '../lib/docStore'
+import { recomputeEntry } from '../lib/calculations'
 import BulkImportModal from './BulkImportModal'
 
 const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December']
@@ -207,31 +208,40 @@ function DocPreviewModal({ doc, onClose, onAttach }) {
 
 // ─── Edit entry modal (recomputes tCO2e = consumption × EF ÷ 1000) ────────────
 
-function EditEntryModal({ row, onClose, onSave }) {
+function EditEntryModal({ row, module, onClose, onSave }) {
   const [pm, py] = (row['Entry Period'] || row.period || ' - ').split(' - ')
   const [month, setMonth]   = useState(MONTHS.includes((pm || '').trim()) ? pm.trim() : MONTHS[0])
   const [year, setYear]     = useState((py || '').trim() || '2025')
   const [date, setDate]     = useState(row.date || new Date().toISOString().slice(0, 10))
-  const [cons, setCons]     = useState(String(row.Consumption ?? row.consumption ?? ''))
-  const [ef, setEf]         = useState(String(row.ef ?? row['Emission Factor'] ?? ''))
+  const [cons, setCons]     = useState(String(row.Consumption ?? row.consumption ?? row.Generation ?? row.Volume ?? row.Tonnes ?? ''))
   const [remarks, setRemarks] = useState(row.remarks || '')
   const [docFile, setDocFile] = useState(null)
   const currentDocName = row['Supporting Document'] || row.fileName || row.documentName
-  const tco2e = (parseFloat(cons) || 0) * (parseFloat(ef) || 0) / 1000
   const typeLabel = row.Type || row.type || row.Country || row['Name of Country'] || row['Type of Goods'] || ''
+
+  // Emission Factor AND tCO2e are derived from the CURRENT factor tables via the
+  // shared recomputeEntry engine — which applies the correct per-module unit math
+  // (e.g. waste is per-tonne, freight is tonne.km). The old modal used a naive
+  // consumption×ef÷1000 that produced wrong carbon for waste/freight on edit.
+  const candidate = { ...row, Consumption: cons, consumption: cons, Volume: cons, Generation: cons }
+  const recomputed = recomputeEntry(module, candidate)
+  const fallbackEf = parseFloat(row.ef ?? row['Emission Factor']) || 0
+  const ef = recomputed ? recomputed.ef : fallbackEf
+  const derivedSource = recomputed?.source
+  const tco2e = recomputed ? recomputed.tco2e : +((parseFloat(cons) || 0) * ef / 1000).toFixed(6)
 
   async function save() {
     const period = `${month} - ${year}`
     const c = parseFloat(cons) || 0
-    const e = parseFloat(ef) || 0
-    const t = +(c * e / 1000).toFixed(6)
+    const t = +tco2e
     const patch = {
       date,
       'Entry Period': period, period,
       Consumption: c, consumption: c, Volume: c,
-      'Emission Factor': e, ef: e,
+      'Emission Factor': ef, ef,
       tco2e: t, ghg: t,
       remarks,
+      ...(derivedSource ? { Source: derivedSource } : {}),
     }
     if (docFile?.name) {
       patch['Supporting Document'] = docFile.name
@@ -285,9 +295,11 @@ function EditEntryModal({ row, onClose, onSave }) {
                 className="border border-slate-200 rounded-xl px-3 py-2 text-sm outline-none focus:border-[#064E3B] focus:ring-2 focus:ring-[#064E3B]/10" />
             </div>
             <div className="flex flex-col gap-1">
-              <label className="text-xs font-medium text-slate-600">Emission Factor</label>
-              <input type="number" value={ef} onChange={e => setEf(e.target.value)}
-                className="border border-slate-200 rounded-xl px-3 py-2 text-sm outline-none focus:border-[#064E3B] focus:ring-2 focus:ring-[#064E3B]/10" />
+              <label className="text-xs font-medium text-slate-600">
+                Emission Factor <span className="text-slate-400 font-normal">(auto{derivedSource ? ` · ${derivedSource}` : ''})</span>
+              </label>
+              <input type="number" value={ef} readOnly disabled title="Auto-calculated from the current DEFRA/IEA factor tables — not editable"
+                className="border border-slate-200 rounded-xl px-3 py-2 text-sm outline-none bg-slate-100 text-slate-500 cursor-not-allowed" />
             </div>
           </div>
           <div className="flex flex-col gap-1">
@@ -688,6 +700,7 @@ export default function AssessmentForm({
       {editRow && (
         <EditEntryModal
           row={editRow}
+          module={module}
           onClose={() => setEditRow(null)}
           onSave={patch => { updateEntry(siteCode, module, editRow.id, patch); setEditRow(null) }}
         />
