@@ -26,7 +26,7 @@ export default function Scope1Fugitive() {
       'Type of Refrigerant': refrigerant,
       'Unit of Measurement': unit || 'kg',
       Consumption: consumption,
-      Source: 'IPCC AR5',
+      Source: 'DEFRA 2026',
       GWP: ef,
       remarks,
       ef,

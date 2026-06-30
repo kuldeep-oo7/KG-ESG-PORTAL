@@ -11,6 +11,11 @@ const MAX_EMBED = 5 * 1024 * 1024 // 5 MB — embed files as a data URL so they 
 // ─── Reusable form fields ─────────────────────────────────────────────────────
 
 export function Select({ label, value, onChange, options, required }) {
+  // Supports flat options (['a','b']) OR grouped options ([{ label, options: [...] }]).
+  // Grouped form renders non-selectable <optgroup> headings so category labels
+  // (e.g. "Construction") can't be picked as if they were materials.
+  const grouped = Array.isArray(options) && options.length > 0
+    && typeof options[0] === 'object' && options[0] !== null && 'options' in options[0]
   return (
     <div className="flex flex-col gap-1">
       <label className="text-xs font-medium text-slate-600">
@@ -23,7 +28,13 @@ export function Select({ label, value, onChange, options, required }) {
           className="w-full border border-slate-200 rounded-xl px-3 py-2.5 text-sm text-slate-800 outline-none focus:border-[#064E3B] focus:ring-2 focus:ring-[#064E3B]/10 appearance-none bg-white pr-8 transition-colors"
         >
           <option value="">Select {label}</option>
-          {options.map(o => <option key={o} value={o}>{o}</option>)}
+          {grouped
+            ? options.map(g => (
+                <optgroup key={g.label} label={g.label}>
+                  {g.options.map(o => <option key={o} value={o}>{o}</option>)}
+                </optgroup>
+              ))
+            : options.map(o => <option key={o} value={o}>{o}</option>)}
         </select>
         <ChevronDown className="absolute right-2.5 top-3 w-4 h-4 text-slate-400 pointer-events-none" />
       </div>

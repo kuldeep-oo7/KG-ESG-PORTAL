@@ -14,12 +14,12 @@ export default function Scope3PurchasedGoods() {
   const [remarks, setRemarks]         = useState('')
 
   const weightTonnes = unit === 'kg' ? (parseFloat(consumption) || 0) / 1000 : (parseFloat(consumption) || 0)
-  const preview = goodsType && consumption ? calcGoods(goodsType, weightTonnes) : null
+  const preview = goodsType && consumption ? calcGoods(goodsType, loop, weightTonnes) : null
 
   function buildEntry() {
     if (!goodsType || !unit || !consumption) return null
     const tonnes = unit === 'kg' ? parseFloat(consumption) / 1000 : parseFloat(consumption)
-    const { ef, tco2e } = calcGoods(goodsType, tonnes)
+    const { ef, tco2e } = calcGoods(goodsType, loop, tonnes)
     const e = {
       date: new Date().toISOString().slice(0, 10),
       'Goods Type': goodsType,

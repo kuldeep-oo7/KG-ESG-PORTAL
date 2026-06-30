@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import AssessmentForm, { Select, Input, GHGPreview } from '../../components/AssessmentForm'
-import { calcElectricity } from '../../lib/calculations'
+import { calcElectricity, gridSourceLabel } from '../../lib/calculations'
 import { COUNTRIES, ELEC_UNITS } from '../../lib/constants'
 
 export default function Scope2Electricity() {
@@ -24,7 +24,7 @@ export default function Scope2Electricity() {
       Country: country,
       Unit: unit,
       Consumption: consumption,
-      Source: 'CaDI 2025',
+      Source: gridSourceLabel(country),
       'Emission Factor': ef,
       remarks,
       ef,

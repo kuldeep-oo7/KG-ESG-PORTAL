@@ -290,7 +290,9 @@ export const EF_GRID = {
   'United Arab Emirates': 0.3652,
   'UAE': 0.3652,
   'Botswana': 0.97662,
-  'UK': 0.177,
+  'UK': 0.13096,                                                  // DEFRA 2026 (UK grid)
+  'United Kingdom': 0.13096,                                      // DEFRA 2026 (UK grid)
+  'United Kingdom of Great Britain and Northern Ireland': 0.13096, // DEFRA 2026 — matches COUNTRIES dropdown value
   'USA': 0.386,
   'Australia': 0.620,
   'Brazil': 0.074,
@@ -303,6 +305,17 @@ export const EF_GRID = {
   'Singapore': 0.408,
   'South Africa': 0.930,
   'default': 0.500,
+}
+
+// DEFRA 2026 publishes a grid factor for the UK ONLY. For every other country
+// DEFRA directs users to the IEA, so overseas values are IEA-sourced.
+// These helpers keep the per-entry Source label honest.
+export function isUKCountry(country) {
+  const c = (country || '').trim().toLowerCase()
+  return c === 'uk' || c.includes('united kingdom') || c.includes('great britain')
+}
+export function gridSourceLabel(country) {
+  return isUKCountry(country) ? 'DEFRA 2026' : 'IEA 2023'
 }
 
 // ── Scope 2: Heat & Steam ──────────────────────────────────────────────────────
@@ -438,6 +451,12 @@ export const EF_GOODS = {
 }
 
 export const EF_GOODS_LOOPS = {
+  "Aggregates": {
+    "Primary material production": 7.80307,
+    "Re-used": 2.21,
+    "Open-loop": null,
+    "Closed-loop": 3.22398
+  },
   "Average construction": {
     "Primary material production": 75.00675,
     "Re-used": null,
@@ -1165,7 +1184,7 @@ export const EF_WASTE_LANDFILL = {
 }
 
 // ── Scope 3: T&D Loss ────────────────────────────────────────────────────────
-export const EF_TD_LOSS = 0.0188  // kg CO2e per kWh
+export const EF_TD_LOSS = 0.01299  // DEFRA 2026 T&D - UK electricity (kg CO2e per kWh)
 
 // ── Core calculators ──────────────────────────────────────────────────────────
 
@@ -1269,14 +1288,12 @@ export function calcWaterTreatment(volume, unit) {
 }
 
 export function calcTDLoss(country, unit, consumption) {
+  // DEFRA 2026 Transmission & Distribution loss factor (UK electricity), applied to all sites.
+  const ef = EF_TD_LOSS
   if (typeof country === 'number') {
     // Legacy support: country was kwh directly
-    const kwh = country
-    const ef = 0.0188
-    return { ef, tco2e: +(kwh * ef / 1000).toFixed(6) }
+    return { ef, tco2e: +(country * ef / 1000).toFixed(6) }
   }
-  const cleanCountry = (country || '').trim()
-  const ef = 0.0188 // Always 0.0188 for India, UAE, Botswana
   const kwh = unit === 'MWh' ? consumption * 1000 : consumption
   return { ef, tco2e: +(kwh * ef / 1000).toFixed(6) }
 }

@@ -78,7 +78,11 @@ function recalculateAllEntries(allEntries) {
         const isRenewable = entry.isRenewable || entry.accounting === 'market' || (entry.category === 'Renewable Electricity Generation')
         const consumption = parseFloat(entry.Consumption ?? entry.consumption ?? entry.Volume ?? entry['Volume (m³)'] ?? entry['Weight (kg)'] ?? entry['Weight (tonnes)'] ?? entry.Generation ?? entry.Nights ?? entry.Rooms ?? entry.Tonnes ?? entry['Distance (km)'] ?? entry['Distance Travelled'] ?? entry['km Travelled'] ?? 0)
 
-        if (currentEf !== 0 && currentEf !== '0.00000' && currentEf !== null && currentEf !== undefined) {
+        // T&D loss factor was corrected to DEFRA 2026 (0.01299) — always refresh T&D
+        // rows on load so old saved 0.0188 / 0.95182 values display the new factor.
+        // This is recompute-on-read only; stored consumption is never overwritten.
+        const forceRecalc = module === 'tdLoss'
+        if (!forceRecalc && currentEf !== 0 && currentEf !== '0.00000' && currentEf !== null && currentEf !== undefined) {
           return entry
         }
         if (isWalkCycle || isRenewable || consumption === 0) {
@@ -193,6 +197,7 @@ function recalculateAllEntries(allEntries) {
             tco2e: res.tco2e,
             'Emission Factor': res.ef,
             ghg: res.tco2e,
+            ...(module === 'tdLoss' ? { Source: 'DEFRA 2026' } : {}),
           }
         }
         return entry

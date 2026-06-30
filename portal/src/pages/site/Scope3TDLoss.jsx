@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import AssessmentForm, { Select, Input, GHGPreview } from '../../components/AssessmentForm'
-import { calcElectricity } from '../../lib/calculations'
+import { calcTDLoss } from '../../lib/calculations'
 import { COUNTRIES, ELEC_UNITS } from '../../lib/constants'
 
 export default function Scope3TDLoss() {
@@ -13,18 +13,18 @@ export default function Scope3TDLoss() {
   const [remarks, setRemarks]         = useState('')
 
   const preview = country && unit && consumption
-    ? calcElectricity(country, unit, parseFloat(consumption) || 0)
+    ? calcTDLoss(country, unit, parseFloat(consumption) || 0)
     : null
 
   function buildEntry() {
     if (!country || !unit || !consumption) return null
-    const { ef, tco2e } = calcElectricity(country, unit, parseFloat(consumption))
+    const { ef, tco2e } = calcTDLoss(country, unit, parseFloat(consumption))
     const e = {
       date: new Date().toISOString().slice(0, 10),
       'Name of Country': country,
       'Unit of Measurement': unit,
       Consumption: consumption,
-      Source: 'IEA 2023',
+      Source: 'DEFRA 2026',
       'Emission Factor': ef,
       remarks,
       ef,
