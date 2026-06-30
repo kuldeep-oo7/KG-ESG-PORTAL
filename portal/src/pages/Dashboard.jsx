@@ -87,10 +87,15 @@ function computeYear(allEntries, selectedYear) {
     { name: 'Transmission & Distribution Loss', module: 'tdLoss', color: '#F59E0B', value: 0 },
     { name: 'Food Consumption', module: 'foodConsumption', color: '#10B981', value: 0 },
     { name: 'Purchased Goods', module: 'purchasedGoods', color: '#EF4444', value: 0 },
+    { name: 'Upstream Activities', module: 'upstream', color: '#14B8A6', value: 0 },
+    { name: 'Downstream Activities', module: 'downstream', color: '#6366F1', value: 0 },
     { name: 'Waste Disposal', module: 'wasteDisposal', color: '#EC4899', value: 0 },
     { name: 'Business Travel (Air)', module: 'businessTravelAir', color: '#8B5CF6', value: 0 },
+    { name: 'Business Travel (Sea)', module: 'businessTravelSea', color: '#F97316', value: 0 },
     { name: 'Business Travel (Land)', module: 'businessTravelLand', color: '#06B6D4', value: 0 },
-    { name: 'Water Supply', module: 'waterSupply', color: '#A7F3D0', value: 0 }
+    { name: 'Hotel Stay', module: 'hotelStay', color: '#84CC16', value: 0 },
+    { name: 'Water Supply', module: 'waterSupply', color: '#A7F3D0', value: 0 },
+    { name: 'Water Treatment', module: 'waterTreatment', color: '#0EA5E9', value: 0 },
   ]
 
   Object.values(filtered).forEach(siteData => {
@@ -130,20 +135,9 @@ function computeYear(allEntries, selectedYear) {
       (siteData[mod] || []).forEach(e => { s3 += parseFloat(e.tco2e || e.ghg || 0) })
     })
 
-    // Scope 3 breakdown (grouped to match the original donut categories)
+    // Scope 3 breakdown — every category shown individually
     scope3Groups.forEach(grp => {
-      if (grp.module === 'businessTravelAir') {
-        grp.value += (siteData.businessTravelAir || []).reduce((s, e) => s + (e.tco2e || e.ghg || 0), 0)
-      } else if (grp.module === 'businessTravelLand') {
-        grp.value += (siteData.businessTravelLand || []).reduce((s, e) => s + (e.tco2e || e.ghg || 0), 0)
-        grp.value += (siteData.businessTravelSea || []).reduce((s, e) => s + (e.tco2e || e.ghg || 0), 0)
-        grp.value += (siteData.hotelStay || []).reduce((s, e) => s + (e.tco2e || e.ghg || 0), 0)
-      } else if (grp.module === 'waterSupply') {
-        grp.value += (siteData.waterSupply || []).reduce((s, e) => s + (e.tco2e || e.ghg || 0), 0)
-        grp.value += (siteData.waterTreatment || []).reduce((s, e) => s + (e.tco2e || e.ghg || 0), 0)
-      } else {
-        grp.value += (siteData[grp.module] || []).reduce((s, e) => s + (e.tco2e || e.ghg || 0), 0)
-      }
+      grp.value += (siteData[grp.module] || []).reduce((s, e) => s + (e.tco2e || e.ghg || 0), 0)
     })
   })
 
