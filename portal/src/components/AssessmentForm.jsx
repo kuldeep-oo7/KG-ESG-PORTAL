@@ -330,8 +330,9 @@ function EditEntryModal({ row, module, onClose, onSave }) {
 
 // ─── Records table ────────────────────────────────────────────────────────────
 
-export function RecordsTable({ columns, entries, onDelete, onEdit, onAttachDoc, avoided }) {
+export function RecordsTable({ columns, entries, onDelete, onEdit, onAttachDoc, avoided, period }) {
   const [search, setSearch] = useState('')
+  const [showAll, setShowAll] = useState(false)
   const [preview, setPreview] = useState(null)
 
   async function openDoc(row) {
@@ -354,7 +355,11 @@ export function RecordsTable({ columns, entries, onDelete, onEdit, onAttachDoc, 
     // No file stored at all — open modal so the user can attach one
     setPreview({ name, url: '', missing: true, row })
   }
-  const filtered = entries.filter(e =>
+  // By default show only the selected month/year; toggle to view all months.
+  const byPeriod = (period && !showAll)
+    ? entries.filter(e => (e['Entry Period'] || e.period || '') === period)
+    : entries
+  const filtered = byPeriod.filter(e =>
     Object.values(e).some(v => String(v).toLowerCase().includes(search.toLowerCase()))
   )
 
@@ -372,7 +377,17 @@ export function RecordsTable({ columns, entries, onDelete, onEdit, onAttachDoc, 
       <div className="flex items-center justify-between px-4 py-2.5 bg-slate-50 border-b border-slate-100">
         <span className="text-xs font-medium text-slate-500">
           {filtered.length} of {entries.length} {entries.length === 1 ? 'record' : 'records'}
+          {period && !showAll && <span className="text-slate-400"> · {period}</span>}
         </span>
+        <div className="flex items-center gap-2">
+          {period && (
+            <button
+              onClick={() => setShowAll(s => !s)}
+              className="text-[11px] font-medium px-2.5 py-1.5 rounded-lg border border-slate-200 bg-white text-slate-600 hover:border-[#10B981] transition-colors whitespace-nowrap"
+            >
+              {showAll ? `Show ${period}` : 'Show all months'}
+            </button>
+          )}
         <div className="flex items-center gap-1.5 bg-white border border-slate-200 rounded-lg px-2.5 py-1.5">
           <Search className="w-3 h-3 text-slate-400 shrink-0" />
           <input
@@ -386,6 +401,7 @@ export function RecordsTable({ columns, entries, onDelete, onEdit, onAttachDoc, 
               <X className="w-3 h-3" />
             </button>
           )}
+        </div>
         </div>
       </div>
       <div className="overflow-x-auto">
@@ -542,6 +558,7 @@ export default function AssessmentForm({
       columns={allColumns}
       entries={entries}
       avoided={avoided}
+      period={entryPeriod}
       onDelete={id => deleteEntry(siteCode, module, id)}
       onEdit={row => setEditRow(row)}
       onAttachDoc={attachDoc}
