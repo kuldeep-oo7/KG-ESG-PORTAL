@@ -627,14 +627,14 @@ export default function AssessmentForm({
             </div>
           </div>
 
-          {/* Centralized supporting-document upload (persists with the entry) */}
+          {fields({ onSubmit: handleSubmit, entries })}
+
+          {/* Centralized supporting-document upload (persists with the entry) — kept at the bottom of the form */}
           {!hideDocument && (
-            <div className="mb-5 grid grid-cols-1">
+            <div className="mt-5 pt-5 border-t border-slate-100 grid grid-cols-1">
               <FileUpload file={doc} onChange={setDoc} />
             </div>
           )}
-
-          {fields({ onSubmit: handleSubmit, entries })}
         </div>
 
         {/* Records section (shown below form when history is hidden) */}
