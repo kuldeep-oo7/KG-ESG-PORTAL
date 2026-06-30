@@ -81,7 +81,7 @@ export function FileUpload({ label = 'Supporting Document', file, onChange }) {
 
 // ─── Live GHG preview ─────────────────────────────────────────────────────────
 
-export function GHGPreview({ tco2e }) {
+export function GHGPreview({ tco2e, avoided }) {
   if (tco2e == null) return null
   return (
     <div className="col-span-full bg-[#ECFDF5] border border-[#10B981]/30 rounded-xl px-4 py-3 flex items-center justify-between">
@@ -89,11 +89,14 @@ export function GHGPreview({ tco2e }) {
         <div className="w-6 h-6 rounded-full bg-[#064E3B] flex items-center justify-center shrink-0">
           <span className="text-white text-[9px] font-bold">~</span>
         </div>
-        <span className="text-xs font-medium text-[#065F46]">Calculated GHG Emission</span>
+        <div className="flex flex-col">
+          <span className="text-xs font-medium text-[#065F46]">{avoided ? 'Avoided Emissions' : 'Calculated GHG Emission'}</span>
+          {avoided && <span className="text-[10px] text-[#065F46]/70">Reported separately — not netted against gross emissions</span>}
+        </div>
       </div>
       <div className="flex items-baseline gap-1.5">
         <span className="text-base font-bold text-[#064E3B] tabular-nums">{tco2e.toFixed(6)}</span>
-        <span className="text-xs text-[#065F46]">tCO2Eq</span>
+        <span className="text-xs text-[#065F46]">{avoided ? 'Avoided tCO2Eq' : 'tCO2Eq'}</span>
       </div>
     </div>
   )
@@ -304,7 +307,7 @@ function EditEntryModal({ row, onClose, onSave }) {
 
 // ─── Records table ────────────────────────────────────────────────────────────
 
-export function RecordsTable({ columns, entries, onDelete, onEdit, onAttachDoc }) {
+export function RecordsTable({ columns, entries, onDelete, onEdit, onAttachDoc, avoided }) {
   const [search, setSearch] = useState('')
   const [preview, setPreview] = useState(null)
 
@@ -371,7 +374,7 @@ export function RecordsTable({ columns, entries, onDelete, onEdit, onAttachDoc }
                   {c}
                 </th>
               ))}
-              <th className="px-3 py-2.5 font-semibold text-slate-400 uppercase tracking-wide text-[10px] text-right whitespace-nowrap">tCO2Eq</th>
+              <th className="px-3 py-2.5 font-semibold text-slate-400 uppercase tracking-wide text-[10px] text-right whitespace-nowrap">{avoided ? 'Avoided tCO2Eq' : 'tCO2Eq'}</th>
               <th className="text-left px-3 py-2.5 font-semibold text-slate-400 uppercase tracking-wide text-[10px] whitespace-nowrap">Document</th>
               <th className="px-3 py-2.5 w-24 text-right font-semibold text-slate-400 uppercase tracking-wide text-[10px] sticky right-0 bg-slate-50 border-l border-slate-200">Actions</th>
             </tr>
@@ -448,7 +451,7 @@ export function EmissionFooter({ label, total }) {
 export default function AssessmentForm({
   title, description, siteCode, module, emissionLabel,
   fields, columns, onBuildEntry,
-  onNext, onPrev, bulkImport, hideDocument,
+  onNext, onPrev, bulkImport, hideDocument, avoided,
 }) {
   const { getEntries, getModuleTotal, addEntry, deleteEntry, updateEntry } = useGHG()
   const [showHistory, setShowHistory] = useState(false)
@@ -510,6 +513,7 @@ export default function AssessmentForm({
     <RecordsTable
       columns={allColumns}
       entries={entries}
+      avoided={avoided}
       onDelete={id => deleteEntry(siteCode, module, id)}
       onEdit={row => setEditRow(row)}
       onAttachDoc={attachDoc}

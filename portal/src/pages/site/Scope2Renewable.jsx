@@ -41,6 +41,7 @@ export default function Scope2Renewable() {
     <AssessmentForm
       title="GHG Inventory of Renewable Electricity Generation"
       siteCode={siteId} module="renewable"
+      avoided
       emissionLabel="Avoided Emissions from Renewable Generation"
       columns={['date', 'Country', 'Unit', 'Consumption', 'Source', 'Emission Factor']}
       onPrev={() => navigate(`/sites/${siteId}/scope2/heatsteam`)}
@@ -54,7 +55,7 @@ export default function Scope2Renewable() {
             <Input label="Consumption" value={consumption} onChange={setConsumption} type="number" required />
           </div>
           <Input label="Remarks" value={remarks} onChange={setRemarks} placeholder="Additional notes" />
-          {preview && <GHGPreview tco2e={preview.tco2e} />}
+          {preview && <GHGPreview tco2e={preview.tco2e} avoided />}
           <div className="flex gap-3">
             <button onClick={() => onSubmit()} className="bg-[#064E3B] hover:bg-[#065F46] text-white text-sm font-medium px-6 py-2.5 rounded-xl transition-colors">Submit</button>
             <button onClick={() => { onSubmit(); navigate(`/sites/${siteId}/scope2/summary`) }} className="border border-slate-200 text-sm text-slate-600 px-4 py-2.5 rounded-xl hover:border-[#10B981] transition-colors">Save &amp; Continue</button>
