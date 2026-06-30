@@ -6,6 +6,8 @@ import jsPDF from 'jspdf'
 import autoTable from 'jspdf-autotable'
 
 const ALL_CODES = SITES.map(s => s.code)
+const SITE_NAME = Object.fromEntries(SITES.map(s => [s.code, s.name]))
+const siteName = code => SITE_NAME[code] || code || '—'
 
 const TABLE_COLUMNS = ['DATE', 'ENTRY PERIOD', 'SITE NAME', 'TYPE', 'UNIT', 'CONSUMPTION', 'SOURCE', 'EMISSION FACTOR', 'GHG (TCO2EQ)', 'REMARKS']
 const COL_KEY = {
@@ -89,7 +91,7 @@ function TableSection({ title, entries }) {
     return {
       date:       e.date || '—',
       period:     e['Entry Period'] || e.period || (e.date ? e.date.slice(0, 7) : '—'),
-      site:       e.siteCode || e.site || '—',
+      site:       siteName(e.siteCode || e.site),
       type:       e.Type || e['Vehicle Type'] || e['Food Type'] || e.Source || e.category || '—',
       unit:       e.Unit || e.unit || '—',
       consumption:e.Consumption || e.consumption || e['Volume (m³)'] || e['Weight (kg)'] || e['Weight (tonnes)'] || '—',
@@ -282,15 +284,15 @@ export default function GHGReports() {
   function handleExport(format) {
     const allRows = [
       ['Scope', 'Module', 'Date', 'Site', 'Type', 'Unit', 'Consumption', 'GHG (tCO2Eq)'],
-      ...scope1Stationary.map(e => ['Scope 1', 'Stationary Combustion', e.date || '', e.siteCode || '', e.Type || '', e.Unit || '', e.Consumption || '', e.tco2e?.toFixed(6) || '']),
-      ...scope1Mobile.map(e => ['Scope 1', 'Mobile Combustion', e.date || '', e.siteCode || '', e.Type || '', e.Unit || '', e.Consumption || '', e.tco2e?.toFixed(6) || '']),
-      ...scope1Fugitive.map(e => ['Scope 1', 'Fugitive Emissions', e.date || '', e.siteCode || '', e.Type || '', e.Unit || '', e.Consumption || '', e.tco2e?.toFixed(6) || '']),
-      ...scope2Electricity.map(e => ['Scope 2', 'Imported Electricity', e.date || '', e.siteCode || '', '', e.Unit || '', e.Consumption || '', e.tco2e?.toFixed(6) || '']),
-      ...scope2Renewable.map(e => ['Scope 2', 'Renewable Electricity', e.date || '', e.siteCode || '', '', e.Unit || '', e.Consumption || '', e.tco2e?.toFixed(6) || '']),
-      ...scope2HeatSteam.map(e => ['Scope 2', 'Heat / Steam', e.date || '', e.siteCode || '', '', e.Unit || '', e.Consumption || '', e.tco2e?.toFixed(6) || '']),
+      ...scope1Stationary.map(e => ['Scope 1', 'Stationary Combustion', e.date || '', siteName(e.siteCode), e.Type || '', e.Unit || '', e.Consumption || '', e.tco2e?.toFixed(6) || '']),
+      ...scope1Mobile.map(e => ['Scope 1', 'Mobile Combustion', e.date || '', siteName(e.siteCode), e.Type || '', e.Unit || '', e.Consumption || '', e.tco2e?.toFixed(6) || '']),
+      ...scope1Fugitive.map(e => ['Scope 1', 'Fugitive Emissions', e.date || '', siteName(e.siteCode), e.Type || '', e.Unit || '', e.Consumption || '', e.tco2e?.toFixed(6) || '']),
+      ...scope2Electricity.map(e => ['Scope 2', 'Imported Electricity', e.date || '', siteName(e.siteCode), '', e.Unit || '', e.Consumption || '', e.tco2e?.toFixed(6) || '']),
+      ...scope2Renewable.map(e => ['Scope 2', 'Renewable Electricity', e.date || '', siteName(e.siteCode), '', e.Unit || '', e.Consumption || '', e.tco2e?.toFixed(6) || '']),
+      ...scope2HeatSteam.map(e => ['Scope 2', 'Heat / Steam', e.date || '', siteName(e.siteCode), '', e.Unit || '', e.Consumption || '', e.tco2e?.toFixed(6) || '']),
       ...[...scope3EmployeeCommute, ...scope3BusinessAir, ...scope3BusinessLand, ...scope3BusinessSea,
           ...scope3WasteDisposal, ...scope3WaterSupply, ...scope3PurchasedGoods, ...scope3HotelStay,
-          ...scope3Food, ...scope3Upstream, ...scope3Downstream, ...scope3TdLoss].map(e => ['Scope 3', e.category || e.module || '', e.date || '', e.siteCode || '', '', '', '', e.tco2e?.toFixed(6) || '']),
+          ...scope3Food, ...scope3Upstream, ...scope3Downstream, ...scope3TdLoss].map(e => ['Scope 3', e.category || e.module || '', e.date || '', siteName(e.siteCode), '', '', '', e.tco2e?.toFixed(6) || '']),
       ['', '', '', '', '', 'TOTAL', '', liveTotal > 0 ? liveTotal.toFixed(6) : displayTotal],
     ]
 
