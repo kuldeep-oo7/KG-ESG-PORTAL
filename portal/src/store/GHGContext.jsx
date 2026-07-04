@@ -62,6 +62,38 @@ function saveLocalEntries(email, data) {
   try { localStorage.setItem(`${LS_ENTRIES_KEY}_${email}`, JSON.stringify(data)) } catch (e) { console.warn(e) }
 }
 
+// One-time restore: re-add any ORIGINAL (seed) record that is missing from the
+// account's saved data — used to recover rows deleted by accident. Seed rows are
+// matched by their stable `id` (1..2052); user-added entries use Date.now() ids,
+// so this never touches or duplicates new data. Runs once per account per version.
+const SEED_RESTORE_VERSION = 'v1'
+function restoreDeletedSeed(email, stored) {
+  try {
+    const flagKey = `kg_seed_restore_${SEED_RESTORE_VERSION}_${email}`
+    if (localStorage.getItem(flagKey)) return stored
+    const merged = stored ? JSON.parse(JSON.stringify(stored)) : {}
+    let added = 0
+    for (const site of Object.keys(SEED)) {
+      merged[site] = merged[site] || {}
+      for (const mod of Object.keys(SEED[site])) {
+        const curList = Array.isArray(merged[site][mod]) ? merged[site][mod] : []
+        const haveIds = new Set(curList.map(e => e && e.id))
+        const restored = curList.slice()
+        for (const se of SEED[site][mod] || []) {
+          if (!haveIds.has(se.id)) { restored.push(se); added++ }
+        }
+        merged[site][mod] = restored
+      }
+    }
+    localStorage.setItem(flagKey, String(added))
+    if (added > 0) { saveLocalEntries(email, merged); console.info(`[KG] Restored ${added} original record(s) that were missing.`) }
+    return added > 0 ? merged : stored
+  } catch (e) {
+    console.warn('seed restore failed', e)
+    return stored
+  }
+}
+
 function recalculateAllEntries(allEntries) {
   if (!allEntries) return allEntries
   let changed = false
@@ -256,7 +288,7 @@ export function GHGProvider({ children }) {
 
     if (!API_ENABLED) {
       const localSites = getLocalSites(currentUserEmail)
-      const localEntries = getLocalEntries(currentUserEmail)
+      const localEntries = restoreDeletedSeed(currentUserEmail, getLocalEntries(currentUserEmail))
       Promise.resolve().then(() => {
         setSites(localSites)
         setEntries(recalculateAllEntries(localEntries))

@@ -40,8 +40,17 @@ For quick back-and-forth messages between agents, use `COORDINATION_CHAT.md`. Ke
 | Codex | Public pre-login page + newsletter section | `portal/src/App.jsx`, `portal/src/pages/PublicHome.jsx`, `portal/src/pages/Login.jsx`, `portal/src/components/Navbar.jsx`, `AGENTS.md` | COMPLETE | 2026-05-27 |
 | Claude | Replace all GHG site emission data with `new data/` workbooks | `portal/src/store/SEED.js`, `gen_seed.py`, `new data/*`, `data/*` | COMPLETE | 2026-06-23 |
 | Antigravity | GHG Recalculation & Dropdowns Theme Unification | `portal/src/lib/calculations.js`, `portal/src/store/GHGContext.jsx`, `portal/src/pages/GHGReports.jsx`, `portal/src/pages/site/Scope2Renewable.jsx`, `database/calculation_engine.py`, `portal/src/pages/CSR.jsx`, `portal/src/pages/Social.jsx`, `portal/src/pages/Governance.jsx`, `portal/src/pages/WomenWellbeing.jsx`, `portal/src/pages/Sites.jsx`, `portal/src/pages/PublicHome.jsx`, `portal/src/pages/site/IntensityMetrics.jsx`, `portal/src/components/AssessmentForm.jsx`, `portal/src/components/SiteLayout.jsx` | VERIFIED | 2026-05-30 |
+| Antigravity | Trybe Order Automation | `scraper/order_automation.py` | COMPLETE | 2026-06-29 |
+| Claude | One-time seed-restore for accidentally deleted rows (keeps new entries) | `portal/src/store/GHGContext.jsx` | COMPLETE | 2026-07-04 |
+
 
 ## Handoff Log
+
+### 2026-06-29 - Antigravity: Trybe Order Automation
+
+- Created `scraper/order_automation.py` containing end-to-end browser automation. It logs in, searches for Order Dashboard, navigates to the customer order creation form, reads `C:\Users\spc1\Downloads\sbook.xlsx`, and selects either "Hold Program" or "Compulsory" based on the presence of "HOLD" in the `prog` column.
+- Verified script execution successfully: Excel check found "HOLD" in `HOLD-R-EMD-0225-001` and selected the "Hold Program" radio button on the form. Verified both headlessly (saving verification screenshot at `scraper/output/automation_result.png`) and interactively (opening the visible browser on the desktop and prompting the user before closing).
+
 
 ### 2026-06-23 - Claude: dashboard baseline comparison, Vercel deploy pipeline, DEFRA 2026 factors
 
