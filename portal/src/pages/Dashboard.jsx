@@ -8,7 +8,10 @@ import { DASHBOARD_TOTALS } from '../data/ghgData'
 import { useGHG } from '../store/useGHG'
 
 // ─── Constants ─────────────────────────────────────────────────────────────────
+// Unique by calendar year — keep the first (upper) entry, drop later duplicates
+// (e.g. FY 2026 / FY 2025 repeat years already covered by CY 2026 / CY 2025).
 const YEAR_OPTIONS = ['CY 2026', 'CY 2025', 'CY 2024', 'CY 2023', 'FY 2026', 'FY 2025']
+  .filter((y, i, arr) => arr.findIndex(o => (o.match(/\d{4}/) || [])[0] === (y.match(/\d{4}/) || [])[0]) === i)
 const MONTHS_SHORT = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 const S3_MODULES = [
   'employeeCommute', 'foodConsumption', 'purchasedGoods', 'tdLoss',
