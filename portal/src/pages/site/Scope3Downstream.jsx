@@ -98,7 +98,7 @@ export default function Scope3Downstream() {
       title="Inventory of GHG Emissions from Downstream transportation of goods"
       siteCode={siteId} module="downstream"
       emissionLabel="Emission From Downstream Activities"
-      columns={['date', 'Type of Vehicle', 'Type of Fuel', 'Class', 'Type', 'Unit of Measurement', 'Tonnes', 'Distance Travelled']}
+      columns={['date', 'Type of Vehicle', 'Type of Fuel', 'Class', 'Type', 'Unit of Measurement', 'Tonnes', 'Distance Travelled', 'Emission Factor']}
       onPrev={() => navigate(`/sites/${siteId}/scope3/upstream`)}
       onNext={() => navigate(`/sites/${siteId}/scope3/waste-disposal`)}
       onBuildEntry={buildEntry}

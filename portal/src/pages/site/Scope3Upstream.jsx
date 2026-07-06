@@ -100,7 +100,7 @@ export default function Scope3Upstream() {
       title="Inventory of GHG Emissions from Upstream transportation of goods"
       siteCode={siteId} module="upstream"
       emissionLabel="Emission From Upstream Activities"
-      columns={['date', 'Type of Vehicle', 'Type of Fuel', 'Class', 'Type', 'Unit of Measurement', 'Tonnes', 'Distance Travelled']}
+      columns={['date', 'Type of Vehicle', 'Type of Fuel', 'Class', 'Type', 'Unit of Measurement', 'Tonnes', 'Distance Travelled', 'Emission Factor']}
       onPrev={() => navigate(`/sites/${siteId}/scope3/td-loss`)}
       onNext={() => navigate(`/sites/${siteId}/scope3/downstream`)}
       onBuildEntry={buildEntry}
