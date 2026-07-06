@@ -62,37 +62,53 @@ function saveLocalEntries(email, data) {
   try { localStorage.setItem(`${LS_ENTRIES_KEY}_${email}`, JSON.stringify(data)) } catch (e) { console.warn(e) }
 }
 
-// One-time restore: re-add any ORIGINAL (seed) record that is missing from the
-// account's saved data — used to recover rows deleted by accident. Seed rows are
-// matched by their stable `id` (1..2052); user-added entries use Date.now() ids,
-// so this never touches or duplicates new data. Runs once per account per version.
-const SEED_RESTORE_VERSION = 'v1'
+// One-time restore of ORIGINAL (seed) data, matched by stable `id` (1..~2052);
+// user-added entries use Date.now() ids so they are always preserved. Runs once
+// per account per version.
+//   • Scope 3 modules: rebuilt to the EXACT reported seed values (old calculations),
+//     because earlier loads may have persisted new-factor recalcs over the old data.
+//   • Other (Scope 1/2) modules: only re-add missing seed rows (they were correct).
+const SEED_RESTORE_VERSION = 'v2'
+const isSeedId = (e) => e && typeof e.id === 'number' && e.id < 1e11
 function restoreDeletedSeed(email, stored) {
   try {
     const flagKey = `kg_seed_restore_${SEED_RESTORE_VERSION}_${email}`
     if (localStorage.getItem(flagKey)) return stored
     const merged = stored ? JSON.parse(JSON.stringify(stored)) : {}
-    let added = 0
+    let changed = 0
     for (const site of Object.keys(SEED)) {
       merged[site] = merged[site] || {}
       for (const mod of Object.keys(SEED[site])) {
+        const seedList = SEED[site][mod] || []
         const curList = Array.isArray(merged[site][mod]) ? merged[site][mod] : []
-        const haveIds = new Set(curList.map(e => e && e.id))
-        const restored = curList.slice()
-        for (const se of SEED[site][mod] || []) {
-          if (!haveIds.has(se.id)) { restored.push(se); added++ }
+        if (SCOPE3_MODULES.has(mod)) {
+          // exact old-calculation seed values + any new (user-added) entries
+          const userAdded = curList.filter(e => !isSeedId(e))
+          merged[site][mod] = [...seedList, ...userAdded]
+          changed += seedList.length
+        } else {
+          const haveIds = new Set(curList.map(e => e && e.id))
+          const restored = curList.slice()
+          for (const se of seedList) if (!haveIds.has(se.id)) { restored.push(se); changed++ }
+          merged[site][mod] = restored
         }
-        merged[site][mod] = restored
       }
     }
-    localStorage.setItem(flagKey, String(added))
-    if (added > 0) { saveLocalEntries(email, merged); console.info(`[KG] Restored ${added} original record(s) that were missing.`) }
-    return added > 0 ? merged : stored
+    localStorage.setItem(flagKey, String(changed))
+    if (changed > 0) { saveLocalEntries(email, merged); console.info(`[KG] Restored original Scope 3 (old-calculation) data.`) }
+    return changed > 0 ? merged : stored
   } catch (e) {
     console.warn('seed restore failed', e)
     return stored
   }
 }
+
+// Scope 3 modules — OLD (seed) rows in these keep their original reported values.
+const SCOPE3_MODULES = new Set([
+  'employeeCommute', 'foodConsumption', 'purchasedGoods', 'tdLoss', 'upstream',
+  'downstream', 'wasteDisposal', 'waterSupply', 'waterTreatment',
+  'businessTravelAir', 'businessTravelSea', 'businessTravelLand', 'hotelStay',
+])
 
 function recalculateAllEntries(allEntries) {
   if (!allEntries) return allEntries
@@ -106,6 +122,11 @@ function recalculateAllEntries(allEntries) {
     for (const module of Object.keys(siteData)) {
       const list = siteData[module] || []
       const updatedList = list.map(entry => {
+        // Scope 3 OLD (seed) data keeps its original reported values — never re-run
+        // new-factor calculations on it. Seed ids are small ints (1..~2052); new
+        // entries use Date.now() ids and continue to use the new factors.
+        const isSeedEntry = typeof entry.id === 'number' && entry.id < 1e11
+        if (isSeedEntry && SCOPE3_MODULES.has(module)) return entry
         const currentEf = entry.ef ?? entry['Emission Factor'] ?? 0
         const isWalkCycle = (entry.Type || entry.type || '').toLowerCase().includes('walk') || (entry.Type || entry.type || '').toLowerCase().includes('cycle')
         const isRenewable = entry.isRenewable || entry.accounting === 'market' || (entry.category === 'Renewable Electricity Generation')
