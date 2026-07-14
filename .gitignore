@@ -33,3 +33,7 @@ server/database.db-journal
 .vercel
 
 .env*.local
+
+# Vercel env pulls (contain secrets)
+.env.vercel
+portal/.env.vercel

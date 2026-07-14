@@ -24,6 +24,7 @@ import { SEED } from './SEED'
 import { SITES } from '../data/ghgData'
 import { FOOD_UNIT_BY_TYPE } from '../lib/constants'
 import { apiUrl, API_ENABLED } from '../lib/api'
+import { SHARED_ENABLED, fetchShared, pushMutation } from '../lib/sharedStore'
 
 // LocalStorage Fallback Helpers
 const LS_SITES_KEY = 'kg_sites_v3_fallback'
@@ -308,13 +309,26 @@ export function GHGProvider({ children }) {
     })
 
     if (!API_ENABLED) {
-      const localSites = getLocalSites(currentUserEmail)
-      const localEntries = restoreDeletedSeed(currentUserEmail, getLocalEntries(currentUserEmail))
-      Promise.resolve().then(() => {
-        setSites(localSites)
-        setEntries(recalculateAllEntries(localEntries))
-        setLoading(false)
-      })
+      setSites(getLocalSites(currentUserEmail))
+      const loadLocal = () =>
+        recalculateAllEntries(restoreDeletedSeed(currentUserEmail, getLocalEntries(currentUserEmail)))
+      if (SHARED_ENABLED) {
+        // Shared company-wide store — every user reads/writes the same central data
+        fetchShared()
+          .then(d => {
+            const shared = d && d.entries
+            if (shared && Object.keys(shared).length) {
+              setEntries(recalculateAllEntries(shared))
+              saveLocalEntries(currentUserEmail, shared) // offline cache
+            } else {
+              setEntries(loadLocal())
+            }
+            setLoading(false)
+          })
+          .catch(() => { setEntries(loadLocal()); setLoading(false) })
+      } else {
+        Promise.resolve().then(() => { setEntries(loadLocal()); setLoading(false) })
+      }
       return
     }
 
@@ -431,6 +445,7 @@ export function GHGProvider({ children }) {
       saveLocalEntries(currentUserEmail, next)
       return next
     })
+    if (SHARED_ENABLED) pushMutation({ action: 'add', siteCode, module, entry: savedEntry, user: currentUserEmail }).catch(() => {})
   }
 
   async function deleteEntry(siteCode, module, id) {
@@ -469,6 +484,7 @@ export function GHGProvider({ children }) {
       saveLocalEntries(currentUserEmail, next)
       return next
     })
+    if (SHARED_ENABLED) pushMutation({ action: 'delete', siteCode, module, id, user: currentUserEmail }).catch(() => {})
   }
 
   async function updateEntry(siteCode, module, id, patch) {
@@ -504,6 +520,7 @@ export function GHGProvider({ children }) {
       saveLocalEntries(currentUserEmail, next)
       return next
     })
+    if (SHARED_ENABLED) pushMutation({ action: 'update', siteCode, module, id, patch, user: currentUserEmail }).catch(() => {})
   }
 
   async function addSite(siteData) {
