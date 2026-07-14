@@ -92,7 +92,7 @@ function TableSection({ title, entries }) {
       date:       e.date || '—',
       period:     e['Entry Period'] || e.period || (e.date ? e.date.slice(0, 7) : '—'),
       site:       siteName(e.siteCode || e.site),
-      type:       e.Type || e['Vehicle Type'] || e['Food Type'] || e.Source || e.category || '—',
+      type:       e.Type || e['Vehicle Type'] || e['Food Type'] || e['Type of Goods'] || e['Type of Vehicle'] || e.category || '—',
       unit:       e.Unit || e.unit || '—',
       consumption:e.Consumption || e.consumption || e['Volume (m³)'] || e['Weight (kg)'] || e['Weight (tonnes)'] || '—',
       source:     e.Source || e.source || '—',
