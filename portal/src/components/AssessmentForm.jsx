@@ -226,9 +226,15 @@ function EditEntryModal({ row, module, onClose, onSave }) {
   const candidate = { ...row, Consumption: cons, consumption: cons, Volume: cons, Generation: cons }
   const recomputed = recomputeEntry(module, candidate)
   const fallbackEf = parseFloat(row.ef ?? row['Emission Factor']) || 0
-  const ef = recomputed ? recomputed.ef : fallbackEf
-  const derivedSource = recomputed?.source
-  const tco2e = recomputed ? recomputed.tco2e : +((parseFloat(cons) || 0) * ef / 1000).toFixed(6)
+  // OLD (seed) rows keep their original emission factor and just rescale by the
+  // edited consumption. New rows use the current factor tables. Either way a failed
+  // factor lookup must NEVER zero the row — fall back to the stored factor.
+  const isSeedRow = typeof row.id === 'number' && row.id < 1e11
+  const recomputedOk = !!(recomputed && recomputed.ef)
+  const useRecompute = recomputedOk && !isSeedRow
+  const ef = useRecompute ? recomputed.ef : (fallbackEf || (recomputedOk ? recomputed.ef : 0))
+  const derivedSource = useRecompute ? recomputed.source : undefined
+  const tco2e = useRecompute ? recomputed.tco2e : +((parseFloat(cons) || 0) * ef / 1000).toFixed(6)
 
   async function save() {
     const period = `${month} - ${year}`
