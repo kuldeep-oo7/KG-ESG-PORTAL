@@ -7,6 +7,7 @@ const NAV_ITEMS = [
   { label: 'Dashboard',   to: '/dashboard',  end: true },
   { label: 'Sites',       to: '/sites',      end: false },
   { label: 'GHG Reports', to: '/reports',    end: false },
+  { label: 'Activity',    to: '/activity',   end: false },
   { label: 'CSR',         to: '/csr',        end: false },
   { label: 'Social',      to: '/social',     end: false },
   { label: 'Governance',  to: '/governance', end: false },

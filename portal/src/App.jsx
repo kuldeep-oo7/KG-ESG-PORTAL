@@ -4,6 +4,7 @@ import SiteLayout from './components/SiteLayout'
 import Dashboard from './pages/Dashboard'
 import Sites from './pages/Sites'
 import GHGReports from './pages/GHGReports'
+import Activity from './pages/Activity'
 import Help from './pages/Help'
 import PublicHome from './pages/PublicHome'
 import NewsletterPage from './pages/NewsletterPage'
@@ -97,6 +98,7 @@ export default function App() {
         <Route path="/dashboard" element={<Layout><Dashboard /></Layout>} />
         <Route path="/sites"     element={<Layout><Sites /></Layout>} />
         <Route path="/reports"   element={<Layout><GHGReports /></Layout>} />
+        <Route path="/activity"  element={<Layout><Activity /></Layout>} />
         <Route path="/csr"       element={<Layout><CSR /></Layout>} />
         <Route path="/social"    element={<Layout><Social /></Layout>} />
         <Route path="/governance" element={<Layout><Governance /></Layout>} />
